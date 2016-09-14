@@ -1,152 +1,810 @@
-\chapter{The Description of a Set of Trajectories and Its Median Trajectory}
+\chapter{Dasar Teori}
 \label{chap:definition}
+Pada bab ini akan dijelsaskan mengenai konsep-konsep dasar pengukung BI, yaitu konsep MVC(\textit{model view controller}), Java FX, Apache POI, iCal4j serta penjelasan singkat mengenai netbeans yang digunakan untuk membangun PL.
 
-\section{Set of Trajectories}
-\label{sec:setoftrjs}
+\section{\textit{Model View Controller}(MVC)}
+Setiap perangkat lunak memiliki pola bawaan dalam proses pembuatannya. Salah satu pola yang cukup terkenal adalah konsep MVC. MVC memisahkan pengembangan aplikasi berdasarkan komponen utama yang membangun sebuah aplikasi seperti manipulasi data, user interface, dan bagian yang menjadi kontrol aplikasi. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.65]{Gambar/MVC}
+	\caption{Diagram MVC}
+	\end{figure}
 
-In this thesis, we only consider the spatial component of the trajectory. 
-Therefore, we represent a trajectory as a polygonal line built by a series of points and connected by line segments.   
- 
-Let $T:=\{\tau_{1},\tau_{2},...,\tau_{m}\}$ be the input set of $m$ trajectories for which we want to compute its median trajectory $\tau^{M}$.
-We define each trajectory in $T$ as a list of at most $n$ points, $\tau_{i}:=(p_{i,1},...,p_{i,k})$ where $1 \leq i \leq m$ and $2 \leq k \leq n$. 
-Note that the number of points for each trajectory can be different.
-Every two consecutive points $p_{i,j}$ and $p_{i,j+1}$ $(1 \leq j \leq k-1)$ are connected by a segment $s_{i,j}:=(\overline{p_{i,j},p_{i,j+1}})$.
-
-$P$ is the set of all points in $T$, $P:=\{p_{i,j} \mid i \in \{ 1 ... m\} , j \in \{ 1 ... n\} \}$ and $S$ is the set of all segments in $T$, $S:=\{s_{i,j} \mid i \in \{ 1 ... m\} , j \in \{ 1 ... n-1\} \}$.
-All trajectories in $T$ share the same start and end points $(p_{1,1}=p_{2,1}=...=p_{m,1}$ and $p_{1,k_{1}}=p_{2,k_{2}}=...=p_{m,k_{m}}$ where $ \{k_{1},...,k_{m}\} \in \{1,...,n\})$. 
-
-Trajectories can intersect with other trajectories in other points than their start and end points.
-These intersection points are also included in the list of points that define the trajectory. When two segments intersect each other, then both segments will be split into two parts and all four segments share one intersection point as one of their endpoints (see Figure~\ref{fig:number_trj}).
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.8]{Gambar/number_trj}
-\caption[Numbering of points and segments]{Numbering of points and segments} 
-\label{fig:number_trj}
-\end{figure}
-
-Let $n'$ be the number of points in a trajectory, including their intersection points with other trajectories. 
-In the worst case, $n' = mn^{2}$. 
-In the rest of this thesis, we define $n$ as a number of points in a trajectory, inclusive with its intersection points with other trajectories. 
-Note that the number of segments for each trajectory is linear to the number of points, because trajectory with $n$ points has $n-1$ segments.
-
-\section{Properties of the Median Trajectory}
-\label{sec:prop_medtrj}
-
-We define several properties for the median trajectory  $\tau^{M}$ with respect to the input set of trajectories $T$:
+Penjelasan MVC sebagai berikut \cite{Hans:2014}:
 
 \begin{itemize}
-\item 
-$\tau^{M}$ is a directed polygonal line from start point to end point and should be similar to most trajectories in $T$.
-
-\item 
-It must be built only using points and segments which are parts of trajectories in the input set. 
-
-\item 
-The usage of segments should follow the direction of them. Therefore, it is not allowed to use a segment such that the direction of $\tau^{M}$ is opposite to the direction of that segment in a trajectory (see Figure~\ref{fig:forbid_seg}, indicated by the dark blue arrow).
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.9]{Gambar/forbid_seg}
-\caption[Possible median trajectory (in black) with backward direction (pointed by the blue arrow)]{Possible median trajectory (in black) with backward direction (indicated by the blue arrow)} 
-\label{fig:forbid_seg}
-\end{figure}
-
-\item 
-The length of the median trajectory should be relatively the same as the average length of all trajectories in the input set.
-
-\item 
-The total angular change should also be similar to the average of total angular change of all trajectories in the input set.
-The total angular change of a trajectory is the sum of all angular changes at every vertex in that trajectory (see Figure~\ref{fig:total_ang}). 
-
-\begin{figure}
-\centering
-\includegraphics[scale=1]{Gambar/total_ang}
-\caption[Red arcs indicate the angular change at each vertex]{Red arcs indicate the angular change at each vertex} 
-\label{fig:total_ang}
-\end{figure}
-
-\item 
-The number of vertices and edges of $\tau^{M}$ should be about the same with the average of the number of vertices and edges from all trajectories in the input set.
-		%\item The final result of $\tau^{M}$ should not be influenced by an outliers.  
+	\item \textit{Model}\\
+	Komponen ini berhubungan dengan proses yang ada dan juga terdapat di dalam sistem.\\
+	Contoh model dalam skripsi ini adalah library Apache POI, iCal4j .
+	\item \textit{Controller}\\
+	Komponen yang mengatur komponen dari model ke view maupun sebaliknya. Fungsi dari komponen ini adalah sebagai penghubung komponen model dan view.\\
+	Contoh \textit{Controller} di dalam skripsi ini adalah kode-kode dalam bahasa java yang meng-inherit dari kelas-kelas dalam \textit{library} Apache POI dan iCal4j untuk membaca \textit{file} excel dari TU dan mengkonversikannya dalam format iCalendar.
+	\item \textit{View}\\
+	komponen yang berhubungan dengan \textit{end user}. Bentuknya berupa tampilan yang akan digunakan oleh \textit{user} atau sering disebut sebagai \textit{user-interface}.
+	Contoh \textit{view} dalam pengerjaan skripsi ini adalah kode-kode yang dituliskan dalam Java FX berupa \textit{file} yang berekstensi fxml.\\
+	Banyak keuntungan dengan pendekatan MVC, yakni \cite{Hans:2014}:
+	\begin{enumerate}
+		\item Pembagian modul pengerjaan yang jelas untuk setiap orang di dalam suatu tim.
+		\item Kemudahan untuk \textit{maintenance} dimasa depan.
+		\item Mempunyai fleksibilitas tinggi dalam pengembangan,
+	\end{enumerate}
+\footnote{http://elmolya.blogspot.co.id/2010/03/belajar-mvc.html}
 \end{itemize}
 
+\section{Apache POI}
 
-Using the definition of the input set of trajectories defined in the previous section, we define a median trajectory $\tau^{M}$ as a sequence of points from $T$, $\tau^{M}:=(p_{i_{1},j_{1}},p_{i_{2},j_{2}},...,$ $p_{i_{k},j_{k}})$ where $\{i_{1},i_{2},...,i_{k}\} \in \{1 ... m\}$ and $\{j_{1},j_{2},...,j_{k}\} \in \{ 1 ... n\}$, or defined as a sequence of segments: $\tau^{M}:=(s_{i_{1},j_{1}},s_{i_{2},j_{2}}, ...,s_{i_{k},j_{k}})$ where $\{i_{1},i_{2},...,i_{k}\} \in \{1 ... m\}$ and $\{j_{1},j_{2},...,j_{k}\} \in \{1 ... n-1\}$. 
-Note that $\tau^{M}$ and all trajectories in $T$ share the same start point and end point.   
+Apache POI pada hakikatnya merupakan API( \textit{application programming interface}) yang populer digunakan oleh programmer untuk membuat, memodifikasi, dan menampilkan \textit{file} MS Office menggunakan bahasa pemograman Java. Untuk mengingatkan bahwa API atau yang dalam bahasa indonesia disebut antarmuka pemograman aplikasi adalah sekumpulan perintah, fungsi, serta protokol yang digunakan oleh programmer saat membangun perangkat lunak \footnote{https://id.wikipedia.org/wiki/Antarmuka\_pemrograman\_aplikasi}. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{Gambar/apachePOI}
+	\caption{Kelebihan Apache POI(HSSF dan XSSF)} \cite{tutpoint}
+	\end{figure}
+
+\subsection{Komponen Apache POI}
+Dalam Apache POI terdapat kelas dan method yang dapat bekerja dengan semua file OLE2 yang merupakan format file yang dipakai oleh dokumen dari Microsoft Office , seperti MS Word, Excel, dll \footnote{http://www.file-extensions.org/ole2-file-extension}. Berikut ini adalah komponen - komponen yang terdapat dalam Apache POI.\cite{tutpoint}
+
+\begin{enumerate}
+	\item \textbf{POIFS (\textit{Poor Obfuscation Implementation File System})} : Komponen ini merupakan faktor dasar dari semua elemen POI. Komponen ini dapat membaca file yang berbeda secara eksplisit.
+	\item \textbf{HSSF (\textit{Horrible Spreadsheet Format})} : Komponen ini digunakan untuk membaca dan menulis format xls dari file MS-Excel.
+	\item \textbf{XSSF (XML \textit{Spreadsheet Format})} : Komponen ini digunakan untuk membaca format file xlsx dari MS-Excel.
+	\item \textbf{HPSF (\textit{Horrible Property Set Format})} : Komponen ini digunakan untuk mengekstrak perangkat file yang dimiliki oleh MS-Office.
+	\item \textbf{HWPF (\textit{Horrible Word Proccessor Format})} : Komponen ini digunakan untuk menulis dan membaca ekstensi file doc dari MS-Word.
+	\item \textbf{XWPF (\textit{XML Word Processor Format})} : Komponen ini digunakan untuk membaca dan menulis ekstensi file docx dari MS-Word.
+	\item \textbf{HSLF (\textit{Horrible Slide Layout Format})} : Komponen ini digunakan untuk membaca, menulis, dan mengedit presentasi PowerPoint.
+	\item \textbf{HDGF (\textit{Horrible Diagram Format})} : komponen ini berisi kelas dan method dari file binary MS-Visio.
+	\item \textbf{HPBF (\textit{Horrible Publisher Format})} : Komponen ini digunakan untuk membaca dan menulis file MS-Publisher.
+\end{enumerate}
 
 
-%  
+\subsection{Kelas Inti Apache POI} 
+Pada sub bab ini akan membahas sedikit intoduksi mengenai beberapa kelas dan method yang ada di Apache POI API yang merupakan bagian penting untuk bekerja dengan file excel mengunakan program Java.\cite{tutpoint}
 
-Table~\ref{tab:tab_begin} shows how this information is kept in $\Gamma$. 
-\begin{table}
-\centering
-\caption{Table $\Gamma$ after inserting $\mathcal{S}_{1}$}
-\label{tab:tab_begin}
-\begin{tabular}{cccc}
-\toprule
+\subsubsection{Workbook}
+\textbf{org.apache.poi.ss.usermodel} \textit{package} merupakan \textit{super-interface} dari semua kelas yang berhubungan dengan pembuatan atau\textit{maintain} Excel workbook. Dua kelas yang mengimplementasikan \textit{interface} diatas sebagai berikut:\cite{tutpoint}
+\begin{itemize}
+	\item \textbf{HSSFWorkbook} : Kelas ini mempunyai method yang dapat membaca dan menulis file Microsoft Excel dengan format .xls. Kelas ini kompatibel dengan MS-Office versi 97-2003.
+	\item \textbf{XSSFWorkbook} : Kelas ini mempunyai method untuk menulis dan membaca Microsoft Excel dan OpenOffice xml dengan format .xls atau .xlsx. Kelas ini kompatibel dengan MS-Office versi 2007 atau versi barunya.
+\end{itemize}  
 
- & $v_{start}$ & $\mathcal{S}_{1}$ & $v_{end}$\\
-\midrule
-$\tau_{1}$ & 1 & 12& 20\\
-$\tau_{2}$ & 1 &  & 20\\
-$\tau_{3}$ & 1 & 9 & 20\\
-$\tau_{4}$ & 1 &  & 20\\
-\bottomrule
-\end{tabular}
-\end{table}
 
-There are two possibilities of the placement of $\mathcal{S}_{2}$: 
-\begin{table}[H]
-\begin{minipage}[c]{0.49\linewidth}
-\centering
-\caption{$\mathcal{S}_{2}$ between $v_{start}$ and $\mathcal{S}_{1}$}
-\label{tab:tab_next1}
-\begin{tabular}{ccccc}
-\toprule
+\subsubsection{HSSFWorkbook} 
+HSSFWorkbook merupakan \textit{high-level class} dibawah \textbf{org.apache.xssf.usermodel} \textit{package}. HSSFWorkbook juga mengimplementasikan antarmuka workbook yang digunakan oleh file Excel dalam format .xls. Berikut ini list dari bebeberapa method dan constructor dalam kelas ini.\cite{tutpoint}\\
 
- & $v_{start}$ & $\mathcal{S}_{2}$ & $\mathcal{S}_{1}$ & $v_{end}$\\
-\midrule
-$\tau_{1}$ & 1 & 5 \cellcolor{green}& 12& 20\\
-$\tau_{2}$ & 1 & 8 \cellcolor{green}& & 20\\
-$\tau_{3}$ & 1 & 2/8/17 \cellcolor{green}& 9 & 20\\
-$\tau_{4}$ & 1 & \cellcolor{red}& & 20\\
-\bottomrule
-\end{tabular}
-\end{minipage}
-\begin{minipage}[c]{0.49\linewidth}
+\noindent \textbf{Class Constructor}\\ \\
 
-\centering
-\caption{$\mathcal{S}_{2}$ between $\mathcal{S}_{1}$ and $v_{end}$}
-\label{tab:tab_next2}
-\begin{tabular}{ccccc}
-\toprule
 
- & $v_{start}$ & $\mathcal{S}_{1}$ & $\mathcal{S}_{2}$ & $v_{end}$\\
-\midrule
-$\tau_{1}$ & 1 & 12& 5 \cellcolor{red} &20\\
-$\tau_{2}$ & 1 &  &  8 \cellcolor{green} &20\\
-$\tau_{3}$ & 1 & 9 & 2/8/17 \cellcolor{green} &20\\
-$\tau_{4}$ & 1 &   & \cellcolor{red} &20\\
-\bottomrule
-\end{tabular}
-\end{minipage}
-\end{table}
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
+		1 & \textbf{HSSFWorkbook()}\\
+			&	Membuat baru objek HSSFWorkbook.\\ \hline 
+		2 & \textbf{HSSFWorkbook(DirectoryNode directory, boolean perserveNodes)}\\
+			&	Membuat objek HSSFWorkbook baru dalam direktori yang spesifik.\\ \hline
+		3 & \textbf{HSSFWorkbook(DirectoryNode directory, POIFSFileSystem fs, boolean perserveNodes)}\\
+			&	Memberikan sebuah objek POIDSFileSystem dan sebuah spesifik didalamnya, serta membuat objek SSFWorkbook untuk membaca sebuah workbook yang spesifik.\\ \hline 
+		4 & \textbf{HSSFWorkbook(java.io.InputStream s)}\\
+			&	Membuat baru objek HSSFWorkbook menggunakan input stream.\\ \hline
+		5 & \textbf{HSSFWorkbook(java.io.InputStream s, boolean preserveNodes )}\\
+			&	Membangun sebuah POI \textit{file system} disekeliling input stream.\\ \hline
+		6 & \textbf{HSSFWorkbook(POIFSFileSystem fs)}\\
+			&	Membangun sebuah objek HSSFWorkbook baru menggunakan sebuah objek POIFSFileSystem.\\ \hline 		
+		7 & \textbf{HSSFWorkbook(POIFSFileSystem fs, boolean preserveNodes)}\\
+			&	Memberikan sebuah objek POIFSFileSystem dan membuat HSSFWorkbook baru untuk membacu sebuah workbook spesifik.\\ \hline 
+	\end{tabular}
 
-The final placement of table $\Gamma$ after simplification: 
-\begin{table}[H]
-\centering
-\caption{Final $\Gamma$}
-\label{tab:tab_final}
-\begin{tabular}{ccccc}
-\toprule
- & $v_{start}$ & $\mathcal{S}_{2}$ & $\mathcal{S}_{1}$ & $v_{end}$\\
-\midrule
-$\tau_{1}$ & 1 & 5 & 12& 20\\
-$\tau_{2}$ & 1 & 8 &   & 20\\
-$\tau_{3}$ & 1 & 8 & 9 & 20\\
-$\tau_{4}$ & 1 &   &   & 20\\
-\bottomrule
-\end{tabular}
-\end{table}
+Berikut ini penjelasan parameter yang sering dipakai pada constructor :
+\begin{itemize}
+	\item \textbf{directory} : direktori proses dari POI filesystem
+	\item \textbf{fs} : POI filesystem yang mengandung workbook stream.
+	\item \textbf{preservenodes} : Opsional parameter yang memutuskan menjaga node lain, selain itu parameter ini menggunakan banyak memori seperti menyimpan semua POIFileSystem dalam memori(jika diset).
+\end{itemize} 
+
+\subsubsection{XSSFWorkbook}
+Kelas ini merepresentasikan baik \textit{high} dan \textit{low} level format file excel. XSSFWorkbook merupakan kelas yang berada dalam \textit{package} \textbf{org.apache.xssf.usermodel} dan mengimplementasikan antarmuka workbook. Berikut ini list method dan constructor dalam kelas ini.\cite{tutpoint}
+\\
+\noindent \textbf{Class Constructor}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
+		1 & \textbf{XSSFWorkbook()}\\
+			&	Membuat baru objek XSSFWorkbook.\\ \hline 
+		2 & \textbf{XSSFWorkbook(java.io.File file)}\\
+			&	Membangun sebuah objek XSSFWorkbook dari file yang diberikan.\\ \hline
+		3 & \textbf{XSSFWorkbook(java.io.InputStream is)}\\
+			&	Membangun sebuah object XSSFWorkbook dengan \textit{buffering} semua input stream kedalam memory, dilanjutkan dengan membuka objek OPCPackage.\\ \hline 
+		4 & \textbf{XSSFWorkbook(java.lang.String path)}\\
+			&	Membangun sebuah objek XSSFWorkbook dengan diberikan \textit{full path} dari sebuah file.\\ \hline
+	\end{tabular}
+\\
+\noindent \textbf{Class Methods}\\ \\
+
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{CreateSheet()}\\
+			&	Menciptakan sebuah XSSFSheet pada workbook, lalu menambahkan sheet, dan mengembalikannya dalam representasi \textit{high level} .\\ \hline 
+		2 & \textbf{createSheet(java.lang.String sheetname)}\\
+			&	Membuat sheet baru untuk workbook dan mengembalikannya dalam representasi \textit{high level}.\\ \hline
+		3 & \textbf{createFont()}\\
+			&	Membuat font baru dan menambahkannya pada tabel font workbook.\\ \hline 
+		4 & \textbf{createCellStyle()}\\
+			&	Membuat XSSFCellStyle Baru dan mmenambahkannya pada tabel style workbook.\\ \hline
+		5 & \textbf{setPrintArea(int sheetIndex, int startColumn, int endColumn, int startRow,int endRow)}\\
+			&	Menentukan area print dari kertas yang diberikan dengan parameter yang spesifik.\\ \hline	
+	\end{tabular}
+	
+	
+\subsubsection{Sheet}
+Sheet merupakan sebuah interface dibawah package org.apache.ss.usermodel dan sheet merupakan super-interface dari semua kelas yang menciptakan \textit{high} atau \textit{low level spreadsheet} dengan nama yang spesifik. Jenis yang paling umum dari spreadsheet adalah worksheet yang direpresentasikan sebagai sebuah \textit{grid} dari cell.\cite{tutpoint}
+
+\subsubsection{HSSFSheet}
+HSSFSheet merupakan kelas dibawah \textit{package}\textbf{org.apache.poi.hssf.usermodel}. HSSFSheet dapat membuat excel spreadsheet dan memungkinkan untuk memformat style dari sheet dan data sheet.\cite{tutpoint}
+\\
+\noindent \textbf{Class Constructor}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
+		1 & \textbf{HSSFSheet(HSSFWorkbook workbook)}\\
+			&	Membuat baru HSSFSheet yang disebut HSSFWorkbook dalam pembuatan sheet baru .\\ \hline 
+		2 & \textbf{HSSFSheet(HSSFWorkbook workbook, InternalSheet sheet)}\\
+			&	Membuat sebuah HSSFSheet yang mewakili objek sheet yang diberikan.\\ \hline
+	\end{tabular}
+	
+\subsubsection{XSSFSheet}
+Kelas ini merupakan representasi dari \textit{high level} excel spreadsheet. Kelas ini berada dibawah package org.apache.poi.hssf.usermodel.\cite{tutpoint}
+\\
+\noindent \textbf{Class Constructor}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
+		1 & \textbf{XSSFSheet()}\\
+			&	Membuat baru XSSFSheet yang disebut XSSFWorkbook dalam pembuatan sheet baru .\\ \hline 
+		2 & \textbf{XSSFSheet(PackagePart part, PackageRelationship rel)}\\
+			&	Membuat sebuah XSSFSheet yang mewakili bagian package dan \textit{relationship}.\\ \hline
+	\end{tabular}
+\\
+\noindent \textbf{Class Method}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
+		1 & \textbf{addMergedRegion(CellRangeAddress region))}\\
+			&	Menambahkan gabungan wilayah dari cell.(beberapa cell menjadi satu)   .\\ \hline 
+		2 & \textbf{autoSizeColumn(int column)}\\
+			& Menyesuaikan lebar kolom agar sesuai dengan isinya.\\ \hline
+		3 & \textbf{iterator()}\\
+			&	Method ini alias rowIterator() untuk memungkinkan foreach loop .\\ \hline
+		4 & \textbf{addHyperlink(XSSFHyperlink hyperlink)}\\
+			&	Mendaftarkan sebuah hyperlink kedalam koleksi hyperlink yang ada di sheet.\\ \hline	
+	\end{tabular}
+
+\subsubsection{Row}
+Row merupakan interface berada dibawah \textit{package} \textbf{org.apache.poi.ss.usermodel}. Row ini digunakan untuk \textit{high-level representation} dari sebuah row pada sebuah spreadsheet. Row juga merupakan super-interface dari semua kelas yang mewakili row dalam POI \textit{Library}.\cite{tutpoint}
+
+\subsubsection{XSSFRow}
+XSSFRow merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel} dan mengimplementasi Row interface. Selain itu, kelas ini dapat membuat row dalam sebuah spreadsheet. List dibawah ini merupakan method dan constructors pada kelas ini.\cite{tutpoint}
+ \\ 
+\noindent \textbf{Class Method}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Deskripsi} \\ \hline \hline
+		1 & \textbf{createCell(int columnIndex)}\\
+			&	Membuat cell baru dalam baris.\\ \hline 
+		2 & \textbf{setHeight(short height)}\\
+			&	Mengatur tinggi dalam satuan short.\\ \hline
+	\end{tabular}
+
+\subsubsection{Cell}
+Cell merupakan interface yang berada dibawah \textit{package} \textbf{org.apache.poi.ss.usermodel}. Cell merupakan sebuah super-interface dari semua kelas yang mewakili cell dalam baris sebuah spreadsheet.\\
+
+Cell dapat beruba berbagai atrubut seperti \textit{blank, numeric, date, error, } dll. Sebelum ditambahkan ke baris cell memiliki nomer tersendiri(dari mulai 0).\cite{tutpoint}
+
+\subsubsection{XSSFCell}  
+Kelas ini berada dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mewakili cell interface. XSSFCell adalah \textit{high-level representation} cell dalam row dari sebuah spreadsheet.\cite{tutpoint}
+
+\subsubsection{Ringkasan Tipe Cell}
+List dibawah ini adalah sebagian \textit{field} dari kelas XSSFCell beserta deskripsinya.\\
+
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Tipe Cell} & \textbf{Deskripsi} \\ \hline \hline
+		CELL\_TYPE\_BLANK & Representasi cell kosong\\ \hline 
+		CELL\_TYPE\_BOOLEAN &	Representasi cell Boolean (True atau False)\\ \hline 
+		CELL\_TYPE\_ERROR & Representasi nilai error dari cell\\ \hline
+		CELL\_TYPE\_FORMULA	&	Representasi dari hasil sebuah formula dalam cell\\ \hline
+		CELL\_TYPE\_NUMERIC	&	Representasi dari data numerik dalam cell\\ \hline
+		CELL\_TYPE\_STRING	&	Representasi dari String(teks) dalam cell\\ \hline
+	\end{tabular}
+	\\
+	
+\noindent \textbf{Class Method}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Deskripsi} \\ \hline \hline
+		1 & \textbf{setCellStyle(CellStyle style)}\\
+			&	Mengatur style untuk cell.\\ \hline 
+		2 & \textbf{setCellType(int cellType)}\\
+			&	Mengatur tipe cell (numeric, formula, atau String).\\ \hline
+		3 & \textbf{setCellValue(boolean value)}\\
+			&	Mengatur nilai bolean dalam sebuah cell.\\ \hline
+		4 & \textbf{setCellValue(java.util.Calendar value)}\\
+			&	Mengatur nilai tanggal dari cell .\\ \hline	
+		5 & \textbf{setCellValue(double value)}\\
+			&	Mengatur nilai numerik dari cell.\\ \hline
+		6 & \textbf{setCellValue(java.lang.String str)}\\
+			&	Mengatur nilai String dari cell.\\ \hline
+		7 & \textbf{setHyperlink(Hyperlink hyperlink)}\\
+			&	Menambahkan sebuah hyperlink kedalam cell\\ \hline					
+	\end{tabular}
+
+\subsubsection{XSSFCellStyle}
+XSSFCellStyle merupakan sebuah kelas yang berada dibawah \textit{package} \textbf{org.apache.poi.usermodel}. kelas ini memberikan infomarsi yang mungkin mengenai format konten pada suatu cell dari spreadsheet. Kelas ini juga memberikan opsi untuk merubah format tersebut. Kelas ini mewakili CellStyle interface.\cite{tutpoint}
+
+\subsubsection{Ringkasan Cell Style}
+List dibawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle interface.\cite{tutpoint}\\
+
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Nama Field} & \textbf{Deskripsi Field} \\ \hline \hline
+		ALIGN\_CENTER & Rata tengah konten cell\\ \hline 
+		ALIGN\_CENTER\_SELECTION &	Posisi seleksi tengah horizontal\\ \hline 
+		ALIGN\_FILL & Mencocokan ukuran konten cell \\ \hline
+		ALIGN\_JUSTIFY	&	Mencocokan ukuran konten cell terhadap lebarnya\\ \hline
+		ALIGN\_LEFT	&	Rata kiri konten cell\\ \hline
+		ALIGN\_RIGHT &	Rata kanan konten cell\\ \hline
+		BORDER\_DASH\_DOT &	Cell style dengan garis dan titik \\ \hline
+		BORDER\_DOTTED &	Cell style dengan border titik\\ \hline
+		BORDER\_DASHED &	Cell Style dengan border garis\\ \hline
+		BORDER\_THICK &	Cell Style dengan border tebal\\ \hline
+		BORDER\_THIN &	Cell Style dengan border tipis\\ \hline
+		VERTICAL\_BOTTOM &	Posisi konten cell vertikal kebawah\\ \hline
+		VERTICAL\_CENTER &	Posisi konten cell vertikal ketengah\\ \hline
+		VERTICAL\_JUSTIFY &	Posisi konten cell sejajar secara vertikal \\ \hline
+		VERTICAL\_TOP &	Posisi selaras keatas secara vertikal\\ \hline
+	\end{tabular}
+\\
+\noindent \textbf{Class Constructor}\\ \\
+	\begin{tabular}{|c|p{15cm}|}
+		\hline
+		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
+		1 & \textbf{XSSFCellStyle(int cellXfId, int cellStyleXfId, StylesTable stylesSource, ThemesTable theme)}\\
+			&	Menciptakan cell style dengan bagian yang sudah disediakan.\\ \hline
+		2 & \textbf{XSSFCellStyle(StylesTable stylesSource)}\\
+			&	Membuat cell Style kosong.\\ \hline 	
+	\end{tabular}
+\\
+\noindent \textbf{Class Method}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{setAlignment(short align)}\\
+			&	Mengatur style secara horizontal untuk cell.\\ \hline 
+		2 & \textbf{setBorderBottom(short border)}\\ \hline
+		3 & \textbf{setBorderColor(XSSFCellBorder.BorderSide side, XSSFColor color)}\\
+			&	Mengatur warna untuk border yang dipilih.\\ \hline
+		4 & \textbf{setBorderLeft(Short border)}\\
+			&	Mengatur tipe border untuk border kiri dari cell .\\ \hline	
+		5 & \textbf{setBorderRight(short border)}\\
+			&	Mengatur tipe border untuk border kanan dari cell .\\ \hline
+		6 & \textbf{setBorderTop(short border)}\\
+			&	Mengatur tipe border untuk border atas dari cell \\ \hline
+		7 & \textbf{setFillBackgroundColor(XSSFColor color)}\\
+			&	Mengatur latar belakang warna yang diwakili oleh nilai XSSFColor\\ \hline
+		8 & \textbf{setFillForegroundColor(XSSFColor color)}\\
+			&	Mengatur latar depan warna yang diwakili oleh nilai XSSFColor\\ \hline
+		9 & \textbf{setFillPattern(short fp)}\\
+			&	Menentukan isi informasi cell dengan pola dan warna solid\\ \hline
+	  10 & \textbf{setFont(Font font)}\\
+			 &	Mengatur font\\ \hline
+		11 & \textbf{setRotation(short rotation)}\\
+			 &	Mengatur derajat rotasi pada teks dalam cell.\\ \hline
+		12 & \textbf{setVerticalAlignment(short align)}\\
+			 &	Menetapkan tipe posisi vertical pada cell\\ \hline		
+	\end{tabular}
+
+\subsubsection{HSSFColor}
+HSSFColor merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.hssf.util.package}. Kelas ini memberikan warna berbeda terhadap \textit{nested class}. Biasanya \textit{nested class} diwakili dengan menggunakan index masing-masing. Kelas ini mengimplementasikan Color interface.\cite{tutpoint}
+
+	
+\subsubsection{Nested Class}
+Semua \textit{nested class} dari kelas ini adalah static dan setiap kelas memiliki index masing-masing. Warna kelas ini digunakan pada format cell seperti konten cell, border, latar depan(\textit{foreground}), dan latar belakang(\textit{background}). List dibawah ini merupakan sebagian dari \textit{nested class}.\cite{tutpoint}
+
+\begin{tabular}{|c|c|}
+		\hline
+		\textbf{No} & \textbf{Nama Kelas(warna)} \\ \hline \hline
+		1 & HSSFColor.AQUA\\ \hline 
+		2 &	HSSFColor.AUTOMATIC\\ \hline 
+		3 & HSSFColor.BLACK \\ \hline
+		4	&	HSSFColor.BLUE\\ \hline
+		5	&	HSSFColor.BRIGHT\_GREEN\\ \hline
+		6 &	HSSFColor.BRIGHT\_GRAY\\ \hline
+		7 &	HSSFColor.CORAL \\ \hline
+		8 &	HSSFColor.DARK\_BLUE\\ \hline
+		9 &	HSSFColor.DARK\_GREEN\\ \hline
+		10 &	HSSFColor.SKY\_BLUE\\ \hline
+		11 &	HSSFColor.WHITE\\ \hline
+		12 &	HSSFColor.YELLOW\\ \hline
+	\end{tabular}
+	\\
+	\noindent \textbf{Class Method}\\ \\
+	Hanya satu method dalam kelas ini yang penting dan digunakan untuk mendapat nilai indeks.\\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{getIndex()}\\
+			&	Method ini digunakan untuk mendapatkan nilai indeks dari sebuah \textit{nested class}.\\ \hline 
+	\end{tabular}
+	
+\subsubsection{XSSFColor}
+XSSFColor merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mewakili warnma pada spreadsheet. Kelas ini mengimplementasika interface warna. List dibawah ini merupakan beberapa method XSSFColor dan constructornya.\cite{tutpoint}
+\\
+\noindent \textbf{Class Constructor}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
+		1 & \textbf{XSSFColor()}\\
+			&	Menciptakan \textit{instance} baru dari XSSFColor.\\ \hline
+		2 & \textbf{XSSFColor(byte[] rgb)}\\
+			&	Membuat  \textit{instance} baru dari XSSFColor menggunakan RGB.\\ \hline
+		3 & \textbf{XSSFColor(java.awt.Color clr))}\\
+			&	Membuat  \textit{instance} baru dari XSSFColor menggunakan kelas warna dari \textit{awt package}.\\ \hline 		
+	\end{tabular}
+\\ \\
+\noindent \textbf{Class Methods}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{setAuto(boolean auto)}\\
+			&	Mengatur sebuah nilai boolean untuk mengindikasikan bahwa ctColor bersifat otomatis dan bergantung pada ctColor sistem.\\ \hline
+		2 & \textbf{setIndexed(int indexed)}\\
+			&	Mengatur nilai indeks ctColor sebagai sistem ctColor.\\ \hline
+	\end{tabular}
+
+\subsubsection{XSSFFFont}
+XSSFFont merupakan kelas dibawah \textit{package} \textbf{org.aoache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{Font interface} dan oleh sebab itu kelas ini dapat menangani font berbeda pada sebuah workbook.\cite{tutpoint}
+\\
+\noindent \textbf{Class Constructor}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
+		1 & \textbf{XSSFFont()}\\
+			&	Menciptakan \textit{instance} baru dari XSSFFont.\\ \hline
+	\end{tabular}
+\\ \\
+\noindent \textbf{Class Methods}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{setBold(boolean bold)}\\
+			&	Mengatur sebuah nilai boolean untuk atribut 'bold'.\\ \hline
+		2 & \textbf{setColor(short color)}\\
+			&	Mengatur nilai indeks warna untuk font.\\ \hline
+		3 & \textbf{setColor(XSSFColor color)}\\
+			&	Mengatur warna untuk font dalam standar nilai warna Alpha RGB.\\ \hline
+		4 & \textbf{setFontHeight(short height)}\\
+			&	Mengatur tinggi font dalam poin.\\ \hline
+		5 & \textbf{setFontName(java.lang.String name)}\\
+			&	Mengatur nama dari font.\\ \hline
+		6 & \textbf{setItalic(boolean italic)}\\
+			&	Mengatur nilai boolean pada poperti 'italic'.\\ \hline					
+	\end{tabular}
+	
+\subsubsection{XSSFHyperlink}
+XSSFHyperlink merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{Hyperlink interface}. Kelas ini digunakan untuk mengatur sebuah hyperlink pada konten cell dalam sebuah spreadsheet.\cite{tutpoint}
+\\
+\noindent \textbf{Field}\\
+Field dalam kelas ini akan didefinisikan sebagai berikut. Field disini dalam arti tipe dari hyperlink yang dipakai.\\
+\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Field} & \textbf{Deskripsi} \\ \hline \hline
+		LINK\_DOCUMENT & Dipakai untuk menghubungkan dengan dokumen lainnya\\ \hline 
+		LINK\_EMAIL &	Digunakan untuk menghubungkan dengan email\\ \hline 
+		LINK\_FILE & Digunakan untuk menghubungkan dengan file lain dalam berbagai format \\ \hline
+		LINK\_URL	&	Digunakan untuk menghubungkan dengan URL \textit{website}\\ \hline
+	\end{tabular}
+	\\ \\
+	\noindent \textbf{Class Methods}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{setAddress(java.lang.String address)}\\
+			&	Alamat Hyperlink.\\ \hline
+	\end{tabular}
+
+\subsubsection{XSSFCreationHelper}
+XSSFCreationHelper merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{CreationHelper interface}. Kelas ini digunakan sebagai bentuk kelas pendukung untuk \textit{formula evaluation} dan penyusun hyperlink.\cite{tutpoint}
+\\
+\noindent \textbf{Class Methods}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{createFormulaEvaluator()}\\
+			&	Membuat sebuh \textit{instance} XSSFFormulaEvaluator, objek yang dapat mengevaluasi formula dalam cell.\\ \hline
+		2 & \textbf{createHyperlink(int type)}\\
+			&	Membuat sebuah XSSFHyperlink baru.\\ \hline
+	\end{tabular}
+
+\subsubsection{XSSFPrintSetup}
+XSSFPrintSetup merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{PrintSetup interface}. Kelas ini digunakan untuk mengatur ukuran cetak pada halaman, wilayah cetak, opsi, dan pengaturan.\cite{tutpoint}
+\\
+\noindent \textbf{Class Methods}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{setLandscape(boolean ls)}\\
+			&	Mengatur sebuah nilai boolean yang dapat mengijinkan atau menolak \textit{landscape printing}.\\ \hline
+		2 & \textbf{setLeftToRight(boolean ltor)}\\
+			&	Mengatur perintah ke kiri, kanan, atas, atau bawah ketika proses cetak.\\ \hline
+		3 & \textbf{setPaperSize(short size)}\\
+			&	Mengatur ukuran kertas.\\ \hline
+	\end{tabular}
+	
+\section{iCal4j}
+iCal4j merupakan \textit{Java library} yang digunakan untuk membaca dan menulis data iCalendar yang didefinisikan dalam RFC2445. iCalendar standar menyediakan sebuah format data yang umumnya digunakan untuk menyimpan informasi tentang spesifikasi kalender seperti acara, pertemuan, \textit{to-do list}, dll. Semua \textit{tool} kalender yang populer, seperti Lotus Notes, Outlook, Google Calendar, Apple iCal mensupport standar iCalendar.\cite{ical}
+\\ \\
+Sebagai pengurai kalender dan \textit{object model}, iCal4j memudahkan untuk memodifikasi data kalender yang sudah ada atau membuat model data baru. Validasi juga diperlukan untuk memastikan data terjaga baik dan konsisten dengan spesifikasi yang diperlukan.\cite{ical}
+
+
+\subsection{Komponen iCal4j}
+Berikut ini merupakan kumpulan \textit{package} yang ada dalam iCal4j.\cite{ical}\\
+\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Package dan Deskripsi} \\ \hline \hline
+		1 & \textbf{net.fortuna.ical4j.data}\\
+			&	Menyediakan berbagai tipe RFC2445 input, output, serta fungsi parsing.\\ \hline
+		2 & \textbf{net.fortuna.ical4j.filter}\\
+			&	Aturan untuk menyaring list komponen yang digunakan, \textit{properties}, maupun parameter yang digunakan.\\ \hline
+		3 & \textbf{net.fortuna.ical4j.model}\\
+			&	Berisikan komponen utama yang digunakan untuk mendefinisikan model iCalendar.\\ \hline
+		4 & \textbf{net.fortuna.ical4j.model.component	
+}\\
+			&	Berisikan respresentasi tipe yang digunakan dalam komponen model iCalendar.\\ \hline
+		5 & \textbf{net.fortuna.ical4j.model.parameter}\\
+			&	Berisikan respresentasi tipe yang digunakan dalam parameter model iCalendar.\\ \hline
+		6 & \textbf{net.fortuna.ical4j.model.property}\\
+			&	Berisikan respresentasi tipe yang digunakan dalam properti model iCalendar.\\ \hline
+		7 & \textbf{net.fortuna.ical4j.transform}\\
+			&	Berisikan perubahan tipe yang digunakan komponen model iCalendar sesuai RFC2446   .\\ \hline
+		8 & \textbf{net.fortuna.ical4j.util}\\
+			&	Berisikan tipe utilitas yang mendukung fungsi dari iCal4j.\\ \hline							
+	\end{tabular}
+
+\subsection{Kelas Inti dari iCal4j}
+Pada bagian ini \textit{package} yang ditulis di sub bab sebelumnya akan dijelaskan lebih dalam apa kegunaannya.\cite{ical}
+
+\subsection{net.fortuna.ical4j.data}
+
+\noindent \textbf{Ringkasan Interface}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{CalendarParser}\\
+			&	Pelaksana yang menyediakan fungsi parsing pada iCalendar.\\ \hline
+		2 & \textbf{ContentHandler}\\
+			&	Pelaksana yang menyediakan fungsi yang berlaku selama parsing aliran data dari iCalendar(misalnya membangun model objek).\\ \hline
+	\end{tabular}
+	\\ 
+	\noindent \textbf{Ringkasan Kelas}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{AbstractOutputter}\\
+			&	kelas dasar untuk model \textit{output}.\\ \hline
+		2 & \textbf{CalendarBuilder}\\
+			&	Parsing dan memnagan sebuah model iCalendar dari input stream.\\ \hline
+		3 & \textbf{CalendarOutputter}\\
+			&	Menuliskan sebuah model iCalendar pada output stream.\\ \hline
+		4 & \textbf{CalendarParserFactory}\\
+			&	Menyediakan akses pada CalenderParser yang telah dikonfigurasi.\\ \hline
+		5 & \textbf{CalendarParserImpl}\\
+			&	Implementasi \textit{default} dari CalenderParser.\\ \hline
+		6 & \textbf{DefaultCalendarParserFactory	
+}\\
+			&	Implementasi \textit{default} dari CalenderParser.\\ \hline
+		7 & \textbf{FoldingWriter}\\
+			&	Fungsi penulisan yang mendukung penulisan iCalendar berlipat.\\ \hline
+		8 & \textbf{HCalendarParser}\\
+			&	Menguraikan dokumen XHTML yang meliputi data kalender, ditandai dengan mikroformat hCalendar.\\ \hline
+		9 & \textbf{HCalendarParserFactory}\\
+			&	kumpulan parser untuk mikroformat hCal\\ \hline
+		10 & \textbf{UnfoldingReader}\\
+			&	Fungsi membaca bagian iCalendar yang wajib dibaca.\\ \hline
+	\end{tabular}
+	
+\subsection{net.fortuna.ical4j.filter}
+
+\noindent \textbf{Ringkasan Interface}\cite{ical}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{Rule}\\
+			&	Pelaksana yang menentukan apakah suatu objek tertentu diklasifikasikan sebagai pasangannya dapat dijadikan sebagai filter lampiran.\\ \hline
+	\end{tabular}
+	\\ \\
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{DateInRangeRule}\\
+			&	Mengimplementasikan Rule.\\ \hline
+		2 & \textbf{Filter}\\
+			&	Melakukan filtering dari seperangkat aturan. Sebuah filter dapat menentukan apakah setidaknya satu aturan tersebut cocok atau tidak. \\ \hline
+		3 & \textbf{HasPropertyRule}\\
+			&	Sebuah aturan yang mencocokan komponen memuat poperti yang spesifik.\\ \hline
+		4 & \textbf{PeriodRule<T extends Component>	
+}\\
+			&	Sebuah aturan yang mencocokan komponen terjadi atau tidak dalam jangka waktu yang ditentukan.\\ \hline
+	\end{tabular}
+	
+\subsection{net.fortuna.ical4j.model}
+
+\noindent \textbf{Ringkasan Interface}\cite{ical}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		2 & \textbf{Escapable}\\
+			&	Pelaksana yang mengkonversi ke/dari nilai string kedalam bentuk iCalendar.\\ \hline
+		4 & \textbf{ParameterFactory<T extends Parameter>}\\
+			&	Pelaksana yang menyediakan pembuatan \textit{service} parameter.\\ \hline
+		5 & \textbf{PropertyFactory<T extends Property>}\\
+			&	Membuat properti iCalendar.\\ \hline
+		6 & \textbf{TimeZoneRegistry}\\
+			&	Menyediakan daftar definisi wilayah yang berlaku untuk digunakan objek iCalendar.\\ \hline
+	\end{tabular}
+	\\ \\
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{AddressList}\\
+			&	Mendefinisikan list dari alamat pada iCalendar.\\ \hline
+		2 & \textbf{Calendar}\\
+			&	Mendefinisikan kalendar pada iCalendar. \\ \hline
+		3 & \textbf{CalendarDateFormatFactory}\\
+			&	Membuat objek dateFormat untuk optimisasi pola tanggal pada iCalendar.\\ \hline
+		4 & \textbf{Date}\\
+			&	Representasi dari objek DATE sesuai RFC5445.\\ \hline
+		5 & \textbf{DateList}\\
+			&	Representasi list tanggal dari iCalendar.\\ \hline
+		6 & \textbf{DateTime}\\
+			&	Representasi dari objek DATE-TIME sesuai RFC5445.\\ \hline
+		7 & \textbf{LocationTypeList}\\
+			&	Menetapkan sebuah list tipe lokasi dari iCalendar.\\ \hline
+		8 & \textbf{NumberList}\\
+			&	Menetapkan list dari nomer.\\ \hline
+		9 & \textbf{Parameter}\\
+			&	Mendefinisikan parameter.\\ \hline
+		10 & \textbf{Period}\\
+			&	Mendefinisikan tenggat waktu.\\ \hline
+		11 & \textbf{Property}\\
+			&	Mendefinisikan properti dari iCalendar.\\ \hline		12 & \textbf{Time}\\
+			&	Sebuah tipe yang merepresentasikan nilai waktu pada iCalendar.\\ \hline
+		13 & \textbf{TimeZone}\\
+			&	Implementasi zona waktu java.\\ \hline
+		14 & \textbf{WeekDay}\\
+			&	Mendefinisikan hari dalam seminggu dengan diimbangi terkait dengan kejadian bulanan atau tahunan.\\ \hline	
+	\end{tabular}
+	
+\subsection{net.fortuna.ical4j.model.component}
+
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{Available}\\
+			&	Mendefinisikan komponen tersedia di iCalendar.\\ \hline
+		2 & \textbf{Daylight}\\
+			&	Mendefinisikan waktu siang dalam zona waktu. \\ \hline
+		3 & \textbf{Standard}\\
+			&	Mendefinisikan komponen zona waktu standar.\\ \hline
+		4 & \textbf{Standard.Factory	 
+VAlarm}\\
+			&	Mendefinisikan komponen VALARM pada iCalendar.\\ \hline
+		5 & \textbf{Standard.Factory	 
+VAvailability}\\
+			&	Mendefinisikan komponen VAvailability pada iCalendar.\\ \hline
+		6 & \textbf{VAvailability.Factory	 
+VEvent}\\
+			&	Mendefinisikan komponen VEvent pada iCalendar.\\ \hline
+		7 & \textbf{VEvent.Factory	 
+VFreeBusy}\\
+			&	Mendefinisikan komponen VFreeBusy pada iCalendar.\\ \hline
+		8 & \textbf{VFreeBusy.Factory	 
+VJournal}\\
+			&	Mendefinisikan komponen VJournal pada iCalendar.\\ \hline
+		9 & \textbf{VJournal.Factory	 
+VTimeZone}\\
+			&	Mendefinisikan komponen VTimeZone pada iCalendar.\\ \hline
+		10 & \textbf{VTimeZone.Factory	 
+VToDo}\\
+			&	Mendefinisikan komponen VToDo pada iCalendar.\\ \hline
+		11 & \textbf{VToDo.Factory	 
+VVenue}\\
+			&	Mendefinisikan komponen VVenue pada iCalendar.\\ \hline	
+	\end{tabular}
+	
+\subsection{net.fortuna.ical4j.model.parameter}
+
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{Abbrev}\\
+			&	Mendefinisikan parameter singkatan.\\ \hline
+		2 & \textbf{AltRep}\\
+			&	Mendefinisikan alternatif representasi parameter teks. \\ \hline
+		3 & \textbf{Cn}\\
+			&	Mendefinisikan parameter dengan nama umum .\\ \hline
+		4 & \textbf{CuType}\\
+			&	Mendefinisikan tipe calender user.\\ \hline
+		5 & \textbf{DelegatedFrom}\\
+			&	Mendefinisikan parameter delegator.\\ \hline
+		6 & \textbf{DelegatedTo}\\
+			&	Mendefinisikan parameter delegasi.\\ \hline
+		7 & \textbf{Dir}\\
+			&	Mendefinisikan parameter referensi directory entri.\\ \hline
+		8 & \textbf{Encoding}\\
+			&	Mendefinisikan parameter inline Encoding.\\ \hline
+		9 & \textbf{VJournal.Factory	 
+VTimeZone}\\
+			&	Mendefinisikan komponen VTimeZone pada iCalendar.\\ \hline
+		10 & \textbf{FbType}\\
+			&	Mendefinisikan tipe parameter \textit{free/busy}.\\ \hline
+		11 & \textbf{FmtType}\\
+			&	Mendefinisikan parameter tipe format.\\ \hline
+		12 & \textbf{Language}\\
+			&	Mendefinisikan parameter bahasa.\\ \hline
+		13 & \textbf{Member}\\
+			&	Mendefinisikan parameter list group peserta.\\ \hline
+		14 & \textbf{PartStat}\\
+			&	Mendefinisikan parameter satus partisipasi.\\ \hline
+		15 & \textbf{Range}\\
+			&	Mendefinisikan parameter identifikasi perulangan .\\ \hline
+		16 & \textbf{Related}\\
+			&	Mendefinisikan parameter pemicu alarm.\\ \hline
+		17 & \textbf{RelType}\\
+			&	Mendefinisikan parameter tipe hubungan.\\ \hline
+		18 & \textbf{Rsvp}\\
+			&	Mendefinisikan parameter RSVP.\\ \hline
+		19 & \textbf{ScheduleAgent}\\
+			&	Mendefinisikan penjadwalan.\\ \hline
+		20 & \textbf{ScheduleStatus}\\
+			&	Mendefinisikan status penjadwalan.\\ \hline
+		21 & \textbf{SentBy}\\
+			&	Mendefinisikan parameter pengirim.\\ \hline
+		22 & \textbf{Type}\\
+			&	Mendefinisikan parameter tipe.\\ \hline
+		23 & \textbf{TzId}\\
+			&	Mendefinisikan parameter zona waktu.\\ \hline
+		24 & \textbf{Value}\\
+			&	Mendefinisikan parameter nilai tipe data.\\ \hline
+		25 & \textbf{Vvenue}\\
+			&	Mendefinisikan parameter Vvenue.\\ \hline
+		26 & \textbf{XParameter}\\
+			&	Mendefinisikan parameter pemicu alarm.\\ \hline
+		27 & \textbf{Related}\\
+			&	Mendefinisikan penambahan parameter.\\ \hline
+	\end{tabular}
+
+\subsection{net.fortuna.ical4j.model.property}
+
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{Action}\\
+			&	Mendefinisikan aksi dari komponen properti iCalendar .\\ \hline
+		2 & \textbf{Attach}\\
+			&	Mendefinisikan lampiran dari komponen properti iCalendar. \\ \hline
+		3 & \textbf{Attendee}\\
+			&	Mendefinisikan kedatangan dari komponen properti iCalendar.\\ \hline
+		4 & \textbf{BusyType}\\
+			&	Mendefinisikan tipe sibuk pada komponen properti.\\ \hline
+		5 & \textbf{Categories}\\
+			&	Mendefinisikan kategori pada komponen properti.\\ \hline
+		6 & \textbf{Clazz}\\
+			&	Mendefinisikan kelas pada komponen properti.\\ \hline
+		7 & \textbf{Comment}\\
+			&	Mendefinisikan komen pada komponen properti.\\ \hline
+		8 & \textbf{Completed}\\
+			&	Mendefinisikan status selesai pada komponen properti.\\ \hline
+		9 & \textbf{Contact}\\
+			&	Mendefinisikan kontak pada komponen properti.\\ \hline
+		10 & \textbf{Country}\\
+			&	Mendefinisikan negara pada komponen properti.\\ \hline
+		11 & \textbf{Created}\\
+			&	Mendefinisikan pembuatan pada komponen properti.\\ \hline
+		12 & \textbf{Description}\\
+			&	Mendefinisikan deskripsi pada komponen properti.\\ \hline
+		13 & \textbf{DtEnd}\\
+			&	Mendefinisikan DtEnd pada komponen properti.\\ \hline
+		14 & \textbf{DtStamp}\\
+			&	Mendefinisikan DtStamp pada komponen properti.\\ \hline
+		15 & \textbf{DtStart}\\
+			&	Mendefinisikan DtStart pada komponen properti.\\ \hline
+		16 & \textbf{Due}\\
+			&	Mendefinisikan Due pada komponen properti.\\ \hline
+		17 & \textbf{Duration}\\
+			&	Mendefinisikan Durasi pada komponen properti.\\ \hline
+		18 & \textbf{LastModified}\\
+			&	Mendefinisikan terakhir dirubah pada komponen properti.\\ \hline
+		19 & \textbf{Location}\\
+			&	Mendefinisikan lokasi pada komponen properti.\\ \hline
+		20 & \textbf{LocationType}\\
+			&	Mendefinisikan tipe lokasi pada komponen properti.\\ \hline
+		21 & \textbf{Name}\\
+			&	Mendefinisikan nama pada komponen properti\\ \hline
+		22 & \textbf{PercentComplete}\\
+			&	Mendefinisikan progress pada komponen properti.\\ \hline
+		23 & \textbf{Priority}\\
+			&	Mendefinisikan prioritas pada komponen properti.\\ \hline
+		24 & \textbf{RelatedTo}\\
+			&	Mendefinisikan berhubungan dengan siapa pada komponen properti.\\ \hline
+		25 & \textbf{Status}\\
+			&	Mendefinisikan status pada komponen properti.\\ \hline
+		26 & \textbf{StreetAddress}\\
+			&	Mendefinisikan alamat pada komponen properti.\\ \hline
+		27 & \textbf{Summary}\\
+			&	Mendefinisikan ringkasan pada komponen properti.\\ \hline
+		28 & \textbf{Url}\\
+			&	Mendefinisikan url pada komponen properti.\\ \hline
+		29 & \textbf{Version}\\
+			&	Mendefinisikan versi pada komponen properti.\\ \hline	
+	\end{tabular}
+
+\subsection{net.fortuna.ical4j.model.transform}
+
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{PublishTransformer}\\
+			&	Merubah kalendar untuk dipublikasikan.\\ \hline
+		2 & \textbf{Transformer}\\
+			&	\textit{Base Class} untuk transforasi kalender. \\ \hline
+		\end{tabular}
+	
+	\subsection{net.fortuna.ical4j.model.transform}
+
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{PublishTransformer}\\
+			&	Merubah kalendar untuk dipublikasikan.\\ \hline
+		2 & \textbf{Transformer}\\
+			&	\textit{Base Class} untuk transforasi kalender. \\ \hline
+		\end{tabular}
+		
+	\subsection{net.fortuna.ical4j.model.util}
+
+	\noindent \textbf{Ringkasan Interface}\cite{ical}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{HostInfo}\\
+			&	Menyediakan informasi host berupa\textit{paltform} yang independen.\\ \hline
+	\end{tabular}
+	
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{Calendars}\\
+			&	Method utility untuk bekerja dengan kalender.\\ \hline
+		2 & \textbf{Dates}\\
+			&	Mengimplementasikan koleksi dari method utility yang relevan untuk memproses tanggal. \\ \hline
+		3 & \textbf{Numbers}\\
+			&	kelas utility untuk memproses nomer. \\ \hline
+		4 & \textbf{Strings}\\
+			&	method utility yang bekerja dengan parameter. \\ \hline
+		5 & \textbf{TimeZones}\\
+			&	method utility yang relevan dengan zona waktu Java. \\ \hline
+		\end{tabular}
+
+\section{Java FX}
+Java FX merupakan seperangkat grafis dan paket media yang memungkinkan pengembang untuk merancang, membuat, menguji, debug , dan dapat beroperasi secara konsisten di seluruh platform yang beragam.\\
+Java FX dapat membuat berbagai macam aplikasi dari mulai aplikasi jaringan dasar hingga antar muka yang memiliki fitur audio, video, grafik, dan animasi
+
+
 

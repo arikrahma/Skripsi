@@ -1,0 +1,140 @@
+\documentclass[a4paper,twoside]{article}
+\usepackage[T1]{fontenc}
+\usepackage[bahasa]{babel}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage[cm]{fullpage}
+\pagestyle{myheadings}
+\usepackage{etoolbox}
+\usepackage{setspace} 
+\usepackage{lipsum} 
+\setlength{\headsep}{30pt}
+\usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
+% \pagestyle{empty}
+
+\makeatletter
+\renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
+\renewcommand{\thispagestyle}[1]{}
+\markright{\textbf{\textsc{AIF401/AIF402 \textemdash Rencana Kerja Skripsi \textemdash Sem. Genap 2016/2017}}}
+
+\onehalfspacing
+ 
+\begin{document}
+
+\title{\@judultopik}
+\author{\nama \textendash \@npm} 
+
+%tulis nama dan NPM anda di sini:
+\newcommand{\nama}{Ariq Rahmaeri}
+\newcommand{\@npm}{2011730066}
+\newcommand{\@judultopik}{Konversi Jadwal Mengawas Ujian Ke Format ICS dengan Apache POI, iCal4j, dan Java FX} % Judul/topik anda
+\newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
+\newcommand{\tanggal}{06/09/2016}
+
+% Dokumen hasil template ini harus dicetak bolak-balik !!!!
+
+\maketitle
+
+\pagenumbering{arabic}
+
+\section{Deskripsi}
+\indent Jadwal mengawas ujian di FTIS merupakan hal yang rutin dipublikasikan kepada dosen setiap tengah dan akhir semester. Jadwal mengawas tersebut dipublikasikan oleh tata usaha. Sebelum dibagikan jadwal mengawas dibuat dalam file excel, lalu dicetak dan dibagikan kepada setiap dosen. Format jadwal mengawas ujian bersifat umum, dalam arti jadwal tersebut menyimpan nama semua dosen yang mengawas, nama mata kuliah, dan tempat pelaksanaan ujian. Dosen diharuskan melihat satu persatu baris untuk mendapatkan informasi mengenai waktu, nama matakuliah, dan tanggal dosen tersebut mengawas. Walalupun jadwal mengawas tersebut telah disusun dalam file excel, namun tetap dirasa kurang efisien karena tidak tersusun berdasarkan dosen yang mengawas dan memungkinkan terjadi kesalahan dalam membaca jadwal oleh dosen. 
+iCalendar merupakan format file calendar pada komputer yang memudahkan penggunanya untuk mengirimkan undangan \textit{meeting} dan melakukan pekerjaan bersama pengguna lainnya, via email, atau file \textit{sharing} menggunakan ekstensi .ics . Format iCalendar sendiri telah didukung dan kompatibel dengan produk lainnya, seperti Google Calendar, Microsoft Outlook, Yahoo Calendar, Mozilla Thunderbird, Apple Calendar.
+Dari penjelasan diatas, tugas akhir ini dimaksudkan untuk memudahkan dosen untuk melihat jadwal mengawas ujian dimanapun dan kapanpun. Pengembangan perangkat lunak ini menggunakan tiga library yaitu Apache POI, Java FX, dan iCal4j.    
+
+\section{Rumusan Masalah}
+Berdasarkan penjelasan di latar belakang, maka dapat dipaparkan rumusan masalah sebagai berikut :
+\begin{enumerate}
+	\item Bagaimana perangkat lunak dapat membaca file excel jadwal mengawas ujian yang dibuat oleh TU ?
+	\item Bagaimana menampilkan jadwal ke layar ?
+	\item Bagaimana perangkat lunak mengkonversi jadwal mengawas menjadi iCalendar ? 
+\end{enumerate}
+
+\section{Tujuan}
+Tujuan dari karya ilmiah ini dapat dipaparkan sebagai berikut:
+\begin{enumerate}
+	\item Merancang PL yang mampu membaca file excel yang dipublikasikan oleh TU.
+	\item Membuat PL yang mampu menampilkan jadwal mengawas ujian yang telah dibaca ke layar.
+	\item Merancang PL dapat mengkonversi jadwal mengawas menjadi iCalendar.
+	
+\end{enumerate}
+\section{Deskripsi Perangkat Lunak}
+
+Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
+\begin{itemize}
+	\item PL dapat membaca file excel jadwal mengawas yang dikeluarkan oleh TU.
+	\item PL dapat menampilkan jadwal mengawas yang telah dibaca ke layar. 
+	\item PL mampu mengkonversi file excel yang dibaca menjadi iCalendar
+	\item Pengguna dapat melakukan \textit{filter} tertentu pada PL
+\end{itemize}
+
+\section{Detail Pengerjaan Skripsi}
+Untuk menunjang penelitian maka diperlukan data untuk pengujian maupun pengetahuan teori yang akan diterapkan.
+
+Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
+	\begin{enumerate}
+		\item Melakukan studi pustaka mengenai
+			\begin{itemize}
+				\item Apache POI
+				\item Java FX
+				\item iCal4j
+				\item Konsep MVC
+				\item Memperdalam Netbeans
+			\end{itemize}
+		\item Melakukan analisis pada file excel jadwal mengawas ujian yang dikeluarkan oleh TU.
+		\item Melakukan perancangan yang terdiri dari use case, diagram aktifitas, dan \textit{user interface}.
+		\item Mengimplementasikan rancangan kedalam Netbeans. 
+		\item Melakukan pengujian perangkat lunak dengan berbagai kemungkinan kasus.
+		\item Menyimpulkan atas serangkaian pengembangan yang dilakukan
+		\item Menulis dokumen skripsi
+	\end{enumerate}
+
+\section{Rencana Kerja}
+Berikut ini rencana kerja yang dikerjakan pada saat skripsi 2 :
+
+\begin{center}
+  \begin{tabular}{ | c | c | c | c | l |}
+    \hline
+    1*  & 2*(\%) & 3*(\%) & 4*(\%) \\ \hline \hline
+    1   & 10 & 10  &    {\footnotesize Menyelesaikan bab 1}\\ \hline
+    2   & 10  & 10  &  {\footnotesize Mempelajari dasar teori dari iCal4j, PHP POI, Java FX, dan konsep MVC}  \\ \hline
+    3   & 15  & 15  &  {\footnotesize Melakukan analisis PL} \\ \hline
+    4   & 15 &  15 &  {\footnotesize Melakukan perancangan PL}\\ \hline 
+    5   & 20  & 20  &   {\footnotesize Implementasi PL}\\ \hline
+    6   & 15  &  15 &   {\footnotesize Melakukan serangkaian ujicoba PL dengan berbagai kasus}\\ \hline 
+    7   & 15  & 15  &  {\footnotesize Menyelesaikan Dokumen}\\ \hline
+    Total  & 100  & 100  &   \\ \hline
+    \end{tabular}
+\end{center}
+
+Keterangan (*)\\
+1 : Bagian pengerjaan Skripsi (nomor disesuaikan dengan detail pengerjaan di bagian 5)\\
+2 : Persentase total \\
+3 : Persentase yang akan diselesaikan di Skripsi 2 \\
+4 : Penjelasan singkat apa yang dilakukan di S2 (skripsi 2) \\
+
+\vspace{1cm}
+\centering Bandung, \tanggal\\
+\vspace{2cm} \nama \\ 
+\vspace{1cm}
+
+Menyetujui, \\
+\ifdefstring{\jumpemb}{2}{
+\vspace{1.5cm}
+\begin{centering} Menyetujui,\\ \end{centering} \vspace{0.75cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013 \\
+\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Utama
+\end{minipage} \hspace{0.5cm}
+\begin{minipage}[b]{0.45\linewidth}
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Pendamping
+\end{minipage}
+\vspace{0.5cm}
+}{
+% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
+\vspace{2cm} Nama: \makebox[3cm] {Pascal Alfadian}\\ Pembimbing Tunggal
+}
+\end{document}
+

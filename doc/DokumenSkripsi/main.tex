@@ -1,6 +1,6 @@
-%_____________________________________________________________________________
+ %_____________________________________________________________________________
 %=============================================================================
-% main.tex v9 (30-11-2015) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
+% main.tex v6 (10-11-2013) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
 % 
 % Ini adalah file utama (main.tex), berisi perintah-perintah yang khusus 
 % dibuat untuk template ini
@@ -8,15 +8,47 @@
 % 			JANGAN MENGUBAH APAPUN DI DALAM FILE INI,
 %			KECUALI ANDA TAHU APA YANG ANDA LAKUKAN !!!
 %
-% Perubahan pada versi 9 (30-11-2015):
-%	- bagian untuk menambahkan perintah sendiri dipindahkan ke data.tex
-%	- bagian untuk mengatur kemunculan daftar gambar dan daftar tabel, dipindahkan
-%	  ke data.tex
-%	- penambahan bagian untuk mengatur perbedaan pdfTeX, masalah hfill dgn hfil
-%	- bagian pengesahan diatur agar lebih rapi 
+% Jika ada tambahan perintah, dapat anda tuliskan di tempat yang telah disediakan 
+% di baris 295 pada file ini
+% Jika daftar tabel tidak digunakan, anda harus menghapus (beri komentar) secara
+% manual di baris 470
 %
-% Perubahan pada versi sebelumnya dapat dilihat di bagian akhir file ini
-%_____________________________________________________________________________
+% Bug, kritik, saran: silahkan kirimkan via email ke lionov@unpar.ac.id
+%
+% Perubahan pada versi 6 (10-11-2013):
+%	- perbaikan pada abstract dengan paragraf lebih dari satu: perbaikan vertical spacing
+%	- perbaikan pada tampilan bab dan lampiran: tidak perlu menuliskan apapun untuk 
+%	  menampilkan semuanya (di data.tex) atau -1 jika tidak ada lampiran
+%	- halaman bernomor genap untuk halaman romawi sudah dimunculkan
+%	- Kurikulum 2013 : perubahan nama buku skripsi 
+%
+% Perubahan dari versi sebelumnya :
+%	versi 5 (21-10-2012)
+%	- halaman terakhir setiap bab tidak ada headernya jika kosong
+%	versi 4 (06-08-2012)
+% 	- penggabungan main.tex, depan.tex dan setup.tex menjadi main.tex
+% 	- menambahkan keterangan di lampiran untuk kode program 
+% 	- ukuran font dapat diubah langsung di tiap lampiran
+% 	versi 3 (09-07-2012): 
+%	- Tidak ada di file ini
+% 	versi 2 :
+% 	- "Daftar Referensi" tidak perlu diubah secara manual (tidak perlu mengubah file bahasai.ldf)
+% 	- Bahasa Indonesia dari abstract adalah abstrak (secara otomatis), bukan ringkasan
+% 	- Spasi pada buku dokumen final adalah onehalfspacing
+%
+% to do : - hilangkan secara otomatis daftar tabel/gambar jika tidak digunakan
+%         - (IT) aturan penulisan algoritma untuk IT (pakai algo.sty ?)
+%=============================================================================
+
+%=============================================================================
+% setup.tex v2 (08-07-2012)
+% Perubahan pada versi 2:
+% - Menambahkan perintah untuk judulINA dan judulENG
+% - Menghapus \usepackage{microtype}, yang pada beberapa kasus menjadi masalah
+%=============================================================================
+% depan.tex v2 (09-07-2012)
+% Perubahan pada versi 2:
+% - Menambahkan halaman depan dalam bahasa inggris
 %=============================================================================
 
 %setup.tex
@@ -48,7 +80,8 @@
 \usepackage{setspace} %line spacing
 \usepackage{xstring} %manipulasi string
 \usepackage[plainpages=false,pdfpagelabels,unicode]{hyperref} %\autoref, \phantomsection & link 
-\usepackage{emptypage} %halaman kosong antar bab
+
+\usepackage{emptypage}
 
 \let\abstractname\Abstrak
 
@@ -56,12 +89,7 @@
 
 \renewcommand{\cftchapfont}{\scshape \bfseries}
 
-\newcommand{\vdierror}{}
-\newcommand{\daftarIsiError}[1]{\renewcommand{\vdierror}{#1}}
-
-\ifdefempty{\vdierror}
-	{\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries\MakeUppercase}}
-	{\renewcommand{\cfttoctitlefont}{\hfil\Large\bfseries\MakeUppercase}}
+\renewcommand{\cfttoctitlefont}{\hfil\Large\bfseries\MakeUppercase}
 \renewcommand{\cftaftertoctitle}{\hfill}
 \renewcommand{\cftloftitlefont}{\hfill\Large\bfseries\MakeUppercase}
 \renewcommand{\cftafterloftitle}{\hfill}
@@ -81,6 +109,7 @@
 	%\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\bf \scshape Lampiran\  }}%
 	%\addtocontents{toc}{\protect\renewcommand{\protect\cftchapnumwidth}{2.75cm}}
 	\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\bf \scshape}}%	
+
 }
 
 \newcommand{\vnama}{Jane Doe}
@@ -107,14 +136,8 @@
 \newcommand{\vkajurmat}{Jack Doe}
 \newcommand{\vkajurfis}{Jack Doe}
 \newcommand{\vkajurtif}{Jack Doe}
-\newcommand{\vtabel}{}
-\newcommand{\vgambar}{}
 
 \newcommand{\namanpm}[2]{
-	\renewcommand{\vstaINA}{<<SKRIPSI/TUGAS AKHIR>>}
-	\renewcommand{\vprodiINA}{<<MATEMATIKA/FISIKA/TEKNIK INFORMATIKA>>}
-	\renewcommand{\vstaENG}{<<FINAL PROJECT/UNDERGRADUATE THESIS>>}
-	\renewcommand{\vprodiENG}{<<MATHEMATICS/PHYSICS/INFORMATICS>>}
 	\renewcommand{\vnama}{\uppercase{#1}} \renewcommand{\vlnama}{#1} \hypersetup{pdfauthor={#2 - #1}}
 	\renewcommand{\vnpm}{#2} \hypersetup{pdfcreator={#2}} \StrChar{\vnpm}{6}[\vprodiN]
 	\ifdefstring{\vprodiN}{1}{
@@ -125,14 +148,12 @@
 		\renewcommand{\vstaINA}{TUGAS AKHIR} \renewcommand{\vstaENG}{FINAL PROJECT} \renewcommand{\vkajur}{\vkajurfis}}{}
 	\ifdefstring{\vprodiN}{3}{
 		\renewcommand{\vprodiINA}{TEKNIK INFORMATIKA} \renewcommand{\vprodiENG}{INFORMATICS} 
-		\renewcommand{\vstaINA}{SKRIPSI} \renewcommand{\vstaENG}{UNDERGRADUATE THESIS} \renewcommand{\vkajur}{\vkajurtif}}{}
-	}
+		\renewcommand{\vstaINA}{SKRIPSI} \renewcommand{\vstaENG}{UNDERGRADUATE THESIS} \renewcommand{\vkajur}{\vkajurtif}}{}}
 
 %\newcommand{\judul}[1]{\renewcommand{\vjudul}{\uppercase{#1}}\hypersetup{pdftitle={#1}, pdfsubject={#1}}}
 \newcommand{\pembimbing}[2]{\renewcommand{\vpembu}{#1}\renewcommand{\vpembs}{#2}}
 \newcommand{\penguji}[2]{\renewcommand{\vpengi}{#1}\renewcommand{\vpengii}{#2}}
 \newcommand{\kajur}[3]{\renewcommand{\vkajurmat}{#1}\renewcommand{\vkajurfis}{#2}\renewcommand{\vkajurtif}{#3}}
-\renewcommand{\vbulan}{<<bulan>>}
 \newcommand{\tanggal}[3]{\renewcommand{\vtanggal}{#1}\renewcommand{\vtahun}{#3}
 	\newcommand{\vcbulan}{#2}
 	\ifdefstring{\vcbulan}{1}{\renewcommand{\vbulan}{Januari}}{}
@@ -160,9 +181,6 @@
 \newcommand{\mode}[1]{\renewcommand{\vmode}{#1}}
 \newcommand{\linespacing}[1]{\renewcommand{\vspacing}{#1}}
 \newcommand{\linenumber}[1]{\renewcommand{\vlineno}{#1}}
-
-\newcommand{\gambar}[1]{\renewcommand{\vgambar}{#1}}
-\newcommand{\tabel}[1]{\renewcommand{\vtabel}{#1}}
 
 \newcommand{\bab}[1]{\newcommand{\vbab}{#1}}
 \newcommand{\lampiran}[1]{\renewcommand{\vlmp}{#1}}
@@ -254,7 +272,7 @@
 	\if@twoside \ifodd\c@page
 	\else
 		\hbox{}
-		\vspace{\fill} 
+		\vspace{\fill}
 		\thispagestyle{empty}
 		\newpage
 	\if@twocolumn\hbox{}\newpage\fi\fi\fi}
@@ -274,14 +292,17 @@
 \lstset{basicstyle=\tiny, commentstyle=\color{blue}}
 \lstset{frame=leftline, tabsize=4, breaklines=true}
 
+%=============================================================================
+
+%tambahkan perintah yang anda butuhkan di sini :
+
+%=============================================================================
 %end setup.tex
 
 \include{data}
 \include{dosen}
 
 \begin{document}
-
-\raggedbottom
 
 \def\bibname{Daftar Referensi}
 \def\abstractname{Abstrak}
@@ -340,27 +361,27 @@
 			Bandung, \vtanggal\ \vbulan\ \vtahun \\ \vspace{0.25cm} Menyetujui,\\
 			\vspace{0.75cm}
 			\ifdefempty{\vpembs}
-					{\centering Pembimbing Tunggal\\ \vspace{2.25cm} \vpembu\\}
+					{\centering Pembimbing Tunggal\\ \vspace{2cm} \vpembu\\}
 					{ 	\begin{minipage}[b]{0.46\linewidth}
-							\centering Pembimbing Utama \\ \vspace{2.5cm} \vpembu \\
+							\centering Pembimbing Utama \\ \vspace{2.25cm} \vpembu \\
 						\end{minipage} \hspace{0.5cm}
 						\begin{minipage}[b]{0.46\linewidth}
-							\centering Pembimbing Pendamping \\	\vspace{2.5cm} \vpembs \\
+							\centering Pembimbing Pendamping \\	\vspace{2.25cm} \vpembs \\
 						\end{minipage}	
 					}
 		\end{centering}
-		\vspace{1.5cm}
+		\vspace{1.25cm}
 		\begin{centering}	
 			\begin{minipage}[b]{0.46\linewidth}
-				\centering Ketua Tim Penguji \\ \vspace{2.5cm} \vpengi \\
+				\centering Ketua Tim Penguji \\ \vspace{2.25cm} \vpengi \\
 			\end{minipage} \hspace{0.5cm}
 			\begin{minipage}[b]{0.46\linewidth}
-				\centering Anggota Tim Penguji \\ \vspace{2.5cm} \vpengii 
+				\centering Anggota Tim Penguji \\ \vspace{2.25cm} \vpengii 
 			\end{minipage}
 		\end{centering}
 		\vspace{1.5cm} \\
 		\centering Mengetahui,\\ \vspace{0.5cm}	
-		Ketua Program Studi \\ \vspace{2.5cm} \vkajur\\
+		Ketua Program Studi \\ \vspace{2.25cm} \vkajur\\
 	}}			
 \end{center}
 \cleardoublepage
@@ -400,9 +421,8 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 	  { \vspace*{4cm}
 		\begin{abstract}
 			%\noindent \normalsize{\onehalfspacing{\vabstrakina \vspace*{1cm}\\
-			\noindent \normalsize{\vabstrakina \vspace*{1cm} 
-			
-			{\noindent \bfseries Kata-kata kunci:\ } \vkunciina}
+			\noindent \normalsize{\vabstrakina \vspace*{1cm}\\
+			{\bfseries Kata-kata kunci:\ } \vkunciina}
 		\end{abstract}
   		\cleardoublepage
 	  }
@@ -411,9 +431,8 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 		\vspace*{4cm}
 		\begin{abstract}
 			%\noindent \normalsize{\onehalfspacing{\vabstrakeng \vspace*{1cm}\\
-			\noindent \normalsize{\vabstrakeng \vspace*{1cm} 
-			
-			{\noindent \bfseries Keywords:\ } \vkuncieng}
+			\noindent \normalsize{\vabstrakeng \vspace*{1cm}\\
+			{\bfseries Keywords:\ } \vkuncieng}
 		\end{abstract}			
  		\cleardoublepage
 	  }
@@ -423,14 +442,14 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 \ifdefstring{\vmode}{final}{
 \ifdefempty{\vuntuk}{}
 	  { \vspace*{5cm}
-		\begin{quote} 
+		\begin{quote}
 			\em \raggedleft \Large{\vuntuk} 
 		\end{quote}
  		\cleardoublepage
 	  }
 
 \pagestyle{plain}
-	 
+	
 % Kata pengantar
 \ifdefempty{\vprakata}{}
 	  {	\chapter*{Kata Pengantar}
@@ -447,11 +466,10 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 
 \ifthenelse{{\equal{\vmode}{kosong}}\or{\equal{\vmode}{cover}}}{}
 	{ \tableofcontents \newpage 	% Daftar isi
-	  \ifdefempty{\vgambar}{\listoffigures \newpage}{} 	% Daftar gambar
-	  \ifdefempty{\vtabel}{\listoftables \newpage}{} 		% Daftar tabel
+	  \listoffigures \newpage 	% Daftar gambar
+	  \listoftables \newpage 		% Daftar tabel
 	}
 	\cleardoublepage
-%	\cleardoublepagewithpagenumber 
 }  
 
 %end depan.tex
@@ -493,46 +511,3 @@ Atas pernyataan ini, saya siap menanggung segala risiko dan sanksi yang dijatuhk
 \ifdefstring{\vlmpi}{1}{\include{Lampiran/lampI}}{}
 
 \end{document}
-
-%=============================================================================
-% Perubahan pada versi 8 (31-05-2015): 
-%	- penambahan default data untuk beberapa keterangan dan digunakan sebagai 
-%	  template dengan tanda << & >> . Data yang diubah defaultnya adalah: nama skripsi
-%	  nama prodi, beserta bahasa inggrisnya.
-%   - Keywords dan kata kunci di abstrak ditambahkan noindent + perbaikan lainnya
-%   - Perbaikan untuk halaman tidak kosong tanpa nomor halaman romawi
-% Perubahan pada versi 7 (27-05-2014)
-%	- penambahan perintah \raggedbottom untuk menghilangkan area kosong akibat 
-%	  penempatan gambar yang tidak sempurna
-% Perubahan pada versi 6 (10-11-2013)
-%	- perbaikan pada abstract dengan paragraf lebih dari satu: perbaikan vertical spacing
-%	- perbaikan pada tampilan bab dan lampiran: tidak perlu menuliskan apapun untuk 
-%	  menampilkan semuanya (di data.tex) atau -1 jika tidak ada lampiran
-%	- halaman bernomor genap untuk halaman romawi sudah dimunculkan
-%	- Kurikulum 2013 : perubahan nama buku skripsi 
-% Perubahan pada versi 5 (21-10-2012)
-%	- halaman terakhir setiap bab tidak ada headernya jika kosong
-% Perubahan pada versi 4 (06-08-2012)
-% 	- penggabungan main.tex, depan.tex dan setup.tex menjadi main.tex
-% 	- menambahkan keterangan di lampiran untuk kode program 
-% 	- ukuran font dapat diubah langsung di tiap lampiran
-% Perubahan pada versi 3 (09-07-2012): 
-%	- Tidak ada perubahan di file ini
-% Perubahan pada versi 2 (08-07-2012):
-% 	- "Daftar Referensi" tidak perlu diubah secara manual (tidak perlu mengubah file bahasai.ldf)
-% 	- Bahasa Indonesia dari abstract adalah abstrak (secara otomatis), bukan ringkasan
-% 	- Spasi pada buku dokumen final adalah onehalfspacing
-% Versi 1 (08-11-2011)
-%=============================================================================
-%=============================================================================
-% depan.tex v2 (09-07-2012)
-% Perubahan pada versi 2:
-% - Menambahkan halaman depan dalam bahasa inggris
-% Versi 1 (08-11-2011)
-%=============================================================================
-% setup.tex v2 (08-07-2012)
-% Perubahan pada versi 2:
-% - Menambahkan perintah untuk judulINA dan judulENG
-% - Menghapus \usepackage{microtype}, yang pada beberapa kasus menjadi masalah
-% Versi 1 (08-11-2011)
-%=============================================================================
