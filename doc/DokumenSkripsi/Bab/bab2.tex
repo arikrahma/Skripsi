@@ -689,7 +689,7 @@ VTimeZone}\\
 \subsection{net.fortuna.ical4j.model.property}
 
 	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
-	\begin{tabular}{|c|p{12cm}|}
+	\resizebox{\columnwidth}{!}{\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
 		1 & \textbf{Action}\\
@@ -750,7 +750,7 @@ VTimeZone}\\
 			&	Mendefinisikan url pada komponen properti.\\ \hline
 		29 & \textbf{Version}\\
 			&	Mendefinisikan versi pada komponen properti.\\ \hline	
-	\end{tabular}
+	\end{tabular}}
 
 \subsection{net.fortuna.ical4j.model.transform}
 
@@ -804,7 +804,16 @@ VTimeZone}\\
 
 \section{Java FX}
 Java FX merupakan seperangkat grafis dan paket media yang memungkinkan pengembang untuk merancang, membuat, menguji, debug , dan dapat beroperasi secara konsisten di seluruh platform yang beragam.\\
-Java FX dapat membuat berbagai macam aplikasi dari mulai aplikasi jaringan dasar hingga antar muka yang memiliki fitur audio, video, grafik, dan animasi
+Berikut ini ilustrasi arsitektur dari JavaFX.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{Gambar/arsitekturJavaFX}
+	\caption{Arsitektur JavaFX}
+	\end{figure}
+	
+Ilustrasi dari gambar \textbf{2.3} mendeskripsikan setiap komponen saling berhubungan. Dibawah JavaFX Public API terdapat mesin yang menjalankan code JavaFX. Mesin tersebut terdiri dari sub komponen termasuk mesin grafis dengan performa tinggi yang dinamakan Prism. Selain itu, terdapat sistem \textit{windowing} kecil dan efisien yang dinamakan Glass. Terakhir dalam mesin dibawah JavaFX Public API terdapat sebuah \textit{media engine} dan \textit{web engine}.
+
+
 
 
 
