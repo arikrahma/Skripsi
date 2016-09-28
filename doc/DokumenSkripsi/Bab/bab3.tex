@@ -11,37 +11,43 @@ berikut ini contoh file excel yang dikeluarkan oleh TU.
 	\includegraphics[scale=0.5]{Gambar/scJadwal}
 	\caption{Jadwal mengawas ujian FTIS}
 	\end{figure}
-Dari gambar \textbf{3.1} dapat anlisa bahwa :
-\begin{enumerate}
-	\item Terdapat 7 kolom pada file jadwal tersebut yaitu :
-		\begin{enumerate}
-			\item No
-			\item Hari, tanggal
-			\item Jam
-			\item Semester
-			\item Peserta Studi
-			\item Nama Mata Kuliah
-			\item Ruangan (09120, 9121, 9122, 10316, 10317, 10323)
-		\end{enumerate}
-	\item Pada kolom semster terdapat hurf p yang menunjukan ujian tersebut merupakan mata kuliah pilihan pada semester tertentu.
-	\item Pada Kolom peserta studi dapat di isi lebih dari satu jurusan ditandai dengan tanda '\textbackslash'
-	\item Terdapat singkatan seperti : 
-		\begin{enumerate}
-			\item Tgl. pada \textit{header} merupakan singkatan dari tanggal.
-			\item Sem. pada \textit{header} merupakan singkatan dari semester.
-			\item PS pada \textit{header} merupakan singkatan dari peserta studi.
-			\item MA pada kolom PS merupakan singkatan dari Matematika
-			\item FI pada kolom PS merupakan singkatan dari Fisika
-			\item IT pada kolom PS merupakan singkatan dari Informatika
-			\item Mrt pada kolom Hari, Tgl. merupakan singkatan dari Maret
-		\end{enumerate}
-	\item kolom \textit{header} terdiri dari 2 baris, ada yang menggunakan \textit{merge}, ada juga yang dibagi menjadi 2 bagian.
-	\item Kolom Ruang merupakan gabungan dari 6 kolom, dan dibawahnya tertulis nomer ruang kelas ujian.
-	\item Selama satu hari jatah dosen mengawas yaitu selama 2 jam, hal itu ditandai dengan \textit{merge} 2 baris dengan nama dosen didalamnya.
-	\item Ruangan yang tidak terpakai ditandai dengan warna abu bergaris - garis.
-	\item Khusus untuk matakuliah pemograman tempat ujian di lab dan ada pembagian jadwal mengawas shift 1 dan shift 2.
-\end{enumerate} 
- 
+	
+Berikut penjelasan kolom-kolom yang ada di gambar \textbf{3.1}\\
+\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Kolom dan Deskripsi} \\ \hline \hline
+		1 & \textbf{No}\\
+			&	Menyatakan nomer urut jadwal mengawas ujian.\\ \hline
+		2 & \textbf{Hari, Tanggal}\\
+			&	Kolom dalam bentuk String berisi hari dan tanggal. Terdapat singkatan yang diberikan TU dalam contoh ini  Mrt. menunjukan bulan Maret\\ \hline	
+		3 & \textbf{Jam}\\
+			&	Kolom ini bertipe String dan menerangkan pukul dilaksakannya ujian.\\ \hline
+		4 & \textbf{Semester}\\
+			&	Kolom ini bertipe String dan mengerangkan semester dari mata kuliah yang di ujiankan . Terdapat simbol p yang menerangkan matakuliah pilihan\\ \hline
+		5 & \textbf{PS}\\
+			&	Bertipe string berisi jurusan yang ujian mata kuliah tersebut.\\ \hline
+		6 & \textbf{Nama Mata Kuliah}\\
+			&	Kolom bertipe String dan berisi tentang mata kuliah yang di ujiankan.\\ \hline
+		7 & \textbf{Ruangan}\\
+			&	Kolom dengan merge 6 kolom dan pada baris kedua terdapat 6 kolom ruangan ujian yaitu 9120, 9121, 9122, 10316, 10317, 10323. Masing kolom kelas berisi nama dosen yang mengawas bertipe String. Ruangan tidak terpakai ditandai dengan garis-garis miring. Jika ada isi kolom kelas yang dimerge sebanyak 6 kolom menandakan kelas tersebut adalah lab.\\ \hline
+	\end{tabular}	
+	\\
+Dari gambar \textbf{3.1} terpilih beberapa kolom untuk dapat ditampilkan pada PL, Berikut analisanya :\\
+\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Kolom dan Deskripsi} \\ \hline \hline
+		1 & \textbf{Hari, Tanggal}\\
+			&	Kolom ini bertipe String dan terdapat singkatan seperti Mrt, maka akan dibuatkan fungsi pada saat implementasi agar seragam dan sesuai dengan format tgl dan waktu pada Java.\\ \hline	
+		2 & \textbf{Jam}\\
+			&	Kolom ini bertipe String, maka dibutuhkan konversi String kedalam fungsi jam pada saat implementasi.\\ \hline
+		3 & \textbf{Nama Mata Kuliah}\\
+			&	Kolom ini dapat menerangkan deskripsi mata kuliah pada PL.\\ \hline
+		4 & \textbf{Owner}\\
+			&	Kolom ini merupakan isi dari tabel kelas pada excel, pada PL akan ditampilkan sebagai kolom tersendiri menerangkan Dosen yang mengawas matakuliah.\\ \hline		
+		7 & \textbf{Ruangan}\\
+			&	Kolom ini akan berisi kelas sesuai dosen yang mengajar, mata kuliah, waktu dan tanggal.\\ \hline
+	\end{tabular}
+
 \subsection{Analisis Fitur Perangkat Lunak}
 Perangkat Lunak ini akan memiliki fitur sebagai berikut : 
 	\begin{enumerate}

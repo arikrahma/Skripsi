@@ -1,67 +1,33 @@
 \chapter{Dasar Teori}
 \label{chap:definition}
-Pada bab ini akan dijelsaskan mengenai konsep-konsep dasar pengukung BI, yaitu konsep MVC(\textit{model view controller}), Java FX, Apache POI, iCal4j serta penjelasan singkat mengenai netbeans yang digunakan untuk membangun PL.
-
-\section{\textit{Model View Controller}(MVC)}
-Setiap perangkat lunak memiliki pola bawaan dalam proses pembuatannya. Salah satu pola yang cukup terkenal adalah konsep MVC. MVC memisahkan pengembangan aplikasi berdasarkan komponen utama yang membangun sebuah aplikasi seperti manipulasi data, user interface, dan bagian yang menjadi kontrol aplikasi. 
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.65]{Gambar/MVC}
-	\caption{Diagram MVC}
-	\end{figure}
-
-Penjelasan MVC sebagai berikut \cite{Hans:2014}:
-
-\begin{itemize}
-	\item \textit{Model}\\
-	Komponen ini berhubungan dengan proses yang ada dan juga terdapat di dalam sistem.\\
-	Contoh model dalam skripsi ini adalah library Apache POI, iCal4j .
-	\item \textit{Controller}\\
-	Komponen yang mengatur komponen dari model ke view maupun sebaliknya. Fungsi dari komponen ini adalah sebagai penghubung komponen model dan view.\\
-	Contoh \textit{Controller} di dalam skripsi ini adalah kode-kode dalam bahasa java yang meng-inherit dari kelas-kelas dalam \textit{library} Apache POI dan iCal4j untuk membaca \textit{file} excel dari TU dan mengkonversikannya dalam format iCalendar.
-	\item \textit{View}\\
-	komponen yang berhubungan dengan \textit{end user}. Bentuknya berupa tampilan yang akan digunakan oleh \textit{user} atau sering disebut sebagai \textit{user-interface}.
-	Contoh \textit{view} dalam pengerjaan skripsi ini adalah kode-kode yang dituliskan dalam Java FX berupa \textit{file} yang berekstensi fxml.\\
-	Banyak keuntungan dengan pendekatan MVC, yakni \cite{Hans:2014}:
-	\begin{enumerate}
-		\item Pembagian modul pengerjaan yang jelas untuk setiap orang di dalam suatu tim.
-		\item Kemudahan untuk \textit{maintenance} dimasa depan.
-		\item Mempunyai fleksibilitas tinggi dalam pengembangan,
-	\end{enumerate}
-\footnote{http://elmolya.blogspot.co.id/2010/03/belajar-mvc.html}
-\end{itemize}
+Pada bab ini akan dijelsaskan mengenai konsep-konsep dasar pengukung PL, yaitu Java FX, Apache POI, iCal4j.
 
 \section{Apache POI}
 
-Apache POI pada hakikatnya merupakan API( \textit{application programming interface}) yang populer digunakan oleh programmer untuk membuat, memodifikasi, dan menampilkan \textit{file} MS Office menggunakan bahasa pemograman Java. Untuk mengingatkan bahwa API atau yang dalam bahasa indonesia disebut antarmuka pemograman aplikasi adalah sekumpulan perintah, fungsi, serta protokol yang digunakan oleh programmer saat membangun perangkat lunak \footnote{https://id.wikipedia.org/wiki/Antarmuka\_pemrograman\_aplikasi}. 
+Apache POI pada hakikatnya merupakan \textit{library} untuk memanipulasi dan menciptakan sesuatu melalui Java API( \textit{application programming interface}) dengan memanipulasi berbagai format file berdasarkan \textit{Office Open XML standards}(OOXML) dan dokumen \textit{Microsoft OLE 2 Document Compound Format}(OLE2), Singkatnya dengan library ini memungkinkan untuk membaca dan menulis pada MS Excel menggunakan Java \cite{apachepoi}. \\
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.5]{Gambar/apachePOI}
-	\caption{Kelebihan Apache POI(HSSF dan XSSF)} \cite{tutpoint}
-	\end{figure}
 
 \subsection{Komponen Apache POI}
-Dalam Apache POI terdapat kelas dan method yang dapat bekerja dengan semua file OLE2 yang merupakan format file yang dipakai oleh dokumen dari Microsoft Office , seperti MS Word, Excel, dll \footnote{http://www.file-extensions.org/ole2-file-extension}. Berikut ini adalah komponen - komponen yang terdapat dalam Apache POI.\cite{tutpoint}
+Untuk membaca aplikasi MS Office Apache POI mempunyai modul berisi komponen java api untuk membaca dokumen dengan format OLE2 dan OOXML. Berikut ini komponen-komponen dalam Apache POI.\cite{apachepoi}  
 
 \begin{enumerate}
-	\item \textbf{POIFS (\textit{Poor Obfuscation Implementation File System})} : Komponen ini merupakan faktor dasar dari semua elemen POI. Komponen ini dapat membaca file yang berbeda secara eksplisit.
-	\item \textbf{HSSF (\textit{Horrible Spreadsheet Format})} : Komponen ini digunakan untuk membaca dan menulis format xls dari file MS-Excel.
-	\item \textbf{XSSF (XML \textit{Spreadsheet Format})} : Komponen ini digunakan untuk membaca format file xlsx dari MS-Excel.
-	\item \textbf{HPSF (\textit{Horrible Property Set Format})} : Komponen ini digunakan untuk mengekstrak perangkat file yang dimiliki oleh MS-Office.
-	\item \textbf{HWPF (\textit{Horrible Word Proccessor Format})} : Komponen ini digunakan untuk menulis dan membaca ekstensi file doc dari MS-Word.
-	\item \textbf{XWPF (\textit{XML Word Processor Format})} : Komponen ini digunakan untuk membaca dan menulis ekstensi file docx dari MS-Word.
-	\item \textbf{HSLF (\textit{Horrible Slide Layout Format})} : Komponen ini digunakan untuk membaca, menulis, dan mengedit presentasi PowerPoint.
-	\item \textbf{HDGF (\textit{Horrible Diagram Format})} : komponen ini berisi kelas dan method dari file binary MS-Visio.
-	\item \textbf{HPBF (\textit{Horrible Publisher Format})} : Komponen ini digunakan untuk membaca dan menulis file MS-Publisher.
+	\item Excel \textit{workbooks} (HSSF dan XSSF)
+	\item Word \textit{document} (HWPF dan XWPF)
+	\item PowerPoint \textit{presentation} (HSLF dan XSLF)
+	\item Outlook (HSMF)
+	\item Visio (HDGF dan XDGF)
+	\item Publisher (HPBF)
 \end{enumerate}
+
+HSSF dan XSSF memberikan cara untuk membuat, membaca, dan memodifikasi XLS spreadsheet. Pada sub bab ini akan di fokuskan untuk membahas HSSF dan XSSF sesuai kebutuhan untuk menganalisa file excel jadwal mengawas ujian yang dikeluarkan oleh TU FTIS.\cite{apachepoi}
 
 
 \subsection{Kelas Inti Apache POI} 
-Pada sub bab ini akan membahas sedikit intoduksi mengenai beberapa kelas dan method yang ada di Apache POI API yang merupakan bagian penting untuk bekerja dengan file excel mengunakan program Java.\cite{tutpoint}
+Pada sub bab ini akan membahas sedikit intoduksi mengenai beberapa kelas dan method yang ada di Apache POI API yang merupakan bagian penting untuk bekerja dengan file excel mengunakan program Java.\cite{apachepoi2}
 
 \subsubsection{Workbook}
-\textbf{org.apache.poi.ss.usermodel} \textit{package} merupakan \textit{super-interface} dari semua kelas yang berhubungan dengan pembuatan atau\textit{maintain} Excel workbook. Dua kelas yang mengimplementasikan \textit{interface} diatas sebagai berikut:\cite{tutpoint}
+\textbf{org.apache.poi.ss.usermodel} \textit{package} merupakan \textit{super-interface} dari semua kelas yang berhubungan dengan pembuatan atau\textit{maintain} Excel workbook. Dua kelas yang mengimplementasikan \textit{interface} diatas sebagai berikut:\cite{apachepoi2}
+
 \begin{itemize}
 	\item \textbf{HSSFWorkbook} : Kelas ini mempunyai method yang dapat membaca dan menulis file Microsoft Excel dengan format .xls. Kelas ini kompatibel dengan MS-Office versi 97-2003.
 	\item \textbf{XSSFWorkbook} : Kelas ini mempunyai method untuk menulis dan membaca Microsoft Excel dan OpenOffice xml dengan format .xls atau .xlsx. Kelas ini kompatibel dengan MS-Office versi 2007 atau versi barunya.
@@ -69,7 +35,7 @@ Pada sub bab ini akan membahas sedikit intoduksi mengenai beberapa kelas dan met
 
 
 \subsubsection{HSSFWorkbook} 
-HSSFWorkbook merupakan \textit{high-level class} dibawah \textbf{org.apache.xssf.usermodel} \textit{package}. HSSFWorkbook juga mengimplementasikan antarmuka workbook yang digunakan oleh file Excel dalam format .xls. Berikut ini list dari bebeberapa method dan constructor dalam kelas ini.\cite{tutpoint}\\
+HSSFWorkbook merupakan \textit{high-level class} dibawah \textbf{org.apache.hssf.usermodel} \textit{package}. HSSFWorkbook juga mengimplementasikan antarmuka workbook yang digunakan oleh file Excel dalam format .xls. Berikut ini list dari bebeberapa method dan constructor dalam kelas ini.\cite{apachepoi2}\\
 
 \noindent \textbf{Class Constructor}\\ \\
 
@@ -101,7 +67,7 @@ Berikut ini penjelasan parameter yang sering dipakai pada constructor :
 \end{itemize} 
 
 \subsubsection{XSSFWorkbook}
-Kelas ini merepresentasikan baik \textit{high} dan \textit{low} level format file excel. XSSFWorkbook merupakan kelas yang berada dalam \textit{package} \textbf{org.apache.xssf.usermodel} dan mengimplementasikan antarmuka workbook. Berikut ini list method dan constructor dalam kelas ini.\cite{tutpoint}
+Kelas ini merepresentasikan baik \textit{high} dan \textit{low} level format file excel. XSSFWorkbook merupakan kelas yang berada dalam \textit{package} \textbf{org.apache.xssf.usermodel} dan mengimplementasikan antarmuka workbook. Berikut ini list method dan constructor dalam kelas ini.\cite{apachepoi2}
 \\
 \noindent \textbf{Class Constructor}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
@@ -136,10 +102,10 @@ Kelas ini merepresentasikan baik \textit{high} dan \textit{low} level format fil
 	
 	
 \subsubsection{Sheet}
-Sheet merupakan sebuah interface dibawah package org.apache.ss.usermodel dan sheet merupakan super-interface dari semua kelas yang menciptakan \textit{high} atau \textit{low level spreadsheet} dengan nama yang spesifik. Jenis yang paling umum dari spreadsheet adalah worksheet yang direpresentasikan sebagai sebuah \textit{grid} dari cell.\cite{tutpoint}
+Sheet merupakan sebuah interface dibawah package org.apache.ss.usermodel dan sheet merupakan super-interface dari semua kelas yang menciptakan \textit{high} atau \textit{low level spreadsheet} dengan nama yang spesifik. Jenis yang paling umum dari spreadsheet adalah worksheet yang direpresentasikan sebagai sebuah \textit{grid} dari cell.\cite{apachepoi2}
 
 \subsubsection{HSSFSheet}
-HSSFSheet merupakan kelas dibawah \textit{package}\textbf{org.apache.poi.hssf.usermodel}. HSSFSheet dapat membuat excel spreadsheet dan memungkinkan untuk memformat style dari sheet dan data sheet.\cite{tutpoint}
+HSSFSheet merupakan kelas dibawah \textit{package}\textbf{org.apache.poi.hssf.usermodel}. HSSFSheet dapat membuat excel spreadsheet dan memungkinkan untuk memformat style dari sheet dan data sheet.\cite{apachepoi2}
 \\
 \noindent \textbf{Class Constructor}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
@@ -152,7 +118,7 @@ HSSFSheet merupakan kelas dibawah \textit{package}\textbf{org.apache.poi.hssf.us
 	\end{tabular}
 	
 \subsubsection{XSSFSheet}
-Kelas ini merupakan representasi dari \textit{high level} excel spreadsheet. Kelas ini berada dibawah package org.apache.poi.hssf.usermodel.\cite{tutpoint}
+Kelas ini merupakan representasi dari \textit{high level} excel spreadsheet. Kelas ini berada dibawah package org.apache.poi.hssf.usermodel.\cite{apachepoi2}
 \\
 \noindent \textbf{Class Constructor}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
@@ -179,10 +145,10 @@ Kelas ini merupakan representasi dari \textit{high level} excel spreadsheet. Kel
 	\end{tabular}
 
 \subsubsection{Row}
-Row merupakan interface berada dibawah \textit{package} \textbf{org.apache.poi.ss.usermodel}. Row ini digunakan untuk \textit{high-level representation} dari sebuah row pada sebuah spreadsheet. Row juga merupakan super-interface dari semua kelas yang mewakili row dalam POI \textit{Library}.\cite{tutpoint}
+Row merupakan interface berada dibawah \textit{package} \textbf{org.apache.poi.ss.usermodel}. Row ini digunakan untuk \textit{high-level representation} dari sebuah row pada sebuah spreadsheet. Row juga merupakan super-interface dari semua kelas yang mewakili row dalam POI \textit{Library}.\cite{apachepoi2}
 
 \subsubsection{XSSFRow}
-XSSFRow merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel} dan mengimplementasi Row interface. Selain itu, kelas ini dapat membuat row dalam sebuah spreadsheet. List dibawah ini merupakan method dan constructors pada kelas ini.\cite{tutpoint}
+XSSFRow merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel} dan mengimplementasi Row interface. Selain itu, kelas ini dapat membuat row dalam sebuah spreadsheet. List dibawah ini merupakan method dan constructors pada kelas ini.\cite{apachepoi2}
  \\ 
 \noindent \textbf{Class Method}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
@@ -238,7 +204,7 @@ List dibawah ini adalah sebagian \textit{field} dari kelas XSSFCell beserta desk
 	\end{tabular}
 
 \subsubsection{XSSFCellStyle}
-XSSFCellStyle merupakan sebuah kelas yang berada dibawah \textit{package} \textbf{org.apache.poi.usermodel}. kelas ini memberikan infomarsi yang mungkin mengenai format konten pada suatu cell dari spreadsheet. Kelas ini juga memberikan opsi untuk merubah format tersebut. Kelas ini mewakili CellStyle interface.\cite{tutpoint}
+XSSFCellStyle merupakan sebuah kelas yang berada dibawah \textit{package} \textbf{org.apache.poi.usermodel}. kelas ini memberikan infomarsi yang mungkin mengenai format konten pada suatu cell dari spreadsheet. Kelas ini juga memberikan opsi untuk merubah format tersebut. Kelas ini mewakili CellStyle interface.\cite{apachepoi2}
 
 \subsubsection{Ringkasan Cell Style}
 List dibawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle interface.\cite{tutpoint}\\
@@ -303,11 +269,11 @@ List dibawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle i
 	\end{tabular}
 
 \subsubsection{HSSFColor}
-HSSFColor merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.hssf.util.package}. Kelas ini memberikan warna berbeda terhadap \textit{nested class}. Biasanya \textit{nested class} diwakili dengan menggunakan index masing-masing. Kelas ini mengimplementasikan Color interface.\cite{tutpoint}
+HSSFColor merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.hssf.util.package}. Kelas ini memberikan warna berbeda terhadap \textit{nested class}. Biasanya \textit{nested class} diwakili dengan menggunakan index masing-masing. Kelas ini mengimplementasikan Color interface.\cite{apachepoi2}
 
 	
 \subsubsection{Nested Class}
-Semua \textit{nested class} dari kelas ini adalah static dan setiap kelas memiliki index masing-masing. Warna kelas ini digunakan pada format cell seperti konten cell, border, latar depan(\textit{foreground}), dan latar belakang(\textit{background}). List dibawah ini merupakan sebagian dari \textit{nested class}.\cite{tutpoint}
+Semua \textit{nested class} dari kelas ini adalah static dan setiap kelas memiliki index masing-masing. Warna kelas ini digunakan pada format cell seperti konten cell, border, latar depan(\textit{foreground}), dan latar belakang(\textit{background}). List dibawah ini merupakan sebagian dari \textit{nested class}.\cite{apachepoi2}
 
 \begin{tabular}{|c|c|}
 		\hline
@@ -336,7 +302,7 @@ Semua \textit{nested class} dari kelas ini adalah static dan setiap kelas memili
 	\end{tabular}
 	
 \subsubsection{XSSFColor}
-XSSFColor merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mewakili warnma pada spreadsheet. Kelas ini mengimplementasika interface warna. List dibawah ini merupakan beberapa method XSSFColor dan constructornya.\cite{tutpoint}
+XSSFColor merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mewakili warnma pada spreadsheet. Kelas ini mengimplementasika interface warna. List dibawah ini merupakan beberapa method XSSFColor dan constructornya.\cite{apachepoi2}
 \\
 \noindent \textbf{Class Constructor}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
@@ -390,7 +356,7 @@ XSSFFont merupakan kelas dibawah \textit{package} \textbf{org.aoache.poi.xssf.us
 	\end{tabular}
 	
 \subsubsection{XSSFHyperlink}
-XSSFHyperlink merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{Hyperlink interface}. Kelas ini digunakan untuk mengatur sebuah hyperlink pada konten cell dalam sebuah spreadsheet.\cite{tutpoint}
+XSSFHyperlink merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{Hyperlink interface}. Kelas ini digunakan untuk mengatur sebuah hyperlink pada konten cell dalam sebuah spreadsheet.\cite{apachepoi2}
 \\
 \noindent \textbf{Field}\\
 Field dalam kelas ini akan didefinisikan sebagai berikut. Field disini dalam arti tipe dari hyperlink yang dipakai.\\
@@ -412,7 +378,7 @@ Field dalam kelas ini akan didefinisikan sebagai berikut. Field disini dalam art
 	\end{tabular}
 
 \subsubsection{XSSFCreationHelper}
-XSSFCreationHelper merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{CreationHelper interface}. Kelas ini digunakan sebagai bentuk kelas pendukung untuk \textit{formula evaluation} dan penyusun hyperlink.\cite{tutpoint}
+XSSFCreationHelper merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{CreationHelper interface}. Kelas ini digunakan sebagai bentuk kelas pendukung untuk \textit{formula evaluation} dan penyusun hyperlink.\cite{apachepoi2}
 \\
 \noindent \textbf{Class Methods}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
@@ -440,9 +406,9 @@ XSSFPrintSetup merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.x
 	\end{tabular}
 	
 \section{iCal4j}
-iCal4j merupakan \textit{Java library} yang digunakan untuk membaca dan menulis data iCalendar yang didefinisikan dalam RFC2445. iCalendar standar menyediakan sebuah format data yang umumnya digunakan untuk menyimpan informasi tentang spesifikasi kalender seperti acara, pertemuan, \textit{to-do list}, dll. Semua \textit{tool} kalender yang populer, seperti Lotus Notes, Outlook, Google Calendar, Apple iCal mensupport standar iCalendar.\cite{ical}
+iCal4j merupakan \textit{Java library} yang digunakan untuk membaca dan menulis data iCalendar yang didefinisikan dalam RFC2445. iCalendar standar menyediakan sebuah format data yang umumnya digunakan untuk menyimpan informasi tentang spesifikasi kalender seperti acara, pertemuan, \textit{to-do list}, dll. Semua \textit{tool} kalender yang populer, seperti Lotus Notes, Outlook, Google Calendar, Apple iCal mensupport standar iCalendar.\cite{ical2}
 \\ \\
-Sebagai pengurai kalender dan \textit{object model}, iCal4j memudahkan untuk memodifikasi data kalender yang sudah ada atau membuat model data baru. Validasi juga diperlukan untuk memastikan data terjaga baik dan konsisten dengan spesifikasi yang diperlukan.\cite{ical}
+Sebagai pengurai kalender dan \textit{object model}, iCal4j memudahkan untuk memodifikasi data kalender yang sudah ada atau membuat model data baru. Validasi juga diperlukan untuk memastikan data terjaga baik dan konsisten dengan spesifikasi yang diperlukan.\cite{ical2}
 
 
 \subsection{Komponen iCal4j}
@@ -689,7 +655,7 @@ VTimeZone}\\
 \subsection{net.fortuna.ical4j.model.property}
 
 	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
-	\resizebox{\columnwidth}{!}{\begin{tabular}{|c|p{12cm}|}
+	\begin{longtable}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
 		1 & \textbf{Action}\\
@@ -750,7 +716,7 @@ VTimeZone}\\
 			&	Mendefinisikan url pada komponen properti.\\ \hline
 		29 & \textbf{Version}\\
 			&	Mendefinisikan versi pada komponen properti.\\ \hline	
-	\end{tabular}}
+	\end{longtable}
 
 \subsection{net.fortuna.ical4j.model.transform}
 
@@ -803,7 +769,7 @@ VTimeZone}\\
 		\end{tabular}
 
 \section{Java FX}
-Java FX merupakan seperangkat grafis dan paket media yang memungkinkan pengembang untuk merancang, membuat, menguji, debug , dan dapat beroperasi secara konsisten di seluruh platform yang beragam.\\
+Java FX merupakan seperangkat grafis dan paket media yang memungkinkan pengembang untuk merancang, membuat, menguji, debug , dan  beroperasi secara konsisten di seluruh platform yang beragam\cite{javafx2}.\\
 Berikut ini ilustrasi arsitektur dari JavaFX.
 \begin{figure}[H]
 	\centering
@@ -811,9 +777,151 @@ Berikut ini ilustrasi arsitektur dari JavaFX.
 	\caption{Arsitektur JavaFX}
 	\end{figure}
 	
-Ilustrasi dari gambar \textbf{2.3} mendeskripsikan setiap komponen saling berhubungan. Dibawah JavaFX Public API terdapat mesin yang menjalankan code JavaFX. Mesin tersebut terdiri dari sub komponen termasuk mesin grafis dengan performa tinggi yang dinamakan Prism. Selain itu, terdapat sistem \textit{windowing} kecil dan efisien yang dinamakan Glass. Terakhir dalam mesin dibawah JavaFX Public API terdapat sebuah \textit{media engine} dan \textit{web engine}.
+Ilustrasi dari gambar \textbf{2.1} mendeskripsikan setiap komponen saling berhubungan. Dibawah JavaFX Public API terdapat mesin yang menjalankan code JavaFX. Mesin tersebut terdiri dari sub komponen termasuk mesin grafis berperforma tinggi yang dinamakan Prism. Selain itu, terdapat sistem \textit{windowing} kecil dan efisien yang dinamakan Glass. Terakhir dalam mesin dibawah JavaFX Public API terdapat sebuah \textit{media engine} dan \textit{web engine}. Berikut ini elemen-elemen yang terdapat pada arsitektur Java FX : \cite{javafx}
+\begin{enumerate}
+	\item \textit{Scene Graph}
+	\item Java Public API untuk Fitur Java FX
+	\item \textit{Graphics System}
+	\item \textit{Glass Windowing Toolkit}
+	\item Gambar dan Media
+	\item Komponen Web
+	\item CSS
+	\item \textit{UI Control}
+	\item Layout
+	\item Transformasi 2-D dan 3-D
+	\item \textit{Visual Effecs}
+\end{enumerate}
 
+\subsection{Scene Graph}
+\textit{Scene Graph} merupakan sebuah pohon hirarki dari sekumpulan node yang merepresentasikan elemen visual dari antarmuka suatu aplikasi. Sebuah elemen dari \textit{scene graph} dinamakan node. Setiap node mempunya ID, \textit{style class} dan \textit{boundling volume}. Node dalam \textit{scene graph} juga memiliki :\cite{javafx}
+\begin{enumerate}
+	\item \textit{Effect}, seperti blur dan shadow
+	\item \textit{Opacity}
+	\item \textit{Transform}
+	\item \textit{Event handler} (Mouse, keyboard, dan input method lainnya)
+	\item Perintah spesifik dari sebuah aplikasi
+\end{enumerate} 
 
+Penggunaan \textbf{javafx.scene} API memungkinkan \textit{developer} untuk menggunakan beberapa jenis konten dialamnya, seperti : \cite{javafx}
+\begin{enumerate}
+	\item \textbf{Node} : Bentuk(2-D dan 3-D), gambar, media, \textit{embedded web browser}, teks, \textit{UI control}, grafik, grup, dan \textit{container}.
+	\item \textbf{State} : Transformasi (posisi dan orientasi dari node), efek visual, dan konten visual lainnya.
+	\item \textbf{Effect} : objek sederhana yang dapat merubah penampilan dari node \textit{scene graph}, seperti blur, shadow, dan \textit{color adjustment}
+\end{enumerate}
 
+\subsection{Java Public API untuk Fitur Java FX}
+Pada lapisan atas arsitektur Java FX pada gambar \textbf{2.1} API Java memberikan kebebasan dan fleksibilitas untuk membangun berbagai client dari sebuah aplikasi. Platform Java FX menggabungkan kemampuan terbaik yang dimiliki platform Java secara menyeluruh dan mendalam serta intuitif dengan memasukan fungsi media kedalamnya, sehingga tercipta lingkup konsep \textit{one-stop development}. Berikut contoh kegunaan Java API untuk fitur Java FX :\cite{javafx}
+\begin{enumerate}
+	\item Memungkinkan penggunaan fitur Java yang poweful seperti \textit{generics, annotations, multithreading}.
+	\item Lebih mudah mengembangan web menggunakan Java FX dibanding \textit{JVM-base dynamic languages} lainnya seperti Grovvy, dan JavaScript.
+	\item Memungkinkan Java developer untuk menggunakan bahasa sistem seperti Groovy untuk menulis file besar atau kompleks pada aplikasi Java FX.
+	\item Memungkinkan penggunaan binding.
+	\item Menambahkan koleksi library Java dengan memasukan urutan dan memetakan perubahan sehingga memngukinkan aplikasi untuk menghubungkan antarmuka kedalam data model, mengamati perubahan pada data model, dan memperbarui kontrol UI yang sesuai dengan perubahan tersebut.   
+\end{enumerate}
 
+\subsection{Graphic System}
+\textit{Java FX Graphic System} pada gambar \textbf{2.1} merupakan implementasi dari Java FX \textit{scene graph layer}. Sistem grafis pada Java FX mendukung tampilan 2-D dan 3-D, selain itu sistem grafis ini menyediakan \textit{software rendering} untuk mendukung akselerasi \textit{rendering} dari \textit{hardware}. Berukut ini merupakan dua \textit{graphic accelerated pipeline} yang ada pada Java FX platform :\cite{javafx}
+\begin{enumerate}
+	\item \textbf{Prism} yang bekerja pada proses render. Prism dapat bekerja pada kedua sisi baik \textit{hardware} maupun \textit{software} rendering termasuk 3-D rendering. Prism juga bertanggung jawab untuk proses \textit{rasterization}(mengubah vektor menjadi pixel atau dot) dan rendering pada Java FX.
+	\item \textbf{Quantum Toolkit} merupakan perpaduan Prism dan Windowing Toolkit yang bekerja di lapisan teratas pada Java FX untuk mengatur \textit{threading rule} yang berhubungan dengan rendering dan \textit{event handling}. 
+\end{enumerate}
 
+\subsection{Glass Windowing Toolkit}
+Tugas pada lapisan ini adalah membantu \textit{service} pada sistem operasi, seperti mengatur windows, waktu , dan \textit{surface}. Glass Toolkit juga bertanggung jawab atas pengaturan \textit{event queue}.\cite{javafx}
+
+\subsection{Media dan Gambar}
+Fungsi -fungsi media pada Java FX tersedia pada \textbf{javafx.scene.media} API. Java FX mensuport baik visual maupun audio. Beberapa format yang disuport seperti MP3, AIFF, WAV pada file audio dan format FLV pada video. Ada tiga komponen yang berperan pada Java FX media, yaitu :\cite{javafx} 
+\begin{itemize}
+	\item \textit{Media object} merepresentasikan sebuah file media.
+	\item \textit{Media Player} memutar sebuah file media.
+	\item \textit{Media View} merupakan sebuah node yang menampilkan media tersebut.
+\end{itemize}
+
+\subsection{Komponen Web}
+Mesin Web pada Java FX merupakan bagian dari Java FX UI control yang berbasis Webkit, dimana mesin web ini dapat menampilkan sebuah website dan melakukan browsing melalui APInya. Berikut ini fitur Java FX yang dapat di implementasikan pada program java :\cite{javafx}
+\begin{enumerate}
+	\item Render konten HTML dari local atau remote URL.
+	\item Mendukung history dan menyediakan navigasi Back dan Forward.
+	\item \textit{Reload Content}.
+	\item Edit konten HTML.
+	\item Mengeksekusi perintah JavaScript.
+	\item \textit{Handle event}.
+\end{enumerate} 
+
+Komponen dari browser tersebut terbagi kedalam ke kelas-kelas berikut :\cite{javafx}
+\begin{enumerate}
+	\item \textbf{WebEngine} : menyediakan kemampuan dasar dari halaman web.
+	\item \textbf{WebView} : merangkum sebuah \textit{WebEngine object}, Menggabungkan konten HTML kedalam layar aplikasi, dan mendukung \textit{field} dan \textit{method} untuk menerapkan efek dan transformasi berupa ekstensi maupun sebuah kelas Node.
+\end{enumerate}
+
+\subsection{CSS}
+JavaFX Cascading Style Sheet (CSS) mendukung kemampuan untuk mengkustom styling pada antarmuka sebuah aplikasi Java FX tanpa merubah \textit{source code} aplikasi tersebut.\cite{javafx}   
+
+\subsection{UI Control}
+Java FX UI Control dalam Java FX API dibangun menggunakan node pada scene graph. Java FX UI Control dapat mengambil keuntungan dari fitur yang diberikan platform Java FX dan bersifat \textit{portable} pada platform yang berbeda.\cite{javafx}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{Gambar/JavaFXuicontrols}
+	\caption{Contoh Java FX UI Control}
+	\end{figure}
+	
+	pada gambar \textbf{2.2} menunjukan UI Control yang sementara didukung oleh Java FX. Java UI control baru seperti TitlePane atau Accordion sebelumnya telah diperkenalkan pada Java FX SDK. UI control tersebut terdapat pada \textbf{javafx.scene.control} \textit{package}.\cite{javafx}
+ 
+\subsection{Layout}
+ \textit{Layout container} atau panel digunakan untuk pengatruan UI control secara dinamis dan fleksibel dalam scene graph pada aplikasi Java FX. Java FX Layout API mempunyai kelas-kelas yang dapat mengotomatiskan tata letak model sebagai berikut:\cite{javafx}
+\begin{enumerate}
+	\item \textbf{BorderPane} merupakan kelas yang mengatur bagian atas, bawah, kiri, kanan layout.
+	\item \textbf{Hbox} merupakan kelas yang mengatur konten node secara horizontal dalam satu baris.
+	\item  \textbf{Vbox} merupakan kelas yang mengatur konten node secara vertikal dalam satu baris.
+	\item \textbf{StackPane} adalah kelas yang menempatkan \textit{back-to-front} konten node pada suatu \textit{stack}.
+	\item \textbf{GridPane} adalah kelas yang memungkinkan developer untuk mebuat sebuah grid baris dan kolom secara flexible untuk memetakan konten node.
+	\item \textbf{FlowPane} adalah kelas yang mengatur alur konten node baik horizontal maupun vertical, \textit{wrapping} pada batas lebar konten (untuk horizontal) atau tinggi konten (untuk vertical).
+	\item \textbf{AnchorPane} adalah kelas yang memungkinkan developer untuk membuat \textit{anchor} node pada layout atas, bawah, sisi kiri atau ditengah layout. 
+\end{enumerate}
+
+\subsection{Transformasi 2-D dan 3-D}
+Setiap node pada Java FX scene graph dapat ditransformasikan dalam koordinat x-y melalui kelas-kelas \textit{javafx.scene.transform} berikut ini:\cite{javafx}
+\begin{enumerate}
+	\item \textbf{translate} - Memindahkan sebuah node dari satu posisi ke posisi lain bersama koordinat x,y,z yang relatif terhadap posisi awalnya.
+	\item \textbf{scale} - Meresize sebuah node untuk membesar atau mengecil sesuai koordinat x,y,z tergantung skala faktornya.
+	\item \textbf{rotate} - Merotasi sebuah node sesuai titik porosnya.
+	\item \textbf{affine} - Melakukan pemetaan linear dari koordinat 2-D / 3-D ke koordinat 2-D / 3-D lainnya dengan menjaga lurus dan paralel sifat garis tersebut. Kelas ini digunakan bersamaan dengan kelas lainya dibanding penggunaan langsung.
+\end{enumerate}
+
+\subsection{Efek Visual}
+Pengembahan antarmuka pada Java FX scene graph melibatkan \textit{Visual Effect} atau efek untuk meningkatkan tamoilan aplikasi Java FX secara \textit{real time}. Beberapa efek visual yang terdapat pada Java FX termasuk penggunaannya ada pada kelas - kelas berikut ini :\cite{javafx}
+\begin{enumerate}
+	\item \textbf{Drop Shadow} - Kelas ini merender sebuah bayangan dari konten yang ada dibelakang konten dimana efek tersebut diterapkan.
+	\item \textbf{Reflection} - Kelas ini merender versi pantulan dari konten dibawah konten sebenarnya.
+	\item \textbf{Lighting} - Kelas ini mensimulasikan sumber cahaya yang didapat dari konten dan memberikannya pada sebuah objek flat agar lebih nyata memberikan efek tiga dimensi.
+\end{enumerate}
+
+\subsection{Komponen Java FX}
+Berikut ini merupakan kumpulan \textit{package} yang ada dalam Java FX\cite{javafx3}.\\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Package dan Deskripsi} \\ \hline \hline
+		1 & \textbf{javafx.application}\\
+			&	Menyediakan kelas-kelas dalam siklus aplikasi.\\ \hline
+		2 & \textbf{javafx.event}\\
+			&	Memberikan kerangka dasar untuk FX event, dari mulai pengiriman hingga handling.\\ \hline	
+		3 & \textbf{javafx.fxml}\\
+			&	Berisi kelas untuk membuat hirarki objek dari markup.\\ \hline
+		4 & \textbf{javafx.scene}\\
+			&	Memberikan set basis kelas - kelas untuk Java FX Scene Graph API .\\ \hline
+		5 & \textbf{javafx.scene.control}\\
+			&	Java FX \textit{User Interface Control }(kontrol UI atau kontrol saja) dimana node khusus dalam Java FX Scenegraph yang dapak digunakan untuk banuak konteks aplikasi yang berbeda.\\ \hline
+		6 & \textbf{javafx.scene.input}\\
+			&	Menyediakan set kelas - kelas untuk mouse dan keyboard \textit{input event handling}.\\ \hline
+		7 & \textbf{javafx.scene.input}\\
+			&	Menyediakan set kelas - kelas untuk mouse dan keyboard \textit{input event handling}.\\ \hline
+		8 & \textbf{javafx.scene.layout}\\
+			&	Menyediakan kelas - kelas untuk mendukung UI layout.\\ \hline
+		9 & \textbf{javafx.scene.text}\\
+			&	Menyediakan set kelas - kelas untuk font dan teks node yang dapat di render.\\ \hline
+		10 & \textbf{javafx.util}\\
+			&	Berisi berbagai utilitas dan kelas pembantu.\\ \hline
+		11 & \textbf{javafx.util.converter}\\
+			&	\textit{Package} ini untuk konversi String pada Java FX.\\ \hline
+	\end{tabular}
