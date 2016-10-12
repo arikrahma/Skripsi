@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.ResourceBundle;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,6 +28,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
 /**
  *
  * @author Ariq
@@ -62,14 +64,15 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void handleConvertAction(ActionEvent event) throws FileNotFoundException, IOException
     {
-       
-       jadwalList = FXCollections.observableArrayList(
-                new ScheduleClass(LocalDate.now(ZoneId.systemDefault()), LocalTime.now(ZoneId.systemDefault()),"Kalkulus 2", "Mariskha", "9120")
-        );
+       ExcelConverter con = new ExcelConverter(selectedFile);
+//       jadwalList = FXCollections.observableArrayList(
+//                new ScheduleClass(LocalDate.now(ZoneId.systemDefault()), LocalTime.now(ZoneId.systemDefault()),LocalTime.now(ZoneId.systemDefault()),"Kalkulus 2", "Mariskha", "9120")
+//        );
+        jadwalList = FXCollections.observableArrayList(con.Converter());
         
         jadwalTable.setItems(jadwalList);
         jadwalTable.getColumns().get(0).setCellValueFactory(new PropertyValueFactory("Date"));
-        jadwalTable.getColumns().get(1).setCellValueFactory(new PropertyValueFactory("Time"));
+        jadwalTable.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("timeAwal"));
         jadwalTable.getColumns().get(2).setCellValueFactory(new PropertyValueFactory("Subject"));
         jadwalTable.getColumns().get(3).setCellValueFactory(new PropertyValueFactory("Dosen"));
         jadwalTable.getColumns().get(4).setCellValueFactory(new PropertyValueFactory("Location"));

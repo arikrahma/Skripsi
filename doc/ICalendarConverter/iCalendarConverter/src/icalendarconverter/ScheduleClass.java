@@ -16,15 +16,17 @@ import javafx.beans.property.StringProperty;
  */
 public class ScheduleClass {
     private LocalDate date;
-    private LocalTime time;
+    private LocalTime timeAwal;
+    private LocalTime timeAkhir;
     private StringProperty subject;
     private StringProperty dosen;
     private StringProperty location;
     
-    public ScheduleClass (LocalDate date, LocalTime time, String subject, String dosen, String location)
+    public ScheduleClass (LocalDate date, LocalTime timeAwal,LocalTime timeAkhir, String subject, String dosen, String location)
     {
         this.date = date;
-        this.time = time;
+        this.timeAwal = timeAwal;
+        this.timeAkhir = timeAkhir;
         this.subject = new SimpleStringProperty(subject);
         this.dosen = new SimpleStringProperty(dosen);
         this.location = new SimpleStringProperty(location);
@@ -47,15 +49,29 @@ public class ScheduleClass {
     /**
      * @return the time
      */
-    public LocalTime getTime() {
-        return time;
+    public LocalTime getTimeAwal() {
+        return timeAwal;
     }
 
     /**
      * @param time the time to set
      */
-    public void setTime(LocalTime time) {
-        this.time = time;
+    public void setTimeAwal(LocalTime timeAwal) {
+        this.timeAwal = timeAwal;
+    }
+    
+     /**
+     * @return the time
+     */
+    public LocalTime getTimeAkhir() {
+        return timeAkhir;
+    }
+
+    /**
+     * @param time the time to set
+     */
+    public void setTimeAkhir(LocalTime timeAkhir) {
+        this.timeAkhir = timeAkhir;
     }
 
     /**
