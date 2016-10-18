@@ -22,8 +22,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -58,110 +60,149 @@ public class ExcelConverter {
         XSSFWorkbook wb = new XSSFWorkbook(fis);
         XSSFSheet sheet = wb.getSheetAt(0);
         Iterator < Row > rowIterator = sheet.iterator();   
-        Cell cell;
+     
         CellRangeAddress add;
         int colNoIdx = 0;
         ArrayList<String> dosen = new ArrayList<>();
         ArrayList<Integer> idxDosen = new ArrayList<>();
         ArrayList<Integer> colDosen = new ArrayList<>();
-        int location = 0;
+        ArrayList<String> location = new ArrayList<>();
         int idxNumber = 0;
-        int locationIdx = 0;
-        while (rowIterator.hasNext()) 
-        {
-            row = (XSSFRow) rowIterator.next();
-            Iterator < Cell > cellIterator = row.cellIterator();
-            if (row.getRowNum() > 53) {
-                break;
+        ArrayList<Integer> locationIdx = new ArrayList<>();
+        outerloop :
+        for (int j = 0; j < sheet.getLastRowNum(); j++) {
+            row = sheet.getRow(j);
+            for (int f = 0; f < row.getLastCellNum(); f++) {
+                Cell cell = row.getCell(j);
+                if (cell.getStringCellValue().contains("No.")) {
+                    rowNoIdx = j;
+                    colNoIdx = cell.getColumnIndex();
+                   
+                    break outerloop;
+                }
             }
-            for (int j = 0; j < sheet.getLastRowNum(); j++) {
-                for (int f = 0; f < row.getPhysicalNumberOfCells(); f++) {
-                    if (String.valueOf(sheet.getRow(j).getCell(f)).contentEquals("No.")) {
-                        rowNoIdx = sheet.getRow(j).getCell(f).getRowIndex();
-                        colNoIdx = sheet.getRow(j).getCell(f).getColumnIndex();
-                        break;
+        }
+        System.out.println("Sampe sini");
+        outerloop2 :
+        for (int i = 0; i < sheet.getLastRowNum(); i++) {
+           row = sheet.getRow(i);
+           outerloop :
+            for (int j = 0; j < row.getLastCellNum(); j++) {
+                Cell cell = row.getCell(j);
+                FormulaEvaluator evaluator = wb.getCreationHelper().createFormulaEvaluator();
+                if (cell.getColumnIndex() == colNoIdx && i > rowNoIdx+3 && evaluator.evaluate(cell).getCellType() != Cell.CELL_TYPE_NUMERIC) {
+                    i = sheet.getLastRowNum();
+                    break outerloop2;
+                }
+                
+                  if (cell.getRowIndex() > rowNoIdx+1 && cell.getColumnIndex() == (colNoIdx + 1)) {
+                    String delims = "[,. ]";
+                    String[] sumary = cell.getStringCellValue().split(delims);
+                    for (int l = 0; l < sumary.length; l++) {
+                        if (sumary[l].equalsIgnoreCase("Mrt")) {
+                            sumary[l] = "3";
+                        }
                     }
-                }
 
-            }
-   
-            while (cellIterator.hasNext()) {
-                cell = cellIterator.next();
-                for (int i = 0; i < sheet.getNumMergedRegions(); i++) {
-                    add = sheet.getMergedRegion(i);
-                    int col = add.getFirstColumn();
-                    int rowNum = add.getFirstRow();
-                    if (rowNum != 0 && rowNum == cell.getRowIndex() && col == cell.getColumnIndex()) {
-                        String b = String.valueOf(sheet.getRow(rowNum).getCell(col));
-                        dosen.add(b);
-                        idxDosen.add(sheet.getRow(rowNum).getCell(col).getRowIndex());
-                        colDosen.add(sheet.getRow(rowNum).getCell(col).getColumnIndex());
+                    lc = LocalDate.of(Integer.parseInt(sumary[5]), Integer.parseInt(sumary[3]), Integer.parseInt(sumary[2]));
+
+//                        sp = new SimpleDateFormat("EEEE, MMMM d, yyyy");
+//                        String b = sumary[3] + "/" + sumary[2] + "/" + sumary[5];
+//                        date = new Date(b);
+                    //System.out.println(sp.format(date));
+                }
+                if (cell.getRowIndex() > rowNoIdx+1 && cell.getColumnIndex() == (colNoIdx + 2)) {
+                    if (cell.getStringCellValue().equalsIgnoreCase("LIBUR"))
+                    {   
+                        i = i+1;
+                        break outerloop;
                     }
-                }
-                switch (cell.getCellType()) {
-                    case Cell.CELL_TYPE_FORMULA:
-                        switch (cell.getCachedFormulaResultType()) {
-                            case Cell.CELL_TYPE_NUMERIC:
-                                idxNumber = (int) cell.getNumericCellValue();
-                                break;
-                        }
-                        break;
-                    case Cell.CELL_TYPE_NUMERIC:
-                        if (cell.getColumnIndex() > colNoIdx+5)
-                        {
-                            location = (int)cell.getNumericCellValue();
-                            locationIdx = cell.getColumnIndex();
-                            
-                        }
-                        break;
-                    case Cell.CELL_TYPE_STRING:
-                        if (!cell.getStringCellValue().equalsIgnoreCase("LIBUR"))
-                        {
-                            if (cell.getRowIndex() > 1 && cell.getColumnIndex() == (colNoIdx+1))
-                            {   
-                                String delims = "[,. ]";
-                                String[] sumary = cell.getStringCellValue().split(delims);
-                                for (int i = 0; i < sumary.length; i++) {
-                                    if (sumary[i].equalsIgnoreCase("Mrt")) {
-                                        sumary[i] = "3";
-                                    }
-                                }
-
-                                lc = LocalDate.of(Integer.parseInt(sumary[5]), Integer.parseInt(sumary[3]), Integer.parseInt(sumary[2]));
-
-                                sp = new SimpleDateFormat("EEEE, MMMM d, yyyy");
-                                String b = sumary[3] + "/" + sumary[2] + "/" + sumary[5];
-                                date = new Date(b);
-                                //System.out.println(sp.format(date));
-                            }
-                            if (cell.getRowIndex() > 1 && cell.getColumnIndex() == (colNoIdx+2))
-                            {
-                                String delimsJam = "[-]";
-                                String[] arrJam = cell.getStringCellValue().split(delimsJam);
-                                for (int i = 0; i < arrJam.length; i++) {
-                                    arrJam[i] = arrJam[i].replace('.', ':');
-                                }
-                                indoFormatter = DateTimeFormatter
-                                        .ofLocalizedTime(FormatStyle.SHORT)
-                                        .withLocale(Locale.getDefault());
-                                lt = LocalTime.parse(arrJam[0], indoFormatter);
-                                //System.out.println(lt+"-"+lt.plusHours(2));                         
-                            }
-                            if (cell.getRowIndex() > 1 && cell.getColumnIndex() == (colNoIdx+5))
-                                subject = cell.getStringCellValue();
-                        }
-                        break;
-                }
-                for (int i = 0; i < colDosen.size(); i++) {
-                    System.out.println("locationidx:"+locationIdx);
-                    System.out.println("colDosen:"+colDosen.get(i));
-                    if (locationIdx == colDosen.get(i))
+                    else
                     {
-                        System.out.println(locationIdx);
-                        scheduleList.add(new ScheduleClass(lc, lt, lt.plusHours(2), subject, dosen.get(i), String.valueOf(location)));
+                        String delimsJam = "[-]";
+                        String[] arrJam = cell.getStringCellValue().split(delimsJam);
+                        for (int k = 0; k < arrJam.length; k++) {
+                            arrJam[k] = arrJam[k].replace('.', ':');
+                        }
+//                                indoFormatter = DateTimeFormatter
+//                                        .ofLocalizedTime(FormatStyle.SHORT)
+//                                        .withLocale(Locale.getDefault());
+                        lt = LocalTime.parse(arrJam[0]);
+                        //System.out.println(lt+"-"+lt.plusHours(2)); 
                     }
+                                        
                 }
+                if (cell.getRowIndex() > rowNoIdx+1 && cell.getColumnIndex() == (colNoIdx + 5)) {
+                    subject = cell.getStringCellValue();
+                }
+   
+                if (cell.getRowIndex() > rowNoIdx && cell.getColumnIndex() >= colNoIdx+6 && cell.getColumnIndex() < row.getLastCellNum()) {
+                    if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+//                        location.add(String.valueOf((int)cell.getNumericCellValue()));
+//                        locationIdx.add(cell.getColumnIndex());
+                    }
+                    if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+                        if (cell.getStringCellValue().contains(":")) {
+                            String[] splt = cell.getStringCellValue().split(":");
+                            String[] splt2 = splt[1].split(",");
+                            for (int l = 0; l < splt2.length; l++) {
+                                dosen.add(splt2[l]);
+                                location.add("Lab");
+                                //System.out.println(splt2[l] + "= lab");
+                            }
+                        } else  {
+                            CellReference cr = new CellReference(1, cell.getColumnIndex());
+                            Row row2 = sheet.getRow(cr.getRow());
+                            Cell c = row2.getCell(cr.getCol());
+                            if (!cell.getStringCellValue().isEmpty())
+                            {
+                                dosen.add(cell.getStringCellValue());
+                                location.add(String.valueOf((int) c.getNumericCellValue()));
+                            }
+                            
+                            //System.out.print(cell.getStringCellValue() + " Ruang =" + (int) c.getNumericCellValue() + " ");
+                        }
+
+                    }
+                    if (cell.getCellType() == Cell.CELL_TYPE_BLANK && cell.getRowIndex() > 2) {
+                        CellReference cr = new CellReference(cell.getRowIndex() - 1, cell.getColumnIndex());
+                        Row row2 = sheet.getRow(cr.getRow());
+                        Cell c = row2.getCell(cr.getCol());
+                        CellReference cr2 = new CellReference(1, cell.getColumnIndex());
+                        Row row3 = sheet.getRow(cr2.getRow());
+                        Cell c2 = row3.getCell(cr2.getCol());
+                        if (c.getStringCellValue().contains(":")) {
+                            String[] splt = c.getStringCellValue().split(":");
+                            String[] splt2 = splt[1].split(",");
+                            for (int l = 0; l < splt2.length; l++) {
+                                dosen.add(splt2[l]);
+                                location.add("Lab");
+                                //System.out.println(splt2[l] + "= lab");
+                            }
+                        } else {
+                            if (!c.getStringCellValue().isEmpty())
+                            {
+                                dosen.add(c.getStringCellValue());
+                                location.add(String.valueOf((int) c2.getNumericCellValue()));
+                            }
+                           
+                            //System.out.print(c.getStringCellValue() + " Ruang = " + (int) c2.getNumericCellValue() + " ");
+                        }
+                    }
+                    //scheduleList.add(new ScheduleClass(lc, lt, lt, subject, dosen.get(j), location.get(j)));
+                } 
+//                System.out.println("lc = "+lc+",lt = "+lt+",subject = "+subject+",dosen = "+dosen.get(i)+",location = "+location.get(i));
+//                scheduleList.add(new ScheduleClass(lc, lt, lt, subject, dosen.get(j), location.get(j)));
+
             }
+
+            for (int j = 0; j < dosen.size(); j++) {
+                //System.out.println("lc = "+lc+",lt = "+lt+",subject = "+subject+",dosen = "+dosen.get(j)+",location = "+location.get(j));
+                scheduleList.add(new ScheduleClass(lc, lt, lt.plusHours(2), subject, dosen.get(j), location.get(j)));
+            }
+            dosen.clear();
+            location.clear();
+           
         }
         return scheduleList;
         

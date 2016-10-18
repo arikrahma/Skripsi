@@ -73,9 +73,10 @@ public class FXMLDocumentController implements Initializable {
         jadwalTable.setItems(jadwalList);
         jadwalTable.getColumns().get(0).setCellValueFactory(new PropertyValueFactory("Date"));
         jadwalTable.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("timeAwal"));
-        jadwalTable.getColumns().get(2).setCellValueFactory(new PropertyValueFactory("Subject"));
-        jadwalTable.getColumns().get(3).setCellValueFactory(new PropertyValueFactory("Dosen"));
-        jadwalTable.getColumns().get(4).setCellValueFactory(new PropertyValueFactory("Location"));
+         jadwalTable.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("timeAkhir"));
+        jadwalTable.getColumns().get(3).setCellValueFactory(new PropertyValueFactory("Subject"));
+        jadwalTable.getColumns().get(4).setCellValueFactory(new PropertyValueFactory("Dosen"));
+        jadwalTable.getColumns().get(5).setCellValueFactory(new PropertyValueFactory("Location"));
  
         
     }
