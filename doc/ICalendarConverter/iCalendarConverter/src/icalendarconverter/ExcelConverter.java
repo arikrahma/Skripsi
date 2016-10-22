@@ -36,7 +36,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  */
 public class ExcelConverter {
     
-    private File pathFile;
+   private File pathFile;
     static XSSFRow row;
     private int rowNoIdx;
     private LocalDate lc;
@@ -45,12 +45,13 @@ public class ExcelConverter {
     private DateTimeFormatter indoFormatter;
     private LocalTime lt;
     private String subject;
+    
     public ExcelConverter(File pathFile)
     {
         this.pathFile = pathFile;
         this.rowNoIdx = 0;
     }
-    
+
     public List<ScheduleClass> Converter() throws FileNotFoundException, IOException
     {
         ArrayList<ScheduleClass> scheduleList = new ArrayList<>();
@@ -146,7 +147,7 @@ public class ExcelConverter {
                             String[] splt = cell.getStringCellValue().split(":");
                             String[] splt2 = splt[1].split(",");
                             for (int l = 0; l < splt2.length; l++) {
-                                dosen.add(splt2[l]);
+                                dosen.add(splt2[l].trim());
                                 location.add("Lab");
                                 //System.out.println(splt2[l] + "= lab");
                             }
@@ -156,8 +157,8 @@ public class ExcelConverter {
                             Cell c = row2.getCell(cr.getCol());
                             if (!cell.getStringCellValue().isEmpty())
                             {
-                                dosen.add(cell.getStringCellValue());
-                                location.add(String.valueOf((int) c.getNumericCellValue()));
+                                dosen.add(cell.getStringCellValue().trim());
+                                location.add(String.valueOf((int) c.getNumericCellValue()).trim());
                             }
                             
                             //System.out.print(cell.getStringCellValue() + " Ruang =" + (int) c.getNumericCellValue() + " ");
@@ -175,15 +176,15 @@ public class ExcelConverter {
                             String[] splt = c.getStringCellValue().split(":");
                             String[] splt2 = splt[1].split(",");
                             for (int l = 0; l < splt2.length; l++) {
-                                dosen.add(splt2[l]);
-                                location.add("Lab");
+                                dosen.add("".trim());
+                                location.add("");
                                 //System.out.println(splt2[l] + "= lab");
                             }
                         } else {
                             if (!c.getStringCellValue().isEmpty())
                             {
-                                dosen.add(c.getStringCellValue());
-                                location.add(String.valueOf((int) c2.getNumericCellValue()));
+                               dosen.add("");
+                               location.add("");
                             }
                            
                             //System.out.print(c.getStringCellValue() + " Ruang = " + (int) c2.getNumericCellValue() + " ");
@@ -204,7 +205,66 @@ public class ExcelConverter {
             location.clear();
            
         }
-        return scheduleList;
         
+        return Mergering(scheduleList);
+    }
+    
+    public List<ScheduleClass> Mergering (ArrayList<ScheduleClass> scheduleList)
+    {
+        int count = 0;
+        System.out.println("Size "+scheduleList.size());
+        ArrayList<ScheduleClass> scheduleListSmt = new ArrayList<>();
+        
+        for (int i = 0; i < scheduleList.size(); i++) {
+
+           
+           if (scheduleList.get(i).getDosen().isEmpty() )
+           {
+               scheduleListSmt.add(scheduleList.get(i));
+//               scheduleList.remove(i);
+           }
+           
+//                System.out.println("dosen= "+scheduleList.get(i).getDosen()+", Location = "+scheduleList.get(i).getLocation()+", subject = "+scheduleList.get(i).getSubject()+", ltA = "+
+//                   scheduleList.get(i).getTimeAwal()+", ltB = "+scheduleList.get(i).getTimeAkhir()+", lc = "+scheduleList.get(i).getDate());
+            
+        }
+        for (int i = 0; i < scheduleListSmt.size() ; i++) {
+//            if ( scheduleList.get(i).getDate().equals(scheduleListSmt.get(i).getDate()) &&
+//                    scheduleList.get(i).getTimeAwal().equals(scheduleListSmt.get(i).getTimeAwal()) 
+//                    && scheduleList.get(i).getTimeAkhir().equals(scheduleListSmt.get(i).getTimeAkhir())
+//                    )
+//            {
+//                //scheduleList.get(i).setSubject(scheduleList.get(i).getSubject()+", "+scheduleListSmt.get(i).getSubject());
+//                scheduleList.set(i, new ScheduleClass(scheduleList.get(i).getDate()
+//                        , scheduleList.get(i).getTimeAwal(), scheduleList.get(i).getTimeAkhir()
+//                        , scheduleList.get(i).getSubject()+", "+scheduleListSmt.get(i).getSubject(),
+//                        scheduleList.get(i).getDosen(), scheduleList.get(i).getLocation()));
+//            }
+              for (int j = 0; j < scheduleList.size(); j++) {
+                  if(scheduleList.get(j).equals(scheduleListSmt.get(i)))
+                  {
+                      scheduleList.remove(j);
+                  }
+              }
+              
+//            System.out.println("dosen= "+scheduleListSmt.get(i).getDosen()+", Location = "+scheduleListSmt.get(i).getLocation()+", subject = "+scheduleListSmt.get(i).getSubject()+", ltA = "+
+//                    scheduleListSmt.get(i).getTimeAwal()+", ltB = "+scheduleListSmt.get(i).getTimeAkhir()+", lc = "+scheduleListSmt.get(i).getDate());
+//               System.out.println("dosen= "+scheduleList.get(i).getDosen()+", Location = "+scheduleList.get(i).getLocation()+", subject = "+scheduleList.get(i).getSubject()+", ltA = "+
+//                    scheduleList.get(i).getTimeAwal()+", ltB = "+scheduleList.get(i).getTimeAkhir()+", lc = "+scheduleList.get(i).getDate());
+        }
+        for (int i = 0; i < scheduleList.size(); i++) {
+            outerloop :
+            for (int j = 0; j < scheduleListSmt.size(); j++) {
+                if (scheduleList.get(i).getDate().equals(scheduleListSmt.get(j).getDate())
+                        && scheduleList.get(i).getTimeAwal().equals(scheduleListSmt.get(j).getTimeAwal()))
+                {
+                    String ss = scheduleList.get(i).getSubject();
+                    scheduleList.get(i).setSubject(ss+", "+scheduleListSmt.get(j).getSubject());
+                    j = j + 1;
+                    break outerloop;
+                }
+            }
+        }
+        return scheduleList;
     }
 }

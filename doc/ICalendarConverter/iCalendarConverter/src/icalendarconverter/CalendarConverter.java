@@ -11,4 +11,10 @@ package icalendarconverter;
  */
 public class CalendarConverter {
     
+    public CalendarConverter()
+    {
+        
+    }
+    
+    
 }
