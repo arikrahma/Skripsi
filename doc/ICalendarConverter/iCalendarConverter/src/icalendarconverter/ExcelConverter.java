@@ -83,7 +83,7 @@ public class ExcelConverter {
                 }
             }
         }
-        System.out.println("Sampe sini");
+        //System.out.println("Sampe sini");
         outerloop2 :
         for (int i = 0; i < sheet.getLastRowNum(); i++) {
            row = sheet.getRow(i);
@@ -212,7 +212,7 @@ public class ExcelConverter {
     public List<ScheduleClass> Mergering (ArrayList<ScheduleClass> scheduleList)
     {
         int count = 0;
-        System.out.println("Size "+scheduleList.size());
+       // System.out.println("Size "+scheduleList.size());
         ArrayList<ScheduleClass> scheduleListSmt = new ArrayList<>();
         
         for (int i = 0; i < scheduleList.size(); i++) {

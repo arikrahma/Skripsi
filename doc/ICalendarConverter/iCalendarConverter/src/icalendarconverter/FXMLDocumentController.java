@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.SocketException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -20,6 +21,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
@@ -28,7 +31,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.util.Callback;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import net.fortuna.ical4j.model.ValidationException;
 /**
  *
  * @author Ariq
@@ -40,6 +48,8 @@ public class FXMLDocumentController implements Initializable {
     private Label label;
     @FXML
     private TextField txtFile;
+    @FXML
+    public Button bt;
     @FXML
     public TableView<ScheduleClass> jadwalTable;
     
@@ -84,6 +94,29 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
       
-    }    
+    } 
+    
+    public void convertClicked() throws FileNotFoundException, IOException, SocketException, ValidationException
+    {
+        int selected = jadwalTable.getSelectionModel().getSelectedIndex();
+        //System.out.println("selected = "+selected);
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save iCal File");
+
+        File save = fileChooser.showSaveDialog(null);
+        int idx = jadwalTable.getSelectionModel().getSelectedIndex();
+        //System.out.println("idx = "+idx);
+        String path;
+        if(save != null)
+        {
+            path = save.getAbsolutePath();
+            CalendarConverter cc = new CalendarConverter();
+            cc.calConverter(path , jadwalList.get(idx));
+        }
+        else
+        {
+            System.out.println("File corrupted !");
+        }
+    }
     
 }

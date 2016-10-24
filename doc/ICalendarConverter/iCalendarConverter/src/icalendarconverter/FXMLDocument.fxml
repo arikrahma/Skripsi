@@ -37,6 +37,7 @@
                   <TableColumn prefWidth="74.0" text="Location" />
               </columns>
             </TableView>
+            <Button layoutX="475.0" layoutY="224.0" mnemonicParsing="false" onAction="#convertClicked" prefHeight="25.0" prefWidth="116.0" text="Convert iCal" />
          </children>
       </Pane>
     </children>
