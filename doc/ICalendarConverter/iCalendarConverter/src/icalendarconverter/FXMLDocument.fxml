@@ -22,7 +22,7 @@
       <Pane layoutX="44.0" layoutY="80.0" prefHeight="40.0" prefWidth="503.0">
          <children>
             <Label layoutX="14.0" layoutY="12.0" text="Filter By Owner : " />
-            <TextField id="txtFilter" layoutX="111.0" layoutY="8.0" prefHeight="25.0" prefWidth="195.0" />
+            <TextField id="txtFilter" fx:id="filterTxt" layoutX="111.0" layoutY="8.0" onInputMethodTextChanged="#filterConvertion" onKeyTyped="#filterConvertion" prefHeight="25.0" prefWidth="195.0" />
          </children>
       </Pane>
       <Pane layoutX="60.0" layoutY="128.0" prefHeight="257.0" prefWidth="621.0">
