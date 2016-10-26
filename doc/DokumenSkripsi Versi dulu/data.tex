@@ -1,48 +1,43 @@
 %_____________________________________________________________________________
 %=============================================================================
-% data.tex v8 (02-10-2016) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
+% data.tex v5 (10-11-2013) \ldots dibuat oleh Lionov - Informatika FTIS UNPAR
 %
-% Perubahan pada versi 8 (02-10-2016)
-%	- Perubahan keterangan pada spacing: Otomatis spasi 1 untuk buku skripsi 
-%	  final dan 1.5 untuk buku sidang
-%	- Penggunaan kantlipsum
+% Perubahan pada versi 5 (10-11-2013)
+% - Perbaikan pada memasukkan bab : tidak perlu menuliskan apapun untuk 
+%	memasukkan seluruh bab (bagian V)
+% - Perbaikan pada memasukkan lampiran : tidak perlu menuliskan apapun untuk
+%	memasukkan seluruh lampiran atau -1 jika tidak memasukkan apapun
+%
+% Perubahan pada versi sebelumnya
+%	versi 4 (21-10-2012)
+%	- Data dosen dipindah ke dosen.tex agar jika ada perubahan/update data dosen
+%   mahasiswa tidak perlu mengubah data.tex
+%	- Perubahan pada keterangan dosen	
+% 	versi 3 (06-08-2012)
+% 	- Perubahan pada beberapa keterangan 
+% 	versi 2 (09-07-2012):
+% 	- Menambahkan data judul dalam bahasa inggris
+% 	- Membuat bagian khusus untuk judul (bagian VIII)
+% 	- Perbaikan pada gelar dosen
 %_____________________________________________________________________________
 %=============================================================================
-
-%=============================================================================
-% 								PETUNJUK
+% 								BAGIAN -
 %=============================================================================
 % Ini adalah file data (data.tex)
 % Masukkan ke dalam file ini, data-data yang diperlukan oleh template ini
 % Cara memasukkan data dijelaskan di setiap bagian
 % Data yang WAJIB dan HARUS diisi dengan baik dan benar adalah SELURUHNYA !!
-% Hilangkan tanda << dan >> jika anda menemukannya
 %=============================================================================
-
-%_____________________________________________________________________________
-%=============================================================================
-% 								BAGIAN 0
-%=============================================================================
-% PERHATIAN!! PERHATIAN!! Bagian ini hanya ada untuk sementara saja
-% Jika "DAFTAR ISI" tidak bisa berada di bagian tengah halaman, isi dengan XXX
-% jika sudah benar posisinya, biarkan kosong (i.e. \daftarIsiError{ })
-%=============================================================================
-\daftarIsiError{ }
-%=============================================================================
-
 %_____________________________________________________________________________
 %=============================================================================
 % 								BAGIAN I
 %=============================================================================
 % Tambahkan package2 lain yang anda butuhkan di sini
 %=============================================================================
-\usepackage{booktabs} 
+\usepackage{booktabs}
 \usepackage[table]{xcolor}
 \usepackage{longtable}
-\usepackage{amssymb}
-\usepackage{todo}
-\usepackage{verbatim} 		%multilne comment
-\usepackage{pgfplots}
+\usepackage{amsmath}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -54,7 +49,8 @@
 % - kosong : tidak ada halaman depan sama sekali (untuk dokumen yang 
 %            dipergunakan pada proses bimbingan)
 % - cover : cover saja tanpa daftar isi, gambar dan tabel
-% - sidang : cover, daftar isi, gambar, tabel 
+% - sidang : cover, daftar isi, gambar, tabel (IT: UTS-UAS Seminar 
+%			 dan UTS TA)
 % - sidang_akhir : mode sidang + abstrak + abstract
 % - final : seluruh halaman awal dokumen (untuk cetak final)
 % Jika tidak ingin mencetak daftar tabel/gambar (misalkan karena tidak ada 
@@ -63,8 +59,8 @@
 % \mode{kosong}
 % \mode{cover}
 % \mode{sidang}
-% \mode{sidang_akhir}
-\mode{final} 
+\mode{sidang_akhir}
+%\mode{final} 
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -76,7 +72,7 @@
 % - yes: setiap baris diberi nomor
 % - no : baris tidak diberi nomor, otomatis untuk mode final
 %=============================================================================
-\linenumber{no}
+\linenumber{yes}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -84,16 +80,15 @@
 % 								BAGIAN IV
 %=============================================================================
 % Linespacing: jarak antara baris 
-% - single	: wajib (dan otomatis jika ingin mencetak buku skripsi, opsi yang 
-%			  disediakan untuk bimbingan, jika pembimbing tidak keberatan 
-%			  (untuk menghemat kertas)
-% - onehalf	: default dan wajib (dan otomatis) jika ingin mencetak dokumen
-%             untuk sidang.
-% - double 	: jarak yang lebih lebar lagi, jika pembimbing berniat memberi 
-%             catatan yg banyak di antara baris (dianjurkan untuk bimbingan)
+% - single: opsi yang disediakan untuk bimbingan, jika pembimbing tidak
+%            keberatan (untuk menghemat kertas)
+% - onehalf: default dan wajib (dan otomatis) jika ingin mencetak dokumen
+%            final/untuk sidang.
+% - double : jarak yang lebih lebar lagi, jika pembimbing berniat memberi 
+%            catatan yg banyak di antara baris (dianjurkan untuk bimbingan)
 %=============================================================================
 \linespacing{single}
-%\linespacing{onehalf}
+% \linespacing{onehalf}
 %\linespacing{double}
 %=============================================================================
 
@@ -101,25 +96,10 @@
 %=============================================================================
 % 								BAGIAN V
 %=============================================================================
-% Tidak semua skripsi memuat gambar dan/atau tabel. Untuk skripsi yang seperti
-% itu, tidak diperlukan Daftar Gambar dan Daftar Tabel. Sayangnya hal ini 
-% sulit dilakukan secara manual karena membutuhkan kedisiplinan pengguna 
-% template.  
-% Jika tidak akan menampilkan Daftar Gambar/Tabel, isi dengan NO. Jika ingin
-% menampilkan, kosongkan parameter (i.e. \gambar{ }, \tabel{ })
-%=============================================================================
-\gambar{ }
-\tabel{ }
-%=============================================================================
-
-%_____________________________________________________________________________
-%=============================================================================
-% 								BAGIAN VI
-%=============================================================================
 % Bab yang akan dicetak: isi dengan angka 1,2,3 s.d 9, sehingga bisa digunakan
 % untuk mencetak hanya 1 atau beberapa bab saja
 % Jika lebih dari 1 bab, pisahkan dengan ',', bab akan dicetak terurut sesuai 
-% urutan bab (e.g. \bab{1,2,3}).
+% urutan bab.
 % Untuk mencetak seluruh bab, kosongkan parameter (i.e. \bab{ })  
 % Catatan: Jika ingin menambahkan bab ke-10 dan seterusnya, harus dilakukan 
 % secara manual
@@ -129,12 +109,12 @@
 
 %_____________________________________________________________________________
 %=============================================================================
-% 								BAGIAN VII
+% 								BAGIAN VI
 %=============================================================================
 % Lampiran yang akan dicetak: isi dengan huruf A,B,C s.d I, sehingga bisa 
 % digunakan untuk mencetak hanya 1 atau beberapa lampiran saja
 % Jika lebih dari 1 lampiran, pisahkan dengan ',', lampiran akan dicetak 
-% terurut sesuai urutan lampiran (e.g. \bab{A,B,C}).
+% terurut sesuai urutan lampiran
 % Jika tidak ingin mencetak lampiran apapun, isi dengan -1 (i.e. \lampiran{-1})
 % Untuk mencetak seluruh mapiran, kosongkan parameter (i.e. \lampiran{ })  
 % Catatan: Jika ingin menambahkan lampiran ke-J dan seterusnya, harus 
@@ -145,7 +125,7 @@
 
 %_____________________________________________________________________________
 %=============================================================================
-% 								BAGIAN VIII
+% 								BAGIAN VII
 %=============================================================================
 % Data diri dan skripsi/tugas akhir
 % - namanpm: Nama dan NPM anda, penggunaan huruf besar untuk nama harus benar
@@ -159,20 +139,19 @@
 %			  ujian akhir skripsi/tugas akhir
 % - pembimbing: isi dengan pembimbing anda, lihat daftar dosen di file dosen.tex
 %				jika pembimbing hanya 1, kosongkan parameter kedua 
-%				(e.g. \pembimbing{\JND}{  } ) , \JND adalah kode dosen
+%				(e.g. \pembimbing{\JND}{  } )
 % - penguji : isi dengan para penguji anda, lihat daftar dosen di file dosen.tex
-%				(e.g. \penguji{\JHD}{\JCD} ) , \JND dan \JCD adalah kode dosen
-% !!Lihat singkatan pembimbing dan penguji anda di file dosen.tex
+%				(e.g. \penguji{\JHD}{\JCD} )
 %=============================================================================
-\namanpm{Ariq Rahmaeri}{2011730066}	%hilangkan tanda << & >>
-\tanggal{<<tanggal>>}{<<bulan>>}{2016}			%hilangkan tanda << & >>
-\pembimbing{Pascal Alfadian}{<<pembimbing pendamping/2>>} %hilangkan tanda << & >>    
-\penguji{<<penguji 1>>}{<<penguji 2>>} 				%hilangkan tanda << & >>
+\namanpm{Ariq Rahmaeri}{2011730066}
+\tanggal{1}{7}{2015}
+\pembimbing{\PAS}{}     %Lihat singkatan pembimbing anda di file dosen.tex
+\penguji{\NIS}{\CEN} 		%Lihat singkatan penguji anda di file dosen.tex
 %=============================================================================
 
 %_____________________________________________________________________________
 %=============================================================================
-% 								BAGIAN IX
+% 								BAGIAN VIII
 %=============================================================================
 % Judul dan title : judul bhs indonesia dan inggris
 % - judulINA: judul dalam bahasa indonesia
@@ -181,13 +160,15 @@
 %			   bawahnya
 %			 - Gunakan \texorpdfstring{\\}{} untuk pindah ke baris baru
 %			 - Judul TIDAK ditulis dengan menggunakan huruf besar seluruhnya !!
-%			 - Gunakan perintah \texorpdfstring{\\}{} untuk baris baru
 %=============================================================================
+
 \judulINA{Konversi Jadwal Mengawas Ujian ke Format ICS dengan Apache POI, iCal4j, dan JavaFX}
+
 \judulENG{Convertion Overseen Exam Schedule to ICS Format with Apache POI, iCal4j, and JavaFX}
+
 %_____________________________________________________________________________
 %=============================================================================
-% 								BAGIAN X
+% 								BAGIAN IX
 %=============================================================================
 % Abstrak dan abstract : abstrak bhs indonesia dan inggris
 % - abstrakINA: abstrak bahasa indonesia
@@ -195,44 +176,50 @@
 % PERHATIAN: langsung mulai setelah '{' awal, jangan mulai menulis di baris 
 %			 bawahnya
 %=============================================================================
-\abstrakINA{Setiap tahun dosen FMIPA UNPAR menerima \textit{printout} jadwal mengawas ujian yang dibuat dengan excel. Walaupun datanya bersifat dijital, namun lebih baik jika data tersebut dibuat terstruktur sehingga dapat dibaca oleh mesin. Dari permalasahan tersebut maka dalam tugas akhir ini akan dibahas tentang pengembangan suatu program yang dapat membaca data excel tersebut dan merubahnya dalam format calendar dijital atau biasa disebut .ics, sehingga dosen dapat memasukan jadwal mengawas ujian kedalam gawai pribadinya. Program ini akan menggunakan tiga bahasa pemograman yaitu Apache POI, iCal4j, dan Java FX. Apache ROI bertugas membaca struktur data excel sehingga dapat dibaca oleh program, Java FX berfungsi sebagai \textit{interface} program, dan Ical4j bertugas mengkonversi data yang telah dibaca program kedalam format iCalendar atau .ics .}
-\abstrakENG{Every year lecture of FMIPA UNPAR get printout schedule of invigilation in excel format. Although, the excel data is digital data, but it`s better if the data is structured so can be read by machine. Based of the problem above, then this thesis will be discussing about developing program that can read invigilation schedule in excel format and converting the schedule to digital calendar format or commonly called .ics, so that lecture can import the schedule to their personal gadget. This software will be build based on three programming language, that is Apache POI, iCal4j, and Java FX. Apache POI will be handle reading input data so the data can be imported to software, Java FX is functionate as interface of the software, and iCal4j handles of converting previously read data to iCalendar format or .ics .} 
+
+\abstrakINA{Setiap tahun dosen FMIPA UNPAR menerima \textit{printout} jadwal mengawas ujian yang dibuat dengan excel. Walaupun datanya bersifat dijital, namun lebih baik jika data tersebut dibuat terstruktur sehingga dapat dibaca oleh mesin. Dari permalasahan tersebut maka dalam tugas akhir ini akan dibahas tentang pengembangan suatu program yang dapat membaca data excel tersebut dan merubahnya dalam format calendar dijital atau biasa disebut .ics, sehingga dosen dapat memasukan jadwal mengawas ujian kedalam gawai pribadinya. Program ini akan menggunakan tiga bahasa pemograman yaitu Apache POI, iCal4j, dan Java FX. Apache ROI bertugas membaca struktur data excel sehingga dapat dibaca oleh program, Java FX berfungsi sebagai \textit{interface} program, dan Ical4j bertugas mengkonversi data yang telah dibaca program kedalam format iCalendar atau .ics .         
+}
+
+\abstrakENG{ Every year lecture of FMIPA UNPAR get printout schedule of invigilation in excel format. Although, the excel data is digital data, but it`s better if the data is structured so can be read by machine. Based of the problem above, then this thesis will be discussing about developing program that can read invigilation schedule in excel format and converting the schedule to digital calendar format or commonly called .ics, so that lecture can import the schedule to their personal gadget. This software will be build based on three programming language, that is Apache POI, iCal4j, and Java FX. Apache POI will be handle reading input data so the data can be imported to software, Java FX is functionate as interface of the software, and iCal4j handles of converting previously read data to iCalendar format or .ics .               
+} 
+
 %=============================================================================
 
 %_____________________________________________________________________________
 %=============================================================================
-% 								BAGIAN XI
+% 								BAGIAN X
 %=============================================================================
 % Kata-kata kunci dan keywords : diletakkan di bawah abstrak (ina dan eng)
 % - kunciINA: kata-kata kunci dalam bahasa indonesia
 % - kunciENG: keywords in english
 %=============================================================================
 \kunciINA{Apache POI, iCal4j, Java FX}
+
 \kunciENG{Apache POI, iCal4j, Java FX}
+%=============================================================================
+
+%_____________________________________________________________________________
+%=============================================================================
+% 								BAGIAN XI
+%=============================================================================
+% Persembahan : kepada siapa anda mempersembahkan skripsi ini ...
+%=============================================================================
+\untuk{Dipersembahkan untuk diri sendiri dan keluarga }
 %=============================================================================
 
 %_____________________________________________________________________________
 %=============================================================================
 % 								BAGIAN XII
 %=============================================================================
-% Persembahan : kepada siapa anda mempersembahkan skripsi ini ...
+% Kata Pengantar: tempat anda menuliskan kata pengantar dan ucapan terima 
+% kasih kepada yang telah membantu anda bla bla bla ....  
 %=============================================================================
-\untuk{Keluarga dan kerabat}
+\prakata{\lipsum}
 %=============================================================================
 
 %_____________________________________________________________________________
 %=============================================================================
 % 								BAGIAN XIII
-%=============================================================================
-% Kata Pengantar: tempat anda menuliskan kata pengantar dan ucapan terima 
-% kasih kepada yang telah membantu anda bla bla bla ....  
-%=============================================================================
-\prakata{\kant[3-4]}
-%=============================================================================
-
-%_____________________________________________________________________________
-%=============================================================================
-% 								BAGIAN XIV
 %=============================================================================
 % Tambahkan hyphen (pemenggalan kata) yang anda butuhkan di sini 
 %=============================================================================
@@ -242,15 +229,5 @@
 \hyphenation{in-for-ma-ti-ka}
 %=============================================================================
 
-%_____________________________________________________________________________
-%=============================================================================
-% 								BAGIAN XV
-%=============================================================================
-% Tambahkan perintah yang anda buat sendiri di sini 
-%=============================================================================
-\newcommand{\vtemplateauthor}{lionov}
-\pgfplotsset{compat=newest}
-\usetikzlibrary{patterns}
-%=============================================================================
 
-% Copyright \textcopyright [Lionov] [09-10-2016]. All rights reserved
+%=============================================================================

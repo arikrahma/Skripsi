@@ -1,16 +1,13 @@
-%versi 2 (8-10-2016)
-\chapter{Landasan Teori}
-\label{chap:teori}
+\chapter{Dasar Teori}
+\label{chap:definition}
 Pada bab ini akan dijelsaskan mengenai konsep-konsep dasar pengukung PL, yaitu Java FX, Apache POI, iCal4j.
 
 \section{Apache POI}
-\label{sec:apache} 
 
 Apache POI pada hakikatnya merupakan \textit{library} untuk memanipulasi dan menciptakan sesuatu melalui Java API( \textit{application programming interface}) dengan memanipulasi berbagai format file berdasarkan \textit{Office Open XML standards}(OOXML) dan dokumen \textit{Microsoft OLE 2 Document Compound Format}(OLE2), Singkatnya dengan library ini memungkinkan untuk membaca dan menulis pada MS Excel menggunakan Java \cite{apachepoi}. \\
 
 
 \subsection{Komponen Apache POI}
-\label{subs:komponen} 
 Untuk membaca aplikasi MS Office Apache POI mempunyai modul berisi komponen java api untuk membaca dokumen dengan format OLE2 dan OOXML. Berikut ini komponen-komponen dalam Apache POI.\cite{apachepoi}  
 
 \begin{enumerate}
@@ -25,12 +22,10 @@ Untuk membaca aplikasi MS Office Apache POI mempunyai modul berisi komponen java
 HSSF dan XSSF memberikan cara untuk membuat, membaca, dan memodifikasi XLS spreadsheet. Pada sub bab ini akan di fokuskan untuk membahas HSSF dan XSSF sesuai kebutuhan untuk menganalisa file excel jadwal mengawas ujian yang dikeluarkan oleh TU FTIS.\cite{apachepoi}
 
 
-\subsection{Kelas Inti Apache POI}
-\label{subs:kelas_inti}  
+\subsection{Kelas Inti Apache POI} 
 Pada sub bab ini akan membahas sedikit intoduksi mengenai beberapa kelas dan method yang ada di Apache POI API yang merupakan bagian penting untuk bekerja dengan file excel mengunakan program Java.\cite{apachepoi2}
 
 \subsubsection{Workbook}
-\label{subs:workbook} 
 \textbf{org.apache.poi.ss.usermodel} \textit{package} merupakan \textit{super-interface} dari semua kelas yang berhubungan dengan pembuatan atau\textit{maintain} Excel workbook. Dua kelas yang mengimplementasikan \textit{interface} diatas sebagai berikut:\cite{apachepoi2}
 
 \begin{itemize}
@@ -40,16 +35,12 @@ Pada sub bab ini akan membahas sedikit intoduksi mengenai beberapa kelas dan met
 
 
 \subsubsection{HSSFWorkbook} 
-\label{subs:HSSFWorkbook} 
 HSSFWorkbook merupakan \textit{high-level class} dibawah \textbf{org.apache.hssf.usermodel} \textit{package}. HSSFWorkbook juga mengimplementasikan antarmuka workbook yang digunakan oleh file Excel dalam format .xls. Berikut ini list dari bebeberapa method dan constructor dalam kelas ini.\cite{apachepoi2}\\
 
-\noindent \textbf{Class Constructor}
+\noindent \textbf{Class Constructor}\\ \\
 
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas Konstruktor HSSFWorkbook}
-		\label{tab:konstrukHSSF}
-	\begin{tabular}{|c|p{12cm}|}			
+
+	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
 		1 & \textbf{HSSFWorkbook()}\\
@@ -67,7 +58,6 @@ HSSFWorkbook merupakan \textit{high-level class} dibawah \textbf{org.apache.hssf
 		7 & \textbf{HSSFWorkbook(POIFSFileSystem fs, boolean preserveNodes)}\\
 			&	Memberikan sebuah objek POIFSFileSystem dan membuat HSSFWorkbook baru untuk membacu sebuah workbook spesifik.\\ \hline 
 	\end{tabular}
-\end{table}
 
 Berikut ini penjelasan parameter yang sering dipakai pada constructor :
 \begin{itemize}
@@ -77,14 +67,9 @@ Berikut ini penjelasan parameter yang sering dipakai pada constructor :
 \end{itemize} 
 
 \subsubsection{XSSFWorkbook}
-\label{subs:XSSFWorkbook}
 Kelas ini merepresentasikan baik \textit{high} dan \textit{low} level format file excel. XSSFWorkbook merupakan kelas yang berada dalam \textit{package} \textbf{org.apache.xssf.usermodel} dan mengimplementasikan antarmuka workbook. Berikut ini list method dan constructor dalam kelas ini.\cite{apachepoi2}
 \\
-\noindent \textbf{Class Constructor}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas Konstruktor XSSFWorkbook}
-		\label{tab:konstrukXSSF}
+\noindent \textbf{Class Constructor}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
@@ -97,14 +82,9 @@ Kelas ini merepresentasikan baik \textit{high} dan \textit{low} level format fil
 		4 & \textbf{XSSFWorkbook(java.lang.String path)}\\
 			&	Membangun sebuah objek XSSFWorkbook dengan diberikan \textit{full path} dari sebuah file.\\ \hline
 	\end{tabular}
-\end{table}
+\\
+\noindent \textbf{Class Methods}\\ \\
 
-\noindent \textbf{Class Methods}
-
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas method XSSFWorkbook}
-		\label{tab:methodXSSF}
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -119,21 +99,15 @@ Kelas ini merepresentasikan baik \textit{high} dan \textit{low} level format fil
 		5 & \textbf{setPrintArea(int sheetIndex, int startColumn, int endColumn, int startRow,int endRow)}\\
 			&	Menentukan area print dari kertas yang diberikan dengan parameter yang spesifik.\\ \hline	
 	\end{tabular}
-	\end{table}
+	
 	
 \subsubsection{Sheet}
-\label{subs:Sheet}
 Sheet merupakan sebuah interface dibawah package org.apache.ss.usermodel dan sheet merupakan super-interface dari semua kelas yang menciptakan \textit{high} atau \textit{low level spreadsheet} dengan nama yang spesifik. Jenis yang paling umum dari spreadsheet adalah worksheet yang direpresentasikan sebagai sebuah \textit{grid} dari cell.\cite{apachepoi2}
 
 \subsubsection{HSSFSheet}
-\label{subs:HSSFSheet}
 HSSFSheet merupakan kelas dibawah \textit{package}\textbf{org.apache.poi.hssf.usermodel}. HSSFSheet dapat membuat excel spreadsheet dan memungkinkan untuk memformat style dari sheet dan data sheet.\cite{apachepoi2}
 \\
-\noindent \textbf{Class Constructor}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas Konstruktor HSSFSheet}
-		\label{tab:konstrukHSSFSheet}
+\noindent \textbf{Class Constructor}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
@@ -142,17 +116,11 @@ HSSFSheet merupakan kelas dibawah \textit{package}\textbf{org.apache.poi.hssf.us
 		2 & \textbf{HSSFSheet(HSSFWorkbook workbook, InternalSheet sheet)}\\
 			&	Membuat sebuah HSSFSheet yang mewakili objek sheet yang diberikan.\\ \hline
 	\end{tabular}
-\end{table}
 	
 \subsubsection{XSSFSheet}
-\label{subs:XSSFSheet}
 Kelas ini merupakan representasi dari \textit{high level} excel spreadsheet. Kelas ini berada dibawah package org.apache.poi.hssf.usermodel.\cite{apachepoi2}
 \\
-\noindent \textbf{Class Constructor}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas Konstruktor XSSFSheet}
-		\label{tab:konstrukXSSFSheet}
+\noindent \textbf{Class Constructor}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
@@ -161,12 +129,8 @@ Kelas ini merupakan representasi dari \textit{high level} excel spreadsheet. Kel
 		2 & \textbf{XSSFSheet(PackagePart part, PackageRelationship rel)}\\
 			&	Membuat sebuah XSSFSheet yang mewakili bagian package dan \textit{relationship}.\\ \hline
 	\end{tabular}
-\end{table}
-\noindent \textbf{Class Method}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas method XSSFSheet}
-		\label{tab:methodXSSFSheet}
+\\
+\noindent \textbf{Class Method}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
@@ -179,21 +143,14 @@ Kelas ini merupakan representasi dari \textit{high level} excel spreadsheet. Kel
 		4 & \textbf{addHyperlink(XSSFHyperlink hyperlink)}\\
 			&	Mendaftarkan sebuah hyperlink kedalam koleksi hyperlink yang ada di sheet.\\ \hline	
 	\end{tabular}
-\end{table}
 
 \subsubsection{Row}
-\label{subs:Row}
 Row merupakan interface berada dibawah \textit{package} \textbf{org.apache.poi.ss.usermodel}. Row ini digunakan untuk \textit{high-level representation} dari sebuah row pada sebuah spreadsheet. Row juga merupakan super-interface dari semua kelas yang mewakili row dalam POI \textit{Library}.\cite{apachepoi2}
 
 \subsubsection{XSSFRow}
-\label{subs:XSSFRow}
 XSSFRow merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel} dan mengimplementasi Row interface. Selain itu, kelas ini dapat membuat row dalam sebuah spreadsheet. List dibawah ini merupakan method dan constructors pada kelas ini.\cite{apachepoi2}
  \\ 
-\noindent \textbf{Class Method}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas method XSSFRow}
-		\label{tab:methodXSSFRow}
+\noindent \textbf{Class Method}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Deskripsi} \\ \hline \hline
@@ -202,25 +159,18 @@ XSSFRow merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.x
 		2 & \textbf{setHeight(short height)}\\
 			&	Mengatur tinggi dalam satuan short.\\ \hline
 	\end{tabular}
-\end{table}
 
 \subsubsection{Cell}
-\label{subs:Cell}
 Cell merupakan interface yang berada dibawah \textit{package} \textbf{org.apache.poi.ss.usermodel}. Cell merupakan sebuah super-interface dari semua kelas yang mewakili cell dalam baris sebuah spreadsheet.\\
 
 Cell dapat beruba berbagai atrubut seperti \textit{blank, numeric, date, error, } dll. Sebelum ditambahkan ke baris cell memiliki nomer tersendiri(dari mulai 0).\cite{tutpoint}
 
-\subsubsection{XSSFCell}
-\label{subs:XSSFCell}  
+\subsubsection{XSSFCell}  
 Kelas ini berada dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mewakili cell interface. XSSFCell adalah \textit{high-level representation} cell dalam row dari sebuah spreadsheet.\cite{tutpoint}
 
 \subsubsection{Ringkasan Tipe Cell}
-\label{subs:Ringkasan_Tipe_Cell}
-List dibawah ini adalah sebagian \textit{field} dari kelas XSSFCell beserta deskripsinya.
-\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan tipe cell}
-		\label{tab:ringkasan_tipe_cell}
+List dibawah ini adalah sebagian \textit{field} dari kelas XSSFCell beserta deskripsinya.\\
+
 	\begin{tabular}{|c|c|}
 		\hline
 		\textbf{Tipe Cell} & \textbf{Deskripsi} \\ \hline \hline
@@ -231,13 +181,9 @@ List dibawah ini adalah sebagian \textit{field} dari kelas XSSFCell beserta desk
 		CELL\_TYPE\_NUMERIC	&	Representasi dari data numerik dalam cell\\ \hline
 		CELL\_TYPE\_STRING	&	Representasi dari String(teks) dalam cell\\ \hline
 	\end{tabular}
-\end{table}
+	\\
 	
-\noindent \textbf{Class Method}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas method XSSFCell}
-		\label{tab:methodXSSFCell}
+\noindent \textbf{Class Method}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Deskripsi} \\ \hline \hline
@@ -256,20 +202,13 @@ List dibawah ini adalah sebagian \textit{field} dari kelas XSSFCell beserta desk
 		7 & \textbf{setHyperlink(Hyperlink hyperlink)}\\
 			&	Menambahkan sebuah hyperlink kedalam cell\\ \hline					
 	\end{tabular}
-\end{table}
 
 \subsubsection{XSSFCellStyle}
-\label{subs:XSSFCellStyle}
 XSSFCellStyle merupakan sebuah kelas yang berada dibawah \textit{package} \textbf{org.apache.poi.usermodel}. kelas ini memberikan infomarsi yang mungkin mengenai format konten pada suatu cell dari spreadsheet. Kelas ini juga memberikan opsi untuk merubah format tersebut. Kelas ini mewakili CellStyle interface.\cite{apachepoi2}
 
 \subsubsection{Ringkasan Cell Style}
-\label{subs:Ringkasan_Cell_Style}
 List dibawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle interface.\cite{tutpoint}\\
 
-\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan cell style}
-		\label{tab:ringkasan_cell_style}
 	\begin{tabular}{|c|c|}
 		\hline
 		\textbf{Nama Field} & \textbf{Deskripsi Field} \\ \hline \hline
@@ -289,13 +228,8 @@ List dibawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle i
 		VERTICAL\_JUSTIFY &	Posisi konten cell sejajar secara vertikal \\ \hline
 		VERTICAL\_TOP &	Posisi selaras keatas secara vertikal\\ \hline
 	\end{tabular}
-\end{table}
-
-\noindent \textbf{Class Constructor}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas konstruktor XSSFCellStyle}
-		\label{tab:konstrukXSSFCellStyle}
+\\
+\noindent \textbf{Class Constructor}\\ \\
 	\begin{tabular}{|c|p{15cm}|}
 		\hline
 		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
@@ -304,13 +238,8 @@ List dibawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle i
 		2 & \textbf{XSSFCellStyle(StylesTable stylesSource)}\\
 			&	Membuat cell Style kosong.\\ \hline 	
 	\end{tabular}
-\end{table}
-
-\noindent \textbf{Class Method}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas method XSSFCellStyle}
-		\label{tab:methodXSSFCellStyle}
+\\
+\noindent \textbf{Class Method}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -338,21 +267,14 @@ List dibawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle i
 		12 & \textbf{setVerticalAlignment(short align)}\\
 			 &	Menetapkan tipe posisi vertical pada cell\\ \hline		
 	\end{tabular}
-\end{table}
 
 \subsubsection{HSSFColor}
-\label{subs:HSSFColor}
 HSSFColor merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.hssf.util.package}. Kelas ini memberikan warna berbeda terhadap \textit{nested class}. Biasanya \textit{nested class} diwakili dengan menggunakan index masing-masing. Kelas ini mengimplementasikan Color interface.\cite{apachepoi2}
 
 	
 \subsubsection{Nested Class}
-\label{subs:Nested_Class}
 Semua \textit{nested class} dari kelas ini adalah static dan setiap kelas memiliki index masing-masing. Warna kelas ini digunakan pada format cell seperti konten cell, border, latar depan(\textit{foreground}), dan latar belakang(\textit{background}). List dibawah ini merupakan sebagian dari \textit{nested class}.\cite{apachepoi2}
 
-\begin{table}[H]
-		\centering
-		\caption{Tabel nested class HSSFColor}
-		\label{tab:nested_class_HSSFColor}
 \begin{tabular}{|c|c|}
 		\hline
 		\textbf{No} & \textbf{Nama Kelas(warna)} \\ \hline \hline
@@ -369,31 +291,20 @@ Semua \textit{nested class} dari kelas ini adalah static dan setiap kelas memili
 		11 &	HSSFColor.WHITE\\ \hline
 		12 &	HSSFColor.YELLOW\\ \hline
 	\end{tabular}
-	\end{table}
-	
+	\\
 	\noindent \textbf{Class Method}\\ \\
-	Hanya satu method dalam kelas ini yang penting dan digunakan untuk mendapat nilai indeks.
-	\begin{table}[H]
-		\centering
-		\caption{Tabel kelas method HSSFColor}
-		\label{tab:methodHSSFColor}
+	Hanya satu method dalam kelas ini yang penting dan digunakan untuk mendapat nilai indeks.\\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
 		1 & \textbf{getIndex()}\\
 			&	Method ini digunakan untuk mendapatkan nilai indeks dari sebuah \textit{nested class}.\\ \hline 
 	\end{tabular}
-\end{table}
-
+	
 \subsubsection{XSSFColor}
-\label{subs:XSSFColor}
 XSSFColor merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mewakili warnma pada spreadsheet. Kelas ini mengimplementasika interface warna. List dibawah ini merupakan beberapa method XSSFColor dan constructornya.\cite{apachepoi2}
 \\
-\noindent \textbf{Class Constructor}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas konstruktor XSSFColor}
-		\label{tab:KonstrukXSSFColor}
+\noindent \textbf{Class Constructor}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
@@ -404,13 +315,8 @@ XSSFColor merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi
 		3 & \textbf{XSSFColor(java.awt.Color clr))}\\
 			&	Membuat  \textit{instance} baru dari XSSFColor menggunakan kelas warna dari \textit{awt package}.\\ \hline 		
 	\end{tabular}
-\end{table}
-
-\noindent \textbf{Class Methods}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas method XSSFColor}
-		\label{tab:methodXSSFColor}
+\\ \\
+\noindent \textbf{Class Methods}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -419,30 +325,19 @@ XSSFColor merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi
 		2 & \textbf{setIndexed(int indexed)}\\
 			&	Mengatur nilai indeks ctColor sebagai sistem ctColor.\\ \hline
 	\end{tabular}
-\end{table}
 
 \subsubsection{XSSFFFont}
-\label{subs:XSSFFFont}
 XSSFFont merupakan kelas dibawah \textit{package} \textbf{org.aoache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{Font interface} dan oleh sebab itu kelas ini dapat menangani font berbeda pada sebuah workbook.\cite{tutpoint}
 \\
-\noindent \textbf{Class Constructor}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas konstruktor XSSFFont}
-		\label{tab:KonstrukXSSFFont}
+\noindent \textbf{Class Constructor}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
 		1 & \textbf{XSSFFont()}\\
 			&	Menciptakan \textit{instance} baru dari XSSFFont.\\ \hline
 	\end{tabular}
-\end{table}
-
-\noindent \textbf{Class Methods}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas method XSSFFont}
-		\label{tab:methodXSSFFont}
+\\ \\
+\noindent \textbf{Class Methods}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -459,18 +354,12 @@ XSSFFont merupakan kelas dibawah \textit{package} \textbf{org.aoache.poi.xssf.us
 		6 & \textbf{setItalic(boolean italic)}\\
 			&	Mengatur nilai boolean pada poperti 'italic'.\\ \hline					
 	\end{tabular}
-\end{table}
-
+	
 \subsubsection{XSSFHyperlink}
-\label{subs:XSSFHyperlink}
 XSSFHyperlink merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{Hyperlink interface}. Kelas ini digunakan untuk mengatur sebuah hyperlink pada konten cell dalam sebuah spreadsheet.\cite{apachepoi2}
 \\
 \noindent \textbf{Field}\\
-Field dalam kelas ini akan didefinisikan sebagai berikut. Field disini dalam arti tipe dari hyperlink yang dipakai.
-\begin{table}[H]
-		\centering
-		\caption{Tabel field XSSFHyperlink}
-		\label{tab:fieldXSSFHyperlink}
+Field dalam kelas ini akan didefinisikan sebagai berikut. Field disini dalam arti tipe dari hyperlink yang dipakai.\\
 \begin{tabular}{|c|c|}
 		\hline
 		\textbf{Field} & \textbf{Deskripsi} \\ \hline \hline
@@ -479,30 +368,19 @@ Field dalam kelas ini akan didefinisikan sebagai berikut. Field disini dalam art
 		LINK\_FILE & Digunakan untuk menghubungkan dengan file lain dalam berbagai format \\ \hline
 		LINK\_URL	&	Digunakan untuk menghubungkan dengan URL \textit{website}\\ \hline
 	\end{tabular}
-\end{table}
-
-	\noindent \textbf{Class Methods}
-	\begin{table}[H]
-		\centering
-		\caption{Tabel kelas method XSSFHyperlink}
-		\label{tab:methodXSSFHyperlink}
+	\\ \\
+	\noindent \textbf{Class Methods}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
 		1 & \textbf{setAddress(java.lang.String address)}\\
 			&	Alamat Hyperlink.\\ \hline
 	\end{tabular}
-\end{table}
 
 \subsubsection{XSSFCreationHelper}
-\label{subs:XSSFCreationHelper}
 XSSFCreationHelper merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{CreationHelper interface}. Kelas ini digunakan sebagai bentuk kelas pendukung untuk \textit{formula evaluation} dan penyusun hyperlink.\cite{apachepoi2}
 \\
-\noindent \textbf{Class Methods}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas method XSSFCreationHelper}
-		\label{tab:methodXSSFCreationHelper}
+\noindent \textbf{Class Methods}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -511,17 +389,11 @@ XSSFCreationHelper merupakan kelas dibawah \textit{package} \textbf{org.apache.p
 		2 & \textbf{createHyperlink(int type)}\\
 			&	Membuat sebuah XSSFHyperlink baru.\\ \hline
 	\end{tabular}
-\end{table}
 
 \subsubsection{XSSFPrintSetup}
-\label{subs:XSSFPrintSetup}
 XSSFPrintSetup merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{PrintSetup interface}. Kelas ini digunakan untuk mengatur ukuran cetak pada halaman, wilayah cetak, opsi, dan pengaturan.\cite{tutpoint}
 \\
-\noindent \textbf{Class Methods}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas method XSSFPrintSetup}
-		\label{tab:methodXSSFPrintSetup}
+\noindent \textbf{Class Methods}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -532,22 +404,15 @@ XSSFPrintSetup merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.x
 		3 & \textbf{setPaperSize(short size)}\\
 			&	Mengatur ukuran kertas.\\ \hline
 	\end{tabular}
-\end{table}
 	
 \section{iCal4j}
-\label{sec:iCal4j}
 iCal4j merupakan \textit{Java library} yang digunakan untuk membaca dan menulis data iCalendar yang didefinisikan dalam RFC2445. iCalendar standar menyediakan sebuah format data yang umumnya digunakan untuk menyimpan informasi tentang spesifikasi kalender seperti acara, pertemuan, \textit{to-do list}, dll. Semua \textit{tool} kalender yang populer, seperti Lotus Notes, Outlook, Google Calendar, Apple iCal mensupport standar iCalendar.\cite{ical2}
 \\ \\
 Sebagai pengurai kalender dan \textit{object model}, iCal4j memudahkan untuk memodifikasi data kalender yang sudah ada atau membuat model data baru. Validasi juga diperlukan untuk memastikan data terjaga baik dan konsisten dengan spesifikasi yang diperlukan.\cite{ical2}
 
 
 \subsection{Komponen iCal4j}
-\label{subs:Komponen_iCal4j}
-Berikut ini merupakan kumpulan \textit{package} yang ada dalam iCal4j.\cite{ical}
-\begin{table}[H]
-		\centering
-		\caption{Tabel komponen iCal4j}
-		\label{tab:komponeniCal4j}
+Berikut ini merupakan kumpulan \textit{package} yang ada dalam iCal4j.\cite{ical}\\
 \begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Package dan Deskripsi} \\ \hline \hline
@@ -569,19 +434,13 @@ Berikut ini merupakan kumpulan \textit{package} yang ada dalam iCal4j.\cite{ical
 		8 & \textbf{net.fortuna.ical4j.util}\\
 			&	Berisikan tipe utilitas yang mendukung fungsi dari iCal4j.\\ \hline							
 	\end{tabular}
-\end{table}
 
 \subsection{Kelas Inti dari iCal4j}
-\label{subs:Kelas_inti_iCal4j}
 Pada bagian ini \textit{package} yang ditulis di sub bab sebelumnya akan dijelaskan lebih dalam apa kegunaannya.\cite{ical}
 
 \subsection{net.fortuna.ical4j.data}
-\label{subs:net.fortuna.ical4j.data}
-\noindent \textbf{Ringkasan Interface}
-\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan interface net.fortuna.ical4j.data}
-		\label{tab:net.fortuna.ical4j.data}
+
+\noindent \textbf{Ringkasan Interface}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -590,13 +449,8 @@ Pada bagian ini \textit{package} yang ditulis di sub bab sebelumnya akan dijelas
 		2 & \textbf{ContentHandler}\\
 			&	Pelaksana yang menyediakan fungsi yang berlaku selama parsing aliran data dari iCalendar(misalnya membangun model objek).\\ \hline
 	\end{tabular}
-\end{table}
- 
-	\noindent \textbf{Ringkasan Kelas}
-	\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan kelas net.fortuna.ical4j.data}
-		\label{tab:kelas_net.fortuna.ical4j.data}
+	\\ 
+	\noindent \textbf{Ringkasan Kelas}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -622,29 +476,18 @@ Pada bagian ini \textit{package} yang ditulis di sub bab sebelumnya akan dijelas
 		10 & \textbf{UnfoldingReader}\\
 			&	Fungsi membaca bagian iCalendar yang wajib dibaca.\\ \hline
 	\end{tabular}
-\end{table}
 	
 \subsection{net.fortuna.ical4j.filter}
-\label{subs:net.fortuna.ical4j.filter}
-\noindent \textbf{Ringkasan Interface}\cite{ical}
-\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan interface net.fortuna.ical4j.filter}
-		\label{tab:net.fortuna.ical4j.filter}
+
+\noindent \textbf{Ringkasan Interface}\cite{ical}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
 		1 & \textbf{Rule}\\
 			&	Pelaksana yang menentukan apakah suatu objek tertentu diklasifikasikan sebagai pasangannya dapat dijadikan sebagai filter lampiran.\\ \hline
 	\end{tabular}
-\end{table}
-
-	\noindent \textbf{Ringkasan Kelas}\cite{ical}
-	
-	\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan kelas net.fortuna.ical4j.filter}
-		\label{tab:kelas_net.fortuna.ical4j.filter}
+	\\ \\
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -658,15 +501,10 @@ Pada bagian ini \textit{package} yang ditulis di sub bab sebelumnya akan dijelas
 }\\
 			&	Sebuah aturan yang mencocokan komponen terjadi atau tidak dalam jangka waktu yang ditentukan.\\ \hline
 	\end{tabular}
-\end{table}
 	
 \subsection{net.fortuna.ical4j.model}
-\label{subs:net.fortuna.ical4j.model}
-\noindent \textbf{Ringkasan Interface}\cite{ical}
-\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan interface net.fortuna.ical4j.model}
-		\label{tab:net.fortuna.ical4j.model}
+
+\noindent \textbf{Ringkasan Interface}\cite{ical}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -679,13 +517,8 @@ Pada bagian ini \textit{package} yang ditulis di sub bab sebelumnya akan dijelas
 		6 & \textbf{TimeZoneRegistry}\\
 			&	Menyediakan daftar definisi wilayah yang berlaku untuk digunakan objek iCalendar.\\ \hline
 	\end{tabular}
-\end{table}
-
-	\noindent \textbf{Ringkasan Kelas}\cite{ical}
-	\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan kelas net.fortuna.ical4j.model}
-		\label{tab:kelas_net.fortuna.ical4j.model}
+	\\ \\
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -717,15 +550,10 @@ Pada bagian ini \textit{package} yang ditulis di sub bab sebelumnya akan dijelas
 		14 & \textbf{WeekDay}\\
 			&	Mendefinisikan hari dalam seminggu dengan diimbangi terkait dengan kejadian bulanan atau tahunan.\\ \hline	
 	\end{tabular}
-\end{table}
 	
 \subsection{net.fortuna.ical4j.model.component}
-\label{subs:net.fortuna.ical4j.model.component}
-	\noindent \textbf{Ringkasan Kelas}\cite{ical}
-	\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan kelas net.fortuna.ical4j.model.component}
-		\label{tab:kelas_net.fortuna.ical4j.model.component}
+
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -760,15 +588,10 @@ VToDo}\\
 VVenue}\\
 			&	Mendefinisikan komponen VVenue pada iCalendar.\\ \hline	
 	\end{tabular}
-\end{table}
 	
 \subsection{net.fortuna.ical4j.model.parameter}
-\label{subs:net.fortuna.ical4j.model.parameter}
-	\noindent \textbf{Ringkasan Kelas}\cite{ical}
-	\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan kelas net.fortuna.ical4j.model.parameter}
-		\label{tab:kelas_net.fortuna.ical4j.model.parameter}
+
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -828,15 +651,10 @@ VTimeZone}\\
 		27 & \textbf{Related}\\
 			&	Mendefinisikan penambahan parameter.\\ \hline
 	\end{tabular}
-\end{table}
 
 \subsection{net.fortuna.ical4j.model.property}
-\label{subs:net.fortuna.ical4j.model.property}
-	\noindent \textbf{Ringkasan Kelas}\cite{ical}
-	\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan kelas net.fortuna.ical4j.model.property}
-		\label{tab:net.fortuna.ical4j.model.property}
+
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
 	\begin{longtable}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -899,15 +717,10 @@ VTimeZone}\\
 		29 & \textbf{Version}\\
 			&	Mendefinisikan versi pada komponen properti.\\ \hline	
 	\end{longtable}
-\end{table}
 
 \subsection{net.fortuna.ical4j.model.transform}
-\label{subs:net.fortuna.ical4j.model.transform}
-	\noindent \textbf{Ringkasan Kelas}\cite{ical}
-	\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan kelas net.fortuna.ical4j.model.transform}
-		\label{tab:kelas_net.fortuna.ical4j.model.transform}
+
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -916,28 +729,30 @@ VTimeZone}\\
 		2 & \textbf{Transformer}\\
 			&	\textit{Base Class} untuk transforasi kalender. \\ \hline
 		\end{tabular}
-	\end{table}	
 	
+	\subsection{net.fortuna.ical4j.model.transform}
+
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{PublishTransformer}\\
+			&	Merubah kalendar untuk dipublikasikan.\\ \hline
+		2 & \textbf{Transformer}\\
+			&	\textit{Base Class} untuk transforasi kalender. \\ \hline
+		\end{tabular}
+		
 	\subsection{net.fortuna.ical4j.model.util}
-\label{subs:net.fortuna.ical4j.model.util}
-	\noindent \textbf{Ringkasan Interface}\cite{ical}
-	\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan interface net.fortuna.ical4j.model.util}
-		\label{tab:net.fortuna.ical4j.model.util}
+
+	\noindent \textbf{Ringkasan Interface}\cite{ical}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
 		1 & \textbf{HostInfo}\\
 			&	Menyediakan informasi host berupa\textit{paltform} yang independen.\\ \hline
 	\end{tabular}
-\end{table}
-
-	\noindent \textbf{Ringkasan Kelas}\cite{ical}
-	\begin{table}[H]
-		\centering
-		\caption{Tabel ringkasan kelas net.fortuna.ical4j.model.util}
-		\label{tab:kelas_net.fortuna.ical4j.model.util}
+	
+	\noindent \textbf{Ringkasan Kelas}\cite{ical}\\ \\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
@@ -952,10 +767,8 @@ VTimeZone}\\
 		5 & \textbf{TimeZones}\\
 			&	method utility yang relevan dengan zona waktu Java. \\ \hline
 		\end{tabular}
-\end{table}
 
 \section{Java FX}
-\label{sec:JavaFX}
 Java FX merupakan seperangkat grafis dan paket media yang memungkinkan pengembang untuk merancang, membuat, menguji, debug , dan  beroperasi secara konsisten di seluruh platform yang beragam\cite{javafx2}.\\
 Berikut ini ilustrasi arsitektur dari JavaFX.
 \begin{figure}[H]
@@ -980,7 +793,6 @@ Ilustrasi dari gambar \textbf{2.1} mendeskripsikan setiap komponen saling berhub
 \end{enumerate}
 
 \subsection{Scene Graph}
-\label{subs:Scene_Graph}
 \textit{Scene Graph} merupakan sebuah pohon hirarki dari sekumpulan node yang merepresentasikan elemen visual dari antarmuka suatu aplikasi. Sebuah elemen dari \textit{scene graph} dinamakan node. Setiap node mempunya ID, \textit{style class} dan \textit{boundling volume}. Node dalam \textit{scene graph} juga memiliki :\cite{javafx}
 \begin{enumerate}
 	\item \textit{Effect}, seperti blur dan shadow
@@ -998,7 +810,6 @@ Penggunaan \textbf{javafx.scene} API memungkinkan \textit{developer} untuk mengg
 \end{enumerate}
 
 \subsection{Java Public API untuk Fitur Java FX}
-\label{subs:API}
 Pada lapisan atas arsitektur Java FX pada gambar \textbf{2.1} API Java memberikan kebebasan dan fleksibilitas untuk membangun berbagai client dari sebuah aplikasi. Platform Java FX menggabungkan kemampuan terbaik yang dimiliki platform Java secara menyeluruh dan mendalam serta intuitif dengan memasukan fungsi media kedalamnya, sehingga tercipta lingkup konsep \textit{one-stop development}. Berikut contoh kegunaan Java API untuk fitur Java FX :\cite{javafx}
 \begin{enumerate}
 	\item Memungkinkan penggunaan fitur Java yang poweful seperti \textit{generics, annotations, multithreading}.
@@ -1009,7 +820,6 @@ Pada lapisan atas arsitektur Java FX pada gambar \textbf{2.1} API Java memberika
 \end{enumerate}
 
 \subsection{Graphic System}
-\label{subs:Graphic_System}
 \textit{Java FX Graphic System} pada gambar \textbf{2.1} merupakan implementasi dari Java FX \textit{scene graph layer}. Sistem grafis pada Java FX mendukung tampilan 2-D dan 3-D, selain itu sistem grafis ini menyediakan \textit{software rendering} untuk mendukung akselerasi \textit{rendering} dari \textit{hardware}. Berukut ini merupakan dua \textit{graphic accelerated pipeline} yang ada pada Java FX platform :\cite{javafx}
 \begin{enumerate}
 	\item \textbf{Prism} yang bekerja pada proses render. Prism dapat bekerja pada kedua sisi baik \textit{hardware} maupun \textit{software} rendering termasuk 3-D rendering. Prism juga bertanggung jawab untuk proses \textit{rasterization}(mengubah vektor menjadi pixel atau dot) dan rendering pada Java FX.
@@ -1017,11 +827,9 @@ Pada lapisan atas arsitektur Java FX pada gambar \textbf{2.1} API Java memberika
 \end{enumerate}
 
 \subsection{Glass Windowing Toolkit}
-\label{subs:Glass_Windowing_Toolkit}
 Tugas pada lapisan ini adalah membantu \textit{service} pada sistem operasi, seperti mengatur windows, waktu , dan \textit{surface}. Glass Toolkit juga bertanggung jawab atas pengaturan \textit{event queue}.\cite{javafx}
 
 \subsection{Media dan Gambar}
-\label{subs:Media_Gambar}
 Fungsi -fungsi media pada Java FX tersedia pada \textbf{javafx.scene.media} API. Java FX mensuport baik visual maupun audio. Beberapa format yang disuport seperti MP3, AIFF, WAV pada file audio dan format FLV pada video. Ada tiga komponen yang berperan pada Java FX media, yaitu :\cite{javafx} 
 \begin{itemize}
 	\item \textit{Media object} merepresentasikan sebuah file media.
@@ -1030,7 +838,6 @@ Fungsi -fungsi media pada Java FX tersedia pada \textbf{javafx.scene.media} API.
 \end{itemize}
 
 \subsection{Komponen Web}
-\label{subs:Komponen_Web}
 Mesin Web pada Java FX merupakan bagian dari Java FX UI control yang berbasis Webkit, dimana mesin web ini dapat menampilkan sebuah website dan melakukan browsing melalui APInya. Berikut ini fitur Java FX yang dapat di implementasikan pada program java :\cite{javafx}
 \begin{enumerate}
 	\item Render konten HTML dari local atau remote URL.
@@ -1048,11 +855,9 @@ Komponen dari browser tersebut terbagi kedalam ke kelas-kelas berikut :\cite{jav
 \end{enumerate}
 
 \subsection{CSS}
-\label{subs:CSS}
 JavaFX Cascading Style Sheet (CSS) mendukung kemampuan untuk mengkustom styling pada antarmuka sebuah aplikasi Java FX tanpa merubah \textit{source code} aplikasi tersebut.\cite{javafx}   
 
 \subsection{UI Control}
-\label{subs:UI_Control}
 Java FX UI Control dalam Java FX API dibangun menggunakan node pada scene graph. Java FX UI Control dapat mengambil keuntungan dari fitur yang diberikan platform Java FX dan bersifat \textit{portable} pada platform yang berbeda.\cite{javafx}
 
 \begin{figure}[H]
@@ -1064,7 +869,6 @@ Java FX UI Control dalam Java FX API dibangun menggunakan node pada scene graph.
 	pada gambar \textbf{2.2} menunjukan UI Control yang sementara didukung oleh Java FX. Java UI control baru seperti TitlePane atau Accordion sebelumnya telah diperkenalkan pada Java FX SDK. UI control tersebut terdapat pada \textbf{javafx.scene.control} \textit{package}.\cite{javafx}
  
 \subsection{Layout}
-\label{subs:Layout}
  \textit{Layout container} atau panel digunakan untuk pengatruan UI control secara dinamis dan fleksibel dalam scene graph pada aplikasi Java FX. Java FX Layout API mempunyai kelas-kelas yang dapat mengotomatiskan tata letak model sebagai berikut:\cite{javafx}
 \begin{enumerate}
 	\item \textbf{BorderPane} merupakan kelas yang mengatur bagian atas, bawah, kiri, kanan layout.
@@ -1077,7 +881,6 @@ Java FX UI Control dalam Java FX API dibangun menggunakan node pada scene graph.
 \end{enumerate}
 
 \subsection{Transformasi 2-D dan 3-D}
-\label{subs:Layout}
 Setiap node pada Java FX scene graph dapat ditransformasikan dalam koordinat x-y melalui kelas-kelas \textit{javafx.scene.transform} berikut ini:\cite{javafx}
 \begin{enumerate}
 	\item \textbf{translate} - Memindahkan sebuah node dari satu posisi ke posisi lain bersama koordinat x,y,z yang relatif terhadap posisi awalnya.
@@ -1087,7 +890,6 @@ Setiap node pada Java FX scene graph dapat ditransformasikan dalam koordinat x-y
 \end{enumerate}
 
 \subsection{Efek Visual}
-\label{subs:Efek_Visual}
 Pengembahan antarmuka pada Java FX scene graph melibatkan \textit{Visual Effect} atau efek untuk meningkatkan tamoilan aplikasi Java FX secara \textit{real time}. Beberapa efek visual yang terdapat pada Java FX termasuk penggunaannya ada pada kelas - kelas berikut ini :\cite{javafx}
 \begin{enumerate}
 	\item \textbf{Drop Shadow} - Kelas ini merender sebuah bayangan dari konten yang ada dibelakang konten dimana efek tersebut diterapkan.
@@ -1096,12 +898,7 @@ Pengembahan antarmuka pada Java FX scene graph melibatkan \textit{Visual Effect}
 \end{enumerate}
 
 \subsection{Komponen Java FX}
-\label{subs:Komponen_Java_FX}
-Berikut ini merupakan kumpulan \textit{package} yang ada dalam Java FX\cite{javafx3}.
-\begin{table}[H]
-		\centering
-		\caption{Tabel komponen Java FX}
-		\label{tab:komponen_javafx}
+Berikut ini merupakan kumpulan \textit{package} yang ada dalam Java FX\cite{javafx3}.\\
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Package dan Deskripsi} \\ \hline \hline
@@ -1117,40 +914,23 @@ Berikut ini merupakan kumpulan \textit{package} yang ada dalam Java FX\cite{java
 			&	Java FX \textit{User Interface Control }(kontrol UI atau kontrol saja) dimana node khusus dalam Java FX Scenegraph yang dapak digunakan untuk banuak konteks aplikasi yang berbeda.\\ \hline
 		6 & \textbf{javafx.scene.input}\\
 			&	Menyediakan set kelas - kelas untuk mouse dan keyboard \textit{input event handling}.\\ \hline
-		7 & \textbf{javafx.scene.layout}\\
+		7 & \textbf{javafx.scene.input}\\
+			&	Menyediakan set kelas - kelas untuk mouse dan keyboard \textit{input event handling}.\\ \hline
+		8 & \textbf{javafx.scene.layout}\\
 			&	Menyediakan kelas - kelas untuk mendukung UI layout.\\ \hline
-		8 & \textbf{javafx.scene.text}\\
+		9 & \textbf{javafx.scene.text}\\
 			&	Menyediakan set kelas - kelas untuk font dan teks node yang dapat di render.\\ \hline
-		9 & \textbf{javafx.util}\\
+		10 & \textbf{javafx.util}\\
 			&	Berisi berbagai utilitas dan kelas pembantu.\\ \hline
-		10 & \textbf{javafx.util.converter}\\
+		11 & \textbf{javafx.util.converter}\\
 			&	\textit{Package} ini untuk konversi String pada Java FX.\\ \hline
-		11 & \textbf{javafx.beans}\\
+		12 & \textbf{javafx.beans}\\
 			&	\textit{Package} ini berisi interface yang mendefinisikan bentuk umum dari \textit{observability}.\\ \hline
-		12 & \textbf{javafx.beans.binding}\\
+		13 & \textbf{javafx.beans.binding}\\
 			&	\textit{Package} ini untuk menjelaskan karakter dari \textit{Binding}.\\ \hline	
-		13 & \textbf{javafx.beans.value}\\
-			&	\textit{Package} ini berisi fundamental interface dari \textit{observableValue} dan \textit{WritebleValue} dan semua sub interface di dalamnya.\\ \hline
-		14 & \textbf{javafx.collections}\\
-				&	\textit{Package} ini berisi koleksi penting dari javaFX dan koleksi utilitas lainnya.\\ \hline						
+		14 & \textbf{javafx.beans.binding}\\
+			&	\textit{Package} ini mendefinisikan \textit{read-only} properti dan \textit{writable} properti, ditambah sejumlah implementasi.\\ \hline		
 	\end{tabular}
-\end{table}
 
-\subsection{javafx.beans.value}
-\textbf{ObservableValueBase}\\
-Dalam \textit{package} javafx.beans.value terdapat sebuah kelas yang sering dipakai yaitu kelas \textbf{ObservableValueBase}. Kelas ini berisi semua dukungan infrastruktur untuk nilai \textit{invalidation} dan notifikasi perubahan \textit{event} . Implementasi kelas ini menangani penambahan dan penghapusan \textit{listeners}. Berikut ini \textit{method} yang ada pada kelas ObserbavleValueBase.
-\begin{table}[H]
-		\centering
-		\caption{Tabel method observableValueBase}
-		\label{tab:method_observableValueBase}
-	\begin{tabular}{|c|p{12cm}|}
-		\hline
-		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
-		1 & \textbf{addListener(ChangeListener<? super T> listener)}\\
-			&	Menambahkan ChangeListener yang akan di notifikasi setiap kali perubahan nilai pada ObservableValue.\\ \hline
-		2 & \textbf{	addListener(InvalidationListener listener)}\\
-			&	Menambahkan InvalidationListener yang di notifikasi setiap yang diamati menjadi invalid.\\ \hline
-	\end{tabular}
-\end{table}
-
-
+\subsection{javafx.application}
+\textbf{}
