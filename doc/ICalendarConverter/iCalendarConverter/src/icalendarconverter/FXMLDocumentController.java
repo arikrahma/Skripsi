@@ -34,16 +34,16 @@ import net.fortuna.ical4j.model.ValidationException;
  * @author Ariq
  */
 public class FXMLDocumentController implements Initializable {
-     public File selectedFile;
+    private File selectedFile;
      
     @FXML
     private Label label;
     @FXML
     private TextField txtFile;
     @FXML
-    public TextField filterTxt;
+    private TextField filterTxt;
     @FXML
-    public TableView<ScheduleClass> jadwalTable;
+    private TableView<ScheduleClass> jadwalTable;
     
     ObservableList<ScheduleClass> jadwalList;
     ObservableList<ScheduleClass> filteredData = FXCollections.observableArrayList();

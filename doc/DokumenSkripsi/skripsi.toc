@@ -68,7 +68,11 @@
 \contentsline {subsection}{\numberline {3.3.1}Memasukan Excel Jadwal Mengawas Ujian}{32}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Sorting Nama Dosen}{32}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Unduh File iCal}{33}{subsection.3.3.3}
-\contentsline {chapter}{Daftar Referensi}{35}{chapter*.25}
+\contentsline {section}{\numberline {3.4}Pemodelan Kelas}{34}{section.3.4}
+\contentsline {subsubsection}{Pemodelan Rancangan Kelas}{34}{subsubsection*.25}
+\contentsline {chapter}{\numberline {4}Perancangan}{35}{chapter.4}
+\contentsline {section}{\numberline {4.1}Perancangan Diagram Kelas}{35}{section.4.1}
+\contentsline {chapter}{Daftar Referensi}{37}{chapter*.26}
 \renewcommand {\cftchappresnum }{\bf \scshape }
-\contentsline {chapter}{\numberline {A}Kode Program}{37}{appendix.A}
-\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{39}{appendix.B}
+\contentsline {chapter}{\numberline {A}Kode Program}{39}{appendix.A}
+\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{41}{appendix.B}

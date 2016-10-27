@@ -165,3 +165,34 @@ Tahap ini merupakan tahap terakhir, file excel yang telah dimasukan lalu dikonve
 	\item Setelah itu, pengguna mengklik tombol iCal pada jadwal dipilih.
 	\item Akan muncul Pop-Up untuk konfirmasi menyimpan, kemudian klik tombol simpan untuk menyimpan file iCal.
 \end{enumerate}
+
+\section{Pemodelan Kelas}
+Setelah excel mengawas ujian tersebut dijabarkan dan dianalisa, pada subbab ini akan di jelaskan mengenai pembagian fungsi
+kelas dalam rancangan program nanti.
+
+\subsubsection{Pemodelan Rancangan Kelas}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Gambar/pemodelan-kelas}
+	\caption{Gambar Pemodelan Kelas}
+	\label{fig:pemodelan-kelas}
+\end{figure}
+
+Berikut penjelasan fungsi dari kelas dari gambar ~\ref{fig:pemodelan-kelas} :	
+\begin{enumerate}
+	\item \textbf{ScheduleClass}\\
+	Kelas ini berfungsi menampung jadwal dosen yang telah dikonversi oleh kelas ExcelConverter.
+	\item \textbf{ExcelConverter}\\
+	Kelas ini bertugas membaca excel jadwal mengawas ujian sehingga dapat ditampilkan oleh program.
+	\item \textbf{FXMLDocumentController}\\
+	Kelas ini mempunyai peran untuk mendapatkan file \textit{input} yang dimasukan oleh user,  memberi perintah 
+	kepada kelas ExcelConverter untuk membaca \textit{input}, menampilkannya kembali ke program dan memberikan perintah
+	kepada CalendarConverter untuk mengkonversikannya dalam iCal.
+	\item \textbf{CalendarConverter}\\
+	Kelas ini berfungsi mengkonversi file yang telah dibaca kedala format .ics atau iCalendar.
+	\item \textbf{FXMLDocument}\\
+	Kelas ini berfungsi sebagai \textit{interface} pada program.
+	\item \textbf{iCalendarMainConverter}\\
+	kelas ini berfungsi sebagai \textit{main} pada program dimana kelas ini mengeksekusi dan menghubungkan seluruh elemen kelas 
+	pada program ini.
+\end{enumerate}
