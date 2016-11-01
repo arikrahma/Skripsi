@@ -12,8 +12,10 @@ berikut ini contoh file excel yang dikeluarkan oleh TU.
 	\caption{Jadwal mengawas ujian FTIS}
 	\label{fig:jadwalpng}
 	\end{figure}
-	
-Berikut penjelasan kolom-kolom yang ada di gambar~\ref{fig:jadwalpng}
+
+Berikut penjelasan kolom-kolom yang ada di gambar~\ref{fig:jadwalpng}.\\
+Excel ini dikeluarkan oleh tata usaha FTIS yang terdiri dari 12 kolom, berisi jadwal mengawas dari dosen FTIS.
+Tabel ~\ref{tab:penjelasan_kolom} menjelaskan rincian dari masing-masing kolom pada excel tersebut. 
 \begin{table}[H]
 		\centering
 		\caption{Tabel penjelasan kolom pada excel mengawas ujian}
@@ -30,7 +32,7 @@ Berikut penjelasan kolom-kolom yang ada di gambar~\ref{fig:jadwalpng}
 		4 & \textbf{Semester}\\
 			&	Kolom ini bertipe String dan mengerangkan semester dari mata kuliah yang di ujiankan . Terdapat simbol p yang menerangkan matakuliah pilihan\\ \hline
 		5 & \textbf{PS}\\
-			&	Bertipe string berisi jurusan yang ujian mata kuliah tersebut.\\ \hline
+			&	Bertipe string berisi jurusan yang mengikuti ujian mata kuliah tersebut.\\ \hline
 		6 & \textbf{Nama Mata Kuliah}\\
 			&	Kolom bertipe String dan berisi tentang mata kuliah yang di ujiankan.\\ \hline
 		7 & \textbf{Ruangan}\\
@@ -38,7 +40,18 @@ Berikut penjelasan kolom-kolom yang ada di gambar~\ref{fig:jadwalpng}
 	\end{tabular}	
 \end{table}
 
-Dari gambar ~\ref{fig:jadwalpng} terpilih beberapa kolom untuk dapat ditampilkan pada PL, Berikut analisanya :
+Dari rincian tabel ~\ref{tab:penjelasan_kolom} pada excel mengawas ujian dapat dianalisis bahwa : 
+\begin{enumerate}
+	\item Kolom \textbf{No.} dapat dijadikan acuan dalam membaca baris jadwal Excel pada program. Jika program menemukan kolom No pada excel maka simpan baris dan kolomnya pada variabel tertentu untuk menandakan bahwa baris selanjutnya merupakan data yang dibutuhkan oleh program. Selanjutnya nomer pada kolom No. juga dapat dijadikan penanda dalam program menentukan banyak data yang dibaca, jika baris selanjutnya dari kolom No. merupakan angka maka dipastikan baris tersebut memuat data jadwal mengawas.
+		\item Kolom \textbf{Hari, Tgl.} memuat tanggal dan hari ujian menggunakan koma (,) sebagai pemisah hari dan tanggal dan titik (.) sebagai penanda singkatan bulan. Untuk mendapatkan tanggal yang sesuai dengan format \textit{LocalDate} maka program harus melakukan \textit{parsing} memisahkan hari dengan tanggal, kemudian mengkonversi bulan menjadi sebuah angka sehingga sesuai dengan format \textit{LocalDate}, lalu disimpan pada sebuah variabel.
+		\item Kolom \textbf{Jam} menggunakan \textit{hyphen}(-) sebagai pemisah antara jam dimulainya ujian dan waktu ujian berakhir. Program dapat melakukan \textit{parsing} untuk memisahkan waktu tersebut menjadi dua varible, lalu dikonversi sesuai dengan ketentuan \textit{LocalTime}.
+		\item Kolom \textbf{Nama Mata kuliah} memuat nama mata kuliah yang diujiankan, karena satu dosen dapat mengawas 2 matakuliah sehingga pada variable program memuat dua matakuliah yang ditandai dengan \textit{merger} dua baris yang berisi nama dosen  yang mengawas ujian.
+		\item kolom \textbf{Ruangan} pada kolom ini terdapat 6 ruangan yang masing-masing kolom dan baris akan disimpan pada varible untuk dicocokan nanti pada saat membaca excel satu per satu untuk menetukan lokasi ujian tersebut berlangsung.
+		\item Jika program menemukan kata \textit{LIBUR} maka baris tersebut akan dilewat menuju baris selanjutnya.
+		\item Jika program menemukan kata \textit{Shift} atau \textit{Lab} maka otomatis program akan menginisiasi tempat berlangsungnya ujian adalah Lab Komputer.
+\end{enumerate}
+
+Dari analisis tersebut terpilih beberapa kolom untuk dapat ditampilkan pada PL, Berikut rinciannya :
 \begin{table}[H]
 		\centering
 		\caption{Tabel analisa kolom pada excel mengawas ujian}
@@ -190,8 +203,6 @@ Berikut penjelasan fungsi dari kelas dari gambar ~\ref{fig:pemodelan-kelas} :
 	kepada CalendarConverter untuk mengkonversikannya dalam iCal.
 	\item \textbf{CalendarConverter}\\
 	Kelas ini berfungsi mengkonversi file yang telah dibaca kedala format .ics atau iCalendar.
-	\item \textbf{FXMLDocument}\\
-	Kelas ini berfungsi sebagai \textit{interface} pada program.
 	\item \textbf{iCalendarMainConverter}\\
 	kelas ini berfungsi sebagai \textit{main} pada program dimana kelas ini mengeksekusi dan menghubungkan seluruh elemen kelas 
 	pada program ini.

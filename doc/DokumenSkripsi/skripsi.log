@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.6)  27 OCT 2016 08:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.6)  2 NOV 2016 05:43
 entering extended mode
 **skripsi.tex
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.tex
@@ -1076,6 +1076,12 @@ LaTeX Warning: Label `subs:Layout' multiply defined.
 
 LaTeX Warning: Label `fig:pemodelan-kelas' multiply defined.
 
+
+LaTeX Warning: Label `tab:excel_converter' multiply defined.
+
+
+LaTeX Warning: Label `fig:jadwalpng' multiply defined.
+
 ) (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab5.aux) (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab6.aux)
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab7.aux) (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab8.aux)
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab9.aux) (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampA.aux)
@@ -1174,7 +1180,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent fea
 ture set (\pgfplotsset{compat=1.14}).
 
-<Gambar/logo-unpar.png, id=226, 360.59718pt x 356.0803pt>
+<Gambar/logo-unpar.png, id=234, 360.59718pt x 356.0803pt>
 File: Gambar/logo-unpar.png Graphic file (type png)
  <use Gambar/logo-unpar.png>
 Package pdftex.def Info: Gambar/logo-unpar.png used on input line 474.
@@ -1252,12 +1258,14 @@ LaTeX Font Info:    Font shape `T1/lmr/bx/sc' in size <10.95> not available
  [18] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.lof)
 \tf@lof=\write7
 
-[19] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.lot)
+[19] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.lot [20])
 \tf@lot=\write8
- [20] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab1.tex
+ [21] [22
+
+]
+(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab1.tex
 Bab 1.
 [1
-
 
 
 
@@ -1344,13 +1352,13 @@ Underfull \vbox (badness 10000) detected at line 862
 Overfull \vbox (156.08849pt too high) has occurred while \output is active []
 
  [20]
-<Gambar/arsitekturJavaFX.png, id=646, 551.05875pt x 177.66376pt>
+<Gambar/arsitekturJavaFX.png, id=682, 551.05875pt x 177.66376pt>
 File: Gambar/arsitekturJavaFX.png Graphic file (type png)
  <use Gambar/arsitekturJavaFX.png>
 Package pdftex.def Info: Gambar/arsitekturJavaFX.png used on input line 963.
 (pdftex.def)             Requested size: 385.73848pt x 124.36377pt.
  [21] [22 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/arsitekturJavaFX.png (PNG copy)>] [23]
-<Gambar/JavaFXuicontrols.png, id=699, 371.13657pt x 373.395pt>
+<Gambar/JavaFXuicontrols.png, id=735, 371.13657pt x 373.395pt>
 File: Gambar/JavaFXuicontrols.png Graphic file (type png)
  <use Gambar/JavaFXuicontrols.png>
 Package pdftex.def Info: Gambar/JavaFXuicontrols.png used on input line 1060.
@@ -1358,7 +1366,7 @@ Package pdftex.def Info: Gambar/JavaFXuicontrols.png used on input line 1060.
  [24] [25 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/JavaFXuicontrols.png (PNG copy)>] [26] [27]) [28]
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab3.tex
 Bab 3.
-<Gambar/scJadwal.png, id=748, 788.19469pt x 398.23781pt>
+<Gambar/scJadwal.png, id=785, 788.19469pt x 398.23781pt>
 File: Gambar/scJadwal.png Graphic file (type png)
  <use Gambar/scJadwal.png>
 Package pdftex.def Info: Gambar/scJadwal.png used on input line 11.
@@ -1367,60 +1375,153 @@ Package pdftex.def Info: Gambar/scJadwal.png used on input line 11.
 
 
 
- <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/scJadwal.png>] [30] <Gambar/useCaseJadwal.png, id=762, 608.2725pt x 55
+ <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/scJadwal.png>] [30] <Gambar/useCaseJadwal.png, id=804, 608.2725pt x 55
 2.56438pt>
 File: Gambar/useCaseJadwal.png Graphic file (type png)
 
 <use Gambar/useCaseJadwal.png>
-Package pdftex.def Info: Gambar/useCaseJadwal.png used on input line 77.
+Package pdftex.def Info: Gambar/useCaseJadwal.png used on input line 90.
 (pdftex.def)             Requested size: 304.13551pt x 276.28151pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--84
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--97
 
  []
 
-[31 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/useCaseJadwal.png>]
-<Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png, id=774, 636.87938pt x 280.79906pt>
+[31] <Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png, id=816, 636.87938pt x 280.79906pt>
 File: Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png Graphic file (type png)
 
 <use Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png>
-Package pdftex.def Info: Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png used on input line 129.
+Package pdftex.def Info: Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png used on input line 142.
 (pdftex.def)             Requested size: 318.4389pt x 140.39919pt.
 
-<Gambar/Sorting-Nama-Dosen.png, id=775, 532.99126pt x 280.79906pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[32 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/useCaseJadwal.png>]
+<Gambar/Sorting-Nama-Dosen.png, id=824, 532.99126pt x 280.79906pt>
 File: Gambar/Sorting-Nama-Dosen.png Graphic file (type png)
  <use Gambar/Sorting-Nama-Dosen.png>
-Package pdftex.def Info: Gambar/Sorting-Nama-Dosen.png used on input line 144.
+Package pdftex.def Info: Gambar/Sorting-Nama-Dosen.png used on input line 157.
 (pdftex.def)             Requested size: 266.49498pt x 140.39919pt.
- [32 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png>]
-<Gambar/Unduh-File-iCal.png, id=786, 767.86874pt x 283.0575pt>
+
+<Gambar/Unduh-File-iCal.png, id=825, 767.86874pt x 283.0575pt>
 File: Gambar/Unduh-File-iCal.png Graphic file (type png)
  <use Gambar/Unduh-File-iCal.png>
-Package pdftex.def Info: Gambar/Unduh-File-iCal.png used on input line 158.
+Package pdftex.def Info: Gambar/Unduh-File-iCal.png used on input line 171.
 (pdftex.def)             Requested size: 383.93343pt x 141.5284pt.
- [33 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Sorting-Nama-Dosen.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/
-Gambar/Unduh-File-iCal.png>] <Gambar/pemodelan-kelas.png, id=800, 734.745pt x 411.03563pt>
+ [33 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png> <C:/Users/Ariq/Skripsi/
+doc/DokumenSkripsi/Gambar/Sorting-Nama-Dosen.png>] <Gambar/pemodelan-kelas.png, id=840, 734.745pt x 411.03563pt>
 File: Gambar/pemodelan-kelas.png Graphic file (type png)
- <use Gambar/pemodelan-kelas.png>
-Package pdftex.def Info: Gambar/pemodelan-kelas.png used on input line 176.
+
+<use Gambar/pemodelan-kelas.png>
+Package pdftex.def Info: Gambar/pemodelan-kelas.png used on input line 189.
 (pdftex.def)             Requested size: 367.3716pt x 205.5173pt.
-) [34 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/pemodelan-kelas.png>] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\B
-ab/bab4.tex
+ [34 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Unduh-File-iCal.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gam
+bar/pemodelan-kelas.png>]) [35] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab4.tex
+[36
+
+
+
+]
 Bab 4.
-<Gambar/kelas-diagram.png, id=814, 1081.03876pt x 864.22874pt>
+<Gambar/kelas-diagram.png, id=866, 1081.03876pt x 864.22874pt>
 File: Gambar/kelas-diagram.png Graphic file (type png)
  <use Gambar/kelas-diagram.png>
 Package pdftex.def Info: Gambar/kelas-diagram.png used on input line 10.
 (pdftex.def)             Requested size: 432.40784pt x 345.68536pt.
-) [35
+ [37 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/kelas-diagram.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
+[]|\T1/lmr/m/n/10.95 Konstruktor un-tuk
+ []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
+\T1/lmr/m/n/10.95 da-ri excel meng-a-was
+ []
 
- <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/kelas-diagram.png>] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab5
-.tex)
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]|\T1/lmr/m/n/10.95 Mengabungkan en-tri
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\T1/lmr/m/n/10.95 Atribut me-nam-pilk-an
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
+[]|\T1/lmr/m/n/10.95 Atribut me-nam-pilk-an
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--95
+[]|\T1/lmr/m/n/10.95 Atribut un-tuk me-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--96
+[]|\T1/lmr/m/n/10.95 Atribut un-tuk me-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--96
+\T1/lmr/m/n/10.95 nyimp-an da-ta yang
+ []
+
+
+Underfull \hbox (badness 7291) in paragraph at lines 98--98
+[]|\T1/lmr/m/n/10.95 Method un-tuk me-la-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--103
+[]|\T1/lmr/m/n/10.95 Mencocokan na-ma
+ []
+
+
+Underfull \hbox (badness 2626) in paragraph at lines 103--103
+\T1/lmr/m/n/10.95 do-sen se-su-ai yang di
+ []
+
+[39] <Gambar/antarmuka.png, id=881, 624.3325pt x 434.62375pt>
+File: Gambar/antarmuka.png Graphic file (type png)
+ <use Gambar/antarmuka.png>
+Package pdftex.def Info: Gambar/antarmuka.png used on input line 127.
+(pdftex.def)             Requested size: 312.16548pt x 217.31134pt.
+
+<Gambar/antarmuka3.png, id=882, 624.3325pt x 434.62375pt>
+File: Gambar/antarmuka3.png Graphic file (type png)
+ <use Gambar/antarmuka3.png>
+Package pdftex.def Info: Gambar/antarmuka3.png used on input line 134.
+(pdftex.def)             Requested size: 312.16548pt x 217.31134pt.
+
+<Gambar/antarmuka2.png, id=883, 615.57036pt x 379.20494pt>
+File: Gambar/antarmuka2.png Graphic file (type png)
+ <use Gambar/antarmuka2.png>
+Package pdftex.def Info: Gambar/antarmuka2.png used on input line 141.
+(pdftex.def)             Requested size: 307.78442pt x 189.602pt.
+ [40 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/antarmuka.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/an
+tarmuka3.png>]
+<Gambar/antarmuka4.png, id=892, 624.3325pt x 434.62375pt>
+File: Gambar/antarmuka4.png Graphic file (type png)
+ <use Gambar/antarmuka4.png>
+Package pdftex.def Info: Gambar/antarmuka4.png used on input line 148.
+(pdftex.def)             Requested size: 312.16548pt x 217.31134pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+[]\T1/lmr/m/n/10.95 Masukan se-mua ke-da-lam se-bu-ah ar-ra-
+ []
+
+[41 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/antarmuka2.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/an
+tarmuka4.png>] [42]) [43] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab5.tex)
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab6.tex) (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab7.tex)
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab8.tex) (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab9.tex)
-(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.bbl [36
+(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.bbl [44
 
 
 
@@ -1437,7 +1538,7 @@ Package pdftex.def Info: Gambar/kelas-diagram.png used on input line 10.
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 5.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) [37] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampA.tex [38
+)) [45] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampA.tex [46
 
 
 ]
@@ -1449,14 +1550,14 @@ LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <6> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 20.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 51.
-) [39]
-(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampB.tex [40
+) [47]
+(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampB.tex [48
 
 
 
 ]
 Lampiran B.
-) [41] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampC.tex)
+) [49] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampC.tex)
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampD.tex)
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampE.tex)
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampF.tex)
@@ -1482,7 +1583,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 514.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 514.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 514.
 Package rerunfilecheck Info: File `skripsi.out' has not changed.
-(rerunfilecheck)             Checksum: 20B86F3AC5E29E0C521E1280708D485B;8273.
+(rerunfilecheck)             Checksum: 178E935102F13DAFADD975399558DA88;8644.
 
 
 LaTeX Warning: There were undefined references.
@@ -1492,11 +1593,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 40912 strings out of 493921
- 898444 string characters out of 3144880
- 1701736 words of memory out of 3000000
- 43114 multiletter control sequences out of 15000+200000
- 63036 words of font info for 52 fonts, out of 3000000 for 9000
+ 40999 strings out of 493921
+ 899570 string characters out of 3144880
+ 1702152 words of memory out of 3000000
+ 43141 multiletter control sequences out of 15000+200000
+ 71570 words of font info for 54 fonts, out of 3000000 for 9000
  845 hyphenation exceptions out of 8191
  73i,13n,122p,10422b,1982s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips
@@ -1504,15 +1605,16 @@ Here is how much of TeX's memory you used:
 ts/enc/dvips/lm/lm-ec.enc} <C:\Users\Ariq\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1095.pk><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/l
 mbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
-pe1/public/lm/lmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/lm/lmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on skripsi.pdf (61 pages, 878768 bytes).
+pe1/public/lm/lmbxi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr6.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/lm/lmri12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
+Output written on skripsi.pdf (71 pages, 1118382 bytes).
 PDF statistics:
- 1088 PDF objects out of 1200 (max. 8388607)
- 354 named destinations out of 1000 (max. 500000)
- 503 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1216 PDF objects out of 1440 (max. 8388607)
+ 409 named destinations out of 1000 (max. 500000)
+ 539 words of extra memory for PDF output out of 10000 (max. 10000000)
 
