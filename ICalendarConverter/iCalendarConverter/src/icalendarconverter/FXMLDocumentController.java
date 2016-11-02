@@ -68,9 +68,6 @@ public class FXMLDocumentController implements Initializable {
     private void handleConvertAction(ActionEvent event) throws FileNotFoundException, IOException
     {
        ExcelConverter con = new ExcelConverter(selectedFile);
-//       jadwalList = FXCollections.observableArrayList(
-//                new ScheduleClass(LocalDate.now(ZoneId.systemDefault()), LocalTime.now(ZoneId.systemDefault()),LocalTime.now(ZoneId.systemDefault()),"Kalkulus 2", "Mariskha", "9120")
-//        );
         jadwalList = FXCollections.observableArrayList(con.Converter());
         
         
@@ -101,9 +98,10 @@ public class FXMLDocumentController implements Initializable {
         
     } 
     
-    public void convertClicked() throws FileNotFoundException, IOException, SocketException, ValidationException
+    public void convertClicked() throws FileNotFoundException, 
+            IOException, SocketException, ValidationException
     {
-        int selected = jadwalTable.getSelectionModel().getSelectedIndex();
+        ScheduleClass selected = jadwalTable.getSelectionModel().getSelectedItem();
         //System.out.println("selected = "+selected);
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save iCal File");
@@ -116,18 +114,16 @@ public class FXMLDocumentController implements Initializable {
         {
             path = save.getAbsolutePath();
             CalendarConverter cc = new CalendarConverter();
-            cc.calConverter(path , jadwalList.get(idx));
+            cc.calConverter(path , selected);
         }
         else
         {
-            System.out.println("File corrupted !");
+            System.out.println("Canceled !");
         }
     }
     @FXML
     private void filterConvertion()
     {
-        
-        
         jadwalTable.setItems(filteredData);
         filterTxt.textProperty().addListener(new ChangeListener<String>()
         {
@@ -137,23 +133,19 @@ public class FXMLDocumentController implements Initializable {
             {
                 updateFilteredData();
             }
-        });
-        
-       
+        });   
     }
     
     private void updateFilteredData()
     {
-        filteredData.clear();;
-        
+        filteredData.clear();;       
         for (ScheduleClass sc : jadwalList)
         {
             if (matchesFilter(sc))
             {
                 filteredData.add(sc);
             }
-        }
-        
+        }       
         reapplyTableSortOrder();
     }
     
@@ -164,8 +156,7 @@ public class FXMLDocumentController implements Initializable {
         if (filterString == null || filterString.isEmpty())
         {
             return true;
-        }
-        
+        }     
         String lowerCaseFilterString = filterString.toLowerCase();
         
         if (sc.getDosen().toLowerCase().indexOf(lowerCaseFilterString) != -1)
@@ -180,6 +171,5 @@ public class FXMLDocumentController implements Initializable {
         ArrayList<TableColumn<ScheduleClass, ? >> sortOrder = new ArrayList<>(jadwalTable.getSortOrder());
         jadwalTable.getSortOrder().clear();
         jadwalTable.getSortOrder().addAll(sortOrder);
-    }
-    
+    }   
 }

@@ -40,7 +40,8 @@ public class CalendarConverter {
         
     }
     
-    public void calConverter (String path,  ScheduleClass sch) throws SocketException, FileNotFoundException, IOException, ValidationException
+    public void calConverter (String path,  ScheduleClass sch) throws SocketException
+            , FileNotFoundException, IOException, ValidationException
     {
         //creating timezone
         TimeZoneRegistry registry = TimeZoneRegistryFactory.getInstance().createRegistry();
