@@ -39,6 +39,7 @@ public class ExcelConverter {
    private File pathFile;
     static XSSFRow row;
     private int rowNoIdx;
+    private int colMatkulIdx;
     private LocalDate lc;
     private SimpleDateFormat sp;
     private Date date;
@@ -74,38 +75,71 @@ public class ExcelConverter {
         for (int j = 0; j < sheet.getLastRowNum(); j++) {
             row = sheet.getRow(j);
             for (int f = 0; f < row.getLastCellNum(); f++) {
-                Cell cell = row.getCell(j);
-                if (cell.getStringCellValue().contains("No.")) {
+                Cell cell = row.getCell(f);
+                if (cell.getCellType() == Cell.CELL_TYPE_STRING && cell.getStringCellValue().equalsIgnoreCase("No.")) {
                     rowNoIdx = j;
                     colNoIdx = cell.getColumnIndex();
-                   
+                }
+                else if (cell.getCellType() == Cell.CELL_TYPE_STRING && cell.getStringCellValue().equalsIgnoreCase("Nama Mata Kuliah"))
+                {
+                    colMatkulIdx = cell.getColumnIndex();
                     break outerloop;
                 }
+                     
             }
         }
-        //System.out.println("Sampe sini");
+        //System.out.println("col matkul = "+colMatkulIdx);
+        System.out.println("sheet = "+sheet.getLastRowNum());
         outerloop2 :
         for (int i = 0; i < sheet.getLastRowNum(); i++) {
-           row = sheet.getRow(i);
+           //System.out.println("i = "+i);
            outerloop :
             for (int j = 0; j < row.getLastCellNum(); j++) {
-                Cell cell = row.getCell(j);
-                FormulaEvaluator evaluator = wb.getCreationHelper().createFormulaEvaluator();
-                if (cell.getColumnIndex() == colNoIdx && i > rowNoIdx+3 && evaluator.evaluate(cell).getCellType() != Cell.CELL_TYPE_NUMERIC) {
+                row = sheet.getRow(i);
+                if (row == null)
+                {
                     i = sheet.getLastRowNum();
                     break outerloop2;
                 }
-                
+                //System.out.println("Jey = " + j);
+                Cell cell = row.getCell(j);
+                FormulaEvaluator evaluator = wb.getCreationHelper().createFormulaEvaluator();
+                if (cell.getColumnIndex() == colNoIdx && i > rowNoIdx + 3 && cell.getCellType() != Cell.CELL_TYPE_BLANK
+                        && evaluator.evaluate(cell).getCellType() != Cell.CELL_TYPE_NUMERIC) {
+                    i = sheet.getLastRowNum();
+                    break outerloop2;
+                }
+                if (cell.getColumnIndex() == colNoIdx && i > rowNoIdx+3 
+                        && cell.getCellType() == Cell.CELL_TYPE_BLANK )
+                {
+                    i = i + 1;
+                    break outerloop;
+
+                    //System.out.println("I = "+i);               
+                }
+       
                   if (cell.getRowIndex() > rowNoIdx+1 && cell.getColumnIndex() == (colNoIdx + 1)) {
+                    if (cell.getCellType() == Cell.CELL_TYPE_BLANK)  
+                    {
+                        i = i+1;
+                        break outerloop;
+                    }
                     String delims = "[,. ]";
                     String[] sumary = cell.getStringCellValue().split(delims);
                     for (int l = 0; l < sumary.length; l++) {
                         if (sumary[l].equalsIgnoreCase("Mrt")) {
                             sumary[l] = "3";
                         }
+                        if (sumary[l].equalsIgnoreCase("Okt")) {
+                            sumary[l] = "10";
+                        }
+                        if (sumary[l].equalsIgnoreCase("`16")) {
+                            sumary[l] = "2016";
+                        } 
                     }
 
                     lc = LocalDate.of(Integer.parseInt(sumary[5]), Integer.parseInt(sumary[3]), Integer.parseInt(sumary[2]));
+                   // System.out.println("LC = "+lc);
 
 //                        sp = new SimpleDateFormat("EEEE, MMMM d, yyyy");
 //                        String b = sumary[3] + "/" + sumary[2] + "/" + sumary[5];
@@ -120,24 +154,50 @@ public class ExcelConverter {
                     }
                     else
                     {
-                        String delimsJam = "[-]";
-                        String[] arrJam = cell.getStringCellValue().split(delimsJam);
-                        for (int k = 0; k < arrJam.length; k++) {
-                            arrJam[k] = arrJam[k].replace('.', ':');
-                        }
+                        if(cell.getStringCellValue().equalsIgnoreCase("Shift 1") 
+                                || cell.getStringCellValue().equalsIgnoreCase("Shift 2"))
+                        {
+                            CellReference cr = new CellReference(cell.getRowIndex()+1, cell.getColumnIndex());
+                            Row row2 = sheet.getRow(cr.getRow());
+                            Cell c = row2.getCell(cr.getCol());
+                            String delimsJam = "[-]";
+                            String[] arrJam = c.getStringCellValue().split(delimsJam);
+                            for (int k = 0; k < arrJam.length; k++) {
+                                arrJam[k] = arrJam[k].replace('.', ':');
+                            }
 //                                indoFormatter = DateTimeFormatter
 //                                        .ofLocalizedTime(FormatStyle.SHORT)
 //                                        .withLocale(Locale.getDefault());
-                        lt = LocalTime.parse(arrJam[0]);
-                        //System.out.println(lt+"-"+lt.plusHours(2)); 
+                            //System.out.println("I3 = " + i);
+                            lt = LocalTime.parse(arrJam[0]);
+                            //System.out.println(lt+"-"+lt.plusHours(2)); 
+                            
+                        }
+                        else
+                        {
+                            String delimsJam = "[-]";
+                            String[] arrJam = cell.getStringCellValue().split(delimsJam);
+                            for (int k = 0; k < arrJam.length; k++) {
+                                arrJam[k] = arrJam[k].replace('.', ':');
+                            }
+//                                indoFormatter = DateTimeFormatter
+//                                        .ofLocalizedTime(FormatStyle.SHORT)
+//                                        .withLocale(Locale.getDefault());
+                            //System.out.println("I3 = " + i);
+                            lt = LocalTime.parse(arrJam[0]);
+                            //System.out.println(lt+"-"+lt.plusHours(2)); 
+                        }
+                        
                     }
                                         
                 }
-                if (cell.getRowIndex() > rowNoIdx+1 && cell.getColumnIndex() == (colNoIdx + 5)) {
+                if (cell.getRowIndex() > rowNoIdx+1 && cell.getColumnIndex() == colMatkulIdx ) {
                     subject = cell.getStringCellValue();
+                    //System.out.println("Subject = "+subject);
                 }
    
-                if (cell.getRowIndex() > rowNoIdx && cell.getColumnIndex() >= colNoIdx+6 && cell.getColumnIndex() < row.getLastCellNum()) {
+                if (cell.getRowIndex() > rowNoIdx && cell.getColumnIndex() >= colMatkulIdx+1 
+                        && cell.getColumnIndex() < row.getLastCellNum()) {
                     if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
 //                        location.add(String.valueOf((int)cell.getNumericCellValue()));
 //                        locationIdx.add(cell.getColumnIndex());
@@ -190,7 +250,7 @@ public class ExcelConverter {
                             //System.out.print(c.getStringCellValue() + " Ruang = " + (int) c2.getNumericCellValue() + " ");
                         }
                     }
-                    //scheduleList.add(new ScheduleClass(lc, lt, lt, subject, dosen.get(j), location.get(j)));
+ //                   scheduleList.add(new ScheduleClass(lc, lt, lt, subject, dosen.get(j), location.get(j)));
                 } 
 //                System.out.println("lc = "+lc+",lt = "+lt+",subject = "+subject+",dosen = "+dosen.get(i)+",location = "+location.get(i));
 //                scheduleList.add(new ScheduleClass(lc, lt, lt, subject, dosen.get(j), location.get(j)));

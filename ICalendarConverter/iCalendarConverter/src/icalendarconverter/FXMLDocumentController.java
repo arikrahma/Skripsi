@@ -20,6 +20,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
@@ -54,13 +56,21 @@ public class FXMLDocumentController implements Initializable {
           FileChooser fileChooser = new FileChooser();
           fileChooser.setTitle("Open Resource File");
           selectedFile = fileChooser.showOpenDialog(null);
-          if (selectedFile != null)
+          String delims ="[.]";
+          String[] path = selectedFile.getName().split(delims);
+          
+          if (selectedFile != null && (path[1].equalsIgnoreCase("xlsx") || path[1].equalsIgnoreCase("xls")))
           {
               txtFile.setText(selectedFile.getAbsolutePath());
           }
           else
           {
-              System.out.println("File not Valid !");
+             Alert alert = new Alert(AlertType.ERROR);
+             alert.setTitle("Error Dialog");
+             alert.setHeaderText("Look, an Error File Input");
+             alert.setContentText("Ooops, you selected wrong file! only excel file accepted");
+
+             alert.showAndWait();
           }
     }
     
