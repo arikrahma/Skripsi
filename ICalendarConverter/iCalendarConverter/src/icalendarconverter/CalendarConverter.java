@@ -40,8 +40,7 @@ public class CalendarConverter {
         
     }
     
-    public void calConverter (String path,  ScheduleClass sch) throws SocketException
-            , FileNotFoundException, IOException, ValidationException
+    public void calConverter (String path,  ScheduleClass sch) throws SocketException, FileNotFoundException, IOException, ValidationException
     {
         //creating timezone
         TimeZoneRegistry registry = TimeZoneRegistryFactory.getInstance().createRegistry();
@@ -51,7 +50,7 @@ public class CalendarConverter {
         //Start Date
         java.util.Calendar startDate = new GregorianCalendar();
         startDate.setTimeZone(timezone);
-        startDate.set(java.util.Calendar.MONTH, sch.getDate().getMonthValue());
+        startDate.set(java.util.Calendar.MONTH, sch.getDate().getMonthValue()-1);
         startDate.set(java.util.Calendar.DAY_OF_MONTH, sch.getDate().getDayOfMonth());
         startDate.set(java.util.Calendar.YEAR, sch.getDate().getYear());
         startDate.set(java.util.Calendar.HOUR_OF_DAY, sch.getTimeAwal().getHour());
@@ -60,7 +59,7 @@ public class CalendarConverter {
         //EndDate
         java.util.Calendar endDate = new GregorianCalendar();
         endDate.setTimeZone(timezone);
-        endDate.set(java.util.Calendar.MONTH, sch.getDate().getMonthValue());
+        endDate.set(java.util.Calendar.MONTH, sch.getDate().getMonthValue()-1);
         endDate.set(java.util.Calendar.DAY_OF_MONTH, sch.getDate().getDayOfMonth());
         endDate.set(java.util.Calendar.YEAR, sch.getDate().getYear());
         endDate.set(java.util.Calendar.HOUR_OF_DAY, sch.getTimeAkhir().getHour());
@@ -104,7 +103,7 @@ public class CalendarConverter {
         //saving iCal
         String calFile = sch.getSubject();
         
-        FileOutputStream fout = new FileOutputStream(path+".ics");
+        FileOutputStream fout = new FileOutputStream(path);
         
         CalendarOutputter outputter = new CalendarOutputter();
         //outputter.setValidating(false);

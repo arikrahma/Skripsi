@@ -55,22 +55,21 @@ public class FXMLDocumentController implements Initializable {
 
           FileChooser fileChooser = new FileChooser();
           fileChooser.setTitle("Open Resource File");
-          selectedFile = fileChooser.showOpenDialog(null);
-          String delims ="[.]";
-          String[] path = selectedFile.getName().split(delims);
           
-          if (selectedFile != null && (path[1].equalsIgnoreCase("xlsx") || path[1].equalsIgnoreCase("xls")))
+          //Set extension filter
+          FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Excel files (*.xlsx)", "*.xlsx");
+          FileChooser.ExtensionFilter extFilter2 = new FileChooser.ExtensionFilter("Excel files (*.xls)", "*.xls");
+          fileChooser.getExtensionFilters().add(extFilter);
+          fileChooser.getExtensionFilters().add(extFilter2);
+          selectedFile = fileChooser.showOpenDialog(null);
+         
+          if (selectedFile != null)
           {
-              txtFile.setText(selectedFile.getAbsolutePath());
+                 txtFile.setText(selectedFile.getAbsolutePath());
           }
-          else
+          else 
           {
-             Alert alert = new Alert(AlertType.ERROR);
-             alert.setTitle("Error Dialog");
-             alert.setHeaderText("Look, an Error File Input");
-             alert.setContentText("Ooops, you selected wrong file! only excel file accepted");
-
-             alert.showAndWait();
+             
           }
     }
     
@@ -115,8 +114,10 @@ public class FXMLDocumentController implements Initializable {
         //System.out.println("selected = "+selected);
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save iCal File");
-
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("iCalendar files (*.ics)", "*.ics");
+        fileChooser.getExtensionFilters().add(extFilter);
         File save = fileChooser.showSaveDialog(null);
+        
         int idx = jadwalTable.getSelectionModel().getSelectedIndex();
         //System.out.println("idx = "+idx);
         String path;

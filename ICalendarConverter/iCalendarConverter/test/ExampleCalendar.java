@@ -78,7 +78,7 @@ public class ExampleCalendar {
         startDate.set(java.util.Calendar.YEAR, sch.getDate().getYear());
         startDate.set(java.util.Calendar.HOUR_OF_DAY, sch.getTimeAwal().getHour());
         startDate.set(java.util.Calendar.MINUTE, sch.getTimeAwal().getMinute());
-        
+        System.out.println("Calendarrr = "+java.util.Calendar.JANUARY);
         //EndDate
         java.util.Calendar endDate = new GregorianCalendar();
         endDate.setTimeZone(timezone);

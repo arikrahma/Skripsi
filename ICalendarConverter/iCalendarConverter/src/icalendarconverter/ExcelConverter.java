@@ -203,7 +203,7 @@ public class ExcelConverter {
 //                        locationIdx.add(cell.getColumnIndex());
                     }
                     if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
-                        if (cell.getStringCellValue().contains(":")) {
+                        if (cell.getStringCellValue().contains(":") ) {
                             String[] splt = cell.getStringCellValue().split(":");
                             String[] splt2 = splt[1].split(",");
                             for (int l = 0; l < splt2.length; l++) {
