@@ -106,7 +106,7 @@ public class CalendarConverter {
         FileOutputStream fout = new FileOutputStream(path);
         
         CalendarOutputter outputter = new CalendarOutputter();
-        //outputter.setValidating(false);
+        outputter.setValidating(false);
         outputter.output(calendar, fout);
         
     }

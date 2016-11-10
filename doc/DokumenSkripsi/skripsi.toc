@@ -73,16 +73,17 @@
 \contentsline {chapter}{\numberline {4}Perancangan}{37}{chapter.4}
 \contentsline {section}{\numberline {4.1}Perancangan Diagram Kelas}{37}{section.4.1}
 \contentsline {section}{\numberline {4.2}Perancangan Antarmuka}{40}{section.4.2}
-\contentsline {section}{\numberline {4.3}Rancangan \textit {Method-Method} Utama}{41}{section.4.3}
+\contentsline {section}{\numberline {4.3}Rancangan \textit {Method-Method} Utama}{42}{section.4.3}
 \contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{45}{chapter.5}
-\contentsline {section}{\numberline {5.1}Lingkungan Implementasi}{45}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Lingkungan Perangkat Keras}{45}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Lingkungan Perangkat Lunak}{45}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Implementasi Program}{45}{section.5.2}
-\contentsline {section}{\numberline {5.3}Implementasi Antarmuka}{55}{section.5.3}
-\contentsline {section}{\numberline {5.4}Pengujian}{56}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Pengujian Fungsional}{57}{subsection.5.4.1}
-\contentsline {chapter}{Daftar Referensi}{65}{chapter*.26}
+\contentsline {section}{\numberline {5.1}Implementasi}{45}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Lingkungan Implementasi}{45}{subsection.5.1.1}
+\contentsline {subsubsection}{Lingkungan Perangkat Keras}{45}{subsubsection*.26}
+\contentsline {subsubsection}{Lingkungan Perangkat Lunak}{45}{subsubsection*.27}
+\contentsline {subsection}{\numberline {5.1.2}Implementasi Program}{46}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Implementasi Antarmuka}{47}{section.5.2}
+\contentsline {section}{\numberline {5.3}Pengujian}{48}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Pengujian Fungsional}{49}{subsection.5.3.1}
+\contentsline {chapter}{Daftar Referensi}{57}{chapter*.28}
 \renewcommand {\cftchappresnum }{\bf \scshape }
-\contentsline {chapter}{\numberline {A}Kode Program}{67}{appendix.A}
-\contentsline {chapter}{\numberline {B}Hasil Eksperimen}{69}{appendix.B}
+\contentsline {chapter}{\numberline {A}Kode Program}{59}{appendix.A}
+\contentsline {chapter}{\numberline {B}File Excel}{67}{appendix.B}

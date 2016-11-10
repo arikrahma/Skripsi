@@ -5,6 +5,7 @@ Berdasarkan analisa dari bab 3, pada bab ini akan dibahas mengenai perancangan d
 program.
 
 \section{Perancangan Diagram Kelas}
+Berdasarkan hasil analisis dari bab 3, telah dijelaskan pemodelan struktur kelas yang akan digunakan pada program, selanjutnya pada subbab ini merupakan terjemahan dari pemodelan kelas dalam bentuk rancangan diagram kelas pada gambar ~\ref{fig:pemodelan-kelas}.   
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.4]{Gambar/kelas-diagram}
@@ -28,22 +29,23 @@ Berikut ini rincian kelas pada diagram kelas yang tercantum dalam tabel-tabel di
 				subject & StringProperty & Atribut mata kuliah\\ \hline
 				dosen & StringProperty & Atribut nama dosen\\ \hline
 				location & StringProperty & Atribut lokasi ujian\\ \hline
-				\multicolumn{2}{|c|}{Method} & Fungsi \\ \hline
-				\multicolumn{2}{|l|}{getDate()} & Mendapatkan tanggal\\ \hline
-				\multicolumn{2}{|l|}{setDate(date: LocalDate)} & Set tanggal \\ \hline
-				\multicolumn{2}{|l|}{getTimeAwal()} & Mendapatkan jam awal ujian \\ \hline
-				\multicolumn{2}{|l|}{setTimeAwal(timeAwal: LocalTime)} & Set jam awal ujian\\ \hline
-				\multicolumn{2}{|l|}{getTimeAkhir()} & Mendapatkan jam akhir ujian\\ \hline
-				\multicolumn{2}{|l|}{setTimeAkhir(timeAkhir: LocalTime)} & Set jam akhir ujian\\ \hline
-				\multicolumn{2}{|l|}{getDosen()} & Mendapatkan nama dosen\\ \hline
-				\multicolumn{2}{|l|}{setDosen(dosen: String)} & Set nama dosen\\ \hline
-				\multicolumn{2}{|l|}{getSubject()} & Mendapatkan nama mata kuliah\\ \hline
-				\multicolumn{2}{|l|}{setSubject(subject: String)}& Set mata kuliah \\ \hline
-				\multicolumn{2}{|l|}{getLocation()} & Mendapatkan lokasi ujian\\ \hline
-				\multicolumn{2}{|l|}{setLocation(location: String)} & Set lokasi ujian\\ \hline
-				\multicolumn{2}{|l|}{subjectProperty()} & Mendapatkan properti mata kuliah\\ \hline
-				\multicolumn{2}{|l|}{dosenProperty()} & Mendapatkan properti dosen\\ \hline
-				\multicolumn{2}{|l|}{location()} & Mendapatkan properti lokasi\\ \hline
+				\multicolumn{3}{|c|}{Method} \\ \hline
+				\multicolumn{2}{|c|}{Nama Method} & Fungsi \\ \hline
+				\multicolumn{2}{|l|}{\textbf{getDate()}} & Mendapatkan tanggal\\ \hline
+				\multicolumn{2}{|l|}{\textbf{setDate(date: LocalDate)}} & Set tanggal \\ \hline
+				\multicolumn{2}{|l|}{\textbf{getTimeAwal()}} & Mendapatkan jam awal ujian \\ \hline
+				\multicolumn{2}{|l|}{\textbf{setTimeAwal(timeAwal: LocalTime)}} & Set jam awal ujian\\ \hline
+				\multicolumn{2}{|l|}{\textbf{getTimeAkhir()}} & Mendapatkan jam akhir ujian\\ \hline
+				\multicolumn{2}{|l|}{\textbf{setTimeAkhir(timeAkhir: LocalTime)}} & Set jam akhir ujian\\ \hline
+				\multicolumn{2}{|l|}{\textbf{getDosen()}} & Mendapatkan nama dosen\\ \hline
+				\multicolumn{2}{|l|}{\textbf{setDosen(dosen: String)}} & Set nama dosen\\ \hline
+				\multicolumn{2}{|l|}{\textbf{getSubject()}} & Mendapatkan nama mata kuliah\\ \hline
+				\multicolumn{2}{|l|}{\textbf{setSubject(subject: String)}}& Set mata kuliah \\ \hline
+				\multicolumn{2}{|l|}{\textbf{getLocation()}} & Mendapatkan lokasi ujian\\ \hline
+				\multicolumn{2}{|l|}{\textbf{setLocation(location: String)}} & Set lokasi ujian\\ \hline
+				\multicolumn{2}{|l|}{\textbf{subjectProperty()}} & Mendapatkan properti mata kuliah\\ \hline
+				\multicolumn{2}{|l|}{\textbf{dosenProperty()}} & Mendapatkan properti dosen\\ \hline
+				\multicolumn{2}{|l|}{\textbf{location()}} & Mendapatkan properti lokasi\\ \hline
 		\end{tabular}
 \end{table}
 
@@ -61,10 +63,11 @@ Berikut ini rincian kelas pada diagram kelas yang tercantum dalam tabel-tabel di
 				indoFormater & DateTimeFormatter & Atribut konversi ke timezone jakarta\\ \hline
 				lt & LocalTime & Atribut jam ujian\\ \hline
 				subject & String & Atribut matakuliah\\ \hline
-				\multicolumn{2}{|c|}{Method} & Fungsi \\ \hline
-				\multicolumn{2}{|c|}{ExcelConverter(path: File)} & Konstruktor untuk mendapatkan path file dari excel mengawas ujian\\ \hline
-				\multicolumn{2}{|c|}{Converter()} & Konversi excel menjadi list scheduleClass \\ \hline
-				\multicolumn{2}{|c|}{Mergering(scheduleList: ArrayList)} & Mengabungkan entri mengawas dosen  duplikat menjadi satu mata kuliah \\ \hline
+				\multicolumn{3}{|c|}{Method} \\ \hline
+				\multicolumn{2}{|c|}{Nama Method} & Fungsi \\ \hline
+				\multicolumn{2}{|c|}{\textbf{ExcelConverter(path: File)}} & Konstruktor untuk mendapatkan path file dari excel mengawas ujian\\ \hline
+				\multicolumn{2}{|c|}{\textbf{Converter()}} & Konversi excel menjadi list scheduleClass \\ \hline
+				\multicolumn{2}{|c|}{\textbf{Mergering(scheduleList: ArrayList)}} & Mengabungkan duplikat entri mengawas dosen \\ \hline
 		\end{tabular}
 \end{table}
 
@@ -74,8 +77,9 @@ Berikut ini rincian kelas pada diagram kelas yang tercantum dalam tabel-tabel di
 		\label{tab:excel_converter}
 		\begin{tabular}{ | c | c | p{4cm} |}
 			\hline
-				\multicolumn{2}{|c|}{Method} & Fungsi \\ \hline
-				\multicolumn{2}{|c|}{calConverter(path: String, sch: ScheduleClass)} & Mengkonversi scheduleClass yang dipilih kedalam iCal dan menyimpannya pada path yang ditentukan\\ \hline
+				\multicolumn{3}{|c|}{Method}\\ \hline
+				\multicolumn{2}{|c|}{Nama Method} & Fungsi \\ \hline
+				\multicolumn{2}{|c|}{\textbf{calConverter(path: String, sch: ScheduleClass)}} & Mengkonversi scheduleClass yang dipilih kedalam iCal dan menyimpannya pada path yang ditentukan\\ \hline
 		\end{tabular}
 \end{table}
 
@@ -94,14 +98,15 @@ Berikut ini rincian kelas pada diagram kelas yang tercantum dalam tabel-tabel di
 				jadwalTable & TableView<ScheduleClass> & Atribut menampilkan tabel jadwal\\ \hline
 				jadwalList & ObservableList<ScheduleClass> & Atribut untuk menyimpan jadwal\\ \hline
 				filteredData & ObservableList<ScheduleClass> & Atribut untuk menyimpan data yang telah di filter\\ \hline
-				\multicolumn{2}{|c|}{Method} & Fungsi \\ \hline
-				\multicolumn{2}{|c|}{handleButtonAction(event: ActionEvent)} & Method untuk melakukan browse dan menyimpan file excel\\ \hline
-				\multicolumn{2}{|c|}{handleConvertAction(event: ActionEvent)} & Method untuk membaca file excel \\ \hline
-				\multicolumn{2}{|c|}{convertedClicked()} & Method untuk konversi \textit{selected item} menjadi iCal  \\ \hline
-				\multicolumn{2}{|c|}{filterConvertion()} & Method untuk menerima masukan filter dari user \\ \hline
-				\multicolumn{2}{|c|}{updateFilteredData()} & Menginisiasi list filteredData \\ \hline
-				\multicolumn{2}{|c|}{matchesFilter(sc: ScheduleClass)} & Mencocokan nama dosen sesuai yang di inginkan user \\ \hline
-				\multicolumn{2}{|c|}{reapplyTableSortOrder()} & Mengatur urutan tabel setelah di filter \\ \hline
+				\multicolumn{3}{|c|}{Method} \\ \hline
+				\multicolumn{2}{|c|}{Nama Method} & Fungsi \\ \hline
+				\multicolumn{2}{|c|}{\textbf{handleButtonAction(event: ActionEvent)}} & Method untuk melakukan browse dan menyimpan file excel\\ \hline
+				\multicolumn{2}{|c|}{\textbf{handleConvertAction(event: ActionEvent)}} & Method untuk membaca file excel \\ \hline
+				\multicolumn{2}{|c|}{\textbf{convertedClicked()}} & Method untuk konversi \textit{selected item} menjadi iCal  \\ \hline
+				\multicolumn{2}{|c|}{\textbf{filterConvertion()}} & Method untuk menerima masukan filter dari user \\ \hline
+				\multicolumn{2}{|c|}{\textbf{updateFilteredData()}} & Menginisiasi list filteredData \\ \hline
+				\multicolumn{2}{|c|}{\textbf{matchesFilter(sc: ScheduleClass)}} & Mencocokan nama dosen sesuai yang di inginkan user \\ \hline
+				\multicolumn{2}{|c|}{\textbf{reapplyTableSortOrder()}} & Mengatur urutan tabel setelah di filter \\ \hline
 		\end{tabular}
 \end{table}
 
@@ -111,38 +116,52 @@ Berikut ini rincian kelas pada diagram kelas yang tercantum dalam tabel-tabel di
 		\label{tab:iCalendarMainConverter}
 		\begin{tabular}{ | c | c | p{4cm} |}
 			\hline
-				\multicolumn{2}{|c|}{Method} & Fungsi \\ \hline
-				\multicolumn{2}{|c|}{start(stage: Stage)} & Menampilkan window\\ \hline
-			\multicolumn{2}{|c|}{main(args: String[])} & Mengeksekusi program\\ \hline
+				\multicolumn{3}{|c|}{Method}  \\ \hline
+				\multicolumn{2}{|c|}{Nama Method} & Fungsi \\ \hline
+				\multicolumn{2}{|c|}{\textbf{start(stage: Stage)}} & Menampilkan window\\ \hline
+			\multicolumn{2}{|c|}{\textbf{main(args: String[])}} & Mengeksekusi program\\ \hline
 		\end{tabular}
 \end{table}
 
 \section{Perancangan Antarmuka}
-Setelah melalui serangkaian anlisa dan perancangan diagram kelas bapa sub bab ini akan dijelaskan mengenai gambaran bentuk program mengawas ujian tersebut.
+Setelah melalui serangkaian anlisis dan perancangan diagram kelas pada sub bab ini akan dijelaskan mengenai gambaran bentuk program mengawas ujian tersebut.
 
 \begin{enumerate}
-	\item Halaman awal program 
-		\begin{figure}[H]
+	\item Halaman awal program\\
+	Ini adalah tampilan awal pada saat user pertama kali menjalankan program.		
+	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{Gambar/antarmuka}
 		\caption{Tampilan awal Program}
 		\label{fig:tampilan_awal}
 		\end{figure}
-	\item Halaman untuk melakukan \textit{Browse} file excel
+		
+		Pada gambar ~\ref{fig:tampilan_awal} terdapat beberapa \textit{button} dan \textit{textbox} yang memiliki fungsi sebagai berikut.
+		\begin{itemize}
+			\item \textit{}{Browse} : berfungsi untuk membuka \textit{pop-up window} sebagai sarana user memilih file excel yang akan dimasukan.
+			\item \textit{Texbox path} : alamat file yang telah dipilih oleh user akan dicatat pada \textit{textbox} ini.
+			\item \textit{Convert} : tombol ini berfungsi mengeksekusi program untuk membaca file yang telah dimasukan oleh user.
+			\item \textit{Texbox filter} : merupakan fitur untuk memfilter jadwal mengawas berdasarkan nama dosen yang sesuai dengan \textit{input} user.
+			\item \textit{TableView} : jadwal yang telah dibaca pada excel selanjutnya akan ditampilkan pada tabel ini. tabel ini terdiri dari kolom tanggal, waktu, matakuliah, dosen, lokasi, dan \textit{download} untuk mengunduh file iCal.		
+		\end{itemize}
+	\item Halaman untuk melakukan \textit{Browse} file excel\\
+	Halaman ini merupakan halaman dimana user melakukan pemilihan input file excel jadwal mengawas. Halaman \textit{browser} menyesuaikan tipe sistem operasi yang dipakai.
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{Gambar/antarmuka3}
 		\caption{Tampilan \textit{Browse} file excel}
 		\label{fig:browse}
 		\end{figure}
-	\item Halaman setelah excel dibaca
+	\item Halaman setelah excel dibaca\\
+	Halaman ini menujukan ketika file excel telah sukses dibaca dan ditampilkan pada \textit{tableview}.
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{Gambar/antarmuka2}
 		\caption{Tampilan setelah excel dibaca}
 		\label{fig:excel_dibaca}
 		\end{figure}
-	\item Halaman untuk menyimpan iCal
+	\item Halaman untuk menyimpan iCal\\
+	Halaman ini dimana user telah memilih salah satu jadwal dan akan menyimpannya dalam betuk iCal. Halaman \textit{save} menyesuaikan sistem operasi yang dipakai. 
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{Gambar/antarmuka4}
@@ -154,10 +173,10 @@ Setelah melalui serangkaian anlisa dan perancangan diagram kelas bapa sub bab in
 \section{Rancangan \textit{Method-Method} Utama}
 Berikut ini adalah rancangan \textit{method} utama program jadwal mengawas ujian yang akan dibangun perangkat lunaknya :
 \begin{enumerate}
-	\item Converter() \\
+	\item Converter() - ExcelConverter\\
 	\begin{tabular}{l c p{9cm}}
 		Input & : & - \\ 
-		Output & : & List<ScheduleClass> \\ 
+		Output & : & List<ScheduleClass>  \\ 
 		Deskripsi & : & Method ini membaca excel yang di input oleh user dan mengkonversikannya kedalam bentuk list\\
 		Algoritma & : & \begin{enumerate}
 			\item Ambil path file yang telah di input oleh user
@@ -171,7 +190,7 @@ Berikut ini adalah rancangan \textit{method} utama program jadwal mengawas ujian
 		\end{enumerate}
 		\end{tabular}	
 	
-	\item Mergering()\\
+	\item Mergering() - ExcelConverter\\
 	\begin{tabular}{l c p{9cm}}
 		Input & : & List<ScheduleClass> \\ 
 		Output & : & List<ScheduleClass> \\ 
@@ -185,7 +204,7 @@ Berikut ini adalah rancangan \textit{method} utama program jadwal mengawas ujian
 			\end{enumerate}
 		\end{tabular}	
 	
-	\item calConverter()\\
+	\item calConverter() - CalendarConverter\\
 	\begin{tabular}{l c p{9cm}}
 		Input & : & sch: ScheduleClass , path: String\\ 
 		Output & : & void \\ 
@@ -200,7 +219,7 @@ Berikut ini adalah rancangan \textit{method} utama program jadwal mengawas ujian
 			\end{enumerate}
 		\end{tabular}	
 		
-	\item filterConvertion()\\
+	\item filterConvertion() - FXMLDocumentController\\
 	\begin{tabular}{l c p{9cm}}
 		Input & : & void\\ 
 		Output & : & void \\ 

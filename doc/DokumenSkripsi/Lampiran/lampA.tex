@@ -11,64 +11,699 @@
 % terdapat beberapa pilihan : tiny, scriptsize, footnotesize, dll
 %
 % caption : nama yang akan ditampilkan di dokumen akhir, lihat contoh
-\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=MyFurSet.java]
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=ScheduleClass.java,label=lst:ScheduleClass]
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet; 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 /**
  *
- * @author Lionov
+ * @author Ariq
  */
-
-//class for set of vertices close to furthest edge
-public class MyFurSet {
-    protected int id;                                  //id of the set
-    protected MyEdge FurthestEdge;                     //the furthest edge
-    protected HashSet<MyVertex> set;                   //set of vertices close to furthest edge
-    protected ArrayList<ArrayList<Integer>> ordered;   //list of all vertices in the set for each trajectory
-    protected ArrayList<Integer> closeID;              //store the ID of all vertices
-    protected ArrayList<Double> closeDist;             //store the distance of all vertices
-    protected int totaltrj;                            //total trajectories in the set
-
-    /**
-     * Constructor
-     * @param id : id of the set
-     * @param totaltrj : total number of trajectories in the set
-     * @param FurthestEdge : the furthest edge
-     */
-    public MyFurSet(int id,int totaltrj,MyEdge FurthestEdge) {
-        this.id = id;
-        this.totaltrj = totaltrj;
-        this.FurthestEdge = FurthestEdge;
-        set = new HashSet<MyVertex>();
-        ordered = new ArrayList<ArrayList<Integer>>();
-        for (int i=0;i<totaltrj;i++) ordered.add(new ArrayList<Integer>());
-        closeID = new ArrayList<Integer>(totaltrj);
-        closeDist = new ArrayList<Double>(totaltrj);
-        for (int i = 0;i <totaltrj;i++) {
-            closeID.add(-1);
-            closeDist.add(Double.MAX_VALUE);
-        }
+public class ScheduleClass {
+    private LocalDate date;
+    private LocalTime timeAwal;
+    private LocalTime timeAkhir;
+    private StringProperty subject;
+    private StringProperty dosen;
+    private StringProperty location;
+    
+    public ScheduleClass (LocalDate date, LocalTime timeAwal
+            ,LocalTime timeAkhir, String subject, String dosen
+            , String location)
+    {
+        this.date = date;
+        this.timeAwal = timeAwal;
+        this.timeAkhir = timeAkhir;
+        this.subject = new SimpleStringProperty(subject);
+        this.dosen = new SimpleStringProperty(dosen);
+        this.location = new SimpleStringProperty(location);
     }
 
     /**
-     * set a vertex into the set
-     * @param v : vertex to be added to the set
+     * @return the date
      */
-    public void add(MyVertex v) {
-        set.add(v);
+    public LocalDate getDate() {
+        return date;
     }
 
     /**
-     * check whether vertex v is a member of the set
-     * @param v : vertex to be checked
-     * @return true if v is a member of the set, false otherwise
+     * @param date the date to set
      */
-    public boolean contains(MyVertex v) {
-        return this.set.contains(v);
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
+
+    /**
+     * @return the time
+     */
+    public LocalTime getTimeAwal() {
+        return timeAwal;
+    }
+
+    /**
+     * @param time the time to set
+     */
+    public void setTimeAwal(LocalTime timeAwal) {
+        this.timeAwal = timeAwal;
+    }
+    
+     /**
+     * @return the time
+     */
+    public LocalTime getTimeAkhir() {
+        return timeAkhir;
+    }
+
+    /**
+     * @param time the time to set
+     */
+    public void setTimeAkhir(LocalTime timeAkhir) {
+        this.timeAkhir = timeAkhir;
+    }
+
+    /**
+     * @return the subject
+     */
+    public String getSubject() {
+        return subject.get();
+    }
+
+    /**
+     * @param subject the subject to set
+     */
+    public void setSubject(String subject) {
+        this.subject.set(subject);
+    }
+
+    /**
+     * @return the dosen
+     */
+    public String getDosen() {
+        return dosen.get();
+    }
+
+    /**
+     * @param dosen the dosen to set
+     */
+    public void setDosen(String dosen) {
+        this.dosen.set(dosen);
+    }
+
+    /**
+     * @return the location
+     */
+    public String getLocation() {
+        return location.get();
+    }
+
+    /**
+     * @param location the location to set
+     */
+    public void setLocation(String location) {
+        this.location.set(location);
+    }
+    
+    public StringProperty subjectProperty()
+    {
+       return subject;
+    }
+    
+    public StringProperty dosenProperty()
+    {
+        return dosen;
+    }
+    public StringProperty location()
+    {
+        return location;
+    }
+    
 }
+
 \end{lstlisting}
 
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=ExcelConverter.java,label=lst:ExcelConverter]
+package icalendarconverter;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.FormulaEvaluator;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.ss.util.CellReference;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+/**
+ *
+ * @author Ariq
+ */
+public class ExcelConverter {
+    
+   private File pathFile;
+    static XSSFRow row;
+    private int rowNoIdx;
+    private int colMatkulIdx;
+    private LocalDate lc;
+    private SimpleDateFormat sp;
+    private Date date;
+    private DateTimeFormatter indoFormatter;
+    private LocalTime lt;
+    private String subject;
+    
+    public ExcelConverter(File pathFile)
+    {
+        this.pathFile = pathFile;
+        this.rowNoIdx = 0;
+    }
+
+    public List<ScheduleClass> Converter() throws FileNotFoundException, IOException
+    {
+        ArrayList<ScheduleClass> scheduleList = new ArrayList<>();
+        
+        FileInputStream fis = new FileInputStream(pathFile);
+        
+        XSSFWorkbook wb = new XSSFWorkbook(fis);
+        XSSFSheet sheet = wb.getSheetAt(0);
+        Iterator < Row > rowIterator = sheet.iterator();   
+     
+        CellRangeAddress add;
+        int colNoIdx = 0;
+        ArrayList<String> dosen = new ArrayList<>();
+        ArrayList<Integer> idxDosen = new ArrayList<>();
+        ArrayList<Integer> colDosen = new ArrayList<>();
+        ArrayList<String> location = new ArrayList<>();
+        int idxNumber = 0;
+        ArrayList<Integer> locationIdx = new ArrayList<>();
+        outerloop :
+        for (int j = 0; j < sheet.getLastRowNum(); j++) {
+            row = sheet.getRow(j);
+            for (int f = 0; f < row.getLastCellNum(); f++) {
+                Cell cell = row.getCell(f);
+                if (cell.getCellType() == Cell.CELL_TYPE_STRING && cell.getStringCellValue().equalsIgnoreCase("No.")) {
+                    rowNoIdx = j;
+                    colNoIdx = cell.getColumnIndex();
+                }
+                else if (cell.getCellType() == Cell.CELL_TYPE_STRING && cell.getStringCellValue().equalsIgnoreCase("Nama Mata Kuliah"))
+                {
+                    colMatkulIdx = cell.getColumnIndex();
+                    break outerloop;
+                }
+                     
+            }
+        }
+        outerloop2 :
+        for (int i = 0; i < sheet.getLastRowNum(); i++) {
+           outerloop :
+            for (int j = 0; j < row.getLastCellNum(); j++) {
+                row = sheet.getRow(i);
+                if (row == null)
+                {
+                    i = sheet.getLastRowNum();
+                    break outerloop2;
+                }
+                Cell cell = row.getCell(j);
+                FormulaEvaluator evaluator = wb.getCreationHelper().createFormulaEvaluator();
+                if (cell.getColumnIndex() == colNoIdx && i > rowNoIdx + 3 && cell.getCellType() != Cell.CELL_TYPE_BLANK
+                        && evaluator.evaluate(cell).getCellType() != Cell.CELL_TYPE_NUMERIC) {
+                    i = sheet.getLastRowNum();
+                    break outerloop2;
+                }
+                if (cell.getColumnIndex() == colNoIdx && i > rowNoIdx+3 
+                        && cell.getCellType() == Cell.CELL_TYPE_BLANK )
+                {
+                    i = i + 1;
+                    break outerloop;             
+                }
+       
+                  if (cell.getRowIndex() > rowNoIdx+1 && cell.getColumnIndex() == (colNoIdx + 1)) {
+                    if (cell.getCellType() == Cell.CELL_TYPE_BLANK)  
+                    {
+                        i = i+1;
+                        break outerloop;
+                    }
+                    String delims = "[,. ]";
+                    String[] sumary = cell.getStringCellValue().split(delims);
+                    for (int l = 0; l < sumary.length; l++) {
+                        if (sumary[l].equalsIgnoreCase("Mrt")) {
+                            sumary[l] = "3";
+                        }
+                        if (sumary[l].equalsIgnoreCase("Okt")) {
+                            sumary[l] = "10";
+                        }
+                        if (sumary[l].equalsIgnoreCase("`16")) {
+                            sumary[l] = "2016";
+                        } 
+                    }
+
+                    lc = LocalDate.of(Integer.parseInt(sumary[5]), Integer.parseInt(sumary[3]), Integer.parseInt(sumary[2]));
+                }
+                if (cell.getRowIndex() > rowNoIdx+1 && cell.getColumnIndex() == (colNoIdx + 2)) {
+                    if (cell.getStringCellValue().equalsIgnoreCase("LIBUR"))
+                    {   
+                        i = i+1;
+                        break outerloop;
+                    }
+                    else
+                    {
+                        if(cell.getStringCellValue().equalsIgnoreCase("Shift 1") 
+                                || cell.getStringCellValue().equalsIgnoreCase("Shift 2"))
+                        {
+                            CellReference cr = new CellReference(cell.getRowIndex()+1, cell.getColumnIndex());
+                            Row row2 = sheet.getRow(cr.getRow());
+                            Cell c = row2.getCell(cr.getCol());
+                            String delimsJam = "[-]";
+                            String[] arrJam = c.getStringCellValue().split(delimsJam);
+                            for (int k = 0; k < arrJam.length; k++) {
+                                arrJam[k] = arrJam[k].replace('.', ':');
+                            }
+                            lt = LocalTime.parse(arrJam[0]);                            
+                        }
+                        else
+                        {
+                            String delimsJam = "[-]";
+                            String[] arrJam = cell.getStringCellValue().split(delimsJam);
+                            for (int k = 0; k < arrJam.length; k++) {
+                                arrJam[k] = arrJam[k].replace('.', ':');
+                            }
+                            lt = LocalTime.parse(arrJam[0]);
+                        }
+                        
+                    }
+                                        
+                }
+                if (cell.getRowIndex() > rowNoIdx+1 && cell.getColumnIndex() == colMatkulIdx ) {
+                    subject = cell.getStringCellValue();
+                }
+   
+                if (cell.getRowIndex() > rowNoIdx && cell.getColumnIndex() >= colMatkulIdx+1 
+                        && cell.getColumnIndex() < row.getLastCellNum()) {
+                    if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+
+                    }
+                    if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+                        if (cell.getStringCellValue().contains(":") ) {
+                            String[] splt = cell.getStringCellValue().split(":");
+                            String[] splt2 = splt[1].split(",");
+                            for (int l = 0; l < splt2.length; l++) {
+                                dosen.add(splt2[l].trim());
+                                location.add("Lab");
+                            }
+                        } else  {
+                            CellReference cr = new CellReference(1, cell.getColumnIndex());
+                            Row row2 = sheet.getRow(cr.getRow());
+                            Cell c = row2.getCell(cr.getCol());
+                            if (!cell.getStringCellValue().isEmpty())
+                            {
+                                dosen.add(cell.getStringCellValue().trim());
+                                location.add(String.valueOf((int) c.getNumericCellValue()).trim());
+                            }
+                        }
+
+                    }
+                    if (cell.getCellType() == Cell.CELL_TYPE_BLANK && cell.getRowIndex() > 2) {
+                        CellReference cr = new CellReference(cell.getRowIndex() - 1, cell.getColumnIndex());
+                        Row row2 = sheet.getRow(cr.getRow());
+                        Cell c = row2.getCell(cr.getCol());
+                        CellReference cr2 = new CellReference(1, cell.getColumnIndex());
+                        Row row3 = sheet.getRow(cr2.getRow());
+                        Cell c2 = row3.getCell(cr2.getCol());
+                        if (c.getStringCellValue().contains(":")) {
+                            String[] splt = c.getStringCellValue().split(":");
+                            String[] splt2 = splt[1].split(",");
+                            for (int l = 0; l < splt2.length; l++) {
+                                dosen.add("".trim());
+                                location.add("");
+                            }
+                        } else {
+                            if (!c.getStringCellValue().isEmpty())
+                            {
+                               dosen.add("");
+                               location.add("");
+                            }
+                           
+                        }
+                    }
+                }       
+            }
+
+            for (int j = 0; j < dosen.size(); j++) {
+                scheduleList.add(new ScheduleClass(lc, lt, lt.plusHours(2), subject, dosen.get(j), location.get(j)));
+            }
+            dosen.clear();
+            location.clear();
+           
+        }
+        
+        return Mergering(scheduleList);
+    }
+    
+    public List<ScheduleClass> Mergering (ArrayList<ScheduleClass> scheduleList)
+    {
+        int count = 0;
+        ArrayList<ScheduleClass> scheduleListSmt = new ArrayList<>();
+        
+        for (int i = 0; i < scheduleList.size(); i++) {
+
+           
+           if (scheduleList.get(i).getDosen().isEmpty() )
+           {
+               scheduleListSmt.add(scheduleList.get(i));
+           }         
+        }
+        for (int i = 0; i < scheduleListSmt.size() ; i++) {
+              for (int j = 0; j < scheduleList.size(); j++) {
+                  if(scheduleList.get(j).equals(scheduleListSmt.get(i)))
+                  {
+                      scheduleList.remove(j);
+                  }
+              }
+        }
+        for (int i = 0; i < scheduleList.size(); i++) {
+            outerloop :
+            for (int j = 0; j < scheduleListSmt.size(); j++) {
+                if (scheduleList.get(i).getDate().equals(scheduleListSmt.get(j).getDate())
+                        && scheduleList.get(i).getTimeAwal().equals(scheduleListSmt.get(j).getTimeAwal()))
+                {
+                    String ss = scheduleList.get(i).getSubject();
+                    scheduleList.get(i).setSubject(ss+", "+scheduleListSmt.get(j).getSubject());
+                    j = j + 1;
+                    break outerloop;
+                }
+            }
+        }
+        return scheduleList;
+    }
+}
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=CalendarConverter.java,label=lst:CalendarConverter]
+package icalendarconverter;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.SocketException;
+import java.util.GregorianCalendar;
+import java.util.List;
+import net.fortuna.ical4j.data.CalendarOutputter;
+import net.fortuna.ical4j.model.DateTime;
+import net.fortuna.ical4j.model.Property;
+import net.fortuna.ical4j.model.TimeZone;
+import net.fortuna.ical4j.model.TimeZoneRegistry;
+import net.fortuna.ical4j.model.TimeZoneRegistryFactory;
+import net.fortuna.ical4j.model.ValidationException;
+import net.fortuna.ical4j.model.component.VEvent;
+import net.fortuna.ical4j.model.component.VTimeZone;
+import net.fortuna.ical4j.model.property.CalScale;
+import net.fortuna.ical4j.model.property.Description;
+import net.fortuna.ical4j.model.property.Location;
+import net.fortuna.ical4j.model.property.ProdId;
+import net.fortuna.ical4j.model.property.Uid;
+import net.fortuna.ical4j.model.property.Version;
+import net.fortuna.ical4j.util.UidGenerator;
+
+/**
+ *
+ * @author Ariq
+ */
+public class CalendarConverter {
+    
+    public CalendarConverter()
+    {
+        
+    }
+    
+    public void calConverter (String path,  ScheduleClass sch) throws SocketException, FileNotFoundException, IOException, ValidationException
+    {
+        //creating timezone
+        TimeZoneRegistry registry = TimeZoneRegistryFactory.getInstance().createRegistry();
+        TimeZone timezone = registry.getTimeZone("Asia/Jakarta");
+        VTimeZone tz = timezone.getVTimeZone();
+        
+        //Start Date
+        java.util.Calendar startDate = new GregorianCalendar();
+        startDate.setTimeZone(timezone);
+        startDate.set(java.util.Calendar.MONTH, sch.getDate().getMonthValue()-1);
+        startDate.set(java.util.Calendar.DAY_OF_MONTH, sch.getDate().getDayOfMonth());
+        startDate.set(java.util.Calendar.YEAR, sch.getDate().getYear());
+        startDate.set(java.util.Calendar.HOUR_OF_DAY, sch.getTimeAwal().getHour());
+        startDate.set(java.util.Calendar.MINUTE, sch.getTimeAwal().getMinute());
+        
+        //EndDate
+        java.util.Calendar endDate = new GregorianCalendar();
+        endDate.setTimeZone(timezone);
+        endDate.set(java.util.Calendar.MONTH, sch.getDate().getMonthValue()-1);
+        endDate.set(java.util.Calendar.DAY_OF_MONTH, sch.getDate().getDayOfMonth());
+        endDate.set(java.util.Calendar.YEAR, sch.getDate().getYear());
+        endDate.set(java.util.Calendar.HOUR_OF_DAY, sch.getTimeAkhir().getHour());
+        endDate.set(java.util.Calendar.MINUTE, sch.getTimeAkhir().getMinute());
+       
+        
+        //creating an event
+        String eventName = sch.getSubject();
+        String location2 = sch.getLocation();
+        String desc = "Mengawas Ujian "+sch.getDosen();
+        DateTime start = new DateTime(startDate.getTime());
+        DateTime end = new DateTime(endDate.getTime());
+        VEvent mengawas = new VEvent(start,end,eventName);
+        mengawas.getProperties().add(new Location(location2));
+        mengawas.getProperties().add(new Description());
+        
+        try {
+            mengawas.getProperties().getProperty(Property.DESCRIPTION).setValue(desc);
+        } catch (Exception e) {
+        }
+        
+        //add timezone info
+        mengawas.getProperties().add(tz.getTimeZoneId());
+        
+        //generate unique indentifier
+        UidGenerator uidgenerator = new UidGenerator("uidGen");
+        Uid uid = uidgenerator.generateUid();
+        mengawas.getProperties().add(uid);
+        
+        
+        //creating calendar
+        net.fortuna.ical4j.model.Calendar calendar = new net.fortuna.ical4j.model.Calendar();
+        calendar.getProperties().add(new ProdId("-//Ben Fortuna//iCal4j 1.0//EN"));
+        calendar.getProperties().add(Version.VERSION_2_0);
+        calendar.getProperties().add(CalScale.GREGORIAN);
+        
+        // Add the event and print
+        calendar.getComponents().add(mengawas);
+        System.out.println(calendar);
+        
+        //saving iCal
+        String calFile = sch.getSubject();
+        
+        FileOutputStream fout = new FileOutputStream(path);
+        
+        CalendarOutputter outputter = new CalendarOutputter();
+        outputter.setValidating(false);
+        outputter.output(calendar, fout);    
+    }   
+}
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java,basicstyle=\tiny,caption=FXMLDocumentController.java,label=lst:FXMLDocumentController]
+package icalendarconverter;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.SocketException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
+import javax.swing.JFileChooser;
+import net.fortuna.ical4j.model.ValidationException;
+/**
+ *
+ * @author Ariq
+ */
+public class FXMLDocumentController implements Initializable {
+    private File selectedFile;
+     
+    @FXML
+    private Label label;
+    @FXML
+    private TextField txtFile;
+    @FXML
+    private TextField filterTxt;
+    @FXML
+    private TableView<ScheduleClass> jadwalTable;
+    
+    ObservableList<ScheduleClass> jadwalList;
+    ObservableList<ScheduleClass> filteredData = FXCollections.observableArrayList();
+    
+    @FXML
+    private void handleButtonAction(ActionEvent event) {
+
+          FileChooser fileChooser = new FileChooser();
+          fileChooser.setTitle("Open Resource File");
+          
+          //Set extension filter
+          FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Excel files (*.xlsx)", "*.xlsx");
+          FileChooser.ExtensionFilter extFilter2 = new FileChooser.ExtensionFilter("Excel files (*.xls)", "*.xls");
+          fileChooser.getExtensionFilters().add(extFilter);
+          fileChooser.getExtensionFilters().add(extFilter2);
+          selectedFile = fileChooser.showOpenDialog(null);
+         
+          if (selectedFile != null)
+          {
+                 txtFile.setText(selectedFile.getAbsolutePath());
+          }
+          else 
+          {
+             
+          }
+    }
+    
+    @FXML
+    private void handleConvertAction(ActionEvent event) throws FileNotFoundException, IOException
+    {
+       ExcelConverter con = new ExcelConverter(selectedFile);
+        jadwalList = FXCollections.observableArrayList(con.Converter());
+        
+        
+        jadwalTable.setItems(jadwalList);
+        jadwalTable.getColumns().get(0).setCellValueFactory(new PropertyValueFactory("Date"));
+        jadwalTable.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("timeAwal"));
+        jadwalTable.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("timeAkhir"));
+        jadwalTable.getColumns().get(3).setCellValueFactory(new PropertyValueFactory("Subject"));
+        jadwalTable.getColumns().get(4).setCellValueFactory(new PropertyValueFactory("Dosen"));
+        jadwalTable.getColumns().get(5).setCellValueFactory(new PropertyValueFactory("Location"));
+        
+        filteredData.addAll(jadwalList);
+        
+        jadwalList.addListener( new ListChangeListener<ScheduleClass>()
+        {
+            @Override
+            public void onChanged(ListChangeListener.Change<? extends ScheduleClass> change)
+            {
+                updateFilteredData();
+            }
+        });
+        
+    }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+      
+        
+    } 
+    
+    public void convertClicked() throws FileNotFoundException, 
+            IOException, SocketException, ValidationException
+    {
+        ScheduleClass selected = jadwalTable.getSelectionModel().getSelectedItem();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save iCal File");
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("iCalendar files (*.ics)", "*.ics");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File save = fileChooser.showSaveDialog(null);
+        
+        int idx = jadwalTable.getSelectionModel().getSelectedIndex();
+        String path;
+        if(save != null)
+        {
+            path = save.getAbsolutePath();
+            CalendarConverter cc = new CalendarConverter();
+            cc.calConverter(path , selected);
+        }
+        else
+        {
+            System.out.println("Canceled !");
+        }
+    }
+    @FXML
+    private void filterConvertion()
+    {
+        jadwalTable.setItems(filteredData);
+        filterTxt.textProperty().addListener(new ChangeListener<String>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                    String oldValue, String newValue)
+            {
+                updateFilteredData();
+            }
+        });   
+    }
+    
+    private void updateFilteredData()
+    {
+        filteredData.clear();;       
+        for (ScheduleClass sc : jadwalList)
+        {
+            if (matchesFilter(sc))
+            {
+                filteredData.add(sc);
+            }
+        }       
+        reapplyTableSortOrder();
+    }
+    
+    private boolean matchesFilter(ScheduleClass sc)
+    {
+        String filterString = filterTxt.getText();
+        
+        if (filterString == null || filterString.isEmpty())
+        {
+            return true;
+        }     
+        String lowerCaseFilterString = filterString.toLowerCase();
+        
+        if (sc.getDosen().toLowerCase().indexOf(lowerCaseFilterString) != -1)
+        {
+            return true;
+        }
+        return false;
+    }
+    
+    private void reapplyTableSortOrder()
+    {
+        ArrayList<TableColumn<ScheduleClass, ? >> sortOrder = new ArrayList<>(jadwalTable.getSortOrder());
+        jadwalTable.getSortOrder().clear();
+        jadwalTable.getSortOrder().addAll(sortOrder);
+    }   
+}
+
+\end{lstlisting}
