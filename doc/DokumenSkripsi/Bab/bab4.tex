@@ -23,12 +23,12 @@ Berikut ini rincian kelas pada diagram kelas yang tercantum dalam tabel-tabel di
 			\hline
 				\multicolumn{3}{|c|}{Atribut} \\ \hline 
 				Nama atribut & Tipe Data  & Fungsi \\ \hline
-				date & LocalDate & Atribut tanggal\\ \hline
-				timeAwal & LocalTime & Atribut jam ujian dimulai\\ \hline
-				timeAkhir & LocalTime & Atribut jam ujian berakhir\\ \hline
-				subject & StringProperty & Atribut mata kuliah\\ \hline
-				dosen & StringProperty & Atribut nama dosen\\ \hline
-				location & StringProperty & Atribut lokasi ujian\\ \hline
+				\textbf{date} & LocalDate & Atribut tanggal\\ \hline
+				\textbf{timeAwal} & LocalTime & Atribut jam ujian dimulai\\ \hline
+				\textbf{timeAkhir} & LocalTime & Atribut jam ujian berakhir\\ \hline
+				\textbf{subject} & StringProperty & Atribut mata kuliah\\ \hline
+				\textbf{dosen} & StringProperty & Atribut nama dosen\\ \hline
+				\textbf{location} & StringProperty & Atribut lokasi ujian\\ \hline
 				\multicolumn{3}{|c|}{Method} \\ \hline
 				\multicolumn{2}{|c|}{Nama Method} & Fungsi \\ \hline
 				\multicolumn{2}{|l|}{\textbf{getDate()}} & Mendapatkan tanggal\\ \hline
@@ -57,12 +57,12 @@ Berikut ini rincian kelas pada diagram kelas yang tercantum dalam tabel-tabel di
 			\hline
 				\multicolumn{3}{|c|}{Atribut} \\ \hline 
 				Nama atribut & Tipe Data  & Fungsi \\ \hline
-				pathFile & File & Atribut path file excel mengawas\\ \hline
-				row & XSSFRow & Atribut baris dari Excel\\ \hline
-				lc & LocalDate & Atribut tanggal ujian\\ \hline
-				indoFormater & DateTimeFormatter & Atribut konversi ke timezone jakarta\\ \hline
-				lt & LocalTime & Atribut jam ujian\\ \hline
-				subject & String & Atribut matakuliah\\ \hline
+				\textbf{pathFile} & File & Atribut path file excel mengawas\\ \hline
+				\textbf{row} & XSSFRow & Atribut baris dari Excel\\ \hline
+				\textbf{lc} & LocalDate & Atribut tanggal ujian\\ \hline
+				\textbf{indoFormater} & DateTimeFormatter & Atribut konversi ke zona waktu jakarta\\ \hline
+				\textbf{lt} & LocalTime & Atribut jam ujian\\ \hline
+				\textbf{subject} & String & Atribut matakuliah\\ \hline
 				\multicolumn{3}{|c|}{Method} \\ \hline
 				\multicolumn{2}{|c|}{Nama Method} & Fungsi \\ \hline
 				\multicolumn{2}{|c|}{\textbf{ExcelConverter(path: File)}} & Konstruktor untuk mendapatkan path file dari excel mengawas ujian\\ \hline
@@ -91,21 +91,21 @@ Berikut ini rincian kelas pada diagram kelas yang tercantum dalam tabel-tabel di
 			\hline
 				\multicolumn{3}{|c|}{Atribut} \\ \hline 
 				Nama atribut & Tipe Data  & Fungsi \\ \hline
-				selectedFile & File & Atribut file yang dipilih user\\ \hline
-				label & Label & Atribut label\\ \hline
-				txtFile & TextField & Atribut menampilkan path file yang dipilih\\ \hline
-				filterTxt & TextField & Atribut untuk menampilkan filter teks\\ \hline
-				jadwalTable & TableView<ScheduleClass> & Atribut menampilkan tabel jadwal\\ \hline
-				jadwalList & ObservableList<ScheduleClass> & Atribut untuk menyimpan jadwal\\ \hline
-				filteredData & ObservableList<ScheduleClass> & Atribut untuk menyimpan data yang telah di filter\\ \hline
+				\textbf{selectedFile} & File & Atribut file yang dipilih pengguna\\ \hline
+				\textbf{label} & Label & Atribut label\\ \hline
+				\textbf{txtFile} & TextField & Atribut menampilkan path file yang dipilih\\ \hline
+				\textbf{filterTxt} & TextField & Atribut untuk menampilkan filter teks\\ \hline
+				\textbf{jadwalTable} & TableView<ScheduleClass> & Atribut menampilkan tabel jadwal\\ \hline
+				\textbf{jadwalList} & ObservableList<ScheduleClass> & Atribut untuk menyimpan jadwal\\ \hline
+				\textbf{filteredData} & ObservableList<ScheduleClass> & Atribut untuk menyimpan data yang telah di filter\\ \hline
 				\multicolumn{3}{|c|}{Method} \\ \hline
 				\multicolumn{2}{|c|}{Nama Method} & Fungsi \\ \hline
-				\multicolumn{2}{|c|}{\textbf{handleButtonAction(event: ActionEvent)}} & Method untuk melakukan browse dan menyimpan file excel\\ \hline
+				\multicolumn{2}{|c|}{\textbf{handleButtonAction(event: ActionEvent)}} & Method untuk melakukan browse dan mendapatkan file excel\\ \hline
 				\multicolumn{2}{|c|}{\textbf{handleConvertAction(event: ActionEvent)}} & Method untuk membaca file excel \\ \hline
 				\multicolumn{2}{|c|}{\textbf{convertedClicked()}} & Method untuk konversi \textit{selected item} menjadi iCal  \\ \hline
-				\multicolumn{2}{|c|}{\textbf{filterConvertion()}} & Method untuk menerima masukan filter dari user \\ \hline
+				\multicolumn{2}{|c|}{\textbf{filterConvertion()}} & Method untuk menerima masukan filter dari pengguna \\ \hline
 				\multicolumn{2}{|c|}{\textbf{updateFilteredData()}} & Menginisiasi list filteredData \\ \hline
-				\multicolumn{2}{|c|}{\textbf{matchesFilter(sc: ScheduleClass)}} & Mencocokan nama dosen sesuai yang di inginkan user \\ \hline
+				\multicolumn{2}{|c|}{\textbf{matchesFilter(sc: ScheduleClass)}} & Mencocokan nama dosen sesuai yang di inginkan pengguna \\ \hline
 				\multicolumn{2}{|c|}{\textbf{reapplyTableSortOrder()}} & Mengatur urutan tabel setelah di filter \\ \hline
 		\end{tabular}
 \end{table}
@@ -128,7 +128,7 @@ Setelah melalui serangkaian anlisis dan perancangan diagram kelas pada sub bab i
 
 \begin{enumerate}
 	\item Halaman awal program\\
-	Ini adalah tampilan awal pada saat user pertama kali menjalankan program.		
+	Ini adalah tampilan awal pada saat pengguna pertama kali menjalankan program.		
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{Gambar/antarmuka}
@@ -138,14 +138,14 @@ Setelah melalui serangkaian anlisis dan perancangan diagram kelas pada sub bab i
 		
 		Pada gambar ~\ref{fig:tampilan_awal} terdapat beberapa \textit{button} dan \textit{textbox} yang memiliki fungsi sebagai berikut.
 		\begin{itemize}
-			\item \textit{}{Browse} : berfungsi untuk membuka \textit{pop-up window} sebagai sarana user memilih file excel yang akan dimasukan.
-			\item \textit{Texbox path} : alamat file yang telah dipilih oleh user akan dicatat pada \textit{textbox} ini.
-			\item \textit{Convert} : tombol ini berfungsi mengeksekusi program untuk membaca file yang telah dimasukan oleh user.
-			\item \textit{Texbox filter} : merupakan fitur untuk memfilter jadwal mengawas berdasarkan nama dosen yang sesuai dengan \textit{input} user.
+			\item \textit{}{Browse} : berfungsi untuk membuka \textit{pop-up window} sebagai sarana pengguna memilih file excel yang akan dimasukan.
+			\item \textit{Textbox path} : alamat file yang telah dipilih oleh pengguna akan dicatat pada \textit{textbox} ini.
+			\item \textit{Convert} : tombol ini berfungsi mengeksekusi program untuk membaca file yang telah dimasukan oleh pengguna.
+			\item \textit{Textbox filter} : merupakan fitur untuk memfilter jadwal mengawas berdasarkan nama dosen yang sesuai dengan \textit{input} pengguna.
 			\item \textit{TableView} : jadwal yang telah dibaca pada excel selanjutnya akan ditampilkan pada tabel ini. tabel ini terdiri dari kolom tanggal, waktu, matakuliah, dosen, lokasi, dan \textit{download} untuk mengunduh file iCal.		
 		\end{itemize}
 	\item Halaman untuk melakukan \textit{Browse} file excel\\
-	Halaman ini merupakan halaman dimana user melakukan pemilihan input file excel jadwal mengawas. Halaman \textit{browser} menyesuaikan tipe sistem operasi yang dipakai.
+	Halaman ini merupakan halaman dimana pengguna melakukan pemilihan \textit{input} file excel jadwal mengawas. Halaman \textit{browser} menyesuaikan tipe sistem operasi yang dipakai.
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{Gambar/antarmuka3}
@@ -161,7 +161,7 @@ Setelah melalui serangkaian anlisis dan perancangan diagram kelas pada sub bab i
 		\label{fig:excel_dibaca}
 		\end{figure}
 	\item Halaman untuk menyimpan iCal\\
-	Halaman ini dimana user telah memilih salah satu jadwal dan akan menyimpannya dalam betuk iCal. Halaman \textit{save} menyesuaikan sistem operasi yang dipakai. 
+	Halaman ini dimana pengguna telah memilih salah satu jadwal dan akan menyimpannya dalam betuk iCal. Halaman \textit{save} menyesuaikan sistem operasi yang dipakai. 
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{Gambar/antarmuka4}
@@ -171,22 +171,22 @@ Setelah melalui serangkaian anlisis dan perancangan diagram kelas pada sub bab i
 \end{enumerate}
 
 \section{Rancangan \textit{Method-Method} Utama}
-Berikut ini adalah rancangan \textit{method} utama program jadwal mengawas ujian yang akan dibangun perangkat lunaknya :
+Berikut ini adalah rancangan \textit{method} utama program jadwal mengawas ujian yang berperan penting dalam perangkat lunak:
 \begin{enumerate}
 	\item Converter() - ExcelConverter\\
 	\begin{tabular}{l c p{9cm}}
 		Input & : & - \\ 
 		Output & : & List<ScheduleClass>  \\ 
-		Deskripsi & : & Method ini membaca excel yang di input oleh user dan mengkonversikannya kedalam bentuk list\\
+		Deskripsi & : & Method ini membaca excel yang di \textit{input} oleh pengguna dan mengkonversikannya kedalam bentuk list.\\
 		Algoritma & : & \begin{enumerate}
-			\item Ambil path file yang telah di input oleh user
-			\item Cari kolom No. pada file excel dan jadikan acuan bahwa program akan membaca setelah dari index kolom tersebut
-			\item Baca baris per baris namun cek terlebih dahulu apakah di kolom No. baris tersebut masih berupa nomer, apabila tidak maka berhenti membaca karena baris yang berisi jadwal sudah terbaca semua
-			\item Cek apakah baris mengandung kata \textit{LIBUR} bila iya maka lewati saja
-			\item Pisahkan hari dan tanggal lalu konversi menjadi localDate. 
-			\item Pisahkan jam menjadi jamAwal dan jamAkhir, lalu konversi menjadi localTime.
-			\item jika menemukan kata \textit{Shift} atau \textit{Lab} maka lokasi ujian adalah Lab
-			\item Masukan semua kedalam sebuah arrayList<ScheduleClass>
+			\item Ambil path file yang telah di \textit{input} oleh pengguna.
+			\item Cari kolom No. pada file excel dan jadikan acuan bahwa program akan membaca setelah dari index kolom tersebut.
+			\item Baca baris per baris namun cek terlebih dahulu apakah di kolom No. baris tersebut masih berupa nomer, apabila tidak maka berhenti membaca karena baris yang berisi jadwal sudah terbaca semua.
+			\item Cek apakah baris mengandung kata \textit{LIBUR} bila ya maka lewati saja.
+			\item Pisahkan hari dan tanggal lalu konversi menjadi LocalDate. 
+			\item Pisahkan jam menjadi jamAwal dan jamAkhir, lalu konversi menjadi LocalTime.
+			\item jika menemukan kata \textit{Shift} atau \textit{Lab} maka lokasi ujian adalah Lab.
+			\item Masukan semua kedalam sebuah ArrayList<ScheduleClass>.
 		\end{enumerate}
 		\end{tabular}	
 	
@@ -194,13 +194,13 @@ Berikut ini adalah rancangan \textit{method} utama program jadwal mengawas ujian
 	\begin{tabular}{l c p{9cm}}
 		Input & : & List<ScheduleClass> \\ 
 		Output & : & List<ScheduleClass> \\ 
-		Deskripsi & : & Method ini mengatasi duplikat \textit{entry} dari dosen yang mempunyai dua jadwal mengawas pada hari yang sama\\
+		Deskripsi & : & Method ini menghapus \textit{entry} duplikat dari dosen yang mempunyai dua jadwal mengawas pada hari yang sama.\\
 		Algoritma & : & 
 			\begin{enumerate}
-				\item Cari subject/mata kuliah yang tidak memiliki dosen pada arrayList yang telah di proses oleh \textit{method} Convert() karena bila program membaca kolom merger maka hanya kolom pertama saja yang dibaca sehingga kolom keduanya kosong.
-				\item Masukan baris yang tidak memiliki dosen kedalam arrayList baru
-				\item Hapus baris yang tidak memiliki dosen pada arrayList master
-				\item Cocokan waktu dan tanggal ujian arrayList master dengan temp, bila sama maka tambahkan matakuliah/subject pada arrayList master
+				\item Cari subject/mata kuliah yang tidak memiliki dosen pada ArrayList yang telah di proses oleh \textit{method} Convert() karena bila program membaca kolom yang di-\textit{merger} maka hanya kolom pertama saja yang dibaca sehingga kolom keduanya kosong.
+				\item Masukan baris yang tidak memiliki dosen kedalam ArrayList baru.
+				\item Hapus baris yang tidak memiliki dosen pada ArrayList master.
+				\item Cocokan waktu dan tanggal ujian ArrayList master dengan temp, bila sama maka tambahkan matakuliah/subject pada ArrayList master.
 			\end{enumerate}
 		\end{tabular}	
 	
@@ -211,11 +211,11 @@ Berikut ini adalah rancangan \textit{method} utama program jadwal mengawas ujian
 		Deskripsi & : & Method ini mengkonversi ScheduleClass menjadi iCal\\
 		Algoritma & : & 
 			\begin{enumerate}
-				\item Inisiasi variable timezone Indonesia
-				\item Konversi tanggal, bulan, dan tahun kedalam GregorianCalender
+				\item Inisiasi variable zona waktu Indonesia.
+				\item Konversi tanggal, bulan, dan tahun kedalam GregorianCalender.
 				\item Masukan event berdasarkan subject/mata kuliah , lokasi, dan dosen yang mengawas.
-				\item Inisiasi kalender dan masukan variable tanggal dan event yang telah dibuat sebelumnya kedalam variable kalender tersebut
-				\item Simpan pada path yang telah di pilih oleh user
+				\item Inisiasi kalender dan masukan variable tanggal dan event yang telah dibuat sebelumnya kedalam variable kalender tersebut.
+				\item Simpan pada path yang telah di pilih oleh pengguna.
 			\end{enumerate}
 		\end{tabular}	
 		
@@ -223,12 +223,12 @@ Berikut ini adalah rancangan \textit{method} utama program jadwal mengawas ujian
 	\begin{tabular}{l c p{9cm}}
 		Input & : & void\\ 
 		Output & : & void \\ 
-		Deskripsi & : & Method ini menjalankan filter data dosen sesuai input user\\
+		Deskripsi & : & Method ini menjalankan filter data dosen sesuai \textit{input} pengguna\\
 		Algoritma & : & 
 			\begin{enumerate}
-				\item Inisiasi tabel dengan list yang sudah di filter
-				\item Masukan nilai yang sama kedalam list filter jika dosen yang dicari sesuai dengan input user.
-				\item Atur kembali urutan tabel pada perangkat lunak
+				\item Inisiasi tabel dengan list yang sudah di filter.
+				\item Masukan nilai yang sama kedalam list filter jika dosen yang dicari sesuai dengan \textit{input} pengguna.
+				\item Atur kembali urutan tabel pada perangkat lunak.
 			\end{enumerate}
 		\end{tabular}	
 \end{enumerate}

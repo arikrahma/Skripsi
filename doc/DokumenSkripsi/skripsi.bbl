@@ -1,40 +1,47 @@
 \begin{thebibliography}{99}
 
 \bibitem{apachepoi}
-Foundation", T. A.~S. (2016) Apache poi - the java api for microsoft documents.
+{The Apache Software Foundation} (2016) {Apache POI - the Java API for
+  Microsoft Documents}.
 \newblock \url{https://poi.apache.org/}.
 \newblock [Online; diakses 23-09-2016].
 
 \bibitem{apachepoi2}
-Foundation", T. A.~S. (2016) Poi api documentation.
+{The Apache Software Foundation} (2016) {POI API Documentation}.
 \newblock \url{http://poi.apache.org/apidocs/index.html}.
 \newblock [Online; diakses 23-09-2016].
 
 \bibitem{ical2}
-Fortune", B. (2007) ical4j.
+{Ben Fortune} (2007) ical4j.
 \newblock \url{http://ical4j.sourceforge.net/introduction.html}.
 \newblock [Online; diakses 14-09-2016].
 
 \bibitem{ical}
-Fortune", B. (2016) cal4j/ical4j: A java library for parsing and building
-  icalendar data models.
+{Ben Fortune} (2016) {cal4j/ical4j: A Java library for parsing and building
+  iCalendar data models}.
 \newblock \url{http://ical4j.github.io/docs/ical4j/api/2.0-beta1}.
 \newblock [Online; diakses 14-09-2016].
 
 \bibitem{javafx2}
-and/or~its affiliates", O. (2013) What is javafx?
+{Oracle and/or its affiliates} (2013) What is javafx?
 \newblock \url{http://docs.oracle.com/javafx/2/overview/jfxpub-overview.htm}.
 \newblock [Online; diakses 28-09-2016].
 
 \bibitem{javafx}
-and/or~its affiliates", O. (2013) Javafx architecture.
+{Oracle and/or its affiliates} (2013) {JavaFX Architecture}.
 \newblock
   \url{http://docs.oracle.com/javafx/2/architecture/jfxpub-architecture.htm}.
 \newblock [Online; diakses 28-09-2016].
 
 \bibitem{javafx3}
-and/or~its affiliates", O. (2015) Javafx 8.
+{Oracle and/or its affiliates} (2015) Javafx 8.
 \newblock \url{http://docs.oracle.com/javase/8/javafx/api/toc.htm}.
 \newblock [Online; diakses 28-09-2016].
+
+\bibitem{jdk}
+{Oracle and/or its affiliates} (2016) Java se at a glance.
+\newblock
+  \url{http://www.oracle.com/technetwork/java/javase/overview/index.html}.
+\newblock 17 November 2016.
 
 \end{thebibliography}
