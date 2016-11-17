@@ -31,50 +31,12 @@ Pada sub bab ini akan membahas sedikit intoduksi mengenai beberapa kelas dan met
 
 \subsubsection{Workbook}
 \label{subs:workbook} 
-\textbf{org.apache.poi.ss.usermodel} \textit{package} merupakan \textit{super-interface} dari semua kelas yang berhubungan dengan pembuatan atau\textit{maintain} Excel workbook. Dua kelas yang mengimplementasikan \textit{interface} diatas sebagai berikut:\cite{apachepoi2}
+\textbf{org.apache.poi.ss.usermodel} \textit{package} merupakan \textit{super-interface} dari semua kelas yang berhubungan dengan pembuatan atau me-\textit{maintain} Excel workbook. Dua kelas yang mengimplementasikan \textit{interface} diatas sebagai berikut:\cite{apachepoi2}
 
 \begin{itemize}
 	\item \textbf{HSSFWorkbook} : Kelas ini mempunyai method yang dapat membaca dan menulis file Microsoft Excel dengan format .xls. Kelas ini kompatibel dengan MS-Office versi 97-2003.
 	\item \textbf{XSSFWorkbook} : Kelas ini mempunyai method untuk menulis dan membaca Microsoft Excel dan OpenOffice xml dengan format .xls atau .xlsx. Kelas ini kompatibel dengan MS-Office versi 2007 atau versi barunya.
 \end{itemize}  
-
-
-\subsubsection{HSSFWorkbook} 
-\label{subs:HSSFWorkbook} 
-HSSFWorkbook merupakan \textit{high-level class} dibawah \textbf{org.apache.hssf.usermodel} \textit{package}. HSSFWorkbook juga mengimplementasikan antarmuka workbook yang digunakan oleh file Excel dalam format .xls. Berikut ini list dari bebeberapa method dan constructor dalam kelas ini.\cite{apachepoi2}\\
-
-\noindent \textbf{Class Constructor}
-
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas Konstruktor HSSFWorkbook}
-		\label{tab:konstrukHSSF}
-	\begin{tabular}{|c|p{12cm}|}			
-		\hline
-		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
-		1 & \textbf{HSSFWorkbook()}\\
-			&	Membuat baru objek HSSFWorkbook.\\ \hline 
-		2 & \textbf{HSSFWorkbook(DirectoryNode directory, boolean perserveNodes)}\\
-			&	Membuat objek HSSFWorkbook baru dalam direktori yang spesifik.\\ \hline
-		3 & \textbf{HSSFWorkbook(DirectoryNode directory, POIFSFileSystem fs, boolean perserveNodes)}\\
-			&	Memberikan sebuah objek POIDSFileSystem dan sebuah spesifik didalamnya, serta membuat objek SSFWorkbook untuk membaca sebuah workbook yang spesifik.\\ \hline 
-		4 & \textbf{HSSFWorkbook(java.io.InputStream s)}\\
-			&	Membuat baru objek HSSFWorkbook menggunakan input stream.\\ \hline
-		5 & \textbf{HSSFWorkbook(java.io.InputStream s, boolean preserveNodes )}\\
-			&	Membangun sebuah POI \textit{file system} disekeliling input stream.\\ \hline
-		6 & \textbf{HSSFWorkbook(POIFSFileSystem fs)}\\
-			&	Membangun sebuah objek HSSFWorkbook baru menggunakan sebuah objek POIFSFileSystem.\\ \hline 		
-		7 & \textbf{HSSFWorkbook(POIFSFileSystem fs, boolean preserveNodes)}\\
-			&	Memberikan sebuah objek POIFSFileSystem dan membuat HSSFWorkbook baru untuk membacu sebuah workbook spesifik.\\ \hline 
-	\end{tabular}
-\end{table}
-
-Berikut ini penjelasan parameter yang sering dipakai pada constructor :
-\begin{itemize}
-	\item \textbf{directory} : direktori proses dari POI filesystem
-	\item \textbf{fs} : POI filesystem yang mengandung workbook stream.
-	\item \textbf{preservenodes} : Opsional parameter yang memutuskan menjaga node lain, selain itu parameter ini menggunakan banyak memori seperti menyimpan semua POIFileSystem dalam memori(jika diset).
-\end{itemize} 
 
 \subsubsection{XSSFWorkbook}
 \label{subs:XSSFWorkbook}
@@ -109,40 +71,21 @@ Kelas ini merepresentasikan baik \textit{high} dan \textit{low} level format fil
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
 		1 & \textbf{CreateSheet()}\\
-			&	Menciptakan sebuah XSSFSheet pada workbook, lalu menambahkan sheet, dan mengembalikannya dalam representasi \textit{high level} .\\ \hline 
+			&	Menciptakan atau menambahkan sebuah XSSFSheet pada workbook.\\ \hline 
 		2 & \textbf{createSheet(java.lang.String sheetname)}\\
-			&	Membuat sheet baru untuk workbook dan mengembalikannya dalam representasi \textit{high level}.\\ \hline
+			&	Membuat sheet baru untuk workbook .\\ \hline
 		3 & \textbf{createFont()}\\
-			&	Membuat font baru dan menambahkannya pada tabel font workbook.\\ \hline 
+			&	Membuat font baru dan menambahkannya pada tabel font pada workbook.\\ \hline 
 		4 & \textbf{createCellStyle()}\\
 			&	Membuat XSSFCellStyle Baru dan mmenambahkannya pada tabel style workbook.\\ \hline
 		5 & \textbf{setPrintArea(int sheetIndex, int startColumn, int endColumn, int startRow,int endRow)}\\
-			&	Menentukan area print dari kertas yang diberikan dengan parameter yang spesifik.\\ \hline	
+			&	Menentukan area print dari kertas dengan parameter yang spesifik.\\ \hline	
 	\end{tabular}
 	\end{table}
 	
 \subsubsection{Sheet}
 \label{subs:Sheet}
-Sheet merupakan sebuah interface dibawah package org.apache.ss.usermodel dan sheet merupakan super-interface dari semua kelas yang menciptakan \textit{high} atau \textit{low level spreadsheet} dengan nama yang spesifik. Jenis yang paling umum dari spreadsheet adalah worksheet yang direpresentasikan sebagai sebuah \textit{grid} dari cell.\cite{apachepoi2}
-
-\subsubsection{HSSFSheet}
-\label{subs:HSSFSheet}
-HSSFSheet merupakan kelas dibawah \textit{package}\textbf{org.apache.poi.hssf.usermodel}. HSSFSheet dapat membuat excel spreadsheet dan memungkinkan untuk memformat style dari sheet dan data sheet.\cite{apachepoi2}
-\\
-\noindent \textbf{Class Constructor}
-\begin{table}[H]
-		\centering
-		\caption{Tabel kelas Konstruktor HSSFSheet}
-		\label{tab:konstrukHSSFSheet}
-	\begin{tabular}{|c|p{12cm}|}
-		\hline
-		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
-		1 & \textbf{HSSFSheet(HSSFWorkbook workbook)}\\
-			&	Membuat baru HSSFSheet yang disebut HSSFWorkbook dalam pembuatan sheet baru .\\ \hline 
-		2 & \textbf{HSSFSheet(HSSFWorkbook workbook, InternalSheet sheet)}\\
-			&	Membuat sebuah HSSFSheet yang mewakili objek sheet yang diberikan.\\ \hline
-	\end{tabular}
-\end{table}
+Sheet merupakan sebuah interface dibawah package org.apache.ss.usermodel. Jenis yang paling umum dari spreadsheet adalah worksheet yang direpresentasikan sebagai sebuah \textit{grid} dari cell.\cite{apachepoi2}
 	
 \subsubsection{XSSFSheet}
 \label{subs:XSSFSheet}
@@ -158,10 +101,9 @@ Kelas ini merupakan representasi dari \textit{high level} excel spreadsheet. Kel
 		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
 		1 & \textbf{XSSFSheet()}\\
 			&	Membuat baru XSSFSheet yang disebut XSSFWorkbook dalam pembuatan sheet baru .\\ \hline 
-		2 & \textbf{XSSFSheet(PackagePart part, PackageRelationship rel)}\\
-			&	Membuat sebuah XSSFSheet yang mewakili bagian package dan \textit{relationship}.\\ \hline
 	\end{tabular}
 \end{table}
+
 \noindent \textbf{Class Method}
 \begin{table}[H]
 		\centering
@@ -208,11 +150,11 @@ XSSFRow merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.x
 \label{subs:Cell}
 Cell merupakan interface yang berada dibawah \textit{package} \textbf{org.apache.poi.ss.usermodel}. Cell merupakan sebuah super-interface dari semua kelas yang mewakili cell dalam baris sebuah spreadsheet.\\
 
-Cell dapat beruba berbagai atrubut seperti \textit{blank, numeric, date, error, } dll. Sebelum ditambahkan ke baris cell memiliki nomer tersendiri(dari mulai 0).\cite{tutpoint}
+Cell dapat berupa berbagai atribut seperti \textit{blank, numeric, date, error, } dll. Sebelum ditambahkan ke baris cell memiliki nomer tersendiri(dari mulai 0).\cite{apachepoi2}
 
 \subsubsection{XSSFCell}
 \label{subs:XSSFCell}  
-Kelas ini berada dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mewakili cell interface. XSSFCell adalah \textit{high-level representation} cell dalam row dari sebuah spreadsheet.\cite{tutpoint}
+Kelas ini berada dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mewakili cell interface. XSSFCell adalah \textit{high-level representation} cell dalam row dari sebuah spreadsheet.\cite{apachepoi2}
 
 \subsubsection{Ringkasan Tipe Cell}
 \label{subs:Ringkasan_Tipe_Cell}
@@ -260,11 +202,11 @@ List dibawah ini adalah sebagian \textit{field} dari kelas XSSFCell beserta desk
 
 \subsubsection{XSSFCellStyle}
 \label{subs:XSSFCellStyle}
-XSSFCellStyle merupakan sebuah kelas yang berada dibawah \textit{package} \textbf{org.apache.poi.usermodel}. kelas ini memberikan infomarsi yang mungkin mengenai format konten pada suatu cell dari spreadsheet. Kelas ini juga memberikan opsi untuk merubah format tersebut. Kelas ini mewakili CellStyle interface.\cite{apachepoi2}
+XSSFCellStyle merupakan sebuah kelas yang berada dibawah \textit{package} \textbf{org.apache.poi.usermodel}. kelas ini memberikan infomarsi yang mungkin mengenai format konten pada suatu cell dari spreadsheet. Kelas ini juga memberikan opsi untuk merubah format tersebut. Kelas ini mewakili \textit{CellStyle interface}.\cite{apachepoi2}
 
 \subsubsection{Ringkasan Cell Style}
 \label{subs:Ringkasan_Cell_Style}
-List dibawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle interface.\cite{tutpoint}\\
+List dibawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle interface.\cite{apachepoi2}\\
 
 \begin{table}[H]
 		\centering
@@ -340,50 +282,6 @@ List dibawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle i
 	\end{tabular}
 \end{table}
 
-\subsubsection{HSSFColor}
-\label{subs:HSSFColor}
-HSSFColor merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.hssf.util.package}. Kelas ini memberikan warna berbeda terhadap \textit{nested class}. Biasanya \textit{nested class} diwakili dengan menggunakan index masing-masing. Kelas ini mengimplementasikan Color interface.\cite{apachepoi2}
-
-	
-\subsubsection{Nested Class}
-\label{subs:Nested_Class}
-Semua \textit{nested class} dari kelas ini adalah static dan setiap kelas memiliki index masing-masing. Warna kelas ini digunakan pada format cell seperti konten cell, border, latar depan(\textit{foreground}), dan latar belakang(\textit{background}). List dibawah ini merupakan sebagian dari \textit{nested class}.\cite{apachepoi2}
-
-\begin{table}[H]
-		\centering
-		\caption{Tabel nested class HSSFColor}
-		\label{tab:nested_class_HSSFColor}
-\begin{tabular}{|c|c|}
-		\hline
-		\textbf{No} & \textbf{Nama Kelas(warna)} \\ \hline \hline
-		1 & HSSFColor.AQUA\\ \hline 
-		2 &	HSSFColor.AUTOMATIC\\ \hline 
-		3 & HSSFColor.BLACK \\ \hline
-		4	&	HSSFColor.BLUE\\ \hline
-		5	&	HSSFColor.BRIGHT\_GREEN\\ \hline
-		6 &	HSSFColor.BRIGHT\_GRAY\\ \hline
-		7 &	HSSFColor.CORAL \\ \hline
-		8 &	HSSFColor.DARK\_BLUE\\ \hline
-		9 &	HSSFColor.DARK\_GREEN\\ \hline
-		10 &	HSSFColor.SKY\_BLUE\\ \hline
-		11 &	HSSFColor.WHITE\\ \hline
-		12 &	HSSFColor.YELLOW\\ \hline
-	\end{tabular}
-	\end{table}
-	
-	\noindent \textbf{Class Method}\\ \\
-	Hanya satu method dalam kelas ini yang penting dan digunakan untuk mendapat nilai indeks.
-	\begin{table}[H]
-		\centering
-		\caption{Tabel kelas method HSSFColor}
-		\label{tab:methodHSSFColor}
-	\begin{tabular}{|c|p{12cm}|}
-		\hline
-		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
-		1 & \textbf{getIndex()}\\
-			&	Method ini digunakan untuk mendapatkan nilai indeks dari sebuah \textit{nested class}.\\ \hline 
-	\end{tabular}
-\end{table}
 
 \subsubsection{XSSFColor}
 \label{subs:XSSFColor}
@@ -415,7 +313,7 @@ XSSFColor merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
 		1 & \textbf{setAuto(boolean auto)}\\
-			&	Mengatur sebuah nilai boolean untuk mengindikasikan bahwa ctColor bersifat otomatis dan bergantung pada ctColor sistem.\\ \hline
+			&	Mengatur sebuah nilai boolean untuk mengindikasikan bahwa ctColor bersifat otomatis dan bergantung pada sistem ctColor.\\ \hline
 		2 & \textbf{setIndexed(int indexed)}\\
 			&	Mengatur nilai indeks ctColor sebagai sistem ctColor.\\ \hline
 	\end{tabular}
@@ -515,7 +413,7 @@ XSSFCreationHelper merupakan kelas dibawah \textit{package} \textbf{org.apache.p
 
 \subsubsection{XSSFPrintSetup}
 \label{subs:XSSFPrintSetup}
-XSSFPrintSetup merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{PrintSetup interface}. Kelas ini digunakan untuk mengatur ukuran cetak pada halaman, wilayah cetak, opsi, dan pengaturan.\cite{tutpoint}
+XSSFPrintSetup merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{PrintSetup interface}. Kelas ini digunakan untuk mengatur ukuran cetak pada halaman, wilayah cetak, opsi, dan pengaturan.\cite{apachepoi2}
 \\
 \noindent \textbf{Class Methods}
 \begin{table}[H]
@@ -603,7 +501,7 @@ Pada bagian ini \textit{package} yang ditulis di sub bab sebelumnya akan dijelas
 		1 & \textbf{AbstractOutputter}\\
 			&	kelas dasar untuk model \textit{output}.\\ \hline
 		2 & \textbf{CalendarBuilder}\\
-			&	Parsing dan memnagan sebuah model iCalendar dari input stream.\\ \hline
+			&	Parsing dan menangani sebuah model iCalendar dari input stream.\\ \hline
 		3 & \textbf{CalendarOutputter}\\
 			&	Menuliskan sebuah model iCalendar pada output stream.\\ \hline
 		4 & \textbf{CalendarParserFactory}\\
@@ -776,56 +674,25 @@ VVenue}\\
 			&	Mendefinisikan parameter singkatan.\\ \hline
 		2 & \textbf{AltRep}\\
 			&	Mendefinisikan alternatif representasi parameter teks. \\ \hline
-		3 & \textbf{Cn}\\
-			&	Mendefinisikan parameter dengan nama umum .\\ \hline
-		4 & \textbf{CuType}\\
-			&	Mendefinisikan tipe calender user.\\ \hline
-		5 & \textbf{DelegatedFrom}\\
-			&	Mendefinisikan parameter delegator.\\ \hline
-		6 & \textbf{DelegatedTo}\\
-			&	Mendefinisikan parameter delegasi.\\ \hline
-		7 & \textbf{Dir}\\
-			&	Mendefinisikan parameter referensi directory entri.\\ \hline
-		8 & \textbf{Encoding}\\
-			&	Mendefinisikan parameter inline Encoding.\\ \hline
-		9 & \textbf{VJournal.Factory	 
-VTimeZone}\\
-			&	Mendefinisikan komponen VTimeZone pada iCalendar.\\ \hline
-		10 & \textbf{FbType}\\
-			&	Mendefinisikan tipe parameter \textit{free/busy}.\\ \hline
-		11 & \textbf{FmtType}\\
-			&	Mendefinisikan parameter tipe format.\\ \hline
-		12 & \textbf{Language}\\
-			&	Mendefinisikan parameter bahasa.\\ \hline
-		13 & \textbf{Member}\\
-			&	Mendefinisikan parameter list group peserta.\\ \hline
-		14 & \textbf{PartStat}\\
-			&	Mendefinisikan parameter satus partisipasi.\\ \hline
-		15 & \textbf{Range}\\
-			&	Mendefinisikan parameter identifikasi perulangan .\\ \hline
-		16 & \textbf{Related}\\
-			&	Mendefinisikan parameter pemicu alarm.\\ \hline
-		17 & \textbf{RelType}\\
-			&	Mendefinisikan parameter tipe hubungan.\\ \hline
-		18 & \textbf{Rsvp}\\
+		3 & \textbf{Rsvp}\\
 			&	Mendefinisikan parameter RSVP.\\ \hline
-		19 & \textbf{ScheduleAgent}\\
+		4 & \textbf{ScheduleAgent}\\
 			&	Mendefinisikan penjadwalan.\\ \hline
-		20 & \textbf{ScheduleStatus}\\
+		5 & \textbf{ScheduleStatus}\\
 			&	Mendefinisikan status penjadwalan.\\ \hline
-		21 & \textbf{SentBy}\\
+		6 & \textbf{SentBy}\\
 			&	Mendefinisikan parameter pengirim.\\ \hline
-		22 & \textbf{Type}\\
+		7 & \textbf{Type}\\
 			&	Mendefinisikan parameter tipe.\\ \hline
-		23 & \textbf{TzId}\\
+		8 & \textbf{TzId}\\
 			&	Mendefinisikan parameter zona waktu.\\ \hline
-		24 & \textbf{Value}\\
+		9 & \textbf{Value}\\
 			&	Mendefinisikan parameter nilai tipe data.\\ \hline
-		25 & \textbf{Vvenue}\\
+		10 & \textbf{Vvenue}\\
 			&	Mendefinisikan parameter Vvenue.\\ \hline
-		26 & \textbf{XParameter}\\
+		11 & \textbf{XParameter}\\
 			&	Mendefinisikan parameter pemicu alarm.\\ \hline
-		27 & \textbf{Related}\\
+		12 & \textbf{Related}\\
 			&	Mendefinisikan penambahan parameter.\\ \hline
 	\end{tabular}
 \end{table}
@@ -846,58 +713,34 @@ VTimeZone}\\
 			&	Mendefinisikan lampiran dari komponen properti iCalendar. \\ \hline
 		3 & \textbf{Attendee}\\
 			&	Mendefinisikan kedatangan dari komponen properti iCalendar.\\ \hline
-		4 & \textbf{BusyType}\\
-			&	Mendefinisikan tipe sibuk pada komponen properti.\\ \hline
-		5 & \textbf{Categories}\\
-			&	Mendefinisikan kategori pada komponen properti.\\ \hline
-		6 & \textbf{Clazz}\\
-			&	Mendefinisikan kelas pada komponen properti.\\ \hline
-		7 & \textbf{Comment}\\
-			&	Mendefinisikan komen pada komponen properti.\\ \hline
-		8 & \textbf{Completed}\\
-			&	Mendefinisikan status selesai pada komponen properti.\\ \hline
-		9 & \textbf{Contact}\\
+		4 & \textbf{Contact}\\
 			&	Mendefinisikan kontak pada komponen properti.\\ \hline
-		10 & \textbf{Country}\\
+		5 & \textbf{Country}\\
 			&	Mendefinisikan negara pada komponen properti.\\ \hline
-		11 & \textbf{Created}\\
+		6 & \textbf{Created}\\
 			&	Mendefinisikan pembuatan pada komponen properti.\\ \hline
-		12 & \textbf{Description}\\
+		7 & \textbf{Description}\\
 			&	Mendefinisikan deskripsi pada komponen properti.\\ \hline
-		13 & \textbf{DtEnd}\\
+		8 & \textbf{DtEnd}\\
 			&	Mendefinisikan DtEnd pada komponen properti.\\ \hline
-		14 & \textbf{DtStamp}\\
+		9 & \textbf{DtStamp}\\
 			&	Mendefinisikan DtStamp pada komponen properti.\\ \hline
-		15 & \textbf{DtStart}\\
+		10 & \textbf{DtStart}\\
 			&	Mendefinisikan DtStart pada komponen properti.\\ \hline
-		16 & \textbf{Due}\\
+		11 & \textbf{Due}\\
 			&	Mendefinisikan Due pada komponen properti.\\ \hline
-		17 & \textbf{Duration}\\
+		12 & \textbf{Duration}\\
 			&	Mendefinisikan Durasi pada komponen properti.\\ \hline
-		18 & \textbf{LastModified}\\
-			&	Mendefinisikan terakhir dirubah pada komponen properti.\\ \hline
-		19 & \textbf{Location}\\
+		13 & \textbf{Location}\\
 			&	Mendefinisikan lokasi pada komponen properti.\\ \hline
-		20 & \textbf{LocationType}\\
-			&	Mendefinisikan tipe lokasi pada komponen properti.\\ \hline
-		21 & \textbf{Name}\\
+		14 & \textbf{Name}\\
 			&	Mendefinisikan nama pada komponen properti\\ \hline
-		22 & \textbf{PercentComplete}\\
-			&	Mendefinisikan progress pada komponen properti.\\ \hline
-		23 & \textbf{Priority}\\
-			&	Mendefinisikan prioritas pada komponen properti.\\ \hline
-		24 & \textbf{RelatedTo}\\
-			&	Mendefinisikan berhubungan dengan siapa pada komponen properti.\\ \hline
-		25 & \textbf{Status}\\
-			&	Mendefinisikan status pada komponen properti.\\ \hline
-		26 & \textbf{StreetAddress}\\
+		15 & \textbf{StreetAddress}\\
 			&	Mendefinisikan alamat pada komponen properti.\\ \hline
-		27 & \textbf{Summary}\\
+		16 & \textbf{Summary}\\
 			&	Mendefinisikan ringkasan pada komponen properti.\\ \hline
-		28 & \textbf{Url}\\
+		17 & \textbf{Url}\\
 			&	Mendefinisikan url pada komponen properti.\\ \hline
-		29 & \textbf{Version}\\
-			&	Mendefinisikan versi pada komponen properti.\\ \hline	
 	\end{longtable}
 \end{table}
 
@@ -929,7 +772,7 @@ VTimeZone}\\
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
 		1 & \textbf{HostInfo}\\
-			&	Menyediakan informasi host berupa\textit{paltform} yang independen.\\ \hline
+			&	Menyediakan informasi host berupa \textit{paltform} yang independen.\\ \hline
 	\end{tabular}
 \end{table}
 
@@ -956,7 +799,7 @@ VTimeZone}\\
 
 \section{Java FX}
 \label{sec:JavaFX}
-Java FX merupakan seperangkat grafis dan paket media yang memungkinkan pengembang untuk merancang, membuat, menguji, debug , dan  beroperasi secara konsisten di seluruh platform yang beragam\cite{javafx2}.\\
+Java FX merupakan seperangkat grafis dan paket media yang memungkinkan pengembang untuk merancang, membuat, menguji, \textit{debug} , dan  beroperasi secara konsisten di seluruh platform yang beragam\cite{javafx2}.\\
 Berikut ini ilustrasi arsitektur dari JavaFX.
 \begin{figure}[H]
 	\centering
@@ -999,7 +842,7 @@ Penggunaan \textbf{javafx.scene} API memungkinkan \textit{developer} untuk mengg
 
 \subsection{Java Public API untuk Fitur Java FX}
 \label{subs:API}
-Pada lapisan atas arsitektur Java FX pada gambar \textbf{2.1} API Java memberikan kebebasan dan fleksibilitas untuk membangun berbagai client dari sebuah aplikasi. Platform Java FX menggabungkan kemampuan terbaik yang dimiliki platform Java secara menyeluruh dan mendalam serta intuitif dengan memasukan fungsi media kedalamnya, sehingga tercipta lingkup konsep \textit{one-stop development}. Berikut contoh kegunaan Java API untuk fitur Java FX :\cite{javafx}
+Pada lapisan atas arsitektur Java FX pada gambar \textbf{2.1} API Java memberikan kebebasan dan fleksibilitas untuk membangun berbagai \textit{client} dari sebuah aplikasi. Platform Java FX menggabungkan kemampuan terbaik yang dimiliki platform Java secara menyeluruh dan mendalam serta intuitif dengan memasukan fungsi media kedalamnya, sehingga tercipta lingkup konsep \textit{one-stop development}. Berikut contoh kegunaan Java API untuk fitur Java FX :\cite{javafx}
 \begin{enumerate}
 	\item Memungkinkan penggunaan fitur Java yang poweful seperti \textit{generics, annotations, multithreading}.
 	\item Lebih mudah mengembangan web menggunakan Java FX dibanding \textit{JVM-base dynamic languages} lainnya seperti Grovvy, dan JavaScript.
@@ -1152,5 +995,6 @@ Dalam \textit{package} javafx.beans.value terdapat sebuah kelas yang sering dipa
 			&	Menambahkan InvalidationListener yang di notifikasi setiap yang diamati menjadi invalid.\\ \hline
 	\end{tabular}
 \end{table}
+
 
 

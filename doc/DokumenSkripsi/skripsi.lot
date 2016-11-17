@@ -1,55 +1,51 @@
 \select@language {bahasa}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Tabel kelas Konstruktor HSSFWorkbook}}{4}{table.2.1}
-\contentsline {table}{\numberline {2.2}{\ignorespaces Tabel kelas Konstruktor XSSFWorkbook}}{5}{table.2.2}
-\contentsline {table}{\numberline {2.3}{\ignorespaces Tabel kelas method XSSFWorkbook}}{5}{table.2.3}
-\contentsline {table}{\numberline {2.4}{\ignorespaces Tabel kelas Konstruktor HSSFSheet}}{6}{table.2.4}
-\contentsline {table}{\numberline {2.5}{\ignorespaces Tabel kelas Konstruktor XSSFSheet}}{6}{table.2.5}
-\contentsline {table}{\numberline {2.6}{\ignorespaces Tabel kelas method XSSFSheet}}{6}{table.2.6}
-\contentsline {table}{\numberline {2.7}{\ignorespaces Tabel kelas method XSSFRow}}{7}{table.2.7}
-\contentsline {table}{\numberline {2.8}{\ignorespaces Tabel ringkasan tipe cell}}{7}{table.2.8}
-\contentsline {table}{\numberline {2.9}{\ignorespaces Tabel kelas method XSSFCell}}{8}{table.2.9}
-\contentsline {table}{\numberline {2.10}{\ignorespaces Tabel ringkasan cell style}}{8}{table.2.10}
-\contentsline {table}{\numberline {2.11}{\ignorespaces Tabel kelas konstruktor XSSFCellStyle}}{9}{table.2.11}
-\contentsline {table}{\numberline {2.12}{\ignorespaces Tabel kelas method XSSFCellStyle}}{9}{table.2.12}
-\contentsline {table}{\numberline {2.13}{\ignorespaces Tabel nested class HSSFColor}}{10}{table.2.13}
-\contentsline {table}{\numberline {2.14}{\ignorespaces Tabel kelas method HSSFColor}}{10}{table.2.14}
-\contentsline {table}{\numberline {2.15}{\ignorespaces Tabel kelas konstruktor XSSFColor}}{10}{table.2.15}
-\contentsline {table}{\numberline {2.16}{\ignorespaces Tabel kelas method XSSFColor}}{11}{table.2.16}
-\contentsline {table}{\numberline {2.17}{\ignorespaces Tabel kelas konstruktor XSSFFont}}{11}{table.2.17}
-\contentsline {table}{\numberline {2.18}{\ignorespaces Tabel kelas method XSSFFont}}{11}{table.2.18}
-\contentsline {table}{\numberline {2.19}{\ignorespaces Tabel field XSSFHyperlink}}{12}{table.2.19}
-\contentsline {table}{\numberline {2.20}{\ignorespaces Tabel kelas method XSSFHyperlink}}{12}{table.2.20}
-\contentsline {table}{\numberline {2.21}{\ignorespaces Tabel kelas method XSSFCreationHelper}}{12}{table.2.21}
-\contentsline {table}{\numberline {2.22}{\ignorespaces Tabel kelas method XSSFPrintSetup}}{12}{table.2.22}
-\contentsline {table}{\numberline {2.23}{\ignorespaces Tabel komponen iCal4j}}{13}{table.2.23}
-\contentsline {table}{\numberline {2.24}{\ignorespaces Tabel ringkasan interface net.fortuna.ical4j.data}}{14}{table.2.24}
-\contentsline {table}{\numberline {2.25}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.data}}{14}{table.2.25}
-\contentsline {table}{\numberline {2.26}{\ignorespaces Tabel ringkasan interface net.fortuna.ical4j.filter}}{14}{table.2.26}
-\contentsline {table}{\numberline {2.27}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.filter}}{15}{table.2.27}
-\contentsline {table}{\numberline {2.28}{\ignorespaces Tabel ringkasan interface net.fortuna.ical4j.model}}{15}{table.2.28}
-\contentsline {table}{\numberline {2.29}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.model}}{16}{table.2.29}
-\contentsline {table}{\numberline {2.30}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.model.component}}{17}{table.2.30}
-\contentsline {table}{\numberline {2.31}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.model.parameter}}{18}{table.2.31}
-\contentsline {table}{\numberline {2.32}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.model.property}}{20}{table.2.32}
-\contentsline {table}{\numberline {2.34}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.model.transform}}{21}{table.2.34}
-\contentsline {table}{\numberline {2.35}{\ignorespaces Tabel ringkasan interface net.fortuna.ical4j.model.util}}{21}{table.2.35}
-\contentsline {table}{\numberline {2.36}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.model.util}}{21}{table.2.36}
-\contentsline {table}{\numberline {2.37}{\ignorespaces Tabel komponen Java FX}}{27}{table.2.37}
-\contentsline {table}{\numberline {2.38}{\ignorespaces Tabel method observableValueBase}}{28}{table.2.38}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Tabel kelas Konstruktor XSSFWorkbook}}{4}{table.2.1}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Tabel kelas method XSSFWorkbook}}{4}{table.2.2}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Tabel kelas Konstruktor XSSFSheet}}{5}{table.2.3}
+\contentsline {table}{\numberline {2.4}{\ignorespaces Tabel kelas method XSSFSheet}}{5}{table.2.4}
+\contentsline {table}{\numberline {2.5}{\ignorespaces Tabel kelas method XSSFRow}}{5}{table.2.5}
+\contentsline {table}{\numberline {2.6}{\ignorespaces Tabel ringkasan tipe cell}}{6}{table.2.6}
+\contentsline {table}{\numberline {2.7}{\ignorespaces Tabel kelas method XSSFCell}}{6}{table.2.7}
+\contentsline {table}{\numberline {2.8}{\ignorespaces Tabel ringkasan cell style}}{7}{table.2.8}
+\contentsline {table}{\numberline {2.9}{\ignorespaces Tabel kelas konstruktor XSSFCellStyle}}{7}{table.2.9}
+\contentsline {table}{\numberline {2.10}{\ignorespaces Tabel kelas method XSSFCellStyle}}{8}{table.2.10}
+\contentsline {table}{\numberline {2.11}{\ignorespaces Tabel kelas konstruktor XSSFColor}}{8}{table.2.11}
+\contentsline {table}{\numberline {2.12}{\ignorespaces Tabel kelas method XSSFColor}}{9}{table.2.12}
+\contentsline {table}{\numberline {2.13}{\ignorespaces Tabel kelas konstruktor XSSFFont}}{9}{table.2.13}
+\contentsline {table}{\numberline {2.14}{\ignorespaces Tabel kelas method XSSFFont}}{9}{table.2.14}
+\contentsline {table}{\numberline {2.15}{\ignorespaces Tabel field XSSFHyperlink}}{10}{table.2.15}
+\contentsline {table}{\numberline {2.16}{\ignorespaces Tabel kelas method XSSFHyperlink}}{10}{table.2.16}
+\contentsline {table}{\numberline {2.17}{\ignorespaces Tabel kelas method XSSFCreationHelper}}{10}{table.2.17}
+\contentsline {table}{\numberline {2.18}{\ignorespaces Tabel kelas method XSSFPrintSetup}}{10}{table.2.18}
+\contentsline {table}{\numberline {2.19}{\ignorespaces Tabel komponen iCal4j}}{11}{table.2.19}
+\contentsline {table}{\numberline {2.20}{\ignorespaces Tabel ringkasan interface net.fortuna.ical4j.data}}{12}{table.2.20}
+\contentsline {table}{\numberline {2.21}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.data}}{12}{table.2.21}
+\contentsline {table}{\numberline {2.22}{\ignorespaces Tabel ringkasan interface net.fortuna.ical4j.filter}}{12}{table.2.22}
+\contentsline {table}{\numberline {2.23}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.filter}}{13}{table.2.23}
+\contentsline {table}{\numberline {2.24}{\ignorespaces Tabel ringkasan interface net.fortuna.ical4j.model}}{13}{table.2.24}
+\contentsline {table}{\numberline {2.25}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.model}}{14}{table.2.25}
+\contentsline {table}{\numberline {2.26}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.model.component}}{15}{table.2.26}
+\contentsline {table}{\numberline {2.27}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.model.parameter}}{16}{table.2.27}
+\contentsline {table}{\numberline {2.28}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.model.property}}{17}{table.2.28}
+\contentsline {table}{\numberline {2.30}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.model.transform}}{17}{table.2.30}
+\contentsline {table}{\numberline {2.31}{\ignorespaces Tabel ringkasan interface net.fortuna.ical4j.model.util}}{18}{table.2.31}
+\contentsline {table}{\numberline {2.32}{\ignorespaces Tabel ringkasan kelas net.fortuna.ical4j.model.util}}{18}{table.2.32}
+\contentsline {table}{\numberline {2.33}{\ignorespaces Tabel komponen Java FX}}{23}{table.2.33}
+\contentsline {table}{\numberline {2.34}{\ignorespaces Tabel method observableValueBase}}{24}{table.2.34}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Tabel penjelasan kolom pada excel mengawas ujian}}{30}{table.3.1}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Tabel analisa kolom pada excel mengawas ujian}}{31}{table.3.2}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Tabel penjelasan kolom pada excel mengawas ujian}}{26}{table.3.1}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Tabel analisa kolom pada excel mengawas ujian}}{27}{table.3.2}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Tabel Kelas \textit {ScheduleClass}}}{38}{table.4.1}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Tabel Kelas \textit {ExcelConverter}}}{38}{table.4.2}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Tabel Kelas \textit {CalendarConverter}}}{39}{table.4.3}
-\contentsline {table}{\numberline {4.4}{\ignorespaces Tabel Kelas \textit {FXMLDocumentController}}}{39}{table.4.4}
-\contentsline {table}{\numberline {4.5}{\ignorespaces Tabel Kelas \textit {iCalendarMainConverter}}}{40}{table.4.5}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Tabel Kelas \textit {ScheduleClass}}}{34}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Tabel Kelas \textit {ExcelConverter}}}{34}{table.4.2}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Tabel Kelas \textit {CalendarConverter}}}{35}{table.4.3}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Tabel Kelas \textit {FXMLDocumentController}}}{35}{table.4.4}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Tabel Kelas \textit {iCalendarMainConverter}}}{36}{table.4.5}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Tabel hasil pengujian fungsional}}{51}{table.5.1}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Tabel hasil pengujian eksperimental}}{60}{table.5.2}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Tabel hasil pengujian eksperimental setelah revisi}}{63}{table.5.3}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Tabel hasil pengujian fungsional}}{47}{table.5.1}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Tabel hasil pengujian eksperimental}}{56}{table.5.2}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Tabel hasil pengujian eksperimental setelah revisi}}{59}{table.5.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

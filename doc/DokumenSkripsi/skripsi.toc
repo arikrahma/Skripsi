@@ -15,76 +15,72 @@
 \contentsline {subsection}{\numberline {2.1.1}Komponen Apache POI}{3}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}Kelas Inti Apache POI}{3}{subsection.2.1.2}
 \contentsline {subsubsection}{Workbook}{4}{subsubsection*.5}
-\contentsline {subsubsection}{HSSFWorkbook}{4}{subsubsection*.6}
-\contentsline {subsubsection}{XSSFWorkbook}{5}{subsubsection*.7}
-\contentsline {subsubsection}{Sheet}{5}{subsubsection*.8}
-\contentsline {subsubsection}{HSSFSheet}{5}{subsubsection*.9}
-\contentsline {subsubsection}{XSSFSheet}{6}{subsubsection*.10}
-\contentsline {subsubsection}{Row}{6}{subsubsection*.11}
-\contentsline {subsubsection}{XSSFRow}{6}{subsubsection*.12}
-\contentsline {subsubsection}{Cell}{7}{subsubsection*.13}
-\contentsline {subsubsection}{XSSFCell}{7}{subsubsection*.14}
-\contentsline {subsubsection}{Ringkasan Tipe Cell}{7}{subsubsection*.15}
-\contentsline {subsubsection}{XSSFCellStyle}{8}{subsubsection*.16}
-\contentsline {subsubsection}{Ringkasan Cell Style}{8}{subsubsection*.17}
-\contentsline {subsubsection}{HSSFColor}{9}{subsubsection*.18}
-\contentsline {subsubsection}{Nested Class}{9}{subsubsection*.19}
-\contentsline {subsubsection}{XSSFColor}{10}{subsubsection*.20}
-\contentsline {subsubsection}{XSSFFFont}{11}{subsubsection*.21}
-\contentsline {subsubsection}{XSSFHyperlink}{11}{subsubsection*.22}
-\contentsline {subsubsection}{XSSFCreationHelper}{12}{subsubsection*.23}
-\contentsline {subsubsection}{XSSFPrintSetup}{12}{subsubsection*.24}
-\contentsline {section}{\numberline {2.2}iCal4j}{13}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Komponen iCal4j}{13}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Kelas Inti dari iCal4j}{13}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}net.fortuna.ical4j.data}{13}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}net.fortuna.ical4j.filter}{14}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}net.fortuna.ical4j.model}{15}{subsection.2.2.5}
-\contentsline {subsection}{\numberline {2.2.6}net.fortuna.ical4j.model.component}{16}{subsection.2.2.6}
-\contentsline {subsection}{\numberline {2.2.7}net.fortuna.ical4j.model.parameter}{17}{subsection.2.2.7}
-\contentsline {subsection}{\numberline {2.2.8}net.fortuna.ical4j.model.property}{19}{subsection.2.2.8}
-\contentsline {subsection}{\numberline {2.2.9}net.fortuna.ical4j.model.transform}{21}{subsection.2.2.9}
-\contentsline {subsection}{\numberline {2.2.10}net.fortuna.ical4j.model.util}{21}{subsection.2.2.10}
-\contentsline {section}{\numberline {2.3}Java FX}{21}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Scene Graph}{22}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Java Public API untuk Fitur Java FX}{23}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Graphic System}{23}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Glass Windowing Toolkit}{23}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}Media dan Gambar}{24}{subsection.2.3.5}
-\contentsline {subsection}{\numberline {2.3.6}Komponen Web}{24}{subsection.2.3.6}
-\contentsline {subsection}{\numberline {2.3.7}CSS}{24}{subsection.2.3.7}
-\contentsline {subsection}{\numberline {2.3.8}UI Control}{24}{subsection.2.3.8}
-\contentsline {subsection}{\numberline {2.3.9}Layout}{25}{subsection.2.3.9}
-\contentsline {subsection}{\numberline {2.3.10}Transformasi 2-D dan 3-D}{26}{subsection.2.3.10}
-\contentsline {subsection}{\numberline {2.3.11}Efek Visual}{26}{subsection.2.3.11}
-\contentsline {subsection}{\numberline {2.3.12}Komponen Java FX}{26}{subsection.2.3.12}
-\contentsline {subsection}{\numberline {2.3.13}javafx.beans.value}{27}{subsection.2.3.13}
-\contentsline {chapter}{\numberline {3}Analisis}{29}{chapter.3}
-\contentsline {section}{\numberline {3.1}Analisis Input}{29}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Analisis File Excel Jadwal Mengawas Ujian}{29}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Analisis Fitur Perangkat Lunak}{31}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Permodelan Tool}{31}{section.3.2}
-\contentsline {section}{\numberline {3.3}Diagram Aktifitas}{32}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Memasukan Excel Jadwal Mengawas Ujian}{32}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Sorting Nama Dosen}{33}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Unduh File iCal}{33}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}Pemodelan Kelas}{34}{section.3.4}
-\contentsline {subsubsection}{Pemodelan Rancangan Kelas}{34}{subsubsection*.25}
-\contentsline {chapter}{\numberline {4}Perancangan}{37}{chapter.4}
-\contentsline {section}{\numberline {4.1}Perancangan Diagram Kelas}{37}{section.4.1}
-\contentsline {section}{\numberline {4.2}Perancangan Antarmuka}{40}{section.4.2}
-\contentsline {section}{\numberline {4.3}Rancangan \textit {Method-Method} Utama}{42}{section.4.3}
-\contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{45}{chapter.5}
-\contentsline {section}{\numberline {5.1}Implementasi}{45}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Lingkungan Implementasi}{45}{subsection.5.1.1}
-\contentsline {subsubsection}{Lingkungan Perangkat Keras}{45}{subsubsection*.26}
-\contentsline {subsubsection}{Lingkungan Perangkat Lunak}{45}{subsubsection*.27}
-\contentsline {subsection}{\numberline {5.1.2}Implementasi Program}{46}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Implementasi Antarmuka}{48}{section.5.2}
-\contentsline {section}{\numberline {5.3}Pengujian}{50}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Pengujian Fungsional}{50}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Pengujian Eksperimental}{60}{subsection.5.3.2}
-\contentsline {chapter}{Daftar Referensi}{71}{chapter*.28}
+\contentsline {subsubsection}{XSSFWorkbook}{4}{subsubsection*.6}
+\contentsline {subsubsection}{Sheet}{5}{subsubsection*.7}
+\contentsline {subsubsection}{XSSFSheet}{5}{subsubsection*.8}
+\contentsline {subsubsection}{Row}{5}{subsubsection*.9}
+\contentsline {subsubsection}{XSSFRow}{5}{subsubsection*.10}
+\contentsline {subsubsection}{Cell}{6}{subsubsection*.11}
+\contentsline {subsubsection}{XSSFCell}{6}{subsubsection*.12}
+\contentsline {subsubsection}{Ringkasan Tipe Cell}{6}{subsubsection*.13}
+\contentsline {subsubsection}{XSSFCellStyle}{6}{subsubsection*.14}
+\contentsline {subsubsection}{Ringkasan Cell Style}{7}{subsubsection*.15}
+\contentsline {subsubsection}{XSSFColor}{8}{subsubsection*.16}
+\contentsline {subsubsection}{XSSFFFont}{9}{subsubsection*.17}
+\contentsline {subsubsection}{XSSFHyperlink}{9}{subsubsection*.18}
+\contentsline {subsubsection}{XSSFCreationHelper}{10}{subsubsection*.19}
+\contentsline {subsubsection}{XSSFPrintSetup}{10}{subsubsection*.20}
+\contentsline {section}{\numberline {2.2}iCal4j}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Komponen iCal4j}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Kelas Inti dari iCal4j}{11}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}net.fortuna.ical4j.data}{11}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}net.fortuna.ical4j.filter}{12}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}net.fortuna.ical4j.model}{13}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}net.fortuna.ical4j.model.component}{14}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}net.fortuna.ical4j.model.parameter}{15}{subsection.2.2.7}
+\contentsline {subsection}{\numberline {2.2.8}net.fortuna.ical4j.model.property}{16}{subsection.2.2.8}
+\contentsline {subsection}{\numberline {2.2.9}net.fortuna.ical4j.model.transform}{17}{subsection.2.2.9}
+\contentsline {subsection}{\numberline {2.2.10}net.fortuna.ical4j.model.util}{18}{subsection.2.2.10}
+\contentsline {section}{\numberline {2.3}Java FX}{18}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Scene Graph}{19}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Java Public API untuk Fitur Java FX}{19}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Graphic System}{20}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Glass Windowing Toolkit}{20}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Media dan Gambar}{20}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}Komponen Web}{20}{subsection.2.3.6}
+\contentsline {subsection}{\numberline {2.3.7}CSS}{21}{subsection.2.3.7}
+\contentsline {subsection}{\numberline {2.3.8}UI Control}{21}{subsection.2.3.8}
+\contentsline {subsection}{\numberline {2.3.9}Layout}{22}{subsection.2.3.9}
+\contentsline {subsection}{\numberline {2.3.10}Transformasi 2-D dan 3-D}{22}{subsection.2.3.10}
+\contentsline {subsection}{\numberline {2.3.11}Efek Visual}{22}{subsection.2.3.11}
+\contentsline {subsection}{\numberline {2.3.12}Komponen Java FX}{23}{subsection.2.3.12}
+\contentsline {subsection}{\numberline {2.3.13}javafx.beans.value}{23}{subsection.2.3.13}
+\contentsline {chapter}{\numberline {3}Analisis}{25}{chapter.3}
+\contentsline {section}{\numberline {3.1}Analisis Input}{25}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Analisis File Excel Jadwal Mengawas Ujian}{25}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Analisis Fitur Perangkat Lunak}{27}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Permodelan Tool}{27}{section.3.2}
+\contentsline {section}{\numberline {3.3}Diagram Aktifitas}{28}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Memasukan Excel Jadwal Mengawas Ujian}{28}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Sorting Nama Dosen}{29}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Unduh File iCal}{29}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Pemodelan Kelas}{30}{section.3.4}
+\contentsline {subsubsection}{Pemodelan Rancangan Kelas}{30}{subsubsection*.21}
+\contentsline {chapter}{\numberline {4}Perancangan}{33}{chapter.4}
+\contentsline {section}{\numberline {4.1}Perancangan Diagram Kelas}{33}{section.4.1}
+\contentsline {section}{\numberline {4.2}Perancangan Antarmuka}{36}{section.4.2}
+\contentsline {section}{\numberline {4.3}Rancangan \textit {Method-Method} Utama}{38}{section.4.3}
+\contentsline {chapter}{\numberline {5}Implementasi dan Pengujian}{41}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implementasi}{41}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Lingkungan Implementasi}{41}{subsection.5.1.1}
+\contentsline {subsubsection}{Lingkungan Perangkat Keras}{41}{subsubsection*.22}
+\contentsline {subsubsection}{Lingkungan Perangkat Lunak}{41}{subsubsection*.23}
+\contentsline {subsection}{\numberline {5.1.2}Implementasi Program}{42}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Implementasi Antarmuka}{44}{section.5.2}
+\contentsline {section}{\numberline {5.3}Pengujian}{46}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Pengujian Fungsional}{46}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Pengujian Eksperimental}{56}{subsection.5.3.2}
+\contentsline {chapter}{Daftar Referensi}{67}{chapter*.24}
 \renewcommand {\cftchappresnum }{\bf \scshape }
-\contentsline {chapter}{\numberline {A}Kode Program}{73}{appendix.A}
-\contentsline {chapter}{\numberline {B}File Excel}{83}{appendix.B}
+\contentsline {chapter}{\numberline {A}Kode Program}{69}{appendix.A}
+\contentsline {chapter}{\numberline {B}File Excel}{79}{appendix.B}
