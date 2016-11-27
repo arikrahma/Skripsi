@@ -1,12 +1,12 @@
 %versi 2 (8-10-2016)
 \chapter{Landasan Teori}
 \label{chap:teori}
-Pada bab ini akan dijelsaskan mengenai konsep-konsep dasar pengukung PL, yaitu Java FX, Apache POI, iCal4j.
+Pada bab ini akan dijelsaskan mengenai konsep-konsep dasar pengukung PL, yaitu JavaFX, Apache POI, iCal4j.
 
 \section{Apache POI}
 \label{sec:apache} 
 
-Apache POI pada hakikatnya merupakan \textit{library} untuk memanipulasi dan menciptakan sesuatu melalui Java API( \textit{application programming interface}) dengan memanipulasi berbagai format file berdasarkan \textit{Office Open XML standards}(OOXML) dan dokumen \textit{Microsoft OLE 2 Document Compound Format}(OLE2), Singkatnya dengan library ini memungkinkan untuk membaca dan menulis pada MS Excel menggunakan Java \cite{apachepoi}. \\
+Apache POI pada hakikatnya merupakan \textit{library} untuk memanipulasi dan menciptakan sesuatu melalui Java API( \textit{application programming interface}) dengan memanipulasi berbagai format file berdasarkan \textit{Office Open XML standards}(OOXML) dan dokumen \textit{Microsoft OLE 2 Document Compound Format}(OLE2), Singkatnya dengan library ini memungkinkan untuk membaca dan menulis pada MS Excel menggunakan Java.\cite{apachepoi} \\
 
 
 \subsection{Komponen Apache POI}
@@ -321,7 +321,7 @@ XSSFColor merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi
 
 \subsubsection{XSSFFFont}
 \label{subs:XSSFFFont}
-XSSFFont merupakan kelas dibawah \textit{package} \textbf{org.aoache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{Font interface} dan oleh sebab itu kelas ini dapat menangani font berbeda pada sebuah workbook.\cite{tutpoint}
+XSSFFont merupakan kelas dibawah \textit{package} \textbf{org.aoache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{Font interface} dan oleh sebab itu kelas ini dapat menangani font berbeda pada sebuah workbook.\cite{apachepoi2}
 \\
 \noindent \textbf{Class Constructor}
 \begin{table}[H]
@@ -797,9 +797,9 @@ VVenue}\\
 		\end{tabular}
 \end{table}
 
-\section{Java FX}
+\section{JavaFX}
 \label{sec:JavaFX}
-Java FX merupakan seperangkat grafis dan paket media yang memungkinkan pengembang untuk merancang, membuat, menguji, \textit{debug} , dan  beroperasi secara konsisten di seluruh platform yang beragam\cite{javafx2}.\\
+JavaFX merupakan seperangkat grafis dan paket media yang memungkinkan pengembang untuk merancang, membuat, menguji, \textit{debug} , dan  beroperasi secara konsisten di seluruh platform yang beragam.\cite{javafx2}\\
 Berikut ini ilustrasi arsitektur dari JavaFX.
 \begin{figure}[H]
 	\centering
@@ -807,10 +807,10 @@ Berikut ini ilustrasi arsitektur dari JavaFX.
 	\caption{Arsitektur JavaFX}
 	\end{figure}
 	
-Ilustrasi dari gambar \textbf{2.1} mendeskripsikan setiap komponen saling berhubungan. Dibawah JavaFX Public API terdapat mesin yang menjalankan code JavaFX. Mesin tersebut terdiri dari sub komponen termasuk mesin grafis berperforma tinggi yang dinamakan Prism. Selain itu, terdapat sistem \textit{windowing} kecil dan efisien yang dinamakan Glass. Terakhir dalam mesin dibawah JavaFX Public API terdapat sebuah \textit{media engine} dan \textit{web engine}. Berikut ini elemen-elemen yang terdapat pada arsitektur Java FX : \cite{javafx}
+Ilustrasi dari gambar \textbf{2.1} mendeskripsikan setiap komponen saling berhubungan. Dibawah JavaFX Public API terdapat mesin yang menjalankan code JavaFX. Mesin tersebut terdiri dari sub komponen termasuk mesin grafis berperforma tinggi yang dinamakan Prism. Selain itu, terdapat sistem \textit{windowing} kecil dan efisien yang dinamakan Glass. Terakhir dalam mesin dibawah JavaFX Public API terdapat sebuah \textit{media engine} dan \textit{web engine}. Berikut ini elemen-elemen yang terdapat pada arsitektur JavaFX : \cite{javafx}
 \begin{enumerate}
 	\item \textit{Scene Graph}
-	\item Java Public API untuk Fitur Java FX
+	\item Java Public API untuk Fitur JavaFX
 	\item \textit{Graphics System}
 	\item \textit{Glass Windowing Toolkit}
 	\item Gambar dan Media
@@ -840,23 +840,23 @@ Penggunaan \textbf{javafx.scene} API memungkinkan \textit{developer} untuk mengg
 	\item \textbf{Effect} : objek sederhana yang dapat merubah penampilan dari node \textit{scene graph}, seperti blur, shadow, dan \textit{color adjustment}
 \end{enumerate}
 
-\subsection{Java Public API untuk Fitur Java FX}
+\subsection{Java Public API untuk Fitur JavaFX}
 \label{subs:API}
-Pada lapisan atas arsitektur Java FX pada gambar \textbf{2.1} API Java memberikan kebebasan dan fleksibilitas untuk membangun berbagai \textit{client} dari sebuah aplikasi. Platform Java FX menggabungkan kemampuan terbaik yang dimiliki platform Java secara menyeluruh dan mendalam serta intuitif dengan memasukan fungsi media kedalamnya, sehingga tercipta lingkup konsep \textit{one-stop development}. Berikut contoh kegunaan Java API untuk fitur Java FX :\cite{javafx}
+Pada lapisan atas arsitektur JavaFX pada gambar \textbf{2.1} API Java memberikan kebebasan dan fleksibilitas untuk membangun berbagai \textit{client} dari sebuah aplikasi. Platform JavaFX menggabungkan kemampuan terbaik yang dimiliki platform Java secara menyeluruh dan mendalam serta intuitif dengan memasukan fungsi media kedalamnya, sehingga tercipta lingkup konsep \textit{one-stop development}. Berikut contoh kegunaan Java API untuk fitur JavaFX :\cite{javafx}
 \begin{enumerate}
 	\item Memungkinkan penggunaan fitur Java yang poweful seperti \textit{generics, annotations, multithreading}.
-	\item Lebih mudah mengembangan web menggunakan Java FX dibanding \textit{JVM-base dynamic languages} lainnya seperti Grovvy, dan JavaScript.
-	\item Memungkinkan Java developer untuk menggunakan bahasa sistem seperti Groovy untuk menulis file besar atau kompleks pada aplikasi Java FX.
+	\item Lebih mudah mengembangan web menggunakan JavaFX dibanding \textit{JVM-base dynamic languages} lainnya seperti Grovvy, dan JavaScript.
+	\item Memungkinkan Java developer untuk menggunakan bahasa sistem seperti Groovy untuk menulis file besar atau kompleks pada aplikasi JavaFX.
 	\item Memungkinkan penggunaan binding.
 	\item Menambahkan koleksi library Java dengan memasukan urutan dan memetakan perubahan sehingga memngukinkan aplikasi untuk menghubungkan antarmuka kedalam data model, mengamati perubahan pada data model, dan memperbarui kontrol UI yang sesuai dengan perubahan tersebut.   
 \end{enumerate}
 
 \subsection{Graphic System}
 \label{subs:Graphic_System}
-\textit{Java FX Graphic System} pada gambar \textbf{2.1} merupakan implementasi dari Java FX \textit{scene graph layer}. Sistem grafis pada Java FX mendukung tampilan 2-D dan 3-D, selain itu sistem grafis ini menyediakan \textit{software rendering} untuk mendukung akselerasi \textit{rendering} dari \textit{hardware}. Berukut ini merupakan dua \textit{graphic accelerated pipeline} yang ada pada Java FX platform :\cite{javafx}
+\textit{JavaFX Graphic System} pada gambar \textbf{2.1} merupakan implementasi dari JavaFX \textit{scene graph layer}. Sistem grafis pada JavaFX mendukung tampilan 2-D dan 3-D, selain itu sistem grafis ini menyediakan \textit{software rendering} untuk mendukung akselerasi \textit{rendering} dari \textit{hardware}. Berukut ini merupakan dua \textit{graphic accelerated pipeline} yang ada pada JavaFX platform :\cite{javafx}
 \begin{enumerate}
-	\item \textbf{Prism} yang bekerja pada proses render. Prism dapat bekerja pada kedua sisi baik \textit{hardware} maupun \textit{software} rendering termasuk 3-D rendering. Prism juga bertanggung jawab untuk proses \textit{rasterization}(mengubah vektor menjadi pixel atau dot) dan rendering pada Java FX.
-	\item \textbf{Quantum Toolkit} merupakan perpaduan Prism dan Windowing Toolkit yang bekerja di lapisan teratas pada Java FX untuk mengatur \textit{threading rule} yang berhubungan dengan rendering dan \textit{event handling}. 
+	\item \textbf{Prism} yang bekerja pada proses render. Prism dapat bekerja pada kedua sisi baik \textit{hardware} maupun \textit{software} rendering termasuk 3-D rendering. Prism juga bertanggung jawab untuk proses \textit{rasterization}(mengubah vektor menjadi pixel atau dot) dan rendering pada JavaFX.
+	\item \textbf{Quantum Toolkit} merupakan perpaduan Prism dan Windowing Toolkit yang bekerja di lapisan teratas pada JavaFX untuk mengatur \textit{threading rule} yang berhubungan dengan rendering dan \textit{event handling}. 
 \end{enumerate}
 
 \subsection{Glass Windowing Toolkit}
@@ -865,7 +865,7 @@ Tugas pada lapisan ini adalah membantu \textit{service} pada sistem operasi, sep
 
 \subsection{Media dan Gambar}
 \label{subs:Media_Gambar}
-Fungsi -fungsi media pada Java FX tersedia pada \textbf{javafx.scene.media} API. Java FX mensuport baik visual maupun audio. Beberapa format yang disuport seperti MP3, AIFF, WAV pada file audio dan format FLV pada video. Ada tiga komponen yang berperan pada Java FX media, yaitu :\cite{javafx} 
+Fungsi -fungsi media pada JavaFX tersedia pada \textbf{javafx.scene.media} API. JavaFX mensuport baik visual maupun audio. Beberapa format yang disuport seperti MP3, AIFF, WAV pada file audio dan format FLV pada video. Ada tiga komponen yang berperan pada JavaFX media, yaitu :\cite{javafx} 
 \begin{itemize}
 	\item \textit{Media object} merepresentasikan sebuah file media.
 	\item \textit{Media Player} memutar sebuah file media.
@@ -874,7 +874,7 @@ Fungsi -fungsi media pada Java FX tersedia pada \textbf{javafx.scene.media} API.
 
 \subsection{Komponen Web}
 \label{subs:Komponen_Web}
-Mesin Web pada Java FX merupakan bagian dari Java FX UI control yang berbasis Webkit, dimana mesin web ini dapat menampilkan sebuah website dan melakukan browsing melalui APInya. Berikut ini fitur Java FX yang dapat di implementasikan pada program java :\cite{javafx}
+Mesin Web pada JavaFX merupakan bagian dari JavaFX UI control yang berbasis Webkit, dimana mesin web ini dapat menampilkan sebuah website dan melakukan browsing melalui APInya. Berikut ini fitur JavaFX yang dapat di implementasikan pada program java :\cite{javafx}
 \begin{enumerate}
 	\item Render konten HTML dari local atau remote URL.
 	\item Mendukung history dan menyediakan navigasi Back dan Forward.
@@ -892,23 +892,23 @@ Komponen dari browser tersebut terbagi kedalam ke kelas-kelas berikut :\cite{jav
 
 \subsection{CSS}
 \label{subs:CSS}
-JavaFX Cascading Style Sheet (CSS) mendukung kemampuan untuk mengkustom styling pada antarmuka sebuah aplikasi Java FX tanpa merubah \textit{source code} aplikasi tersebut.\cite{javafx}   
+JavaFX Cascading Style Sheet (CSS) mendukung kemampuan untuk mengkustom styling pada antarmuka sebuah aplikasi JavaFX tanpa merubah \textit{source code} aplikasi tersebut.\cite{javafx}   
 
 \subsection{UI Control}
 \label{subs:UI_Control}
-Java FX UI Control dalam Java FX API dibangun menggunakan node pada scene graph. Java FX UI Control dapat mengambil keuntungan dari fitur yang diberikan platform Java FX dan bersifat \textit{portable} pada platform yang berbeda.\cite{javafx}
+JavaFX UI Control dalam JavaFX API dibangun menggunakan node pada scene graph. JavaFX UI Control dapat mengambil keuntungan dari fitur yang diberikan platform JavaFX dan bersifat \textit{portable} pada platform yang berbeda.\cite{javafx}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.8]{Gambar/JavaFXuicontrols}
-	\caption{Contoh Java FX UI Control}
+	\caption{Contoh JavaFX UI Control}
 	\end{figure}
 	
-	pada gambar \textbf{2.2} menunjukan UI Control yang sementara didukung oleh Java FX. Java UI control baru seperti TitlePane atau Accordion sebelumnya telah diperkenalkan pada Java FX SDK. UI control tersebut terdapat pada \textbf{javafx.scene.control} \textit{package}.\cite{javafx}
+	pada gambar \textbf{2.2} menunjukan UI Control yang sementara didukung oleh JavaFX. Java UI control baru seperti TitlePane atau Accordion sebelumnya telah diperkenalkan pada JavaFX SDK. UI control tersebut terdapat pada \textbf{javafx.scene.control} \textit{package}.\cite{javafx}
  
 \subsection{Layout}
 \label{subs:Layout}
- \textit{Layout container} atau panel digunakan untuk pengatruan UI control secara dinamis dan fleksibel dalam scene graph pada aplikasi Java FX. Java FX Layout API mempunyai kelas-kelas yang dapat mengotomatiskan tata letak model sebagai berikut:\cite{javafx}
+ \textit{Layout container} atau panel digunakan untuk pengatruan UI control secara dinamis dan fleksibel dalam scene graph pada aplikasi JavaFX. JavaFX Layout API mempunyai kelas-kelas yang dapat mengotomatiskan tata letak model sebagai berikut:\cite{javafx}
 \begin{enumerate}
 	\item \textbf{BorderPane} merupakan kelas yang mengatur bagian atas, bawah, kiri, kanan layout.
 	\item \textbf{Hbox} merupakan kelas yang mengatur konten node secara horizontal dalam satu baris.
@@ -921,7 +921,7 @@ Java FX UI Control dalam Java FX API dibangun menggunakan node pada scene graph.
 
 \subsection{Transformasi 2-D dan 3-D}
 \label{subs:Layout}
-Setiap node pada Java FX scene graph dapat ditransformasikan dalam koordinat x-y melalui kelas-kelas \textit{javafx.scene.transform} berikut ini:\cite{javafx}
+Setiap node pada JavaFX scene graph dapat ditransformasikan dalam koordinat x-y melalui kelas-kelas \textit{javafx.scene.transform} berikut ini:\cite{javafx}
 \begin{enumerate}
 	\item \textbf{translate} - Memindahkan sebuah node dari satu posisi ke posisi lain bersama koordinat x,y,z yang relatif terhadap posisi awalnya.
 	\item \textbf{scale} - Meresize sebuah node untuk membesar atau mengecil sesuai koordinat x,y,z tergantung skala faktornya.
@@ -931,19 +931,19 @@ Setiap node pada Java FX scene graph dapat ditransformasikan dalam koordinat x-y
 
 \subsection{Efek Visual}
 \label{subs:Efek_Visual}
-Pengembahan antarmuka pada Java FX scene graph melibatkan \textit{Visual Effect} atau efek untuk meningkatkan tamoilan aplikasi Java FX secara \textit{real time}. Beberapa efek visual yang terdapat pada Java FX termasuk penggunaannya ada pada kelas - kelas berikut ini :\cite{javafx}
+Pengembahan antarmuka pada JavaFX scene graph melibatkan \textit{Visual Effect} atau efek untuk meningkatkan tamoilan aplikasi JavaFX secara \textit{real time}. Beberapa efek visual yang terdapat pada JavaFX termasuk penggunaannya ada pada kelas - kelas berikut ini :\cite{javafx}
 \begin{enumerate}
 	\item \textbf{Drop Shadow} - Kelas ini merender sebuah bayangan dari konten yang ada dibelakang konten dimana efek tersebut diterapkan.
 	\item \textbf{Reflection} - Kelas ini merender versi pantulan dari konten dibawah konten sebenarnya.
 	\item \textbf{Lighting} - Kelas ini mensimulasikan sumber cahaya yang didapat dari konten dan memberikannya pada sebuah objek flat agar lebih nyata memberikan efek tiga dimensi.
 \end{enumerate}
 
-\subsection{Komponen Java FX}
+\subsection{Komponen JavaFX}
 \label{subs:Komponen_Java_FX}
-Berikut ini merupakan kumpulan \textit{package} yang ada dalam Java FX\cite{javafx3}.
+Berikut ini merupakan kumpulan \textit{package} yang ada dalam JavaFX.\cite{javafx3}
 \begin{table}[H]
 		\centering
-		\caption{Tabel komponen Java FX}
+		\caption{Tabel komponen JavaFX}
 		\label{tab:komponen_javafx}
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
@@ -955,9 +955,9 @@ Berikut ini merupakan kumpulan \textit{package} yang ada dalam Java FX\cite{java
 		3 & \textbf{javafx.fxml}\\
 			&	Berisi kelas untuk membuat hirarki objek dari markup.\\ \hline
 		4 & \textbf{javafx.scene}\\
-			&	Memberikan set basis kelas - kelas untuk Java FX Scene Graph API .\\ \hline
+			&	Memberikan set basis kelas - kelas untuk JavaFX Scene Graph API .\\ \hline
 		5 & \textbf{javafx.scene.control}\\
-			&	Java FX \textit{User Interface Control }(kontrol UI atau kontrol saja) dimana node khusus dalam Java FX Scenegraph yang dapak digunakan untuk banuak konteks aplikasi yang berbeda.\\ \hline
+			&	JavaFX \textit{User Interface Control }(kontrol UI atau kontrol saja) dimana node khusus dalam JavaFX Scenegraph yang dapak digunakan untuk banuak konteks aplikasi yang berbeda.\\ \hline
 		6 & \textbf{javafx.scene.input}\\
 			&	Menyediakan set kelas - kelas untuk mouse dan keyboard \textit{input event handling}.\\ \hline
 		7 & \textbf{javafx.scene.layout}\\
@@ -967,7 +967,7 @@ Berikut ini merupakan kumpulan \textit{package} yang ada dalam Java FX\cite{java
 		9 & \textbf{javafx.util}\\
 			&	Berisi berbagai utilitas dan kelas pembantu.\\ \hline
 		10 & \textbf{javafx.util.converter}\\
-			&	\textit{Package} ini untuk konversi String pada Java FX.\\ \hline
+			&	\textit{Package} ini untuk konversi String pada JavaFX.\\ \hline
 		11 & \textbf{javafx.beans}\\
 			&	\textit{Package} ini berisi interface yang mendefinisikan bentuk umum dari \textit{observability}.\\ \hline
 		12 & \textbf{javafx.beans.binding}\\
@@ -978,23 +978,85 @@ Berikut ini merupakan kumpulan \textit{package} yang ada dalam Java FX\cite{java
 				&	\textit{Package} ini berisi koleksi penting dari javaFX dan koleksi utilitas lainnya.\\ \hline						
 	\end{tabular}
 \end{table}
-
-\subsection{javafx.beans.value}
-\textbf{ObservableValueBase}\\
-Dalam \textit{package} javafx.beans.value terdapat sebuah kelas yang sering dipakai yaitu kelas \textbf{ObservableValueBase}. Kelas ini berisi semua dukungan infrastruktur untuk nilai \textit{invalidation} dan notifikasi perubahan \textit{event} . Implementasi kelas ini menangani penambahan dan penghapusan \textit{listeners}. Berikut ini \textit{method} yang ada pada kelas ObserbavleValueBase.
+\subsection{Property}
+Properti merupakan \textit{interface} generik yang mendefinisikan metode umum untuk sifat yang dapat ditulis secara independen sesuai tipenya.\cite{javafx3}
+\subsection{javafx.collections}
+\subsubsection{ObservableList}
+Dalam \textit{package} javafx.collections terdapat sebuah \textit{interface} yang bernama ObservableList. \textit{Interface} ini merupakan sebuah \textit{list} yang memungkinkan \textit{listeners} melacak ketika terjadi perubahan pada \textit{list} tersebut.
+. Berikut ini \textit{method} yang ada pada \textit{interface} ObservableList.\cite{javafx3}
 \begin{table}[H]
 		\centering
-		\caption{Tabel method observableValueBase}
-		\label{tab:method_observableValueBase}
+		\caption{Tabel method ObservableList}
+		\label{tab:method_ObservableList}
 	\begin{tabular}{|c|p{12cm}|}
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
-		1 & \textbf{addListener(ChangeListener<? super T> listener)}\\
-			&	Menambahkan ChangeListener yang akan di notifikasi setiap kali perubahan nilai pada ObservableValue.\\ \hline
-		2 & \textbf{	addListener(InvalidationListener listener)}\\
-			&	Menambahkan InvalidationListener yang di notifikasi setiap yang diamati menjadi invalid.\\ \hline
+		1 & \textbf{addAll(E... elements)}\\
+			&	Sebuah metode untuk menambah semua variabel dari sebuah elemen.\\ \hline
+		2 & \textbf{addListener(ListChangeListener<? super E> listener)}\\
+			&	Menambahkan \textit{listeners} pada sebuah observableList.\\ \hline
 	\end{tabular}
 \end{table}
 
+\subsubsection{ListChangeListener}
+\textit{Interface} ini menerima informasi perubahan dari sebuah ObservableList. Berikut ini \textit{method} yang ada pada \textit{interface} ListChangeListener.\cite{javafx3}
+\begin{table}[H]
+		\centering
+		\caption{Tabel method ListChangeListener}
+		\label{tab:method_ListChangeListener}
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{onChanged(ListChangeListener.Change<? extends E> c)}\\
+			&	Metode ini dipanggil ketika perubahan telah dilakukan terhadap sebuah ObservableList.\\ \hline
+	\end{tabular}
+\end{table}
 
+\subsection{javafx.scene.control}
+JavaFX UI \textit{control}(kontrol UI atau Kontrol) merupakan Node khusus pada JavaFX \textit{scenegraph} yang dapat digunakan berulang kali menyesuaikan kebutuhan rancangan aplikasi. Kontrol UI dapat disesuaikan visualnya oleh desainer atau pengembang aplikasi. \textit{Interface} ini didesain untuk berkerja dalam \textit{layout system}. Contoh \textit{interface} ini adalah Button, Label, ListView, TableView, dan TextField.\cite{javafx3}
 
+\subsubsection{TextField}
+TextField merupakan komponen \textit{input} teks yang memungkinkan pengguna untuk memasukan satu baris teks terformat. Berikut ini \textit{method} pada kelas TextField.\cite{javafx3}
+\begin{table}[H]
+		\centering
+		\caption{Tabel method TextField}
+		\label{tab:method_textField}
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{getOnAction()}\\
+			&	Metode ini menangani aksi terkait \textit{text field} ini. Method ini mengembalikan nilai null bila tidak ada aksi yang diberikan.\\ \hline
+	\end{tabular}
+\end{table}
+
+\subsubsection{TableView}
+TableView dirancang untuk memvisualisasikan jumlah baris data. Jumlah baris data tersebut akan dipecah menjadi kolom-kolom dalam TabelView. Berikut \textit{method} dalam kelas TabelView.\cite{javafx3}
+
+\begin{table}[H]
+		\centering
+		\caption{Tabel method TabelView}
+		\label{tab:method_TabelView}
+	\begin{tabular}{|c|p{12cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{setItems(ObservableList<S> value)}\\
+			&	Menetapkan nilai dari properti item pada tabel.\\ \hline
+		2 & \textbf{getOnSort()}\\
+			&	\textit{Method} ini dipanggil ketika ada permintaan untuk \textit{sorting}.\\ \hline		
+	\end{tabular}
+\end{table}
+
+\subsubsection{TableColumn}
+Sebuah TableView terdiri dari sejumlah TableColumn. Setiap TableColumn pada tabel bertanggung jawab menampilkan dan mengedit isi kolom. Berikut \textit{method} pada TableColumn.\cite{javafx3}
+\begin{table}[H]
+		\centering
+		\caption{Tabel method TableColumn}
+		\label{tab:method_TableColumn}
+	\begin{tabular}{|c|p{14cm}|}
+		\hline
+		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
+		1 & \textbf{setCellValueFactory(Callback<TableColumn.CellDataFeatures<S,T>}\\
+			& \textbf{,ObservableValue<T>> value)}\\
+			&	Menetapkan nilai properti \textit{CellFactory} yang dibutuhkan untuk menentukan bagaimana sel terisi pada satu TableColumn .\\ \hline	
+	\end{tabular}
+\end{table}

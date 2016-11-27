@@ -39,7 +39,7 @@ Berikut ini merupakan penjelasan kode program dari perangkat lunak iCalendarConv
 	ExcelConverter merupakan kelas yang dikhususkan untuk membaca excel dan mengeluarkan \textit{output} berupa ArrayList dari kelas model ScheduleClass.\\
 	Berikut ini merupakan urutan dari algoritma yang digunakan pada Excel Converter :
 \begin{enumerate}
-		\item Baris (68-84) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan bagaimana program mencari kolom No. dan Nama Mata Kuliah pada excel. Dua kolom tersebut merupakan acuan data jadwal yang akan dibaca oleh program. Setelah diketahui dimana kolom No. dan Nama Kuliah berada, maka nomer baris dan kolomnya akan dimasukan kedalam \textit{variable} sebagai acuan membaca program dimulai pada baris itu. Pemilihan kolom No. sebagai acuan dikarenakan isi kolom No. menandakan berapa banyak data jadwal yang ada, sehingga bila isi dari kolom No. bukan angka, maka program akan berhenti membaca. Selanjutnya, pemilihan Nama Mata Kuliah sebagai acuan selain karena data pada kolom itu akan dimasukan ke kelas model, pun juga karena setelah kolom tersebut terdapat kolom ruang kuliah yang akan dimasukan kedalam \textit{variable} lokasi pada program.
+		\item Baris (68-84) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan bagaimana program mencari kolom No. dan Nama Mata Kuliah pada excel. Dua kolom tersebut merupakan acuan data jadwal yang akan dibaca oleh program. Setelah diketahui dimana kolom No. dan Nama Kuliah berada, maka nomer baris dan kolomnya akan dimasukkan kedalam \textit{variable} sebagai acuan membaca program dimulai pada baris itu. Pemilihan kolom No. sebagai acuan dikarenakan isi kolom No. menandakan berapa banyak data jadwal yang ada, sehingga bila isi dari kolom No. bukan angka, maka program akan berhenti membaca. Selanjutnya, pemilihan Nama Mata Kuliah sebagai acuan selain karena data pada kolom itu akan dimasukkan ke kelas model, pun juga karena setelah kolom tersebut terdapat kolom ruang kuliah yang akan dimasukkan kedalam \textit{variable} lokasi pada program.
 		Selain itu, nomer kolom ruangan dapat menjadi acuan lokasi dosen mengawas.
 		\item Baris (85-87) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan bahwa i sebagai acuan program membaca baris, sedangkan j sebagai acuan program membaca kolom.
 		\item Baris (89-93) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan bahwa bila baris ke i program membaca dan isinya kosong maka berhenti membaca.
@@ -108,11 +108,11 @@ Berikut ini implementasi antarmuka dari perangkat lunak iCalendarConverter :
 		\label{fig:implementAntarmuka}
 		\end{figure}
 		Pada tampilan \ref{fig:implementAntarmuka} terlihat beberapa perubahan dengan perancangan antarmuka pada bab sebelumnya. Beberapa perubahan tersebut diantaranya, fungsi fitur \textit{download} yang terletak pada tabel digantikan dengan \textit{button} Convert to iCal pada antarmuka. Hal ini dikarenakan sangat sulit untuk membuat \textit{button} pada setiap isi dari tabel yang berbeda-beda isinya. Selain itu, jika setiap isi tabel mempunyai file iCal akan sangat memakan memori apalagi jika jumlah datanya sangat banyak. Maka, diputuskan untuk membuat satu \textit{button} Convert to iCal yang menangkap \textit{selected item} dari kursor pengguna pada tabel. Selanjutnya, jika pengguna menekan tombol tersebut akan memunculkan \textit{pop-up window} meminta pengguna menentukan tempat penyimpanan file iCal dari jadwal yang telah dipilih sebelumnya.     
-	\item Tampilan Antarmuka ketika file excel jadwal mengawas telah dimasukan
+	\item Tampilan Antarmuka ketika file excel jadwal mengawas telah dimasukkan
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.7]{Gambar/implementAntarmuka2}
-		\caption{Tampilan antarmuka setelah file mengawas dimasukan}
+		\caption{Tampilan antarmuka setelah file mengawas dimasukkan}
 		\label{fig:implementAntarmuka}
 		\end{figure}
 \end{enumerate}
@@ -137,39 +137,38 @@ Pada pengujian ini akan di uji mengenai fungsionalitas dari perangkat lunak. Sel
 				Path file excel & PL dapat menangkap alamat file dari \textit{input file} excel & Berhasil \ref{fig:pathFile} \\ \hline
 				Menampilkan Jadwal ke layar & PL menampilkan ke layar file excel yang telah dibaca & Berhasil \ref{fig:jadwalKeLayar} \\ \hline
 				Konversi ke iCal & PL dapat mengkonversi jadwal yang diseleksi pengguna kedalam iCalendar & Berhasil \ref{fig:konversiiCal} \\ \hline
-				Filter nama dosen & PL dapat menampilkan nama dosen yang telah di filter, sesuai yang di yang dimasukan oleh pengguna pada \textit{textbox} filter & Berhasil \ref{fig:filterDosen} \\ \hline
+				Filter nama dosen & PL dapat menampilkan nama dosen yang telah di filter, sesuai yang di yang dimasukkan oleh pengguna pada \textit{textbox} filter & Berhasil \ref{fig:filterDosen} \\ \hline
 				Hasil Filter dapat dikonversi ke iCal & Hasil Filter pada PL dan diseleksi oleh pengguna, dapat di konversikan kedalam iCal & Berhasil \ref{fig:filterKonvertiCal} \\ \hline
-				Import Google Calendar & Hasil konversi PL dapat di masukan kedalam Google Calendar & Berhasil \ref{fig:importGC} \\ \hline
+				\textit{Import} Google Calendar & Hasil konversi PL dapat di masukan kedalam Google Calendar & Berhasil \ref{fig:importGC} \\ \hline
 				Dapat dibuka di Outlook & Hasil konversi PL dapat di buka di Outlook & Berhasil  \ref{fig:hasilOutlook}\\ \hline
-				Hasil filter dapat di import Google Calendar & Hasil filter konversi PL dapat di masukan kedalam Google Calendar & Berhasil \ref{fig:importGCFilter} \\ \hline
+				Hasil filter dapat di \textit{import} Google Calendar & Hasil filter konversi PL dapat di masukan kedalam Google Calendar & Berhasil \ref{fig:importGCFilter} \\ \hline
 				Hasil filter Dapat dibuka di Outlook & Hasil filter konversi PL dapat di buka di Outlook & Berhasil \ref{fig:hasilOutlookFilter} \\ \hline
 		\end{tabular}
 \end{table}
 
 Berikut ini adalah tampilan dari hasil pengujian yang telah dilakukan pada tabel ~\ref{tab:fungsional} :
-\begin{enumerate}
-	\item
+
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.7]{Gambar/browseFile}
 		\caption{Tampilan browse file excel mengawas ujian}
 		\label{fig:browseFile}
 		\end{figure}
-	\item
+
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.8]{Gambar/pathFile}
 		\caption{Tampilan path file excel mengawas ujian}
 		\label{fig:pathFile}
 		\end{figure}
-	\item 
+
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.7]{Gambar/implementAntarmuka2}
 		\caption{PL menampilkan jadwal ke layar}
 		\label{fig:jadwalKeLayar}
 		\end{figure}
-	\item 
+
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.6]{Gambar/konversiiCal}
@@ -183,14 +182,14 @@ Berikut ini adalah tampilan dari hasil pengujian yang telah dilakukan pada tabel
 		\caption{File iCal}
 		\label{fig:fileiCal}
 		\end{figure}
-	\item
+
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.7]{Gambar/filterDosen}
 		\caption{Hasil pengujian filter nama dosen}
 		\label{fig:filterDosen}
 		\end{figure}
-	\item
+
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.6]{Gambar/filterKonvertiCal}
@@ -205,7 +204,7 @@ Berikut ini adalah tampilan dari hasil pengujian yang telah dilakukan pada tabel
 		\label{fig:fileiCalFilter}
 		\end{figure}
 	
-	\item 
+ 
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.8]{Gambar/importGC}
@@ -227,7 +226,7 @@ Berikut ini adalah tampilan dari hasil pengujian yang telah dilakukan pada tabel
 		\label{fig:hasilGC2}
 		\end{figure}
 		
-	\item 
+
 			\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.8]{Gambar/importOutlook}
@@ -249,7 +248,7 @@ Berikut ini adalah tampilan dari hasil pengujian yang telah dilakukan pada tabel
 			\label{fig:hasilOutlook}
 			\end{figure}
 		
-		\item 
+
 			\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.8]{Gambar/importGCFilter}
@@ -271,7 +270,7 @@ Berikut ini adalah tampilan dari hasil pengujian yang telah dilakukan pada tabel
 			\label{fig:hasilGCFilter2}
 			\end{figure}
 			
-		\item 
+	
 			\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.8]{Gambar/importOutlook}
@@ -293,7 +292,7 @@ Berikut ini adalah tampilan dari hasil pengujian yang telah dilakukan pada tabel
 			\label{fig:hasilOutlookFilter}
 			\end{figure}
 			
-\end{enumerate} 
+
 
 \subsection{Pengujian Eksperimental}
 Pengujian eksperimental merupakan pengujian yang dilakukan dengan melibatkan skenario yang bersifat eksperimental. Pengujian ini ditujukan untuk melihat reaksi program menerima berbagai kejadian. Selain itu, file uji \ref{fig:formatBaru} pada pengujian eksperimental ini merupakan format file baru yang dikeluarkan TU FTIS untuk 2016. Berikut hasil pengujiannya :
@@ -312,23 +311,22 @@ Pengujian eksperimental merupakan pengujian yang dilakukan dengan melibatkan ske
 \end{table}
 
 Berikut ini merupakan gambar hasil pengujian eksperimental : 
-\begin{enumerate}
-	\item 
+
 			\begin{figure}[H]
 			\centering
-			\includegraphics[scale=0.8]{Gambar/eksperimental}
+			\includegraphics[scale=0.6]{Gambar/eksperimental}
 			\caption{\textit{Output} PL pada pengujian eksperimental }
 			\label{fig:eksperimental}
 			\end{figure}
 	
-	\item
+
 			\begin{figure}[H]
 			\centering
-			\includegraphics[scale=0.8]{Gambar/eksperimental2}
+			\includegraphics[scale=0.6]{Gambar/eksperimental2}
 			\caption{\textit{Output} PL pada pengujian eksperimental dari file \textit{input} yang bukan excel}
 			\label{fig:eksperimental2}
 			\end{figure}		
-\end{enumerate}
+
 
 Berdasarkan hasil pengujian tersebut maka dilakukan perubahan pada cara membaca PL sehingga dapat membaca kedua file excel, baik format lama maupun format baru yang dikeluarkan TU FTIS. Kelas ExcelConverter sebelum revisi dapat dilihat pada \ref{lst:ExcelConverterLama}. Berikut hasil pengujian setelah revisi : 
 
@@ -344,32 +342,31 @@ Berdasarkan hasil pengujian tersebut maka dilakukan perubahan pada cara membaca 
 				Memasukan file yang bukan excel & PL menggunakan \textit{extension filter} sehingga file bukan excel tidak dapat menjadi file \textit{input} & Berhasil \ref{fig:filterExtension} \\ \hline
 				Menampilkan Jadwal ke layar & PL menampilkan ke layar file excel yang telah dibaca & Berhasil \ref{fig:jadwalKeLayarEksperimental} \\ \hline
 				Konversi ke iCal & PL dapat mengkonversi jadwal yang diseleksi pengguna kedalam iCalendar & Berhasil \ref{fig:konversiiCalEksperimental} \\ \hline
-				Filter nama dosen & PL dapat menampilkan nama dosen yang telah di filter, sesuai yang di yang dimasukan oleh pengguna pada \textit{textbox} filter & Berhasil \ref{fig:filterDosen} \\ \hline
+				Filter nama dosen & PL dapat menampilkan nama dosen yang telah di filter, sesuai yang di yang dimasukkan oleh pengguna pada \textit{textbox} filter & Berhasil \ref{fig:filterDosen} \\ \hline
 				Hasil Filter dapat dikonversi ke iCal & Hasil Filter pada PL dan diseleksi oleh pengguna, dapat di konversikan kedalam iCal & Berhasil \ref{fig:filterKonvertiCaEksperimentall} \\ \hline
-				Import Google Calendar & Hasil konversi PL dapat di masukan kedalam Google Calendar & Berhasil \ref{fig:hasilGCEksperimental} \\ \hline
+				\textit{Import} Google Calendar & Hasil konversi PL dapat di masukan kedalam Google Calendar & Berhasil \ref{fig:hasilGCEksperimental} \\ \hline
 				Dapat dibuka di Outlook & Hasil konversi PL dapat di buka di Outlook & Berhasil  \ref{fig:hasilOutlookEksperimental2}\\ \hline
-				Hasil filter dapat di import Google Calendar & Hasil filter konversi PL dapat di masukan kedalam Google Calendar & Berhasil \ref{fig:hasilGCFilterEksperimental} \\ \hline
+				Hasil filter dapat di \textit{import} Google Calendar & Hasil filter konversi PL dapat di masukan kedalam Google Calendar & Berhasil \ref{fig:hasilGCFilterEksperimental} \\ \hline
 				Hasil filter Dapat dibuka di Outlook & Hasil filter konversi PL dapat di buka di Outlook & Berhasil \ref{fig:hasilOutlookFilterEksperimental2} \\ \hline
 		\end{tabular}
 \end{table}
 
 Berikut merupakan tampilan dari hasil pengujian menggunakan file excel dengan format baru \ref{fig:formatBaru} :
-\begin{enumerate}
-	\item 
+
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.7]{Gambar/filterExtension}
-		\caption{PL memfilter ekstensi file excel yang akan dimasukan}
+		\caption{PL memfilter ekstensi file excel yang akan dimasukkan}
 		\label{fig:filterExtension}
 		\end{figure}
-	\item 
+	 
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.7]{Gambar/jadwalKeLayarEksperimental}
 		\caption{PL menampilkan jadwal ke layar}
 		\label{fig:jadwalKeLayarEksperimental}
 		\end{figure}
-	\item 
+ 
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.6]{Gambar/konversiiCalEksperimental}
@@ -383,7 +380,7 @@ Berikut merupakan tampilan dari hasil pengujian menggunakan file excel dengan fo
 		\caption{File iCal}
 		\label{fig:fileiCalEksperimental}
 		\end{figure}
-	\item
+	
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.6]{Gambar/filterKonvertiCalEksperimental}
@@ -397,8 +394,7 @@ Berikut merupakan tampilan dari hasil pengujian menggunakan file excel dengan fo
 		\caption{File iCal Filter}
 		\label{fig:fileiCalFilterEksperimental}
 		\end{figure}
-	
-	\item 
+	 
 		\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.8]{Gambar/importGCEksperimental}
@@ -420,7 +416,7 @@ Berikut merupakan tampilan dari hasil pengujian menggunakan file excel dengan fo
 		\label{fig:hasilGCEksperimental2}
 		\end{figure}
 		
-	\item 
+	
 			\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.8]{Gambar/importOutlook}
@@ -442,7 +438,7 @@ Berikut merupakan tampilan dari hasil pengujian menggunakan file excel dengan fo
 			\label{fig:hasilOutlookEksperimental}
 			\end{figure}
 		
-		\item 
+	
 			\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.8]{Gambar/importGCFilterEksperimental}
@@ -464,7 +460,7 @@ Berikut merupakan tampilan dari hasil pengujian menggunakan file excel dengan fo
 			\label{fig:hasilGCFilterEksperimental2}
 			\end{figure}
 			
-		\item 
+		
 			\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.8]{Gambar/importOutlook}
@@ -486,4 +482,137 @@ Berikut merupakan tampilan dari hasil pengujian menggunakan file excel dengan fo
 			\label{fig:hasilOutlookFilter}
 			\end{figure}
 			
-\end{enumerate} 
+
+
+Selain menguji pada sistem operasi windows, PL juga diuji pada sistem operasi Mac OS. Pada kesempatan kali ini PL diuji kinerjanya dalam OS X. PL diuji pada Macbook Pa Pascal dengan skenario yang sama pada sistem operasi windows. Berikut hasil pengujiannya.
+\begin{table}[H]
+	\centering
+		\caption{Tabel hasil pengujian pada OS X}
+		\label{tab:eksperimental}
+		\begin{tabular}{ | p{4cm} | p{4cm} | p{4cm} | }
+			\hline
+				Hal yang diuji & Hasil yang diharapkan & Hasil \\ \hline
+				Browse file excel & PL dapat melakukan browse file excel & Berhasil \ref{fig:BrowseonMac} \ref{fig:BrowseDatabaruonMac}\\ \hline
+				Menampilkan Jadwal ke layar & PL menampilkan ke layar file excel yang telah dibaca & Berhasil \ref{fig:MenampilkankelayaronMac}  \ref{fig:MenampilkankelayarDatabaruonMac}\\ \hline
+				Konversi ke iCal & PL dapat mengkonversi jadwal yang diseleksi pengguna kedalam iCalendar & Berhasil \ref{fig:Save-iCal-on-Mac} \ref{fig:Save-iCal-Data-Baru-on-Mac} \\ \hline
+				Hasil Filter dapat dikonversi ke iCal & Hasil Filter pada PL dan diseleksi oleh pengguna, dapat di konversikan kedalam iCal & Berhasil \ref{fig:Save-iCal-Filter-on-Mac} \ref{fig:Save-iCal-Data-Baru-Filter-on-Mac}  \\ \hline
+				Import iCalendar Mac & Hasil konversi PL dapat di masukan kedalam iCalendar pada OS X & Berhasil \ref{fig:Hasil-Import-2-on-Mac} \ref{fig:Hasil-iCal-Data-Baru-on-Mac} \\ \hline
+				Hasil filter dapat di \textit{import} Google Calendar & Hasil filter konversi PL dapat di masukan kedalam Google Calendar & Berhasil \ref{fig:Hasil-Import-Filter-2-on-Mac} \ref{fig:Hasil-iCal-Data-Baru-Filter}\\ \hline
+		\end{tabular}
+\end{table} 
+	Berikut tampilan dari hasil pengujian PL pada OS X :
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{Gambar/BrowseonMac}
+			\caption{Hasil pengujian \textit{browse} pada OS X dengan \textit{file input} data lama}
+			\label{fig:BrowseonMac}
+			\end{figure}
+		
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{Gambar/BrowseDatabaruonMac}
+			\caption{Hasil pengujian \textit{browse} pada OS X dengan \textit{file input} data baru}
+			\label{fig:BrowseDatabaruonMac}
+			\end{figure}
+			
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{Gambar/Menampilkan-ke-layar-on-Mac}
+			\caption{Hasil pengujian menampilkan ke layar pada OS X dengan \textit{file input} data lama}
+			\label{fig:MenampilkankelayaronMac}
+			\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{Gambar/Menampilkan-ke-Layar-Data-baru-on-Mac}
+			\caption{Hasil pengujian menampilkan ke layar pada OS X dengan \textit{file input} data baru}
+			\label{fig:MenampilkankelayarDatabaruonMac}
+			\end{figure}
+			
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{Gambar/Save-iCal-on-Mac}
+			\caption{Hasil pengujian menyimpan file iCal pada OS X dengan \textit{file input} data lama}
+			\label{fig:Save-iCal-on-Mac}
+			\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{Gambar/Save-iCal-Data-Baru-on-Mac}
+			\caption{Hasil pengujian menyimpan file iCal pada OS X dengan \textit{file input} data baru}
+			\label{fig:Save-iCal-Data-Baru-on-Mac}
+			\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{Gambar/Save-iCal-Filter-on-Mac}
+			\caption{Hasil pengujian menyimpan file iCal yang telah difilter pada OS X dengan \textit{file input} data lama}
+			\label{fig:Save-iCal-Filter-on-Mac}
+			\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{Gambar/Save-iCal-Data-Baru-Filter-on-Mac}
+			\caption{Hasil pengujian menyimpan file iCal yang telah difilter pada OS X dengan \textit{file input} data baru}
+			\label{fig:Save-iCal-Data-Baru-Filter-on-Mac}
+			\end{figure}
+			
+			\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{Gambar/Import-Jadwal-on-Mac}
+			\caption{Hasil pengujian \textit{import} iCalendar pada OS X dengan \textit{file input} data lama}
+			\label{fig:Import-Jadwal-on-Mac}
+			\end{figure}
+			
+			\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.5]{Gambar/Import-Jadwal-2-on-Mac}
+			\caption{Notifikasi destinasi kalendar pada OS X dengan \textit{file input} data lama}
+			\label{fig:Import-Jadwal-2-on-Mac}
+			\end{figure}
+			
+			\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.4]{Gambar/Hasil-import-on-Mac}
+			\caption{Tampilan iCalendar pada OS X dengan \textit{file input} data lama}
+			\label{fig:Hasil-import-on-Mac}
+			\end{figure}
+			
+			\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.4]{Gambar/Hasil-Import-2-on-Mac}
+			\caption{Tampilan iCalendar bagian 2 pada OS X dengan \textit{file input} data lama}
+			\label{fig:Hasil-Import-2-on-Mac}
+			\end{figure}
+			
+			\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.3]{Gambar/Hasil-iCal-Data-Baru-on-Mac}
+			\caption{Tampilan iCalendar  pada OS X dengan \textit{file input} data baru}
+			\label{fig:Hasil-iCal-Data-Baru-on-Mac}
+			\end{figure}
+			
+			\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.4]{Gambar/Hasil-Import-Filter-on-Mac}
+			\caption{Tampilan hasil filter pada OS X dengan \textit{file input} data lama}
+			\label{fig:Hasil-Import-Filter-on-Mac}
+			\end{figure}
+			
+			\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.4]{Gambar/Hasil-Import-Filter-2-on-Mac}
+			\caption{Tampilan hasil filter bagian 2 pada OS X dengan \textit{file input} data lama}
+			\label{fig:Hasil-Import-Filter-2-on-Mac}
+			\end{figure}
+			
+			Hasil-iCal-Data-Baru-Filter
+			\begin{figure}[H]
+			\centering
+			\includegraphics[scale=0.4]{Gambar/Hasil-iCal-Data-Baru-Filter}
+			\caption{Tampilan hasil filter pada OS X dengan \textit{file input} data baru}
+			\label{fig:Hasil-iCal-Data-Baru-Filter}
+			\end{figure}
+			

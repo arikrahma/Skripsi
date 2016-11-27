@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.6)  17 NOV 2016 08:58
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.6)  28 NOV 2016 01:34
 entering extended mode
 **skripsi.tex
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.tex
@@ -1101,6 +1101,9 @@ LaTeX Warning: Label `fig:importOutlookFilter' multiply defined.
 
 LaTeX Warning: Label `fig:hasilOutlookFilter' multiply defined.
 
+
+LaTeX Warning: Label `tab:eksperimental' multiply defined.
+
 ) (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab6.aux) (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab7.aux)
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab8.aux) (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab9.aux)
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampA.aux)
@@ -1199,7 +1202,7 @@ ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent fea
 ture set (\pgfplotsset{compat=1.14}).
 
-<Gambar/logo-unpar.png, id=266, 360.59718pt x 356.0803pt>
+<Gambar/logo-unpar.png, id=270, 360.59718pt x 356.0803pt>
 File: Gambar/logo-unpar.png Graphic file (type png)
  <use Gambar/logo-unpar.png>
 Package pdftex.def Info: Gambar/logo-unpar.png used on input line 474.
@@ -1223,66 +1226,89 @@ Package pdftex.def Info: Gambar/logo-unpar.png used on input line 474.
 
 ] [5] [6
 
-]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 474.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+] [7] [8
+
+] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.toc
+LaTeX Font Info:    Font shape `T1/lmr/bx/sc' in size <10.95> not available
+(Font)              Font shape `T1/cmr/bx/sc' tried instead on input line 2.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 2.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 474.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 2.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 474.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 2.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 474.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 2.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 474.
+(Font)              <10.95> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 474.
+(Font)              <8> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 474.
-LaTeX Font Info:    Try loading font information for U+msa on input line 474.
+(Font)              <6> on input line 2.
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 474.
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [7] [8
-
-] [9] [10
-
-] [11] [12
-
-] [13] [14
-
-] [15
-
-] [16
-
-]
-(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.toc
-LaTeX Font Info:    Font shape `T1/lmr/bx/sc' in size <10.95> not available
-(Font)              Font shape `T1/cmr/bx/sc' tried instead on input line 2.
- [17])
+) [9])
 \tf@toc=\write6
- [18] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.lof
-[19])
+ [10]
+(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.lof [11])
 \tf@lof=\write7
- [20] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.lot [21])
+ [12] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.lot
+[13])
 \tf@lot=\write8
- [22]
-(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab1.tex
+ [14]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(85.35826pt, 433.90454pt, 78.24507pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=433.90454pt
+* \textheight=731.23584pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=5.97508pt
+* \topmargin=-55.36449pt
+* \headheight=15.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=103.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab1.tex
 Bab 1.
 [1
+
 
 
 
@@ -1294,25 +1320,25 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 34.
-) [2]
-(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab2.tex
+ [2]) [3]
+(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab2.tex [4
+
+
+
+]
 Bab 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-[3
-
-
-
-] [4]
+[5] [6] [7]
 Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
-[5]
-Overfull \hbox (2.57745pt too wide) in paragraph at lines 205--206
+[8]
+Overfull \hbox (38.1434pt too wide) in paragraph at lines 205--206
 \T1/lmr/m/n/10.95 XSSFCellStyle me-ru-pak-an se-bu-ah ke-las yang ber-a-da di-ba-wah \T1/lmr/m/it/10.95 pac-ka-ge \T1/lm
 r/bx/n/10.95 org.apache.poi.usermodel\T1/lmr/m/n/10.95 .
  []
@@ -1322,48 +1348,65 @@ Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
  []
 
-[6] [7] [8]
 
-LaTeX Warning: Citation `tutpoint' on page 9 undefined on input line 324.
-
-
-Overfull \hbox (13.55933pt too wide) in paragraph at lines 372--380
+Overfull \hbox (34.23799pt too wide) in paragraph at lines 241--249
  [][] 
  []
 
-[9]
+[9] [10]
+Overfull \hbox (49.12527pt too wide) in paragraph at lines 372--380
+ [][] 
+ []
+
+[11] [12]
 Underfull \hbox (badness 10000) in paragraph at lines 437--440
 
  []
 
-[10] [11] [12] [13] [14] [15]
+[13] [14] [15] [16] [17]
 Underfull \vbox (badness 10000) detected at line 729
  []
 
-[16] [17] <Gambar/arsitekturJavaFX.png, id=784, 551.05875pt x 177.66376pt>
+[18] [19] <Gambar/arsitekturJavaFX.png, id=808, 551.05875pt x 177.66376pt>
 File: Gambar/arsitekturJavaFX.png Graphic file (type png)
  <use Gambar/arsitekturJavaFX.png>
 Package pdftex.def Info: Gambar/arsitekturJavaFX.png used on input line 806.
 (pdftex.def)             Requested size: 385.73848pt x 124.36377pt.
- [18 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/arsitekturJavaFX.png (PNG copy)>] [19] [20]
-<Gambar/JavaFXuicontrols.png, id=839, 371.13657pt x 373.395pt>
+ [20 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/arsitekturJavaFX.png (PNG copy)>] [21] [22]
+<Gambar/JavaFXuicontrols.png, id=860, 371.13657pt x 373.395pt>
 File: Gambar/JavaFXuicontrols.png Graphic file (type png)
  <use Gambar/JavaFXuicontrols.png>
 Package pdftex.def Info: Gambar/JavaFXuicontrols.png used on input line 903.
 (pdftex.def)             Requested size: 296.90965pt x 298.7164pt.
- [21 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/JavaFXuicontrols.png (PNG copy)>] [22] [23]) [24]
-(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab3.tex
+ [23] [24 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/JavaFXuicontrols.png (PNG copy)>] [25]
+Overfull \hbox (6.46501pt too wide) in paragraph at lines 985--999
+\T1/lmr/m/n/10.95 per-u-bah-an pa-da \T1/lmr/m/it/10.95 list \T1/lmr/m/n/10.95 ter-se-but. . Ber-i-kut ini \T1/lmr/m/it/
+10.95 me-thod \T1/lmr/m/n/10.95 yang ada pa-da \T1/lmr/m/it/10.95 in-ter-fa-ce \T1/lmr/m/n/10.95 ObservableList.[[]] 
+ []
+
+[26]
+Overfull \hbox (5.78523pt too wide) in paragraph at lines 1055--1062
+ [][] 
+ []
+
+
+Overfull \hbox (4.8662pt too wide) in paragraph at lines 1050--1062
+\T1/lmr/m/n/10.95 tang-gung ja-wab me-nam-pilk-an dan meng-e-dit isi ko-lom. Ber-i-kut \T1/lmr/m/it/10.95 me-thod \T1/lm
+r/m/n/10.95 pa-da TableColumn.[[]] 
+ []
+
+[27]) [28] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab3.tex
 Bab 3.
-<Gambar/scJadwal.png, id=882, 788.19469pt x 398.23781pt>
+<Gambar/scJadwal.png, id=926, 788.19469pt x 398.23781pt>
 File: Gambar/scJadwal.png Graphic file (type png)
  <use Gambar/scJadwal.png>
 Package pdftex.def Info: Gambar/scJadwal.png used on input line 11.
 (pdftex.def)             Requested size: 394.09637pt x 199.11841pt.
- [25
+ [29
 
 
 
- <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/scJadwal.png>] [26] <Gambar/useCaseJadwal.png, id=901, 608.2725pt x 55
+ <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/scJadwal.png>] [30] <Gambar/useCaseJadwal.png, id=945, 608.2725pt x 55
 2.56438pt>
 File: Gambar/useCaseJadwal.png Graphic file (type png)
 
@@ -1379,49 +1422,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--97
 
  []
 
-[27] <Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png, id=914, 636.87938pt x 280.79906pt>
+[31] [32 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/useCaseJadwal.png>]
+<Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png, id=965, 636.87938pt x 280.79906pt>
 File: Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png Graphic file (type png)
 
 <use Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png>
 Package pdftex.def Info: Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png used on input line 142.
 (pdftex.def)             Requested size: 318.4389pt x 140.39919pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[28 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/useCaseJadwal.png>]
-<Gambar/Sorting-Nama-Dosen.png, id=922, 532.99126pt x 280.79906pt>
+<Gambar/Sorting-Nama-Dosen.png, id=966, 532.99126pt x 280.79906pt>
 File: Gambar/Sorting-Nama-Dosen.png Graphic file (type png)
  <use Gambar/Sorting-Nama-Dosen.png>
 Package pdftex.def Info: Gambar/Sorting-Nama-Dosen.png used on input line 157.
 (pdftex.def)             Requested size: 266.49498pt x 140.39919pt.
-
-<Gambar/Unduh-File-iCal.png, id=923, 767.86874pt x 283.0575pt>
+ [33 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png> <C:/Users/Ariq/Skripsi/
+doc/DokumenSkripsi/Gambar/Sorting-Nama-Dosen.png>] <Gambar/Unduh-File-iCal.png, id=977, 767.86874pt x 283.0575pt>
 File: Gambar/Unduh-File-iCal.png Graphic file (type png)
- <use Gambar/Unduh-File-iCal.png>
+
+<use Gambar/Unduh-File-iCal.png>
 Package pdftex.def Info: Gambar/Unduh-File-iCal.png used on input line 171.
 (pdftex.def)             Requested size: 383.93343pt x 141.5284pt.
- [29 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Memasukan-Excel-Jadwal-Mengawas-Ujian.png> <C:/Users/Ariq/Skripsi/
-doc/DokumenSkripsi/Gambar/Sorting-Nama-Dosen.png>] <Gambar/pemodelan-kelas.png, id=937, 734.745pt x 411.03563pt>
+ <Gambar/pemodelan-kelas.png, id=978, 734.745pt x 411.03563pt>
 File: Gambar/pemodelan-kelas.png Graphic file (type png)
 
 <use Gambar/pemodelan-kelas.png>
 Package pdftex.def Info: Gambar/pemodelan-kelas.png used on input line 189.
 (pdftex.def)             Requested size: 367.3716pt x 205.5173pt.
- [30 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Unduh-File-iCal.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gam
-bar/pemodelan-kelas.png>]) [31] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab4.tex
-[32
+ [34 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Unduh-File-iCal.png>]) [35 <C:/Users/Ariq/Skripsi/doc/DokumenSkrip
+si/Gambar/pemodelan-kelas.png>] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab4.tex
+[36
 
 
 
 ]
 Bab 4.
-<Gambar/kelas-diagram.png, id=964, 1081.03876pt x 864.22874pt>
+<Gambar/kelas-diagram.png, id=1009, 1081.03876pt x 864.22874pt>
 File: Gambar/kelas-diagram.png Graphic file (type png)
  <use Gambar/kelas-diagram.png>
 Package pdftex.def Info: Gambar/kelas-diagram.png used on input line 11.
 (pdftex.def)             Requested size: 432.40784pt x 345.68536pt.
- [33 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/kelas-diagram.png>]
+ [37 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/kelas-diagram.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 68--68
 []|\T1/lmr/m/n/10.95 Konstruktor un-tuk
  []
@@ -1441,7 +1481,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--70
 \T1/lmr/m/n/10.95 kat en-tri meng-a-was
  []
 
-[34]
+[38]
 Underfull \hbox (badness 10000) in paragraph at lines 96--96
 []|\T1/lmr/m/n/10.95 Atribut me-nam-pilk-an
  []
@@ -1476,55 +1516,57 @@ Underfull \hbox (badness 2626) in paragraph at lines 108--108
 \T1/lmr/m/n/10.95 do-sen se-su-ai yang di
  []
 
-[35] <Gambar/antarmuka.png, id=979, 624.3325pt x 434.62375pt>
+[39] <Gambar/antarmuka.png, id=1023, 624.3325pt x 434.62375pt>
 File: Gambar/antarmuka.png Graphic file (type png)
  <use Gambar/antarmuka.png>
 Package pdftex.def Info: Gambar/antarmuka.png used on input line 134.
 (pdftex.def)             Requested size: 312.16548pt x 217.31134pt.
 
-<Gambar/antarmuka3.png, id=981, 624.3325pt x 434.62375pt>
+<Gambar/antarmuka3.png, id=1025, 624.3325pt x 434.62375pt>
 File: Gambar/antarmuka3.png Graphic file (type png)
  <use Gambar/antarmuka3.png>
 Package pdftex.def Info: Gambar/antarmuka3.png used on input line 151.
 (pdftex.def)             Requested size: 312.16548pt x 217.31134pt.
- [36 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/antarmuka.png>] <Gambar/antarmuka2.png, id=989, 615.57036pt x 379.
-20494pt>
+ [40 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/antarmuka.png>] <Gambar/antarmuka2.png, id=1032, 615.57036pt x 379
+.20494pt>
 File: Gambar/antarmuka2.png Graphic file (type png)
 
 <use Gambar/antarmuka2.png>
 Package pdftex.def Info: Gambar/antarmuka2.png used on input line 159.
 (pdftex.def)             Requested size: 307.78442pt x 189.602pt.
- <Gambar/antarmuka4.png, id=990, 624.3325pt x 434.62375pt>
+ <Gambar/antarmuka4.png, id=1033, 624.3325pt x 434.62375pt>
 File: Gambar/antarmuka4.png Graphic file (type png)
  <use Gambar/antarmuka4.png>
 Package pdftex.def Info: Gambar/antarmuka4.png used on input line 167.
 (pdftex.def)             Requested size: 312.16548pt x 217.31134pt.
 
-[37 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/antarmuka3.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/an
+[41 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/antarmuka3.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/an
 tarmuka2.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 189--190
 []\T1/lmr/m/n/10.95 Masukan se-mua ke-da-lam se-bu-ah Ar-ra-
  []
 
-[38 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/antarmuka4.png>] [39]) [40]
-(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab5.tex
+[42 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/antarmuka4.png>] [43] [44]) [45]
+(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab5.tex [46
+
+
+
+]
 Bab 5.
-[41
-
-
-
-] [42] [43] <Gambar/implementAntarmuka.png, id=1126, 544.28343pt x 330.48468pt>
+[47] [48] [49] [50] <Gambar/implementAntarmuka.png, id=1192, 544.28343pt x 330.48468pt>
 File: Gambar/implementAntarmuka.png Graphic file (type png)
- <use Gambar/implementAntarmuka.png>
+
+<use Gambar/implementAntarmuka.png>
 Package pdftex.def Info: Gambar/implementAntarmuka.png used on input line 106.
 (pdftex.def)             Requested size: 380.9958pt x 231.33769pt.
-
-[44] <Gambar/implementAntarmuka2.png, id=1150, 546.54187pt x 331.2375pt>
+ [51] <Gambar/implementAntarmuka2.png, id=1208, 546.54187pt x 331.2375pt>
 File: Gambar/implementAntarmuka2.png Graphic file (type png)
- <use Gambar/implementAntarmuka2.png>
+
+<use Gambar/implementAntarmuka2.png>
 Package pdftex.def Info: Gambar/implementAntarmuka2.png used on input line 114.
 (pdftex.def)             Requested size: 382.57669pt x 231.86465pt.
- [45 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/implementAntarmuka.png>]
+ [52 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/implementAntarmuka.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/
+Gambar/implementAntarmuka2.png>]
 Underfull \hbox (badness 4660) in paragraph at lines 136--136
 []|\T1/lmr/m/n/10.95 PL da-pat me-la-kuk-an
  []
@@ -1532,11 +1574,6 @@ Underfull \hbox (badness 4660) in paragraph at lines 136--136
 
 Underfull \hbox (badness 2310) in paragraph at lines 137--137
 []|\T1/lmr/m/n/10.95 PL da-pat me-nang-kap
- []
-
-
-Underfull \hbox (badness 1292) in paragraph at lines 140--140
-[]|\T1/lmr/m/n/10.95 PL da-pat me-nam-pilk-
  []
 
 
@@ -1550,356 +1587,485 @@ Underfull \hbox (badness 1939) in paragraph at lines 141--141
  []
 
 
-Underfull \hbox (badness 1383) in paragraph at lines 142--142
-[]|\T1/lmr/m/n/10.95 Import Go-o-gle Ca-len-
+Underfull \hbox (badness 1728) in paragraph at lines 142--142
+[]|\T1/lmr/m/it/10.95 Import \T1/lmr/m/n/10.95 Go-o-gle Ca-len-
  []
 
-[46 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/implementAntarmuka2.png>]
-<Gambar/browseFile.png, id=1178, 714.41907pt x 341.02406pt>
+<Gambar/browseFile.png, id=1228, 714.41907pt x 341.02406pt>
 File: Gambar/browseFile.png Graphic file (type png)
  <use Gambar/browseFile.png>
-Package pdftex.def Info: Gambar/browseFile.png used on input line 154.
+Package pdftex.def Info: Gambar/browseFile.png used on input line 153.
 (pdftex.def)             Requested size: 500.08994pt x 238.71521pt.
 
-Overfull \hbox (30.61945pt too wide) in paragraph at lines 154--155
+Overfull \hbox (66.1854pt too wide) in paragraph at lines 153--154
  [][] 
  []
 
-[47] <Gambar/pathFile.png, id=1183, 538.26094pt x 80.55093pt>
+[53] <Gambar/pathFile.png, id=1236, 538.26094pt x 80.55093pt>
 File: Gambar/pathFile.png Graphic file (type png)
  <use Gambar/pathFile.png>
-Package pdftex.def Info: Gambar/pathFile.png used on input line 161.
+Package pdftex.def Info: Gambar/pathFile.png used on input line 160.
 (pdftex.def)             Requested size: 430.60934pt x 64.44083pt.
 File: Gambar/implementAntarmuka2.png Graphic file (type png)
 
 <use Gambar/implementAntarmuka2.png>
-Package pdftex.def Info: Gambar/implementAntarmuka2.png used on input line 168.
+Package pdftex.def Info: Gambar/implementAntarmuka2.png used on input line 167.
 (pdftex.def)             Requested size: 382.57669pt x 231.86465pt.
- [48 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/browseFile.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/p
-athFile.png>] <Gambar/konversiiCal.png, id=1193, 465.99094pt x 511.15968pt>
+ <Gambar/konversiiCal.png, id=1237, 465.99094pt x 511.15968pt>
 File: Gambar/konversiiCal.png Graphic file (type png)
 
 <use Gambar/konversiiCal.png>
-Package pdftex.def Info: Gambar/konversiiCal.png used on input line 175.
+Package pdftex.def Info: Gambar/konversiiCal.png used on input line 174.
 (pdftex.def)             Requested size: 279.59671pt x 306.69817pt.
- <Gambar/fileiCal.png, id=1194, 329.73187pt x 194.97844pt>
+ [54 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/browseFile.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/p
+athFile.png>] <Gambar/fileiCal.png, id=1244, 329.73187pt x 194.97844pt>
 File: Gambar/fileiCal.png Graphic file (type png)
- <use Gambar/fileiCal.png>
-Package pdftex.def Info: Gambar/fileiCal.png used on input line 182.
-(pdftex.def)             Requested size: 263.78584pt x 155.98294pt.
 
-<Gambar/filterDosen.png, id=1195, 536.75531pt x 331.99031pt>
+<use Gambar/fileiCal.png>
+Package pdftex.def Info: Gambar/fileiCal.png used on input line 181.
+(pdftex.def)             Requested size: 263.78584pt x 155.98294pt.
+ <Gambar/filterDosen.png, id=1245, 536.75531pt x 331.99031pt>
 File: Gambar/filterDosen.png Graphic file (type png)
  <use Gambar/filterDosen.png>
-Package pdftex.def Info: Gambar/filterDosen.png used on input line 189.
+Package pdftex.def Info: Gambar/filterDosen.png used on input line 188.
 (pdftex.def)             Requested size: 375.72614pt x 232.39162pt.
- [49 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/konversiiCal.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar
-/fileiCal.png>]
-<Gambar/filterKonvertiCal.png, id=1203, 460.72125pt x 490.08093pt>
+
+[55 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/konversiiCal.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/
+fileiCal.png>] <Gambar/filterKonvertiCal.png, id=1252, 460.72125pt x 490.08093pt>
 File: Gambar/filterKonvertiCal.png Graphic file (type png)
  <use Gambar/filterKonvertiCal.png>
-Package pdftex.def Info: Gambar/filterKonvertiCal.png used on input line 196.
+Package pdftex.def Info: Gambar/filterKonvertiCal.png used on input line 195.
 (pdftex.def)             Requested size: 276.43488pt x 294.05083pt.
 
-<Gambar/fileiCalFilter.png, id=1204, 271.0125pt x 189.70876pt>
+<Gambar/fileiCalFilter.png, id=1253, 271.0125pt x 189.70876pt>
 File: Gambar/fileiCalFilter.png Graphic file (type png)
  <use Gambar/fileiCalFilter.png>
-Package pdftex.def Info: Gambar/fileiCalFilter.png used on input line 203.
+Package pdftex.def Info: Gambar/fileiCalFilter.png used on input line 202.
 (pdftex.def)             Requested size: 189.70744pt x 132.79521pt.
- [50 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/filterDosen.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/
+ [56 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/filterDosen.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/
 filterKonvertiCal.png>]
-<Gambar/importGC.png, id=1213, 405.76593pt x 228.10219pt>
+<Gambar/importGC.png, id=1260, 405.76593pt x 228.10219pt>
 File: Gambar/importGC.png Graphic file (type png)
  <use Gambar/importGC.png>
-Package pdftex.def Info: Gambar/importGC.png used on input line 211.
+Package pdftex.def Info: Gambar/importGC.png used on input line 210.
 (pdftex.def)             Requested size: 324.61317pt x 182.48198pt.
 
-<Gambar/hasilGC.png, id=1214, 456.95718pt x 347.79938pt>
+<Gambar/hasilGC.png, id=1261, 456.95718pt x 347.79938pt>
 File: Gambar/hasilGC.png Graphic file (type png)
  <use Gambar/hasilGC.png>
-Package pdftex.def Info: Gambar/hasilGC.png used on input line 218.
+Package pdftex.def Info: Gambar/hasilGC.png used on input line 217.
 (pdftex.def)             Requested size: 319.86784pt x 243.4579pt.
 
-<Gambar/hasilGC2.png, id=1215, 709.90219pt x 465.99094pt>
+<Gambar/hasilGC2.png, id=1262, 709.90219pt x 465.99094pt>
 File: Gambar/hasilGC2.png Graphic file (type png)
  <use Gambar/hasilGC2.png>
-Package pdftex.def Info: Gambar/hasilGC2.png used on input line 225.
+Package pdftex.def Info: Gambar/hasilGC2.png used on input line 224.
 (pdftex.def)             Requested size: 354.95023pt x 232.99489pt.
- [51 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/fileiCalFilter.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gamb
-ar/importGC.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilGC.png>] <Gambar/importOutlook.png, id=1225, 341.
+ [57 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/fileiCalFilter.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gamb
+ar/importGC.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilGC.png>] <Gambar/importOutlook.png, id=1270, 341.
 02406pt x 263.48438pt>
 File: Gambar/importOutlook.png Graphic file (type png)
 
 <use Gambar/importOutlook.png>
-Package pdftex.def Info: Gambar/importOutlook.png used on input line 233.
+Package pdftex.def Info: Gambar/importOutlook.png used on input line 232.
 (pdftex.def)             Requested size: 272.81961pt x 210.78777pt.
- <Gambar/hasilOutlook2.png, id=1226, 248.42813pt x 333.49594pt>
+ <Gambar/hasilOutlook2.png, id=1271, 248.42813pt x 333.49594pt>
 File: Gambar/hasilOutlook2.png Graphic file (type png)
 
 <use Gambar/hasilOutlook2.png>
-Package pdftex.def Info: Gambar/hasilOutlook2.png used on input line 240.
+Package pdftex.def Info: Gambar/hasilOutlook2.png used on input line 239.
 (pdftex.def)             Requested size: 198.74277pt x 266.7971pt.
- [52 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilGC2.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/imp
-ortOutlook.png>] <Gambar/hasilOutlook.png, id=1234, 371.13657pt x 140.77594pt>
+ [58 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilGC2.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/imp
+ortOutlook.png>] <Gambar/hasilOutlook.png, id=1278, 371.13657pt x 140.77594pt>
 File: Gambar/hasilOutlook.png Graphic file (type png)
 
 <use Gambar/hasilOutlook.png>
-Package pdftex.def Info: Gambar/hasilOutlook.png used on input line 247.
+Package pdftex.def Info: Gambar/hasilOutlook.png used on input line 246.
 (pdftex.def)             Requested size: 296.90965pt x 112.62088pt.
- <Gambar/importGCFilter.png, id=1235, 386.19281pt x 197.98969pt>
+ <Gambar/importGCFilter.png, id=1279, 386.19281pt x 197.98969pt>
 File: Gambar/importGCFilter.png Graphic file (type png)
 
 <use Gambar/importGCFilter.png>
-Package pdftex.def Info: Gambar/importGCFilter.png used on input line 255.
+Package pdftex.def Info: Gambar/importGCFilter.png used on input line 254.
 (pdftex.def)             Requested size: 308.95465pt x 158.39195pt.
- <Gambar/hasilGCFilter.png, id=1236, 442.65375pt x 305.64188pt>
+ <Gambar/hasilGCFilter.png, id=1280, 442.65375pt x 305.64188pt>
 File: Gambar/hasilGCFilter.png Graphic file (type png)
 
 <use Gambar/hasilGCFilter.png>
-Package pdftex.def Info: Gambar/hasilGCFilter.png used on input line 262.
+Package pdftex.def Info: Gambar/hasilGCFilter.png used on input line 261.
 (pdftex.def)             Requested size: 309.8555pt x 213.94785pt.
- [53 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilOutlook2.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gamba
+ [59 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilOutlook2.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gamba
 r/hasilOutlook.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/importGCFilter.png>]
-<Gambar/hasilGCFilter2.png, id=1245, 703.87968pt x 463.7325pt>
+<Gambar/hasilGCFilter2.png, id=1289, 703.87968pt x 463.7325pt>
 File: Gambar/hasilGCFilter2.png Graphic file (type png)
  <use Gambar/hasilGCFilter2.png>
-Package pdftex.def Info: Gambar/hasilGCFilter2.png used on input line 269.
+Package pdftex.def Info: Gambar/hasilGCFilter2.png used on input line 268.
 (pdftex.def)             Requested size: 422.33107pt x 278.24164pt.
 File: Gambar/importOutlook.png Graphic file (type png)
 
 <use Gambar/importOutlook.png>
-Package pdftex.def Info: Gambar/importOutlook.png used on input line 277.
+Package pdftex.def Info: Gambar/importOutlook.png used on input line 276.
 (pdftex.def)             Requested size: 272.81961pt x 210.78777pt.
- [54 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilGCFilter.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gamba
+ [60 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilGCFilter.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gamba
 r/hasilGCFilter2.png>]
 File: Gambar/hasilOutlook2.png Graphic file (type png)
  <use Gambar/hasilOutlook2.png>
-Package pdftex.def Info: Gambar/hasilOutlook2.png used on input line 284.
+Package pdftex.def Info: Gambar/hasilOutlook2.png used on input line 283.
 (pdftex.def)             Requested size: 198.74277pt x 266.7971pt.
 
-<Gambar/hasilOutlookFilter.png, id=1252, 371.88937pt x 143.78719pt>
+<Gambar/hasilOutlookFilter.png, id=1296, 371.88937pt x 143.78719pt>
 File: Gambar/hasilOutlookFilter.png Graphic file (type png)
  <use Gambar/hasilOutlookFilter.png>
-Package pdftex.def Info: Gambar/hasilOutlookFilter.png used on input line 291.
+Package pdftex.def Info: Gambar/hasilOutlookFilter.png used on input line 290.
 (pdftex.def)             Requested size: 297.51189pt x 115.02989pt.
- [55]
-Underfull \hbox (badness 4660) in paragraph at lines 307--307
+
+Underfull \hbox (badness 4660) in paragraph at lines 306--306
 []|\T1/lmr/m/n/10.95 PL da-pat me-la-kuk-an
  []
 
 
-Underfull \hbox (badness 2310) in paragraph at lines 308--308
+Underfull \hbox (badness 2310) in paragraph at lines 307--307
 []|\T1/lmr/m/n/10.95 PL da-pat me-nang-kap
  []
 
 
-Underfull \hbox (badness 4266) in paragraph at lines 309--309
+Underfull \hbox (badness 4266) in paragraph at lines 308--308
 []|\T1/lmr/m/n/10.95 Memasukan fi-le yang
  []
 
 
-Underfull \hbox (badness 1406) in paragraph at lines 310--310
+Underfull \hbox (badness 1406) in paragraph at lines 309--309
 \T1/lmr/m/n/10.95 (`16). Se-hing-ga, \T1/lmr/m/it/10.95 ou-
  []
 
 
-Underfull \hbox (badness 1400) in paragraph at lines 310--310
+Underfull \hbox (badness 1400) in paragraph at lines 309--309
 \T1/lmr/m/it/10.95 tput \T1/lmr/m/n/10.95 yang di-ke-lu-ark-an
  []
 
-<Gambar/eksperimental.png, id=1263, 635.37375pt x 383.93437pt>
+[61 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilOutlookFilter.png>]
+<Gambar/eksperimental.png, id=1307, 635.37375pt x 383.93437pt>
 File: Gambar/eksperimental.png Graphic file (type png)
  <use Gambar/eksperimental.png>
-Package pdftex.def Info: Gambar/eksperimental.png used on input line 319.
-(pdftex.def)             Requested size: 508.29968pt x 307.1479pt.
+Package pdftex.def Info: Gambar/eksperimental.png used on input line 317.
+(pdftex.def)             Requested size: 381.22719pt x 230.3624pt.
 
-Overfull \hbox (38.8292pt too wide) in paragraph at lines 319--320
- [][] 
- []
-
-[56 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilOutlookFilter.png>]
-<Gambar/eksperimental2.png, id=1269, 797.22844pt x 390.70969pt>
+<Gambar/eksperimental2.png, id=1308, 797.22844pt x 390.70969pt>
 File: Gambar/eksperimental2.png Graphic file (type png)
  <use Gambar/eksperimental2.png>
-Package pdftex.def Info: Gambar/eksperimental2.png used on input line 327.
-(pdftex.def)             Requested size: 637.78363pt x 312.56816pt.
+Package pdftex.def Info: Gambar/eksperimental2.png used on input line 325.
+(pdftex.def)             Requested size: 478.34076pt x 234.42761pt.
 
-Overfull \hbox (168.31314pt too wide) in paragraph at lines 327--328
+Overfull \hbox (44.43622pt too wide) in paragraph at lines 325--326
  [][] 
  []
 
-[57 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/eksperimental.png>]
-Underfull \hbox (badness 4660) in paragraph at lines 342--342
+[62 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/eksperimental.png>]
+Underfull \hbox (badness 4660) in paragraph at lines 340--340
 []|\T1/lmr/m/n/10.95 PL da-pat me-la-kuk-an
  []
 
 
-Underfull \hbox (badness 2310) in paragraph at lines 343--343
+Underfull \hbox (badness 2310) in paragraph at lines 341--341
 []|\T1/lmr/m/n/10.95 PL da-pat me-nang-kap
  []
 
 
-Underfull \hbox (badness 4266) in paragraph at lines 344--344
+Underfull \hbox (badness 4266) in paragraph at lines 342--342
 []|\T1/lmr/m/n/10.95 Memasukan fi-le yang
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--344
+Underfull \hbox (badness 10000) in paragraph at lines 342--342
 []|\T1/lmr/m/n/10.95 PL meng-gu-nak-an
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--344
+Underfull \hbox (badness 10000) in paragraph at lines 342--342
 \T1/lmr/m/n/10.95 ga fi-le buk-an excel
  []
 
 
-Underfull \hbox (badness 1292) in paragraph at lines 347--347
-[]|\T1/lmr/m/n/10.95 PL da-pat me-nam-pilk-
- []
-
-
-Underfull \hbox (badness 1043) in paragraph at lines 348--348
+Underfull \hbox (badness 1043) in paragraph at lines 346--346
 []|\T1/lmr/m/n/10.95 Hasil Fil-ter da-pat di-
  []
 
 
-Underfull \hbox (badness 1939) in paragraph at lines 348--348
+Underfull \hbox (badness 1939) in paragraph at lines 346--346
 []|\T1/lmr/m/n/10.95 Hasil Fil-ter pa-da PL
  []
 
 
-Underfull \hbox (badness 1383) in paragraph at lines 349--349
-[]|\T1/lmr/m/n/10.95 Import Go-o-gle Ca-len-
+Underfull \hbox (badness 1728) in paragraph at lines 347--347
+[]|\T1/lmr/m/it/10.95 Import \T1/lmr/m/n/10.95 Go-o-gle Ca-len-
  []
 
-[58 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/eksperimental2.png>]
-<Gambar/filterExtension.png, id=1297, 541.27219pt x 379.4175pt>
+[63 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/eksperimental2.png>]
+<Gambar/filterExtension.png, id=1333, 541.27219pt x 379.4175pt>
 File: Gambar/filterExtension.png Graphic file (type png)
  <use Gambar/filterExtension.png>
-Package pdftex.def Info: Gambar/filterExtension.png used on input line 361.
+Package pdftex.def Info: Gambar/filterExtension.png used on input line 358.
 (pdftex.def)             Requested size: 378.88794pt x 265.59042pt.
- [59]
-<Gambar/jadwalKeLayarEksperimental.png, id=1302, 546.54187pt x 333.49594pt>
+ [64]
+<Gambar/jadwalKeLayarEksperimental.png, id=1338, 546.54187pt x 333.49594pt>
 File: Gambar/jadwalKeLayarEksperimental.png Graphic file (type png)
  <use Gambar/jadwalKeLayarEksperimental.png>
-Package pdftex.def Info: Gambar/jadwalKeLayarEksperimental.png used on input line 368.
+Package pdftex.def Info: Gambar/jadwalKeLayarEksperimental.png used on input line 365.
 (pdftex.def)             Requested size: 382.57669pt x 233.44556pt.
 
-<Gambar/konversiiCalEksperimental.png, id=1303, 542.77782pt x 427.5975pt>
+<Gambar/konversiiCalEksperimental.png, id=1339, 542.77782pt x 427.5975pt>
 File: Gambar/konversiiCalEksperimental.png Graphic file (type png)
  <use Gambar/konversiiCalEksperimental.png>
-Package pdftex.def Info: Gambar/konversiiCalEksperimental.png used on input line 375.
+Package pdftex.def Info: Gambar/konversiiCalEksperimental.png used on input line 372.
 (pdftex.def)             Requested size: 325.6692pt x 256.56047pt.
 
-[60 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/filterExtension.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gamb
-ar/jadwalKeLayarEksperimental.png>] <Gambar/fileiCalEksperimental.png, id=1312, 243.91125pt x 170.88844pt>
+[65 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/filterExtension.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gamb
+ar/jadwalKeLayarEksperimental.png>] <Gambar/fileiCalEksperimental.png, id=1347, 243.91125pt x 170.88844pt>
 File: Gambar/fileiCalEksperimental.png Graphic file (type png)
 
 <use Gambar/fileiCalEksperimental.png>
-Package pdftex.def Info: Gambar/fileiCalEksperimental.png used on input line 382.
+Package pdftex.def Info: Gambar/fileiCalEksperimental.png used on input line 379.
 (pdftex.def)             Requested size: 195.12926pt x 136.71092pt.
- <Gambar/filterKonvertiCalEksperimental.png, id=1313, 545.78906pt x 445.665pt>
+ <Gambar/filterKonvertiCalEksperimental.png, id=1348, 545.78906pt x 445.665pt>
 File: Gambar/filterKonvertiCalEksperimental.png Graphic file (type png)
 
 <use Gambar/filterKonvertiCalEksperimental.png>
-Package pdftex.def Info: Gambar/filterKonvertiCalEksperimental.png used on input line 389.
+Package pdftex.def Info: Gambar/filterKonvertiCalEksperimental.png used on input line 386.
 (pdftex.def)             Requested size: 327.47595pt x 267.40106pt.
- [61 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/konversiiCalEksperimental.png> <C:/Users/Ariq/Skripsi/doc/DokumenS
+ [66 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/konversiiCalEksperimental.png> <C:/Users/Ariq/Skripsi/doc/DokumenS
 kripsi/Gambar/fileiCalEksperimental.png>]
-<Gambar/fileiCalFilterEksperimental.png, id=1321, 447.17062pt x 167.87718pt>
+<Gambar/fileiCalFilterEksperimental.png, id=1355, 447.17062pt x 167.87718pt>
 File: Gambar/fileiCalFilterEksperimental.png Graphic file (type png)
 
 <use Gambar/fileiCalFilterEksperimental.png>
-Package pdftex.def Info: Gambar/fileiCalFilterEksperimental.png used on input line 396.
+Package pdftex.def Info: Gambar/fileiCalFilterEksperimental.png used on input line 393.
 (pdftex.def)             Requested size: 313.01729pt x 117.51321pt.
- <Gambar/importGCEksperimental.png, id=1322, 387.69844pt x 203.25937pt>
+ <Gambar/importGCEksperimental.png, id=1356, 387.69844pt x 203.25937pt>
 File: Gambar/importGCEksperimental.png Graphic file (type png)
 
 <use Gambar/importGCEksperimental.png>
-Package pdftex.def Info: Gambar/importGCEksperimental.png used on input line 404.
+Package pdftex.def Info: Gambar/importGCEksperimental.png used on input line 400.
 (pdftex.def)             Requested size: 310.15916pt x 162.60771pt.
- <Gambar/hasilGCEksperimental.png, id=1323, 450.18187pt x 194.97844pt>
+ <Gambar/hasilGCEksperimental.png, id=1357, 450.18187pt x 194.97844pt>
 File: Gambar/hasilGCEksperimental.png Graphic file (type png)
 
 <use Gambar/hasilGCEksperimental.png>
-Package pdftex.def Info: Gambar/hasilGCEksperimental.png used on input line 411.
+Package pdftex.def Info: Gambar/hasilGCEksperimental.png used on input line 407.
 (pdftex.def)             Requested size: 315.12515pt x 136.48396pt.
- [62 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/filterKonvertiCalEksperimental.png> <C:/Users/Ariq/Skripsi/doc/Dok
+ [67 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/filterKonvertiCalEksperimental.png> <C:/Users/Ariq/Skripsi/doc/Dok
 umenSkripsi/Gambar/fileiCalFilterEksperimental.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/importGCEksperiment
-al.png>] <Gambar/hasilGCEksperimental2.png, id=1333, 699.36281pt x 463.7325pt>
+al.png>] <Gambar/hasilGCEksperimental2.png, id=1365, 699.36281pt x 463.7325pt>
 File: Gambar/hasilGCEksperimental2.png Graphic file (type png)
 
 <use Gambar/hasilGCEksperimental2.png>
-Package pdftex.def Info: Gambar/hasilGCEksperimental2.png used on input line 418.
+Package pdftex.def Info: Gambar/hasilGCEksperimental2.png used on input line 414.
 (pdftex.def)             Requested size: 349.68054pt x 231.86568pt.
 File: Gambar/importOutlook.png Graphic file (type png)
  <use Gambar/importOutlook.png>
-Package pdftex.def Info: Gambar/importOutlook.png used on input line 426.
+Package pdftex.def Info: Gambar/importOutlook.png used on input line 422.
 (pdftex.def)             Requested size: 272.81961pt x 210.78777pt.
- [63 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilGCEksperimental.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkrips
-i/Gambar/hasilGCEksperimental2.png>]
-<Gambar/hasilOutlookEksperimental2.png, id=1341, 378.66469pt x 149.05687pt>
+
+<Gambar/hasilOutlookEksperimental2.png, id=1366, 378.66469pt x 149.05687pt>
 File: Gambar/hasilOutlookEksperimental2.png Graphic file (type png)
  <use Gambar/hasilOutlookEksperimental2.png>
-Package pdftex.def Info: Gambar/hasilOutlookEksperimental2.png used on input line 433.
+Package pdftex.def Info: Gambar/hasilOutlookEksperimental2.png used on input line 429.
 (pdftex.def)             Requested size: 302.93216pt x 119.24565pt.
 
-<Gambar/hasilOutlookEksperimental.png, id=1342, 240.9pt x 286.82156pt>
+[68 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilGCEksperimental.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi
+/Gambar/hasilGCEksperimental2.png>] <Gambar/hasilOutlookEksperimental.png, id=1373, 240.9pt x 286.82156pt>
 File: Gambar/hasilOutlookEksperimental.png Graphic file (type png)
- <use Gambar/hasilOutlookEksperimental.png>
-Package pdftex.def Info: Gambar/hasilOutlookEksperimental.png used on input line 440.
-(pdftex.def)             Requested size: 192.72025pt x 229.45755pt.
 
-[64 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilOutlookEksperimental2.png> <C:/Users/Ariq/Skripsi/doc/DokumenS
-kripsi/Gambar/hasilOutlookEksperimental.png>]
-<Gambar/importGCFilterEksperimental.png, id=1350, 392.21532pt x 202.50656pt>
+<use Gambar/hasilOutlookEksperimental.png>
+Package pdftex.def Info: Gambar/hasilOutlookEksperimental.png used on input line 436.
+(pdftex.def)             Requested size: 192.72025pt x 229.45755pt.
+ <Gambar/importGCFilterEksperimental.png, id=1374, 392.21532pt x 202.50656pt>
 File: Gambar/importGCFilterEksperimental.png Graphic file (type png)
 
 <use Gambar/importGCFilterEksperimental.png>
-Package pdftex.def Info: Gambar/importGCFilterEksperimental.png used on input line 448.
+Package pdftex.def Info: Gambar/importGCFilterEksperimental.png used on input line 444.
 (pdftex.def)             Requested size: 313.77267pt x 162.00545pt.
 
-<Gambar/hasilGCFilterEksperimental.png, id=1351, 604.50844pt x 157.33781pt>
+<Gambar/hasilGCFilterEksperimental.png, id=1375, 604.50844pt x 157.33781pt>
 File: Gambar/hasilGCFilterEksperimental.png Graphic file (type png)
  <use Gambar/hasilGCFilterEksperimental.png>
-Package pdftex.def Info: Gambar/hasilGCFilterEksperimental.png used on input line 455.
+Package pdftex.def Info: Gambar/hasilGCFilterEksperimental.png used on input line 451.
 (pdftex.def)             Requested size: 423.15302pt x 110.13571pt.
 
-<Gambar/hasilGCFilterEksperimental2.png, id=1352, 694.09312pt x 464.4853pt>
+[69 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilOutlookEksperimental2.png> <C:/Users/Ariq/Skripsi/doc/DokumenS
+kripsi/Gambar/hasilOutlookEksperimental.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/importGCFilterEksperimenta
+l.png>] <Gambar/hasilGCFilterEksperimental2.png, id=1383, 694.09312pt x 464.4853pt>
 File: Gambar/hasilGCFilterEksperimental2.png Graphic file (type png)
 
 <use Gambar/hasilGCFilterEksperimental2.png>
-Package pdftex.def Info: Gambar/hasilGCFilterEksperimental2.png used on input line 462.
+Package pdftex.def Info: Gambar/hasilGCFilterEksperimental2.png used on input line 458.
 (pdftex.def)             Requested size: 416.45909pt x 278.69333pt.
- [65 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/importGCFilterEksperimental.png> <C:/Users/Ariq/Skripsi/doc/Dokume
-nSkripsi/Gambar/hasilGCFilterEksperimental.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilGCFilterEksperimen
-tal2.png>]
 File: Gambar/importOutlook.png Graphic file (type png)
  <use Gambar/importOutlook.png>
-Package pdftex.def Info: Gambar/importOutlook.png used on input line 470.
+Package pdftex.def Info: Gambar/importOutlook.png used on input line 466.
 (pdftex.def)             Requested size: 272.81961pt x 210.78777pt.
 File: Gambar/hasilOutlookEksperimental2.png Graphic file (type png)
-
-<use Gambar/hasilOutlookEksperimental2.png>
-Package pdftex.def Info: Gambar/hasilOutlookEksperimental2.png used on input line 477.
+ <use Gambar/hasilOutlookEksperimental2.png>
+Package pdftex.def Info: Gambar/hasilOutlookEksperimental2.png used on input line 473.
 (pdftex.def)             Requested size: 302.93216pt x 119.24565pt.
 
-<Gambar/hasilOutlookFilterEksperimental.png, id=1361, 236.38312pt x 228.855pt>
+[70 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilGCFilterEksperimental.png> <C:/Users/Ariq/Skripsi/doc/DokumenS
+kripsi/Gambar/hasilGCFilterEksperimental2.png>]
+<Gambar/hasilOutlookFilterEksperimental.png, id=1390, 236.38312pt x 228.855pt>
 File: Gambar/hasilOutlookFilterEksperimental.png Graphic file (type png)
 
 <use Gambar/hasilOutlookFilterEksperimental.png>
-Package pdftex.def Info: Gambar/hasilOutlookFilterEksperimental.png used on input line 484.
+Package pdftex.def Info: Gambar/hasilOutlookFilterEksperimental.png used on input line 480.
 (pdftex.def)             Requested size: 189.10675pt x 183.08423pt.
-) [66 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilOutlookFilterEksperimental.png>] (C:\Users\Ariq\Skripsi\doc\
-DokumenSkripsi\Bab/bab6.tex)
-(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab7.tex) (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab8.tex)
-(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab9.tex) (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.bbl
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 6.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) [67
+Underfull \hbox (badness 4660) in paragraph at lines 495--495
+[]|\T1/lmr/m/n/10.95 PL da-pat me-la-kuk-an
+ []
+
+
+Underfull \hbox (badness 1043) in paragraph at lines 498--498
+[]|\T1/lmr/m/n/10.95 Hasil Fil-ter da-pat di-
+ []
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 498--498
+[]|\T1/lmr/m/n/10.95 Hasil Fil-ter pa-da PL
+ []
+
+[71 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/hasilOutlookFilterEksperimental.png>]
+<Gambar/BrowseonMac.png, id=1409, 711.65875pt x 624.3325pt>
+File: Gambar/BrowseonMac.png Graphic file (type png)
+ <use Gambar/BrowseonMac.png>
+Package pdftex.def Info: Gambar/BrowseonMac.png used on input line 507.
+(pdftex.def)             Requested size: 355.8285pt x 312.16548pt.
+
+<Gambar/BrowseDatabaruonMac.png, id=1410, 711.65875pt x 623.32875pt>
+File: Gambar/BrowseDatabaruonMac.png Graphic file (type png)
+ <use Gambar/BrowseDatabaruonMac.png>
+Package pdftex.def Info: Gambar/BrowseDatabaruonMac.png used on input line 515.
+(pdftex.def)             Requested size: 355.8285pt x 311.6636pt.
+ [72 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/BrowseonMac.png>]
+<Gambar/Menampilkan-ke-layar-on-Mac.png, id=1416, 710.655pt x 425.59pt>
+File: Gambar/Menampilkan-ke-layar-on-Mac.png Graphic file (type png)
+ <use Gambar/Menampilkan-ke-layar-on-Mac.png>
+Package pdftex.def Info: Gambar/Menampilkan-ke-layar-on-Mac.png used on input line 522.
+(pdftex.def)             Requested size: 355.32663pt x 212.79446pt.
+
+<Gambar/Menampilkan-ke-Layar-Data-baru-on-Mac.png, id=1417, 713.66624pt x 427.5975pt>
+File: Gambar/Menampilkan-ke-Layar-Data-baru-on-Mac.png Graphic file (type png)
+
+<use Gambar/Menampilkan-ke-Layar-Data-baru-on-Mac.png>
+Package pdftex.def Info: Gambar/Menampilkan-ke-Layar-Data-baru-on-Mac.png used on input line 529.
+(pdftex.def)             Requested size: 356.83224pt x 213.79822pt.
+ [73 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/BrowseDatabaruonMac.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi
+/Gambar/Menampilkan-ke-layar-on-Mac.png>]
+<Gambar/Save-iCal-on-Mac.png, id=1424, 678.535pt x 456.70625pt>
+File: Gambar/Save-iCal-on-Mac.png Graphic file (type png)
+ <use Gambar/Save-iCal-on-Mac.png>
+Package pdftex.def Info: Gambar/Save-iCal-on-Mac.png used on input line 536.
+(pdftex.def)             Requested size: 339.26666pt x 228.35255pt.
+
+<Gambar/Save-iCal-Data-Baru-on-Mac.png, id=1425, 673.51625pt x 460.72125pt>
+File: Gambar/Save-iCal-Data-Baru-on-Mac.png Graphic file (type png)
+ <use Gambar/Save-iCal-Data-Baru-on-Mac.png>
+Package pdftex.def Info: Gambar/Save-iCal-Data-Baru-on-Mac.png used on input line 543.
+(pdftex.def)             Requested size: 336.7573pt x 230.36006pt.
+
+[74 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Menampilkan-ke-Layar-Data-baru-on-Mac.png> <C:/Users/Ariq/Skripsi/d
+oc/DokumenSkripsi/Gambar/Save-iCal-on-Mac.png>] <Gambar/Save-iCal-Filter-on-Mac.png, id=1432, 705.63625pt x 481.8pt>
+File: Gambar/Save-iCal-Filter-on-Mac.png Graphic file (type png)
+
+<use Gambar/Save-iCal-Filter-on-Mac.png>
+Package pdftex.def Info: Gambar/Save-iCal-Filter-on-Mac.png used on input line 550.
+(pdftex.def)             Requested size: 352.81726pt x 240.8994pt.
+
+<Gambar/Save-iCal-Data-Baru-Filter-on-Mac.png, id=1433, 679.53876pt x 429.605pt>
+File: Gambar/Save-iCal-Data-Baru-Filter-on-Mac.png Graphic file (type png)
+
+<use Gambar/Save-iCal-Data-Baru-Filter-on-Mac.png>
+Package pdftex.def Info: Gambar/Save-iCal-Data-Baru-Filter-on-Mac.png used on input line 557.
+(pdftex.def)             Requested size: 339.76855pt x 214.80197pt.
+ [75 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Save-iCal-Data-Baru-on-Mac.png> <C:/Users/Ariq/Skripsi/doc/Dokumen
+Skripsi/Gambar/Save-iCal-Filter-on-Mac.png>]
+<Gambar/Import-Jadwal-on-Mac.png, id=1440, 718.685pt x 467.7475pt>
+File: Gambar/Import-Jadwal-on-Mac.png Graphic file (type png)
+ <use Gambar/Import-Jadwal-on-Mac.png>
+Package pdftex.def Info: Gambar/Import-Jadwal-on-Mac.png used on input line 564.
+(pdftex.def)             Requested size: 359.34161pt x 233.87317pt.
+
+<Gambar/Import-Jadwal-2-on-Mac.png, id=1441, 464.73625pt x 184.69pt>
+File: Gambar/Import-Jadwal-2-on-Mac.png Graphic file (type png)
+ <use Gambar/Import-Jadwal-2-on-Mac.png>
+Package pdftex.def Info: Gambar/Import-Jadwal-2-on-Mac.png used on input line 571.
+(pdftex.def)             Requested size: 232.36755pt x 92.34476pt.
+
+<Gambar/Hasil-import-on-Mac.png, id=1442, 1229.59375pt x 653.44125pt>
+File: Gambar/Hasil-import-on-Mac.png Graphic file (type png)
+ <use Gambar/Hasil-import-on-Mac.png>
+Package pdftex.def Info: Gambar/Hasil-import-on-Mac.png used on input line 578.
+(pdftex.def)             Requested size: 491.8288pt x 261.37187pt.
+
+Overfull \hbox (57.92426pt too wide) in paragraph at lines 578--579
+ [][] 
+ []
+
+[76 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Save-iCal-Data-Baru-Filter-on-Mac.png> <C:/Users/Ariq/Skripsi/doc/D
+okumenSkripsi/Gambar/Import-Jadwal-on-Mac.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Import-Jadwal-2-on-Mac.p
+ng>] <Gambar/Hasil-Import-2-on-Mac.png, id=1450, 1228.59pt x 654.445pt>
+File: Gambar/Hasil-Import-2-on-Mac.png Graphic file (type png)
+ <use Gambar/Hasil-Import-2-on-Mac.png>
+Package pdftex.def Info: Gambar/Hasil-Import-2-on-Mac.png used on input line 585.
+(pdftex.def)             Requested size: 491.42729pt x 261.77336pt.
+
+Overfull \hbox (57.52275pt too wide) in paragraph at lines 585--586
+ [][] 
+ []
+
+<Gambar/Hasil-iCal-Data-Baru-on-Mac.png, id=1451, 1407.2575pt x 574.145pt>
+File: Gambar/Hasil-iCal-Data-Baru-on-Mac.png Graphic file (type png)
+ <use Gambar/Hasil-iCal-Data-Baru-on-Mac.png>
+Package pdftex.def Info: Gambar/Hasil-iCal-Data-Baru-on-Mac.png used on input line 592.
+(pdftex.def)             Requested size: 422.18051pt x 172.24483pt.
+
+[77 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Hasil-import-on-Mac.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/
+Gambar/Hasil-Import-2-on-Mac.png>] <Gambar/Hasil-Import-Filter-on-Mac.png, id=1459, 1226.5825pt x 470.75874pt>
+File: Gambar/Hasil-Import-Filter-on-Mac.png Graphic file (type png)
+
+<use Gambar/Hasil-Import-Filter-on-Mac.png>
+Package pdftex.def Info: Gambar/Hasil-Import-Filter-on-Mac.png used on input line 599.
+(pdftex.def)             Requested size: 490.62431pt x 188.30016pt.
+
+Overfull \hbox (56.71977pt too wide) in paragraph at lines 599--600
+ [][] 
+ []
+
+<Gambar/Hasil-Import-Filter-2-on-Mac.png, id=1460, 1226.5825pt x 527.9725pt>
+File: Gambar/Hasil-Import-Filter-2-on-Mac.png Graphic file (type png)
+
+<use Gambar/Hasil-Import-Filter-2-on-Mac.png>
+Package pdftex.def Info: Gambar/Hasil-Import-Filter-2-on-Mac.png used on input line 606.
+(pdftex.def)             Requested size: 490.62431pt x 211.18526pt.
+
+Overfull \hbox (56.71977pt too wide) in paragraph at lines 606--607
+ [][] 
+ []
+
+<Gambar/Hasil-iCal-Data-Baru-Filter.png, id=1461, 1222.5675pt x 640.3925pt>
+File: Gambar/Hasil-iCal-Data-Baru-Filter.png Graphic file (type png)
+
+<use Gambar/Hasil-iCal-Data-Baru-Filter.png>
+Package pdftex.def Info: Gambar/Hasil-iCal-Data-Baru-Filter.png used on input line 614.
+(pdftex.def)             Requested size: 489.01834pt x 256.15245pt.
+
+Overfull \hbox (55.1138pt too wide) in paragraph at lines 614--615
+ [][] 
+ []
+
+[78 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Hasil-iCal-Data-Baru-on-Mac.png> <C:/Users/Ariq/Skripsi/doc/Dokumen
+Skripsi/Gambar/Hasil-Import-Filter-on-Mac.png> <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Hasil-Import-Filter-2-on
+-Mac.png>]) [79 <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/Hasil-iCal-Data-Baru-Filter.png>]
+(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab6.tex) (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab7.tex)
+(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab8.tex) (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Bab/bab9.tex)
+(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.bbl [80
 
 
 
@@ -1911,7 +2077,10 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 
 ]
-(C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampA.tex [68
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 6.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)) [81] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampA.tex [82
 
 
 ]
@@ -1921,29 +2090,29 @@ File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <6> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 21.
- [69] [70] [71]
+ [83] [84]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 291.
- [72] [73] [74] [75] [76]
-[77]) [78] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampB.tex
+ [85] [86] [87] [88] [89] [90]
+[91]) [92] (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampB.tex
 Lampiran B.
-<Gambar/JadwalPengawasUjianPakPascal.pdf, id=2339, 597.23125pt x 845.1575pt>
+<Gambar/JadwalPengawasUjianPakPascal.pdf, id=2449, 597.23125pt x 845.1575pt>
 File: Gambar/JadwalPengawasUjianPakPascal.pdf Graphic file (type pdf)
 
 <use Gambar/JadwalPengawasUjianPakPascal.pdf>
 Package pdftex.def Info: Gambar/JadwalPengawasUjianPakPascal.pdf used on input line 7.
 (pdftex.def)             Requested size: 358.3415pt x 507.09842pt.
- <Gambar/JadwalPengawasUTS20161.pdf, id=2340, 597.23125pt x 845.1575pt>
+ <Gambar/JadwalPengawasUTS20161.pdf, id=2450, 597.23125pt x 845.1575pt>
 File: Gambar/JadwalPengawasUTS20161.pdf Graphic file (type pdf)
 
 <use Gambar/JadwalPengawasUTS20161.pdf>
 Package pdftex.def Info: Gambar/JadwalPengawasUTS20161.pdf used on input line 14.
 (pdftex.def)             Requested size: 418.05902pt x 591.60622pt.
- [79
+ [93
 
 
 
- <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/JadwalPengawasUjianPakPascal.pdf>]) [80 <C:/Users/Ariq/Skripsi/doc/Dok
+ <C:/Users/Ariq/Skripsi/doc/DokumenSkripsi/Gambar/JadwalPengawasUjianPakPascal.pdf>]) [94 <C:/Users/Ariq/Skripsi/doc/Dok
 umenSkripsi/Gambar/JadwalPengawasUTS20161.pdf>]
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampC.tex)
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\Lampiran/lampD.tex)
@@ -1971,35 +2140,32 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 514.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 514.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 514.
 Package rerunfilecheck Info: File `skripsi.out' has not changed.
-(rerunfilecheck)             Checksum: 6251CAFF3193623416DADF82A9A8108C;9875.
-
-
-LaTeX Warning: There were undefined references.
+(rerunfilecheck)             Checksum: 32DA0B5441935499963C87E942142E78;10000.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 42101 strings out of 493921
- 913709 string characters out of 3144880
- 1870920 words of memory out of 3000000
- 43209 multiletter control sequences out of 15000+200000
- 71570 words of font info for 54 fonts, out of 3000000 for 9000
+ 42209 strings out of 493921
+ 917403 string characters out of 3144880
+ 1546822 words of memory out of 3000000
+ 43289 multiletter control sequences out of 15000+200000
+ 67308 words of font info for 53 fonts, out of 3000000 for 9000
  845 hyphenation exceptions out of 8191
- 73i,12n,122p,10422b,1862s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 73i,12n,122p,10422b,1820s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips
 /lm/lm-ec.enc} <C:\Users\Ariq\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1095.pk><C:/Program Files 
 (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/l
 m/lmbxi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
 nts/type1/public/lm/lmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lms
-y6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on skripsi.pdf (102 pages, 2164742 bytes).
+MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmtt
+10.pfb>
+Output written on skripsi.pdf (108 pages, 3045367 bytes).
 PDF statistics:
- 3133 PDF objects out of 3580 (max. 8388607)
- 1404 named destinations out of 1440 (max. 500000)
- 793 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3244 PDF objects out of 3580 (max. 8388607)
+ 1417 named destinations out of 1440 (max. 500000)
+ 881 words of extra memory for PDF output out of 10000 (max. 10000000)
 
