@@ -1,7 +1,7 @@
 %versi 2 (8-10-2016)
 \chapter{Landasan Teori}
 \label{chap:teori}
-Pada bab ini akan dijelsaskan mengenai konsep-konsep dasar pengukung PL, yaitu JavaFX, Apache POI, iCal4j.
+Pada bab ini akan dijelsaskan mengenai konsep-konsep dasar pendukung PL, yaitu JavaFX, Apache POI, iCal4j.
 
 \section{Apache POI}
 \label{sec:apache} 
@@ -104,7 +104,7 @@ Kelas ini merupakan representasi dari \textit{high level} excel spreadsheet. Kel
 	\end{tabular}
 \end{table}
 
-\noindent \textbf{Class Method}
+\noindent \textbf{Class Methods}
 \begin{table}[H]
 		\centering
 		\caption{Tabel kelas method XSSFSheet}
@@ -129,9 +129,9 @@ Row merupakan interface berada dibawah \textit{package} \textbf{org.apache.poi.s
 
 \subsubsection{XSSFRow}
 \label{subs:XSSFRow}
-XSSFRow merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel} dan mengimplementasi Row interface. Selain itu, kelas ini dapat membuat row dalam sebuah spreadsheet. List dibawah ini merupakan method dan constructors pada kelas ini.\cite{apachepoi2}
+XSSFRow merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel} dan mengimplementasi Row interface. Selain itu, kelas ini dapat membuat row dalam sebuah spreadsheet. List dibawah ini merupakan \textit{method} dan constructors pada kelas ini.\cite{apachepoi2}
  \\ 
-\noindent \textbf{Class Method}
+\noindent \textbf{Class Methods}
 \begin{table}[H]
 		\centering
 		\caption{Tabel kelas method XSSFRow}
@@ -150,7 +150,7 @@ XSSFRow merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.x
 \label{subs:Cell}
 Cell merupakan interface yang berada dibawah \textit{package} \textbf{org.apache.poi.ss.usermodel}. Cell merupakan sebuah super-interface dari semua kelas yang mewakili cell dalam baris sebuah spreadsheet.\\
 
-Cell dapat berupa berbagai atribut seperti \textit{blank, numeric, date, error, } dll. Sebelum ditambahkan ke baris cell memiliki nomer tersendiri(dari mulai 0).\cite{apachepoi2}
+Cell dapat berupa berbagai atribut seperti \textit{blank, numeric, date, error}. Sebelum ditambahkan ke baris cell memiliki nomer tersendiri(dari mulai 0).\cite{apachepoi2}
 
 \subsubsection{XSSFCell}
 \label{subs:XSSFCell}  
@@ -175,7 +175,7 @@ List dibawah ini adalah sebagian \textit{field} dari kelas XSSFCell beserta desk
 	\end{tabular}
 \end{table}
 	
-\noindent \textbf{Class Method}
+\noindent \textbf{Class Methods}
 \begin{table}[H]
 		\centering
 		\caption{Tabel kelas method XSSFCell}
@@ -215,20 +215,20 @@ List dibawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle i
 	\begin{tabular}{|c|c|}
 		\hline
 		\textbf{Nama Field} & \textbf{Deskripsi Field} \\ \hline \hline
-		ALIGN\_CENTER & Rata tengah konten cell\\ \hline 
+		ALIGN\_CENTER & Rata tengah \textit{content cell}\\ \hline 
 		ALIGN\_CENTER\_SELECTION &	Posisi seleksi tengah horizontal\\ \hline 
-		ALIGN\_FILL & Mencocokan ukuran konten cell \\ \hline
-		ALIGN\_JUSTIFY	&	Mencocokan ukuran konten cell terhadap lebarnya\\ \hline
-		ALIGN\_LEFT	&	Rata kiri konten cell\\ \hline
-		ALIGN\_RIGHT &	Rata kanan konten cell\\ \hline
-		BORDER\_DASH\_DOT &	Cell style dengan garis dan titik \\ \hline
-		BORDER\_DOTTED &	Cell style dengan border titik\\ \hline
-		BORDER\_DASHED &	Cell Style dengan border garis\\ \hline
-		BORDER\_THICK &	Cell Style dengan border tebal\\ \hline
-		BORDER\_THIN &	Cell Style dengan border tipis\\ \hline
-		VERTICAL\_BOTTOM &	Posisi konten cell vertikal kebawah\\ \hline
-		VERTICAL\_CENTER &	Posisi konten cell vertikal ketengah\\ \hline
-		VERTICAL\_JUSTIFY &	Posisi konten cell sejajar secara vertikal \\ \hline
+		ALIGN\_FILL & Mencocokan ukuran \textit{cell content} \\ \hline
+		ALIGN\_JUSTIFY	&	Mencocokan ukuran \textit{cell content} terhadap lebarnya\\ \hline
+		ALIGN\_LEFT	&	Rata kiri \textit{cell content}\\ \hline
+		ALIGN\_RIGHT &	Rata kanan \textit{cell content}\\ \hline
+		BORDER\_DASH\_DOT &	\textit{Cell style} dengan garis dan titik \\ \hline
+		BORDER\_DOTTED &	\textit{Cell style} dengan border titik\\ \hline
+		BORDER\_DASHED &	\textit{Cell style} dengan border garis\\ \hline
+		BORDER\_THICK &	\textit{Cell style} dengan border tebal\\ \hline
+		BORDER\_THIN &	\textit{Cell style} dengan border tipis\\ \hline
+		VERTICAL\_BOTTOM &	Posisi \textit{cell content} vertikal kebawah\\ \hline
+		VERTICAL\_CENTER & \textit{cell content} vertikal ketengah\\ \hline
+		VERTICAL\_JUSTIFY &	Posisi \textit{cell content} sejajar secara vertikal \\ \hline
 		VERTICAL\_TOP &	Posisi selaras keatas secara vertikal\\ \hline
 	\end{tabular}
 \end{table}
@@ -248,7 +248,7 @@ List dibawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle i
 	\end{tabular}
 \end{table}
 
-\noindent \textbf{Class Method}
+\noindent \textbf{Class Methods}
 \begin{table}[H]
 		\centering
 		\caption{Tabel kelas method XSSFCellStyle}
@@ -355,13 +355,13 @@ XSSFFont merupakan kelas dibawah \textit{package} \textbf{org.aoache.poi.xssf.us
 		5 & \textbf{setFontName(java.lang.String name)}\\
 			&	Mengatur nama dari font.\\ \hline
 		6 & \textbf{setItalic(boolean italic)}\\
-			&	Mengatur nilai boolean pada poperti 'italic'.\\ \hline					
+			&	Mengatur nilai boolean pada properti 'italic'.\\ \hline					
 	\end{tabular}
 \end{table}
 
 \subsubsection{XSSFHyperlink}
 \label{subs:XSSFHyperlink}
-XSSFHyperlink merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{Hyperlink interface}. Kelas ini digunakan untuk mengatur sebuah hyperlink pada konten cell dalam sebuah spreadsheet.\cite{apachepoi2}
+XSSFHyperlink merupakan kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mengimplementasikan \textit{Hyperlink interface}. Kelas ini digunakan untuk mengatur sebuah hyperlink pada \textit{cell content} dalam sebuah spreadsheet.\cite{apachepoi2}
 \\
 \noindent \textbf{Field}\\
 Field dalam kelas ini akan didefinisikan sebagai berikut. Field disini dalam arti tipe dari hyperlink yang dipakai.
@@ -606,7 +606,7 @@ Pada bagian ini \textit{package} yang ditulis di sub bab sebelumnya akan dijelas
 		9 & \textbf{Parameter}\\
 			&	Mendefinisikan parameter.\\ \hline
 		10 & \textbf{Period}\\
-			&	Mendefinisikan tenggat waktu.\\ \hline
+			&	Mendefinisikan periode waktu.\\ \hline
 		11 & \textbf{Property}\\
 			&	Mendefinisikan properti dari iCalendar.\\ \hline		12 & \textbf{Time}\\
 			&	Sebuah tipe yang merepresentasikan nilai waktu pada iCalendar.\\ \hline
@@ -866,11 +866,11 @@ Tugas pada lapisan ini adalah membantu \textit{service} pada sistem operasi, sep
 \subsection{Media dan Gambar}
 \label{subs:Media_Gambar}
 Fungsi -fungsi media pada JavaFX tersedia pada \textbf{javafx.scene.media} API. JavaFX mensuport baik visual maupun audio. Beberapa format yang disuport seperti MP3, AIFF, WAV pada file audio dan format FLV pada video. Ada tiga komponen yang berperan pada JavaFX media, yaitu :\cite{javafx} 
-\begin{itemize}
+\begin{enumerate}
 	\item \textit{Media object} merepresentasikan sebuah file media.
 	\item \textit{Media Player} memutar sebuah file media.
 	\item \textit{Media View} merupakan sebuah node yang menampilkan media tersebut.
-\end{itemize}
+\end{enumerate}
 
 \subsection{Komponen Web}
 \label{subs:Komponen_Web}
@@ -914,7 +914,7 @@ JavaFX UI Control dalam JavaFX API dibangun menggunakan node pada scene graph. J
 	\item \textbf{Hbox} merupakan kelas yang mengatur konten node secara horizontal dalam satu baris.
 	\item  \textbf{Vbox} merupakan kelas yang mengatur konten node secara vertikal dalam satu baris.
 	\item \textbf{StackPane} adalah kelas yang menempatkan \textit{back-to-front} konten node pada suatu \textit{stack}.
-	\item \textbf{GridPane} adalah kelas yang memungkinkan developer untuk mebuat sebuah grid baris dan kolom secara flexible untuk memetakan konten node.
+	\item \textbf{GridPane} adalah kelas yang memungkinkan developer untuk membuat sebuah grid baris dan kolom secara flexible untuk memetakan konten node.
 	\item \textbf{FlowPane} adalah kelas yang mengatur alur konten node baik horizontal maupun vertical, \textit{wrapping} pada batas lebar konten (untuk horizontal) atau tinggi konten (untuk vertical).
 	\item \textbf{AnchorPane} adalah kelas yang memungkinkan developer untuk membuat \textit{anchor} node pada layout atas, bawah, sisi kiri atau ditengah layout. 
 \end{enumerate}
