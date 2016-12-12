@@ -10,10 +10,10 @@ berikut ini contoh file excel yang dikeluarkan oleh TU.
 	\centering
 	\includegraphics[scale=0.5]{Gambar/scJadwal}
 	\caption{Jadwal mengawas ujian FTIS}
-	\label{fig:jadwalpng}
+	\label{fig:jadwalLamapng}
 	\end{figure}
 
-Berikut penjelasan kolom-kolom yang ada di gambar~\ref{fig:jadwalpng}.\\
+Berikut penjelasan kolom-kolom yang ada di gambar \ref{fig:jadwalLamapng}.\\
 Excel ini dikeluarkan oleh tata usaha FTIS yang terdiri dari 12 kolom, berisi jadwal mengawas dari dosen FTIS.
 Tabel ~\ref{tab:penjelasan_kolom} menjelaskan rincian dari masing-masing kolom pada excel tersebut. 
 \begin{table}[H]
@@ -65,7 +65,7 @@ Dari analisis tersebut terpilih beberapa kolom untuk dapat ditampilkan pada PL, 
 			&	Kolom ini bertipe String, maka dibutuhkan konversi String kedalam fungsi jam pada saat implementasi.\\ \hline
 		3 & \textbf{Nama Mata Kuliah}\\
 			&	Kolom ini dapat menerangkan deskripsi mata kuliah pada PL.\\ \hline
-		4 & \textbf{Owner}\\
+		4 & \textbf{Dosen}\\
 			&	Kolom ini merupakan isi dari tabel kelas pada excel, pada PL akan ditampilkan sebagai kolom tersendiri menerangkan Dosen yang mengawas matakuliah.\\ \hline		
 		7 & \textbf{Ruangan}\\
 			&	Kolom ini akan berisi kelas sesuai dosen yang mengajar, mata kuliah, waktu dan tanggal.\\ \hline
@@ -83,12 +83,13 @@ Perangkat Lunak ini akan memiliki fitur sebagai berikut :
 	
 \section{Permodelan Tool}
 
-Berikut diagram use case berserta skenario yang tertera pada gambar ~\ref{fig:jadwalpng}
+Berikut diagram use case berserta skenario yang tertera pada gambar \ref{fig:useCase}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5]{Gambar/useCaseJadwal}
 	\caption{Diagram use case \textit{tool} konversi jadwal mengawas ujian}
+	\label{fig:useCase}
 	\end{figure}
 
 \begin{enumerate}
@@ -188,10 +189,10 @@ kelas dalam rancangan program nanti.
 	\centering
 	\includegraphics[scale=0.5]{Gambar/pemodelan-kelas}
 	\caption{Gambar Pemodelan Kelas}
-	\label{fig:pemodelan-kelas}
+	\label{fig:pemodelanKelas}
 \end{figure}
 
-Berikut penjelasan fungsi dari kelas dari gambar ~\ref{fig:pemodelan-kelas} :	
+Berikut penjelasan fungsi dari kelas dari gambar \ref{fig:pemodelanKelas} :	
 \begin{enumerate}
 	\item \textbf{ScheduleClass}\\
 	Kelas ini berfungsi menampung jadwal dosen yang telah dikonversi oleh kelas ExcelConverter.
