@@ -1,12 +1,12 @@
 %versi 2 (8-10-2016)
 \chapter{Landasan Teori}
 \label{chap:teori}
-Pada bab ini akan dijelsaskan mengenai konsep-konsep dasar pendukung PL, yaitu JavaFX, Apache POI, iCal4j.
+Pada bab ini akan dijelaskan mengenai konsep-konsep dasar pendukung PL, yaitu JavaFX, Apache POI, iCal4j.
 
 \section{Apache POI}
 \label{sec:apache} 
 
-Apache POI pada hakikatnya merupakan \textit{library} untuk memanipulasi dan menciptakan sesuatu melalui Java API( \textit{application programming interface}) dengan memanipulasi berbagai format file berdasarkan \textit{Office Open XML standards}(OOXML) dan dokumen \textit{Microsoft OLE 2 Document Compound Format}(OLE2), Singkatnya dengan library ini memungkinkan untuk membaca dan menulis pada MS Excel menggunakan Java.\cite{apachepoi} \\
+POI merupakan singkatan dari \textit{Poor Obfuscation Implementation} yang dikembangkan oleh Apache. Apache POI pada hakikatnya merupakan \textit{library} untuk memanipulasi dan menciptakan sesuatu melalui Java API( \textit{application programming interface}) dengan memanipulasi berbagai format file berdasarkan \textit{Office Open XML standards}(OOXML) dan dokumen \textit{Microsoft OLE 2 Document Compound Format}(OLE2), Singkatnya dengan library ini memungkinkan untuk membaca dan menulis pada MS Excel menggunakan Java.\cite{apachepoi} \\
 
 
 \subsection{Komponen Apache POI}
@@ -22,20 +22,27 @@ Untuk membaca aplikasi MS Office Apache POI mempunyai modul berisi komponen java
 	\item Publisher (HPBF)
 \end{enumerate}
 
-HSSF dan XSSF memberikan cara untuk membuat, membaca, dan memodifikasi XLS spreadsheet. Pada sub bab ini akan di fokuskan untuk membahas HSSF dan XSSF sesuai kebutuhan untuk menganalisa file excel jadwal mengawas ujian yang dikeluarkan oleh TU FTIS.\cite{apachepoi}
+HSSF merupakan singkatan dari \textit{Horrible Spreadsheet Format}, sedangkan XSSF merupakan singkatan dari \textit{XML Spreadsheet Format}. HSSF dan XSSF memberikan cara untuk membuat, membaca, dan memodifikasi XLS spreadsheet. Pada sub bab ini akan difokuskan untuk membahas XSSF sesuai kebutuhan untuk menganalisa file excel jadwal mengawas ujian yang dikeluarkan oleh TU FTIS.\cite{apachepoi}
 
 
 \subsection{Kelas Inti Apache POI}
-\label{subs:kelas_inti}  
-Pada sub bab ini akan membahas sedikit intoduksi mengenai beberapa kelas dan method yang ada di Apache POI API yang merupakan bagian penting untuk bekerja dengan file excel mengunakan program Java.\cite{apachepoi2}
+\label{subs:kelas_inti}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.3]{Gambar/hssf}
+	\caption{Kelas diagram hssf}
+\end{figure}
+
+Pada sub bab ini akan membahas introduksi mengenai beberapa kelas dan method yang ada di Apache POI API yang merupakan bagian penting untuk bekerja dengan file excel mengunakan program Java. Kelas HSSF dan XSSF mempunyai struktur kelas yang sama yang membedakan adalah kompatibilitas versi format excel yang dapat dibaca. \cite{apachepoi2}
 
 \subsubsection{Workbook}
 \label{subs:workbook} 
-\textbf{org.apache.poi.ss.usermodel} \textit{package} merupakan \textit{super-interface} dari semua kelas yang berhubungan dengan pembuatan atau me-\textit{maintain} Excel workbook. Dua kelas yang mengimplementasikan \textit{interface} diatas sebagai berikut:\cite{apachepoi2}
+\textbf{org.apache.poi.ss.usermodel} \textit{package} merupakan \textit{super-interface} dari semua kelas yang berhubungan dengan pembuatan atau me-\textit{maintain} Excel workbook. Dua kelas yang mengimplementasikan \textit{interface} tersebut sebagai berikut:\cite{apachepoi2}
 
 \begin{itemize}
 	\item \textbf{HSSFWorkbook} : Kelas ini mempunyai method yang dapat membaca dan menulis file Microsoft Excel dengan format .xls. Kelas ini kompatibel dengan MS-Office versi 97-2003.
-	\item \textbf{XSSFWorkbook} : Kelas ini mempunyai method untuk menulis dan membaca Microsoft Excel dan OpenOffice xml dengan format .xls atau .xlsx. Kelas ini kompatibel dengan MS-Office versi 2007 atau versi barunya.
+	\item \textbf{XSSFWorkbook} : Kelas ini mempunyai method untuk menulis dan membaca Microsoft Excel dan OpenOffice xml dengan format .xlsx. Kelas ini kompatibel dengan MS-Office versi 2007 atau versi barunya.
 \end{itemize}  
 
 \subsubsection{XSSFWorkbook}
@@ -51,11 +58,11 @@ Kelas ini merepresentasikan baik \textit{high} dan \textit{low} level format fil
 		\hline
 		\textbf{No} & \textbf{Constructor dan Deskripsi} \\ \hline \hline
 		1 & \textbf{XSSFWorkbook()}\\
-			&	Membuat baru objek XSSFWorkbook.\\ \hline 
+			&	Membuat objek XSSFWorkbook.\\ \hline 
 		2 & \textbf{XSSFWorkbook(java.io.File file)}\\
 			&	Membangun sebuah objek XSSFWorkbook dari file yang diberikan.\\ \hline
 		3 & \textbf{XSSFWorkbook(java.io.InputStream is)}\\
-			&	Membangun sebuah object XSSFWorkbook dengan \textit{buffering} semua input stream kedalam memory, dilanjutkan dengan membuka objek OPCPackage.\\ \hline 
+			&	Membangun sebuah object XSSFWorkbook dengan \textit{buffering} semua input stream ke dalam memory, dilanjutkan dengan membuka objek OPCPackage.\\ \hline 
 		4 & \textbf{XSSFWorkbook(java.lang.String path)}\\
 			&	Membangun sebuah objek XSSFWorkbook dengan diberikan \textit{full path} dari sebuah file.\\ \hline
 	\end{tabular}
@@ -77,7 +84,7 @@ Kelas ini merepresentasikan baik \textit{high} dan \textit{low} level format fil
 		3 & \textbf{createFont()}\\
 			&	Membuat font baru dan menambahkannya pada tabel font pada workbook.\\ \hline 
 		4 & \textbf{createCellStyle()}\\
-			&	Membuat XSSFCellStyle Baru dan mmenambahkannya pada tabel style workbook.\\ \hline
+			&	Membuat XSSFCellStyle Baru dan menambahkannya pada tabel style workbook.\\ \hline
 		5 & \textbf{setPrintArea(int sheetIndex, int startColumn, int endColumn, int startRow,int endRow)}\\
 			&	Menentukan area print dari kertas dengan parameter yang spesifik.\\ \hline	
 	\end{tabular}
@@ -85,11 +92,11 @@ Kelas ini merepresentasikan baik \textit{high} dan \textit{low} level format fil
 	
 \subsubsection{Sheet}
 \label{subs:Sheet}
-Sheet merupakan sebuah interface dibawah package org.apache.ss.usermodel. Jenis yang paling umum dari spreadsheet adalah worksheet yang direpresentasikan sebagai sebuah \textit{grid} dari cell.\cite{apachepoi2}
+\textit{Sheet} merupakan sebuah interface dibawah package org.apache.ss.usermodel. \textit{Sheet} merupakan representasi sebuah \textit{grid} dari cell.\cite{apachepoi2}
 	
 \subsubsection{XSSFSheet}
 \label{subs:XSSFSheet}
-Kelas ini merupakan representasi dari \textit{high level} excel spreadsheet. Kelas ini berada dibawah package org.apache.poi.hssf.usermodel.\cite{apachepoi2}
+Kelas ini merupakan representasi dari \textit{high level} excel spreadsheet. Kelas ini berada di bawah package org.apache.poi.hssf.usermodel.\cite{apachepoi2}
 \\
 \noindent \textbf{Class Constructor}
 \begin{table}[H]
@@ -125,11 +132,11 @@ Kelas ini merupakan representasi dari \textit{high level} excel spreadsheet. Kel
 
 \subsubsection{Row}
 \label{subs:Row}
-Row merupakan interface berada dibawah \textit{package} \textbf{org.apache.poi.ss.usermodel}. Row ini digunakan untuk \textit{high-level representation} dari sebuah row pada sebuah spreadsheet. Row juga merupakan super-interface dari semua kelas yang mewakili row dalam POI \textit{Library}.\cite{apachepoi2}
+Row merupakan interface berada di bawah \textit{package} \textbf{org.apache.poi.ss.usermodel}. Row ini digunakan untuk \textit{high-level representation} dari sebuah row pada sebuah spreadsheet. Row juga merupakan super-interface dari semua kelas yang mewakili row dalam POI \textit{Library}.\cite{apachepoi2}
 
 \subsubsection{XSSFRow}
 \label{subs:XSSFRow}
-XSSFRow merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel} dan mengimplementasi Row interface. Selain itu, kelas ini dapat membuat row dalam sebuah spreadsheet. List dibawah ini merupakan \textit{method} dan constructors pada kelas ini.\cite{apachepoi2}
+XSSFRow merupakan sebuah kelas di bawah \textit{package} \textbf{org.apache.poi.xssf.usermodel} dan mengimplementasi Row interface. Selain itu, kelas ini dapat membuat row dalam sebuah spreadsheet. List dibawah ini merupakan \textit{method} dan constructors pada kelas ini.\cite{apachepoi2}
  \\ 
 \noindent \textbf{Class Methods}
 \begin{table}[H]
@@ -148,17 +155,17 @@ XSSFRow merupakan sebuah kelas dibawah \textit{package} \textbf{org.apache.poi.x
 
 \subsubsection{Cell}
 \label{subs:Cell}
-Cell merupakan interface yang berada dibawah \textit{package} \textbf{org.apache.poi.ss.usermodel}. Cell merupakan sebuah super-interface dari semua kelas yang mewakili cell dalam baris sebuah spreadsheet.\\
+Cell merupakan interface yang berada di bawah \textit{package} \textbf{org.apache.poi.ss.usermodel}. Cell merupakan sebuah super-interface dari semua kelas yang mewakili cell dalam baris sebuah spreadsheet.\\
 
 Cell dapat berupa berbagai atribut seperti \textit{blank, numeric, date, error}. Sebelum ditambahkan ke baris cell memiliki nomer tersendiri(dari mulai 0).\cite{apachepoi2}
 
 \subsubsection{XSSFCell}
 \label{subs:XSSFCell}  
-Kelas ini berada dibawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mewakili cell interface. XSSFCell adalah \textit{high-level representation} cell dalam row dari sebuah spreadsheet.\cite{apachepoi2}
+Kelas ini berada di bawah \textit{package} \textbf{org.apache.poi.xssf.usermodel}. Kelas ini mewakili cell interface. XSSFCell adalah \textit{high-level representation} cell dalam row dari sebuah spreadsheet.\cite{apachepoi2}
 
 \subsubsection{Ringkasan Tipe Cell}
 \label{subs:Ringkasan_Tipe_Cell}
-List dibawah ini adalah sebagian \textit{field} dari kelas XSSFCell beserta deskripsinya.
+List di bawah ini adalah sebagian \textit{field} dari kelas XSSFCell beserta deskripsinya.
 \begin{table}[H]
 		\centering
 		\caption{Tabel ringkasan tipe cell}
@@ -202,16 +209,18 @@ List dibawah ini adalah sebagian \textit{field} dari kelas XSSFCell beserta desk
 
 \subsubsection{XSSFCellStyle}
 \label{subs:XSSFCellStyle}
-XSSFCellStyle merupakan sebuah kelas yang berada dibawah \textit{package} \textbf{org.apache.poi.usermodel}. kelas ini memberikan infomarsi yang mungkin mengenai format konten pada suatu cell dari spreadsheet. Kelas ini juga memberikan opsi untuk merubah format tersebut. Kelas ini mewakili \textit{CellStyle interface}.\cite{apachepoi2}
+XSSFCellStyle merupakan sebuah kelas yang berada di bawah \textit{package} \textbf{org.apache.poi.usermodel}. kelas ini memberikan infomarsi yang mungkin mengenai format konten pada suatu cell dari spreadsheet. Kelas ini juga memberikan opsi untuk merubah format tersebut. Kelas ini mewakili \textit{CellStyle interface}.\cite{apachepoi2}
 
 \subsubsection{Ringkasan Cell Style}
 \label{subs:Ringkasan_Cell_Style}
-List dibawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle interface.\cite{apachepoi2}\\
+List di bawah ini adalah sebagian \textit{field} yang diwariskan dari CellStyle interface.\cite{apachepoi2}\\
 
 \begin{table}[H]
 		\centering
 		\caption{Tabel ringkasan cell style}
 		\label{tab:ringkasan_cell_style}
+		
+	
 	\begin{tabular}{|c|c|}
 		\hline
 		\textbf{Nama Field} & \textbf{Deskripsi Field} \\ \hline \hline
@@ -800,7 +809,7 @@ VVenue}\\
 \section{JavaFX}
 \label{sec:JavaFX}
 JavaFX merupakan seperangkat grafis dan paket media yang memungkinkan pengembang untuk merancang, membuat, menguji, \textit{debug} , dan  beroperasi secara konsisten di seluruh platform yang beragam.\cite{javafx2}\\
-Berikut ini ilustrasi arsitektur dari JavaFX.
+Berikut ini ilustrasi arsitektur dari gambar JavaFX.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.7]{Gambar/arsitekturJavaFX}
@@ -927,15 +936,6 @@ Setiap node pada JavaFX scene graph dapat ditransformasikan dalam koordinat x-y 
 	\item \textbf{scale} - Meresize sebuah node untuk membesar atau mengecil sesuai koordinat x,y,z tergantung skala faktornya.
 	\item \textbf{rotate} - Merotasi sebuah node sesuai titik porosnya.
 	\item \textbf{affine} - Melakukan pemetaan linear dari koordinat 2-D / 3-D ke koordinat 2-D / 3-D lainnya dengan menjaga lurus dan paralel sifat garis tersebut. Kelas ini digunakan bersamaan dengan kelas lainya dibanding penggunaan langsung.
-\end{enumerate}
-
-\subsection{Efek Visual}
-\label{subs:Efek_Visual}
-Pengembahan antarmuka pada JavaFX scene graph melibatkan \textit{Visual Effect} atau efek untuk meningkatkan tamoilan aplikasi JavaFX secara \textit{real time}. Beberapa efek visual yang terdapat pada JavaFX termasuk penggunaannya ada pada kelas - kelas berikut ini :\cite{javafx}
-\begin{enumerate}
-	\item \textbf{Drop Shadow} - Kelas ini merender sebuah bayangan dari konten yang ada dibelakang konten dimana efek tersebut diterapkan.
-	\item \textbf{Reflection} - Kelas ini merender versi pantulan dari konten dibawah konten sebenarnya.
-	\item \textbf{Lighting} - Kelas ini mensimulasikan sumber cahaya yang didapat dari konten dan memberikannya pada sebuah objek flat agar lebih nyata memberikan efek tiga dimensi.
 \end{enumerate}
 
 \subsection{Komponen JavaFX}

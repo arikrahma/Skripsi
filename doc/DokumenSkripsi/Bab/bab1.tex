@@ -4,34 +4,36 @@
    
 \section{Latar Belakang}
 \label{sec:latar_belakang}
-\indent Jadwal mengawas ujian di FTIS merupakan hal yang rutin dipublikasikan kepada dosen setiap tengah dan akhir semester. Jadwal mengawas tersebut dipublikasikan oleh tata usaha. Sebelum dibagikan jadwal mengawas dibuat dalam file excel, lalu dicetak dan dibagikan kepada setiap dosen. Format jadwal mengawas ujian bersifat umum, dalam arti jadwal tersebut menyimpan nama semua dosen yang mengawas, nama mata kuliah, dan tempat pelaksanaan ujian. Dosen diharuskan melihat satu persatu baris untuk mendapatkan informasi mengenai waktu, nama matakuliah, dan tanggal dosen tersebut mengawas. Walaupun jadwal mengawas tersebut telah disusun dalam file excel, namun tetap dirasa kurang efisien karena tidak tersusun berdasarkan dosen yang mengawas dan memungkinkan terjadi kesalahan dalam membaca jadwal oleh dosen. 
-iCalendar merupakan format file \textit{calendar} pada komputer yang memudahkan penggunanya untuk mengirimkan undangan \textit{meeting} dan melakukan pekerjaan bersama pengguna lainnya, via email, atau file \textit{sharing} menggunakan ekstensi .ics . Format iCalendar sendiri telah didukung dan kompatibel dengan produk lainnya, seperti Google Calendar, Microsoft Outlook, Yahoo Calendar, Mozilla Thunderbird, Apple Calendar.
-Dari penjelasan diatas, tugas akhir ini dimaksudkan untuk memudahkan dosen untuk melihat jadwal mengawas ujian dimanapun dan kapanpun. Pengembangan perangkat lunak ini menggunakan tiga library yaitu Apache POI, JavaFX, dan iCal4j.    
+\indent Jadwal mengawas ujian di FTIS(Fakultas Teknologi Infomasi dan Sains) merupakan hal yang rutin dibagikan filenya kepada dosen setiap semester. Jadwal mengawas tersebut dipublikasikan oleh TU(Tata Usaha). Format jadwal mengawas ujian bersifat umum, dalam arti jadwal tersebut menyimpan nama semua dosen yang mengawas, nama mata kuliah, dan tempat pelaksanaan ujian. Dosen diharuskan melihat satu persatu baris untuk mendapatkan informasi mengenai waktu, nama matakuliah, dan tanggal dosen tersebut mengawas. Walaupun jadwal mengawas tersebut telah disusun dalam file excel, namun tetap dirasa kurang efisien karena tidak tersusun berdasarkan dosen yang mengawas dan memungkinkan terjadi kesalahan dalam membaca jadwal oleh dosen. 
+iCalendar merupakan format file \textit{calendar} pada komputer yang memudahkan penggunanya untuk mengirimkan undangan \textit{meeting} dan melakukan pekerjaan bersama pengguna lainnya, via email, atau file \textit{sharing} menggunakan ekstensi .ics . Format iCalendar sendiri telah didukung dan kompatibel dengan produk lainnya, seperti Google Calendar, Microsoft Outlook, Apple Calendar.
+Tugas akhir ini dimaksudkan untuk memudahkan dosen untuk melihat jadwal mengawas ujian. Pengembangan perangkat lunak ini menggunakan tiga \textit{library} yaitu Apache POI, JavaFX, dan iCal4j.    
 
 \section{Rumusan Masalah}
 \label{sec:rumusan}
 Berdasarkan penjelasan di latar belakang, maka dapat dipaparkan rumusan masalah sebagai berikut :
 \begin{enumerate}
 	\item Bagaimana perangkat lunak dapat membaca file excel jadwal mengawas ujian yang dibuat oleh TU ?
-	\item Bagaimana menampilkan jadwal ke layar ?
 	\item Bagaimana perangkat lunak mengkonversi jadwal mengawas menjadi iCalendar ? 
+	\item Bagaima kompatibilitas dengan aplikasi lain ? 
 \end{enumerate}
 
 
 \section{Tujuan}
 \label{sec:tujuan}
-Tujuan dari karya ilmiah ini dapat dipaparkan sebagai berikut:
+Tujuan dari skripsi ini dapat dipaparkan sebagai berikut:
 \begin{enumerate}
-	\item Merancang PL yang mampu membaca file excel yang dipublikasikan oleh TU.
-	\item Membuat PL yang mampu menampilkan jadwal mengawas ujian yang telah dibaca ke layar.
-	\item Merancang PL dapat mengkonversi jadwal mengawas menjadi iCalendar.
+	\item Merancang PL(Perangkat Lunak) yang mampu membaca file excel yang dipublikasikan oleh TU.
+	\item Merancang PL(Perangkat Lunak) dapat mengkonversi jadwal mengawas menjadi iCalendar.
+	\item Merancang PL(Perangkat Lunak) yang kompatibel dengan aplikasi lain.
 \end{enumerate}
 
 \section{Batasan Masalah}
 \label{sec:batasan}
 Batasan masalah dalam penelitian ini agar dapat fokus pada pengembangan perangkat lunak konversi jadwal mengawas ujian :
 \begin{itemize}
-	\item Diasumsikan TU menggunakan layout yang sama setiap tahunnya.  
+	\item Diasumsikan format excel jadwal mengawas yang menjadi \textit{input} sudah fix.
+	\item File excel jadwal mengawas berekstensi .xlsx.
+	\item \textit{Sheet} yang dibaca dan dikonversi oleh PL adalah \textit{Sheet} pertama.
 \end{itemize}
 
 \section{Metodologi}
@@ -43,11 +45,9 @@ Untuk menunjang penelitian maka diperlukan data untuk pengujian maupun pengetahu
 				\item Apache POI
 				\item JavaFX
 				\item iCal4j
-				\item Memperdalam Netbeans
 			\end{enumerate}
 		\item Melakukan analisis pada file excel jadwal mengawas ujian yang dikeluarkan oleh TU.
 		\item Melakukan perancangan yang terdiri dari use case, diagram aktifitas, dan \textit{user interface}.
-		\item Mengimplementasikan rancangan kedalam Netbeans. 
 		\item Melakukan pengujian perangkat lunak dengan berbagai kemungkinan kasus.
 		\item Menyimpulkan atas serangkaian pengembangan yang dilakukan
 		\item Menulis dokumen skripsi
@@ -59,7 +59,7 @@ Untuk menunjang penelitian maka diperlukan data untuk pengujian maupun pengetahu
 	\item Bab 1 Pendahuluan\\
 	Bab ini berisi tentang latar belakang, rumusan masalah, tujuan, batasan masalah, metodologi penelitian, dan sistematika pembahasan.
 	\item Bab 2 Dasar Teori\\
-	Bab ini berisi tentang teori dasar tentang JavaFX, Apache POI, iCal4j.
+	Bab ini berisi tentang teori dasar tentang File Excel, Format ICS, Apache POI, iCal4j, Java FX.
 	\item Bab 3 Analisis\\
 	Bab ini berisi tentang analisis kebutuhan dan fitur PL, diagram aktifitas PL, use case, diagram kelas.
 	\item Bab 4 Perancangan\\
