@@ -77,7 +77,7 @@ public class FXMLDocumentController implements Initializable {
     private void handleConvertAction(ActionEvent event) throws FileNotFoundException, IOException
     {
        ExcelConverter con = new ExcelConverter(selectedFile);
-        jadwalList = FXCollections.observableArrayList(con.Converter());
+        jadwalList = FXCollections.observableArrayList(con.readExcel());
         
         
         jadwalTable.setItems(jadwalList);

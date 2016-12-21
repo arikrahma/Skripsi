@@ -38,60 +38,181 @@ Berikut ini merupakan penjelasan kode program dari perangkat lunak iCalendarConv
 	\item Kode program untuk membaca Excel \\
 	ExcelConverter merupakan kelas yang dikhususkan untuk membaca excel dan mengeluarkan \textit{output} berupa ArrayList dari kelas model ScheduleClass.\\
 	Berikut ini merupakan urutan dari algoritma yang digunakan pada Excel Converter :
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/excelConverter1}
+		\caption{Implementasi kode program untuk mencari kolom No dan matakuliah}
+		\label{fig:ExcelConverter1}
+		\end{figure}
 \begin{enumerate}
-		\item Baris (68-84) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan bagaimana program mencari kolom No. dan Nama Mata Kuliah pada excel. Dua kolom tersebut merupakan acuan data jadwal yang akan dibaca oleh program. Setelah diketahui dimana kolom No. dan Nama Kuliah berada, maka nomer baris dan kolomnya akan dimasukkan kedalam \textit{variable} sebagai acuan membaca program dimulai pada baris itu. Pemilihan kolom No. sebagai acuan dikarenakan isi kolom No. menandakan berapa banyak data jadwal yang ada, sehingga bila isi dari kolom No. bukan angka, maka program akan berhenti membaca. Selanjutnya, pemilihan Nama Mata Kuliah sebagai acuan selain karena data pada kolom itu akan dimasukkan ke kelas model, pun juga karena setelah kolom tersebut terdapat kolom ruang kuliah yang akan dimasukkan kedalam \textit{variable} lokasi pada program.
+		\item Gambar \ref{fig:ExcelConverter1} menjelaskan bagaimana program mencari kolom No. dan Nama Mata Kuliah pada excel. Dua kolom tersebut merupakan acuan data jadwal yang akan dibaca oleh program. Setelah diketahui dimana kolom No. dan Nama Kuliah berada, maka nomer baris dan kolomnya akan dimasukkan kedalam \textit{variable} sebagai acuan membaca program dimulai pada baris itu. Pemilihan kolom No. sebagai acuan dikarenakan isi kolom No. menandakan berapa banyak data jadwal yang ada, sehingga bila isi dari kolom No. bukan angka, maka program akan berhenti membaca. Selanjutnya, pemilihan Nama Mata Kuliah sebagai acuan selain karena data pada kolom itu akan dimasukkan ke kelas model, pun juga karena setelah kolom tersebut terdapat kolom ruang kuliah yang akan dimasukkan kedalam \textit{variable} lokasi pada program.
 		Selain itu, nomer kolom ruangan dapat menjadi acuan lokasi dosen mengawas.
-		\item Baris (85-87) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan bahwa i sebagai acuan program membaca baris, sedangkan j sebagai acuan program membaca kolom.
-		\item Baris (89-93) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan bahwa bila baris ke i program membaca dan isinya kosong maka berhenti membaca.
-		\item Baris (96-100) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan bila isi pada kolom No. bukanlah angka dan \textit{blank} maka program berhenti membaca.
-		\item Baris (101-107) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan	bila isi kolom No. adalah kosong maka lewati barisnya dan baca baris selanjutnya.
-		\item Baris (108-129) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan bahwa bila kolom tersebut adalah tanggal dan jika isinya kosong, maka lewati barisnya. Jika isinya tidak kosong, maka pisahkan isinya menurut tanda "-" dan tanda "," . Lalu, jika ada singkatan Mrt ganti menjadi 3. Jika ada singktan Okt ganti menjadi 10 dan jika ada singkatan 16 maka ganti menjadi 2016. Sehingga format tanggal menjadi 2016-03-01 sebagai contoh. Setelah itu masukan ke \textit{variable} beritipe LocalDate.
-		\item Baris (130-163) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan bahwa bila kolom tersebut adalah jam an jika isinya LIBUR maka lewati baris tersebut. Jika isinya Shift maka pasti baris dibawahnya adalah jam. Sehingga, ambil \textit{value} baris dibawahnya, lalu pisahkan menurut tanda "-" dan ganti tanda "." dengan tanda ":" . Kemudian, masukan ke \textit{variable} bertipe LocalTime. Jika isi kolom berisi jam saja, maka pisahkan menurut tanda "-" dan ganti tanda "." dengan tanda ":" . Lalu, masukan ke \textit{variable} bertipe LocalTime.
-		\item Baris (164-166) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan bila kolom tersebut adalah Nama Mata Kuliah, maka masukan ke \textit{variable} String Subject.
-		\item Baris (173-192) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan bila kolom tersebut adalah ruangan, yang bearti isinya adalah nama dosen yang mengawas. Jika isi kolom diawali dengan Lab, maka pisahkan menurut tanda ":" dan pisahkan kembali menurut tanda ",", sehingga menghasilkan nama dosen saja. Selanjutnya, masukan nama dosen ke ArrayList dosen dan isi ArrayList location dengan kata Lab. Jika isi kolom tidak di awali dengan kata lab, maka masukan nama dosen ke ArrayList dosen dan isi ArrayList location dengan mengambil nomor kolom dari ruangan tersebut dan mencocokannya dengan posisi nama dosen tersebut berada dan isi nomer ruangan kedalam ArrayList Location.
-		\item Baris (193-215) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan bahwa karena dua mata kuliah berisikan dua baris kolom dosen yang di \textit{merger} jadi satu dan Apache POI hanya dapat membaca baris pertama kolom yang digabungkan, maka pada baris yang kosong pada ArrayList dosen dan location disi dengan String kosong.
-		\item Baris (219-221) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan masukan semua \textit{variable} yang diisikan sebelumnya kedalam sebuah ArrayList ScheduleClass sesuai jumlah ArrayList nama dosen.
-		\item Baris (222-223) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan hapus semua isi ArrayList dosen agar tidak ada duplikasi.
-		\item Baris (227) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan hasil ArrayList method Converter() akan kembali dicek oleh \textit{method} mergering().
-		\item Baris (235-242) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan jika ada dosen yang isinya kosong pada ArrayList ScheduleList, maka pindahkan isinya ke ArrayList baru yang bernama ScheduleListSmt.
-		\item Baris (243-250) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan cara menghapus isi ArrayList ScheduleList yang sama dengan ArrayList SchedulelistSmt.
-		\item Baris (251-263) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan jika tanggal dan jam pada ArrayList ScheduleList sama dengan ArrayList ScheduleListSmt, maka tambahkan subject dari ArrayList ScheduleList dengan subject yang ada di ArrayList ScheduleListSmt.
-		\item Baris (264) pada lampiran ~\ref{lst:ExcelConverter} menjelaskan kembalian ArrayList ScheduleList.				
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/excelConverter2}
+		\caption{Implementasi kode program ExcelConverter}
+		\label{fig:ExcelConverter2}
+		\end{figure}
+		\item  Gambar \ref{fig:ExcelConverter1} menjelaskan bahwa i sebagai acuan program membaca baris, sedangkan j sebagai acuan program membaca kolom.
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/excelConverter3}
+		\caption{Implementasi kode program ExcelConverter  bagian 2}
+		\label{fig:ExcelConverter3}
+		\end{figure}
+		\item Gambar \ref{fig:ExcelConverter3} menjelaskan bahwa bila baris ke i program membaca dan isinya kosong maka berhenti membaca.
+		\item Gambar \ref{fig:ExcelConverter3} menjelaskan bila isi pada kolom No. bukanlah angka dan \textit{blank} maka program berhenti membaca.
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/excelConverter4}
+		\caption{Implementasi kode program ExcelConverter  bagian 3}
+		\label{fig:ExcelConverter4}
+		\end{figure}
+		
+		\item Gambar \ref{fig:ExcelConverter4} menjelaskan	bila isi kolom No. adalah kosong maka lewati barisnya dan baca baris selanjutnya.
+		\item Gambar \ref{fig:ExcelConverter4} menjelaskan bahwa bila kolom tersebut adalah tanggal dan jika isinya kosong, maka lewati barisnya. Jika isinya tidak kosong, maka pisahkan isinya menurut tanda "-" dan tanda "," . Lalu, jika ada singkatan Mrt ganti menjadi 3. Jika ada singktan Okt ganti menjadi 10 dan jika ada singkatan 16 maka ganti menjadi 2016. Sehingga format tanggal menjadi 2016-03-01 sebagai contoh. Setelah itu masukan ke \textit{variable} beritipe LocalDate.
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/excelConverter5}
+		\caption{Implementasi kode program ExcelConverter  bagian 4}
+		\label{fig:ExcelConverter5}
+		\end{figure}
+		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/excelConverter5-1}
+		\caption{Implementasi kode program ExcelConverter  bagian 4.1}
+		\label{fig:ExcelConverter5-1}
+		\end{figure}
+		\item Gambar \ref{fig:ExcelConverter5} menjelaskan bahwa bila kolom tersebut adalah jam dan jika isinya LIBUR maka lewati baris tersebut. Jika isinya Shift maka pasti baris dibawahnya adalah jam. Sehingga, ambil \textit{value} baris dibawahnya, lalu pisahkan menurut tanda "-" dan ganti tanda "." dengan tanda ":" . Kemudian, masukan ke \textit{variable} bertipe LocalTime. Jika isi kolom berisi jam saja, maka pisahkan menurut tanda "-" dan ganti tanda "." dengan tanda ":" . Lalu, masukan ke \textit{variable} bertipe LocalTime.
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/excelConverter6}
+		\caption{Implementasi kode program ExcelConverter  bagian 5}
+		\label{fig:ExcelConverter6}
+		\end{figure}
+		
+		\item Gambar \ref{fig:ExcelConverter6} menjelaskan bila kolom tersebut adalah Nama Mata Kuliah, maka masukan ke \textit{variable} String Subject.
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/excelConverter7}
+		\caption{Implementasi kode program ExcelConverter  bagian 6}
+		\label{fig:ExcelConverter7}
+		\end{figure}
+		
+		\item Gambar \ref{fig:ExcelConverter7} menjelaskan bila kolom tersebut adalah ruangan, yang bearti isinya adalah nama dosen yang mengawas. Jika isi kolom diawali dengan Lab, maka pisahkan menurut tanda ":" dan pisahkan kembali menurut tanda ",", sehingga menghasilkan nama dosen saja. Selanjutnya, masukan nama dosen ke ArrayList dosen dan isi ArrayList location dengan kata Lab. Jika isi kolom tidak di awali dengan kata lab, maka masukan nama dosen ke ArrayList dosen dan isi ArrayList location dengan mengambil nomor kolom dari ruangan tersebut dan mencocokannya dengan posisi nama dosen tersebut berada dan isi nomer ruangan kedalam ArrayList Location.
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/excelConverter8}
+		\caption{Implementasi kode program ExcelConverter  bagian 7}
+		\label{fig:ExcelConverter8}
+		\end{figure}
+		
+		\item  Gambar \ref{fig:ExcelConverter8} menjelaskan bahwa karena dua mata kuliah berisikan dua baris kolom dosen yang di \textit{merger} jadi satu dan Apache POI hanya dapat membaca baris pertama kolom yang digabungkan, maka pada baris yang kosong pada ArrayList dosen dan location disi dengan String kosong.
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/excelConverter9}
+		\caption{Implementasi kode program ExcelConverter  bagian 8}
+		\label{fig:ExcelConverter9}
+		\end{figure}
+		\item Gambar \ref{fig:ExcelConverter9} menjelaskan masukan semua \textit{variable} yang diisikan sebelumnya kedalam sebuah ArrayList ScheduleClass sesuai jumlah ArrayList nama dosen.
+		\item Gambar \ref{fig:ExcelConverter9} menjelaskan hapus semua isi ArrayList dosen agar tidak ada duplikasi.
+		\item Gambar \ref{fig:ExcelConverter9} menjelaskan hasil ArrayList method readExcel() akan kembali dicek oleh \textit{method} mergering().
+		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/excelConverter10}
+		\caption{Implementasi kode program ExcelConverter  bagian 9}
+		\label{fig:ExcelConverter10}
+		\end{figure}
+		
+		\item Gambar \ref{fig:ExcelConverter10} pada lampiran ~\ref{lst:ExcelConverter} menjelaskan jika ada dosen yang isinya kosong pada ArrayList ScheduleList, maka pindahkan isinya ke ArrayList baru yang bernama ScheduleListSmt.
+		\item Gambar \ref{fig:ExcelConverter10} menjelaskan cara menghapus isi ArrayList ScheduleList yang sama dengan ArrayList SchedulelistSmt.
+		\item Gambar \ref{fig:ExcelConverter10} menjelaskan jika tanggal dan jam pada ArrayList ScheduleList sama dengan ArrayList ScheduleListSmt, maka tambahkan subject dari ArrayList ScheduleList dengan subject yang ada di ArrayList ScheduleListSmt.
+		\item Gambar \ref{fig:ExcelConverter10} menjelaskan kembalian ArrayList ScheduleList.				
 	\end{enumerate}
 
 \item Kode Program untuk Konversi Kalendar \\
 Kelas CalendarConverter merupakan kelas yang dikhususkan untuk mengkonversi ScheduleClass menjadi file iCalendar. \\
 Berikut ini penjelasan dari implementasi kelas CalendarConverter :
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/calConverter1}
+		\caption{Implementasi kode program CalendarConverter bagian 1}
+		\label{fig:calConverter1}
+		\end{figure}
 \begin{enumerate}
-	\item Baris (41-43) pada lampiran ~\ref{lst:CalendarConverter} menjelaskan pembuatan \textit{timeZone} untuk wilayah Indonesia.
-	\item Baris (46-52) pada lampiran ~\ref{lst:CalendarConverter} menjelaskan pembuatan tanggal dan waktu dimulainya ujian dengan mengkonversi tahun, bulan, tanggal, jam, dan menit dari ScheduleClass.
-	\item Baris (55-61) pada lampiran ~\ref{lst:CalendarConverter} menjelaskan pembuatan tanggal dan waktu ujian tersebut berakhir dengan mengkonversi tahun, bulan, tanggal, jam, dan menit dari ScheduleClass.
-	\item Baris (65-72) pada lampiran ~\ref{lst:CalendarConverter} menjelaskan pembuatan \textit{event} pada kalendar.
-	\item Baris (80) pada lampiran ~\ref{lst:CalendarConverter} memasukan timeZone pada kalendar.
-	\item Baris (83-85) pada lampiran ~\ref{lst:CalendarConverter} menjelaskan identitas pembuat calendar.
-	\item Baris (89-92) pada lampiran ~\ref{lst:CalendarConverter} menjelaskan cara pembuatan calendar.
-	\item Baris (95-96) pada lampiran ~\ref{lst:CalendarConverter} memasukan \textit{event} yang telah dibuat kedalam kalendar dan \textit{print} sesudahnya.
-	\item Baris (99-105) pada lampiran ~\ref{lst:CalendarConverter} menjelaskan cara menyimpan file iCalendar pada direktori tertentu.
+	\item Gambar \ref{fig:calConverter1} menjelaskan pembuatan \textit{timeZone} untuk wilayah Indonesia.
+	\item Gambar \ref{fig:calConverter1} menjelaskan pembuatan tanggal dan waktu dimulainya ujian dengan mengkonversi tahun, bulan, tanggal, jam, dan menit dari ScheduleClass.
+	\item Gambar \ref{fig:calConverter1} menjelaskan pembuatan tanggal dan waktu ujian tersebut berakhir dengan mengkonversi tahun, bulan, tanggal, jam, dan menit dari ScheduleClass.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/calConverter2}
+		\caption{Implementasi kode program CalendarConverter bagian 2}
+		\label{fig:calConverter2}
+		\end{figure}
+	\item Gambar \ref{fig:calConverter2} menjelaskan pembuatan \textit{event} pada kalendar.
+	\item Gambar \ref{fig:calConverter2} memasukan timeZone pada kalendar.
+	\item Gambar \ref{fig:calConverter2} menjelaskan identitas pembuat calendar.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/calConverter3}
+		\caption{Implementasi kode program CalendarConverter bagian 3}
+		\label{fig:calConverter3}
+		\end{figure}
+	\item Gambar \ref{fig:calConverter3} menjelaskan cara pembuatan calendar.
+	\item Gambar \ref{fig:calConverter3} memasukan \textit{event} yang telah dibuat kedalam kalendar dan \textit{print} sesudahnya.
+	\item Gambar \ref{fig:calConverter3} menjelaskan cara menyimpan file iCalendar pada direktori tertentu.
 \end{enumerate}
 
 \item Kode Program \textit{Controller} \\
 Kelas FXMLDocumentController merupakan kelas yang bertugas menjadi penghubung kelas \textit{view} dengan kelas-kelas lainnya. Di kelas ini hasil dari excel yang telah dibaca akan ditampilkan pada tabelview dan semua fungsi \textit{button} dan  \textit{textbox} di atur dalam kelas ini. \\
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/controller1}
+		\caption{Implementasi kode program FXMLDocumentController bagian 1}
+		\label{fig:controller1}
+\end{figure}
 Berikut ini penjelasan dari kode-kode dalam kelas FXMLDocumentController :
 \begin{enumerate}
-	\item Baris (55-58) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan file yang akan dipilih nanti harus berekstensi .xlsx.
-	\item Baris (59) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan bagaimana memunculkan \textit{pop-up window} untuk memilih file \textit{input}.
-	\item Baris (61-68) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan jika file tidak kosong maka ambil \textit{path}file tersebut dan isikan \textit{textbox browse} dengan \textit{path} file tersebut.
-	\item Baris (74-75) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan konversi file excel tersebut, kemudian ambil hasilnya dan masukan kedalam ObservableArrayList.
-	\item Baris (78-84) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan cara menampilkan hasil konversi kedalam \textit{tableview} dengan mengisikan sesuai urutan kolom pada \textit{tableview}.
-	\item Baris (86-95) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan masukan semua ObservableArrayList jadwalList kedalam ObservableArrayList filteredData untuk keperluan filter nanti dan jika ada perubahan pada ObservableArrayList jadwalList maka \textit{update} pula ObservableArrayList filteredData.
-	\item Baris (108) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan ambil kelas ScheduleClass yang dipilih oleh \textit{user} dan masukan kedalm \textit{variable} selected.
-	\item Baris (111-112) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan bahwa setiap file yang akan disimpan diberikan ekstensi .ics .
-	\item Baris (113) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan cara memunculkan \textit{save dialog}.
-	\item Baris (117-126) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan ambil path direktori dimana \textit{user} akan menyimpan file, lalu konversi jadwal yang telah dipilih oleh \textit{user} dan simpan di direktori yang sudah ditentukan.
-	\item Baris (131-140) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan jika \textit{textbox filter} di isi oleh \textit{user} maka jadwal di tabel pun berubah sesuai dengan nama dosen yang di tuliskan \textit{user}.
-	\item Baris (145-154) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan cara \textit{update} filteredData sesuai nama dosen yang di input oleh \textit{user}.
-	\item Baris (158-170) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan bila nama dosen yang ditulis di \textit{textbox} filter sama dengan nama dosen yang ada di ScheduleClass, maka kembalikan nilai \textit{true}. Jika tidak, maka kembalikan nilai \textit{false}.
-	\item Baris (175-177) pada lampiran ~\ref{lst:FXMLDocumentController} menjelaskan pengurutan kembali tabel, sehingga isi tabelnya sesuai dengan apa yang di masukan pada \textit{textboxt} oleh \textit{user} sebelumnya.
+	\item Gambar \ref{fig:controller1} menjelaskan file yang akan dipilih nanti harus berekstensi .xlsx.
+	\item Gambar \ref{fig:controller1} menjelaskan bagaimana memunculkan \textit{pop-up window} untuk memilih file \textit{input}.
+	\item Gambar \ref{fig:controller1} menjelaskan jika file tidak kosong maka ambil \textit{path}file tersebut dan isikan \textit{textbox browse} dengan \textit{path} file tersebut.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/controller2}
+		\caption{Implementasi kode program FXMLDocumentController bagian 2}
+		\label{fig:controller2}
+\end{figure}
+	\item Gambar \ref{fig:controller2} menjelaskan konversi file excel tersebut, kemudian ambil hasilnya dan masukan kedalam ObservableArrayList.
+	\item Gambar \ref{fig:controller2} menjelaskan cara menampilkan hasil konversi kedalam \textit{tableview} dengan mengisikan sesuai urutan kolom pada \textit{tableview}.
+	\item Gambar \ref{fig:controller2} menjelaskan masukan semua ObservableArrayList jadwalList kedalam ObservableArrayList filteredData untuk keperluan filter nanti dan jika ada perubahan pada ObservableArrayList jadwalList maka \textit{update} pula ObservableArrayList filteredData.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/controller3}
+		\caption{Implementasi kode program FXMLDocumentController bagian 3}
+		\label{fig:controller3}
+\end{figure}
+	\item Gambar \ref{fig:controller3} menjelaskan ambil kelas ScheduleClass yang dipilih oleh \textit{user} dan masukan kedalm \textit{variable} selected.
+	\item Gambar \ref{fig:controller3} menjelaskan bahwa setiap file yang akan disimpan diberikan ekstensi .ics .
+	\item Gambar \ref{fig:controller3} menjelaskan cara memunculkan \textit{save dialog}.
+	\item Gambar \ref{fig:controller3} menjelaskan ambil path direktori dimana \textit{user} akan menyimpan file, lalu konversi jadwal yang telah dipilih oleh \textit{user} dan simpan di direktori yang sudah ditentukan.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/controller4}
+		\caption{Implementasi kode program FXMLDocumentController bagian 4}
+		\label{fig:controller4}
+\end{figure}
+	\item Gambar \ref{fig:controller4} menjelaskan jika \textit{textbox filter} di isi oleh \textit{user} maka jadwal di tabel pun berubah sesuai dengan nama dosen yang di tuliskan \textit{user}.
+	\item Gambar \ref{fig:controller4} menjelaskan cara \textit{update} filteredData sesuai nama dosen yang di input oleh \textit{user}.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{Gambar/controller5}
+		\caption{Implementasi kode program FXMLDocumentController bagian 5}
+		\label{fig:controller5}
+\end{figure}
+	\item Gambar \ref{fig:controller5} menjelaskan bila nama dosen yang ditulis di \textit{textbox} filter sama dengan nama dosen yang ada di ScheduleClass, maka kembalikan nilai \textit{true}. Jika tidak, maka kembalikan nilai \textit{false}.
+	\item Gambar \ref{fig:controller5} menjelaskan pengurutan kembali tabel, sehingga isi tabelnya sesuai dengan apa yang di masukan pada \textit{textboxt} oleh \textit{user} sebelumnya.
 \end{enumerate}
 	
 \end{enumerate}
@@ -615,4 +736,25 @@ Selain menguji pada sistem operasi windows, PL juga diuji pada sistem operasi Ma
 			\caption{Tampilan hasil filter pada OS X dengan \textit{file input} data baru}
 			\label{fig:Hasil-iCal-Data-Baru-Filter}
 			\end{figure}
+		
+	\subsection{Kesimpulan Pengujian}
+	Berikut ini merupakan kesimpulan dari hasil pengujian fungsional maupun eksperimental.
+	\begin{enumerate}
+		\item Pengujian Fungsional
+			\begin{enumerate}
+				\item Pengguna dapat melakukan \textit{browse} untuk mencari file excel.
+				\item Alamat file excel muncul di kolom alamat pada PL.
+				\item PL dapat membaca file excel dan menampilkannya ke layar.
+				\item Pengguna dapat melakukan \textit{filter} nama pengawas.
+				\item Pengguna dapat memilih jadwal pada tabel dan mengkonversikannya kedalam file iCalendar.
+				\item Pengguna dapat memasukan jadwal ke Goggle Calendar dan Microsoft Outlook.
+			\end{enumerate}
+		\item Pengujian Eksperimental
+			\begin{enumerate}
+				\item File selain excel tidak dapat dibaca oleh PL.
+				\item \textit{Sheet} yang dapat dibaca oleh PL adalah \textit{Sheet} pertama.
+				\item PL dapat mengkonversi file excel jadwal baru.
+				\item Hasil konversi PL dapat dimasukan kedalam Apple Calendar.
+			\end{enumerate}
+	\end{enumerate}
 			

@@ -1,12 +1,54 @@
 %versi 2 (8-10-2016)
 \chapter{Landasan Teori}
 \label{chap:teori}
-Pada bab ini akan dijelaskan mengenai konsep-konsep dasar pendukung PL, yaitu JavaFX, Apache POI, iCal4j.
+Pada bab ini akan dijelaskan mengenai konsep-konsep dasar pendukung PL, yaitu File Excel, iCalendar, JavaFX, Apache POI, iCal4j.
+
+\section{Microsoft Excel}
+\label{sec:excel}
+Microsoft Excel atau Microsoft Office Excel adalah sebuah program aplikasi lembar kerja \textit{spreadsheet} yang dibuat dan didistribusikan oleh Microsoft Corporation yang dapat dijalankan pada Microsoft Windows dan Mac OS. Aplikasi ini memiliki fitur kalkulasi, pembuatan grafik.\cite{excel}
+
+\subsection{Fitur Dasar}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Gambar/msExcel}
+	\caption{\textit{Spreadsheet} Microsoft Excel}
+\end{figure}
+Microsoft Excel mempunyai semua fitur dasar dari \textit{spreadsheet}. MS(Microsoft) Excel memiliki sebuah grid dari sel yang diatur dalam beberapa kolom. Setiap kolom berisi huruf kapital yang berfungsi untuk mengatur atau memanipulasi data, contohnya operasi aritmatika. Terdapat beberapa fungsi atau rumus yang disediakan untuk membantu menjawab persoalan statistik, tehnik, dan kebutuhan keuangan. Sebagai tambahan, MS Excel dapat menampilkan data dalam \textit{line graph}, histogram dan chart.\cite{excel}
+
+\subsection{Format File}
+ Sebelum 2007 MS Excel memiliki paten dari format file biner yang dilamakan \textit{Excel Binary File Format}(.XLS). Pada tahun 2007 dengan penambahan XML maka format file dari excel berubah menjadi .xlsx . \cite{excel}
+
+\section{iCalendar}
+\label{sec:iCalendar}
+iCalender merupkan format file komputer yang memungkinkan pengguna internet untuk mengirimkan undangan undangan pertemuan dengan pengguna internet lainnya dangan berbagai atau mengirimkan file dalam format yang memiliki ekstensi .ics .\cite{iCalendar}
+
+\subsection{Komponen Utama}
+Pada elemen bagian atas iCalendar terdiri dari rangkaian kalender, dan informasi penjadwalan. Sebuah informasi jadwal dapat berisi objek iCalendar tunggal maupun beberapa objek iCalendar yang buat group.\\
+Baris pertama adalan BEGIN:VCALENDAR, dan baris terakhir berisi END:VCALENDAR, konten jadwal berada diantara kedua baris ini. Baris konten biasa disebut "\textit{icalbody}". Baris kedua merupakan versi format yang digunakan. Ada dua versi dari vCalendar yaitu VERSION:1.0 dan VERSION:2.0. Bodi dari objek iCalendar terdiri dari list properi kalender dan satu atau lebih komponen kalender. Properti dari kalender dapat di aplikasikan ke seluruh kalender. Komponen Kalender terdiri dari beberapa properti kalender untuk membuat sebuah skema kalender(desain). Misalnya, komponen kalender dapat menentukan sebuah event, daftar to-do, sebuah entri jurnal, informaasi zona waktu, informasi waktu sibuk/lenggang, atau sebuah alarm. \\
+Berikut ini contoh dari sebuah objek iCalendar. Obek iCalendar ini berisi hari ulang tahun bastille yang dilaksanakan pada 14 juli 1997, pukul 17:00(UTC) sampai 15 juli 1997, pukul 03:59(UTC).\cite{iCalendar}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Gambar/CaptureiCalendar1}
+	\caption{Contoh iCalendar}
+\end{figure}
+
+\subsection{Event(VEVENT)}
+VENVENT menggambarkan sebuah event yang dijadwalkan dengan rentang waktu tertentu. Sebuah VEVENT memili DTSTART untuk menetapkan waktu awal, dan DTEND menetapkan waktu akhir dari sebuah event.\cite{iCalendar}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Gambar/CaptureiCalendarEvent}
+	\caption{Contoh VEVENT pada iCalendar}
+\end{figure}
+
+\subsection{Tipe Komponen Lain}
+Terdapat komponen lain pada iCalendar, yaitu VTIMEZONE (zona waktu) and VALARM (alarm). VTIMEZONE  menerangkang zona waktu pada kalender. VALARM untuk memasang alarm pengingat pada kalender. UID merupakan tanda pengenal yang membuat kalendar. \cite{iCalendar}
+
+
 
 \section{Apache POI}
 \label{sec:apache} 
 
-POI merupakan singkatan dari \textit{Poor Obfuscation Implementation} yang dikembangkan oleh Apache. Apache POI pada hakikatnya merupakan \textit{library} untuk memanipulasi dan menciptakan sesuatu melalui Java API( \textit{application programming interface}) dengan memanipulasi berbagai format file berdasarkan \textit{Office Open XML standards}(OOXML) dan dokumen \textit{Microsoft OLE 2 Document Compound Format}(OLE2), Singkatnya dengan library ini memungkinkan untuk membaca dan menulis pada MS Excel menggunakan Java.\cite{apachepoi} \\
+Apache POI(\textit{Poor Obfuscation Implementation}) pada hakikatnya merupakan \textit{library} untuk memanipulasi dan menciptakan sesuatu melalui Java API( \textit{application programming interface}) dengan memanipulasi berbagai format file berdasarkan \textit{Office Open XML standards}(OOXML) dan dokumen \textit{Microsoft OLE 2 Document Compound Format}(OLE2), Singkatnya dengan library ini memungkinkan untuk membaca dan menulis pada MS Excel menggunakan Java.\cite{apachepoi} \\
 
 
 \subsection{Komponen Apache POI}
@@ -599,7 +641,7 @@ Pada bagian ini \textit{package} yang ditulis di sub bab sebelumnya akan dijelas
 		1 & \textbf{AddressList}\\
 			&	Mendefinisikan list dari alamat pada iCalendar.\\ \hline
 		2 & \textbf{Calendar}\\
-			&	Mendefinisikan kalendar pada iCalendar. \\ \hline
+			&	Mendefinisikan kalender pada iCalendar. \\ \hline
 		3 & \textbf{CalendarDateFormatFactory}\\
 			&	Membuat objek dateFormat untuk optimisasi pola tanggal pada iCalendar.\\ \hline
 		4 & \textbf{Date}\\
@@ -764,7 +806,7 @@ VVenue}\\
 		\hline
 		\textbf{No} & \textbf{Method dan Deskripsi} \\ \hline \hline
 		1 & \textbf{PublishTransformer}\\
-			&	Merubah kalendar untuk dipublikasikan.\\ \hline
+			&	Merubah kalender untuk dipublikasikan.\\ \hline
 		2 & \textbf{Transformer}\\
 			&	\textit{Base Class} untuk transforasi kalender. \\ \hline
 		\end{tabular}

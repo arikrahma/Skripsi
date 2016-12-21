@@ -53,7 +53,7 @@ public class ExcelConverter {
         this.rowNoIdx = 0;
     }
 
-    public List<ScheduleClass> Converter() throws FileNotFoundException, IOException
+    public List<ScheduleClass> readExcel() throws FileNotFoundException, IOException
     {
         ArrayList<ScheduleClass> scheduleList = new ArrayList<>();
         
@@ -76,11 +76,13 @@ public class ExcelConverter {
             row = sheet.getRow(j);
             for (int f = 0; f < row.getLastCellNum(); f++) {
                 Cell cell = row.getCell(f);
-                if (cell.getCellType() == Cell.CELL_TYPE_STRING && cell.getStringCellValue().equalsIgnoreCase("No.")) {
+                if (cell.getCellType() == Cell.CELL_TYPE_STRING 
+                        && cell.getStringCellValue().equalsIgnoreCase("No.")) {
                     rowNoIdx = j;
                     colNoIdx = cell.getColumnIndex();
                 }
-                else if (cell.getCellType() == Cell.CELL_TYPE_STRING && cell.getStringCellValue().equalsIgnoreCase("Nama Mata Kuliah"))
+                else if (cell.getCellType() == Cell.CELL_TYPE_STRING 
+                        && cell.getStringCellValue().equalsIgnoreCase("Nama Mata Kuliah"))
                 {
                     colMatkulIdx = cell.getColumnIndex();
                     break outerloop;
@@ -92,7 +94,6 @@ public class ExcelConverter {
         System.out.println("sheet = "+sheet.getLastRowNum());
         outerloop2 :
         for (int i = 0; i < sheet.getLastRowNum(); i++) {
-           //System.out.println("i = "+i);
            outerloop :
             for (int j = 0; j < row.getLastCellNum(); j++) {
                 row = sheet.getRow(i);
@@ -101,10 +102,10 @@ public class ExcelConverter {
                     i = sheet.getLastRowNum();
                     break outerloop2;
                 }
-                //System.out.println("Jey = " + j);
                 Cell cell = row.getCell(j);
                 FormulaEvaluator evaluator = wb.getCreationHelper().createFormulaEvaluator();
-                if (cell.getColumnIndex() == colNoIdx && i > rowNoIdx + 3 && cell.getCellType() != Cell.CELL_TYPE_BLANK
+                if (cell.getColumnIndex() == colNoIdx && i > rowNoIdx + 3 
+                        && cell.getCellType() != Cell.CELL_TYPE_BLANK
                         && evaluator.evaluate(cell).getCellType() != Cell.CELL_TYPE_NUMERIC) {
                     i = sheet.getLastRowNum();
                     break outerloop2;
@@ -113,9 +114,7 @@ public class ExcelConverter {
                         && cell.getCellType() == Cell.CELL_TYPE_BLANK )
                 {
                     i = i + 1;
-                    break outerloop;
-
-                    //System.out.println("I = "+i);               
+                    break outerloop;             
                 }
        
                   if (cell.getRowIndex() > rowNoIdx+1 && cell.getColumnIndex() == (colNoIdx + 1)) {
@@ -266,10 +265,10 @@ public class ExcelConverter {
            
         }
         
-        return Mergering(scheduleList);
+        return mergeringList(scheduleList);
     }
     
-    public List<ScheduleClass> Mergering (ArrayList<ScheduleClass> scheduleList)
+    public List<ScheduleClass> mergeringList (ArrayList<ScheduleClass> scheduleList)
     {
         int count = 0;
        // System.out.println("Size "+scheduleList.size());

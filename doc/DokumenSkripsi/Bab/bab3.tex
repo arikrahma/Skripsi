@@ -14,7 +14,7 @@ berikut ini contoh file excel yang dikeluarkan oleh TU.
 	\end{figure}
 
 Berikut penjelasan kolom-kolom yang ada di gambar \ref{fig:jadwalLamapng}.\\
-File excel jadwal mengawas ujian yang dipublikasikan Tata Usaha FTIS yang terdiri dari 12 kolom A sampai dengan L.
+File excel jadwal mengawas ujian yang dipublikasikan Tata Usaha FTIS yang terdiri dari 12 kolom A sampai dengan L. TU meentukan jumlah ruangan yang dipakai berdasarkan jumlah peserta ujian dibagi dengan jumlah dosen pengawas ujian. Setiap dosen dapat mengawas lebih dari satu matakuliah pada satu ruangan.  
 Tabel ~\ref{tab:penjelasan_kolom} menjelaskan rincian dari masing-masing kolom pada excel tersebut. 
 \begin{table}[H]
 		\centering
@@ -43,11 +43,12 @@ Tabel ~\ref{tab:penjelasan_kolom} menjelaskan rincian dari masing-masing kolom p
 Dari rincian tabel ~\ref{tab:penjelasan_kolom} berikut analisis \textit{flowchart} cara perangkat lunak membaca file excel : 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.3]{Gambar/FlowchartBacaExcel}
+	\includegraphics[scale=0.5]{Gambar/FlowchartBacaExcel}
 	\caption{\textit{Flowchart} membaca excel}
 	\label{fig:flowchartMembacaExcel}
 	\end{figure}
 \begin{enumerate}
+	\item \textit{Sheet} yang dibaca merupakan \textit{Sheet} pertama.
 	\item Kolom \textbf{No.} dapat dijadikan acuan dalam membaca baris jadwal Excel pada perangkat lunak. Jika PL menemukan kolom No pada excel maka simpan baris dan kolomnya pada variabel tertentu untuk menandakan bahwa baris selanjutnya merupakan data yang dibutuhkan oleh perangkat lunak. Selanjutnya nomer pada kolom No. juga dapat dijadikan penanda dalam perangkat lunak menentukan banyak data yang dibaca, jika baris selanjutnya dari kolom No. merupakan angka maka dipastikan baris tersebut memuat data jadwal mengawas.
 		\item Kolom \textbf{Hari, Tgl.} memuat tanggal dan hari ujian menggunakan koma (,) sebagai pemisah hari dan tanggal dan titik (.) sebagai penanda singkatan bulan. Untuk mendapatkan tanggal yang sesuai dengan format \textit{LocalDate} maka perangkat lunak harus melakukan \textit{parsing} memisahkan hari dengan tanggal, kemudian mengkonversi bulan menjadi sebuah angka sehingga sesuai dengan format \textit{LocalDate}, lalu disimpan pada sebuah variabel.
 		\item Kolom \textbf{Jam} menggunakan \textit{hyphen}(-) sebagai pemisah antara jam dimulainya ujian dan waktu ujian berakhir. perangkat lunak dapat melakukan \textit{parsing} untuk memisahkan waktu tersebut menjadi dua variabel, lalu dikonversi sesuai dengan ketentuan \textit{LocalTime}.
@@ -86,7 +87,7 @@ Setelah dibaca file excel akan berubah menjadi ArrayList \textit{schedule}, kemu
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.4]{Gambar/FlowchartConvertiCalendar}
+	\includegraphics[scale=0.6]{Gambar/FlowchartConvertiCalendar}
 	\caption{\textit{Flowchart} alur konversi excel ke iCalendar}
 	\label{fig:flowchartKonversiiCalendar}
 	\end{figure}
@@ -132,7 +133,9 @@ Berikut diagram use case berserta skenario yang tertera pada gambar \ref{fig:use
 			\item Prakondisi	: -
 			\item Skenario		:
 				\begin{itemize}
-					\item Pengawas memasukan file excel mengawas ujian yang diterbitkan oleh TU
+					\item Pengawas memasukan file excel mengawas ujian.
+					\item PL membaca file excel lalu menkonversi ke ArrayList jadwal.
+					\item PL menampilkan jadwal dalam bentuk TableView.
 				\end{itemize}
 		\end{itemize}
 		}
@@ -145,8 +148,10 @@ Berikut diagram use case berserta skenario yang tertera pada gambar \ref{fig:use
 			\item Prakondisi	: -
 			\item Skenario		:
 				\begin{itemize}
-					\item Pengawas
-					dapat melakukan sorting nama dari jadwal ujian yang telah berupa iCal sesuai nama yang di inginkan. 
+					\item Pengawas menuliskan nama pengawas pada kolom filter di PL.
+					\item PL mengambil data nama pengawas dan mencocokannya dengan ArrayList jadwal.
+					\item PL mengabil data nama pengawas yang sesuai dengan masukan Pengawas, lalu memisahkannya ke variable ArrayList sementara.
+					\item PL mengatur kembali urutan tabel jadwal sesuai nama pengawas yang dimasukan Pengawas.
 				\end{itemize}
 		\end{itemize}
 		}
@@ -159,101 +164,16 @@ Berikut diagram use case berserta skenario yang tertera pada gambar \ref{fig:use
 			\item Prakondisi	: -
 			\item Skenario		:
 				\begin{itemize}
-					\item Pengawas mengunduh file iCal yang telah dikonversi oleh perangkat lunak.
+					\item Pengawas memilih jadwal yang akan dikonversi.
+					\item Pengawas mengklik tombol Convert to iCal pada PL.
+					\item PL mengambil item yang diseleksi oleh Pengawas.
+					\item PL mengkonversi jadwal yang dipilih Pengawas.
+					\item Pengawas menentukan alamat destinasi file iCalendar dan memasukan nama file iCalendar.
+					\item PL akan menyimpan file iCalendar ditempat yang dipilih oleh Pengawas.
 				\end{itemize}
 		\end{itemize}
 		}
 		
-		\item Skenario Membaca File Excel
-		{\renewcommand\labelitemi{}
-		\begin{itemize}
-			\item Deskripsi		: Membaca File Excel.
-			\item Aktor				: System 
-			\item Prakondisi	: File bertipe excel dan berekstensi .xlsx
-			\item Skenario		:
-				\begin{itemize}
-					\item System membaca file excel jadwal mengawas ujian.
-				\end{itemize}
-		\end{itemize}
-		}
-		
-		\item Skenario Membaca File Excel
-		{\renewcommand\labelitemi{}
-		\begin{itemize}
-			\item Deskripsi		: Membaca File Excel.
-			\item Aktor				: System 
-			\item Prakondisi	: File bertipe excel dan berekstensi .xlsx .
-			\item Skenario		:
-				\begin{itemize}
-					\item System membaca file excel jadwal mengawas ujian.
-				\end{itemize}
-		\end{itemize}
-		}
-		
-		\item Skenario Konversi File Excel Menjadi ArrayList Jadwal
-		{\renewcommand\labelitemi{}
-		\begin{itemize}
-			\item Deskripsi		: konversi file excel menjadi ArrayList Jadwal.
-			\item Aktor				: System 
-			\item Prakondisi	: File excel telah dimasukan.
-			\item Skenario		:
-				\begin{itemize}
-					\item System mengkonversi file excel yang telah dibaca menjadi ArrayList jadwal.
-				\end{itemize}
-		\end{itemize}
-		}
-		
-		\item Skenario Menampilkan Jadwal Ke Layar
-		{\renewcommand\labelitemi{}
-		\begin{itemize}
-			\item Deskripsi		: Menampilkan jadwal ke layar.
-			\item Aktor				: System 
-			\item Prakondisi	: File excel telah dikonversi menjadi ArrayList jadwal
-			\item Skenario		:
-				\begin{itemize}
-					\item System nampilkan jadwal yang telah dikonversi dalam bentuk TableView ke layar.
-				\end{itemize}
-		\end{itemize}
-		}
-		
-		\item Skenario Menyusun Tabel Sesuai Nama Pengawas
-		{\renewcommand\labelitemi{}
-		\begin{itemize}
-			\item Deskripsi		: Menyusun tabel sesuai nama pengawas.
-			\item Aktor				: System 
-			\item Prakondisi	: TextBox Sort telah diisikan nama pengawas
-			\item Skenario		:
-				\begin{itemize}
-					\item System menyusun tabel sesuai dengan nama pengawas yang dimasukan oleh pengguna pada TextBox Sort.
-				\end{itemize}
-		\end{itemize}
-		}
-		
-		\item Skenario Mengkonversi File Seleksi ke iCalendar
-		{\renewcommand\labelitemi{}
-		\begin{itemize}
-			\item Deskripsi		: Mengkonversi file seleksi ke icalendars.
-			\item Aktor				: System 
-			\item Prakondisi	: Pengguna menyeleksi satu item pada tabel yang akan dikonversi menjadi iCalendar
-			\item Skenario		:
-				\begin{itemize}
-					\item System mengkonversi item yang telah diseleksi oleh pengguna pada tabel menjadi iCalendar.
-				\end{itemize}
-		\end{itemize}
-		}
-		
-		\item Skenario Menyimpan File iCalendar Pada Destinasi Folder
-		{\renewcommand\labelitemi{}
-		\begin{itemize}
-			\item Deskripsi		: Menyimpan file iCalendar pada destinasi folder.
-			\item Aktor				: System 
-			\item Prakondisi	: Pengguna telah menentukan destinasi folder dan memasukan nama file iCalendar
-			\item Skenario		:
-				\begin{itemize}
-					\item System menyimpan file iCalendar yang telah dikonversi sebelumnya pada destinasi folder yang dipilih oleh pengguna beserta nama filenya.
-				\end{itemize}
-		\end{itemize}
-		}
 \end{enumerate}
 
 \section{Diagram Aktifitas}
@@ -322,10 +242,17 @@ kelas dalam rancangan perangkat lunak.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.5]{Gambar/pemodelanScheduleClass}
+	\includegraphics[scale=0.6]{Gambar/pemodelanScheduleClass}
 	\caption{Gambar Pemodelan ScheduleClass}
 	\label{fig:pemodelanExcelConverter}
 \end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Gambar/pemodelanFXMLDocumentController}
+	\caption{Gambar Pemodelan FXMLDocumentController}
+	\label{fig:pemodelanFXMLDocumentController}
+\end{figure}
+
 
 \begin{figure}[H]
 	\centering

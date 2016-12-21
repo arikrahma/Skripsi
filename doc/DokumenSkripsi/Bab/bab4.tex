@@ -123,57 +123,10 @@ Berikut ini rincian kelas pada diagram kelas yang tercantum dalam tabel-tabel di
 		\end{tabular}
 \end{table}
 
-\section{Perancangan Antarmuka}
-Setelah melalui serangkaian anlisis dan perancangan diagram kelas pada sub bab ini akan dijelaskan mengenai gambaran bentuk program mengawas ujian tersebut.
-
-\begin{enumerate}
-	\item Halaman awal program\\
-	Ini adalah tampilan awal pada saat pengguna pertama kali menjalankan program.		
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.5]{Gambar/antarmuka}
-		\caption{Tampilan awal Program}
-		\label{fig:tampilan_awal}
-		\end{figure}
-		
-		Pada gambar ~\ref{fig:tampilan_awal} terdapat beberapa \textit{button} dan \textit{textbox} yang memiliki fungsi sebagai berikut.
-		\begin{itemize}
-			\item \textit{}{Browse} : berfungsi untuk membuka \textit{pop-up window} sebagai sarana pengguna memilih file excel yang akan dimasukkan.
-			\item \textit{Textbox path} : alamat file yang telah dipilih oleh pengguna akan dicatat pada \textit{textbox} ini.
-			\item \textit{Convert} : tombol ini berfungsi mengeksekusi program untuk membaca file yang telah dimasukkan oleh pengguna.
-			\item \textit{Textbox filter} : merupakan fitur untuk memfilter jadwal mengawas berdasarkan nama dosen yang sesuai dengan \textit{input} pengguna.
-			\item \textit{TableView} : jadwal yang telah dibaca pada excel selanjutnya akan ditampilkan pada tabel ini. tabel ini terdiri dari kolom tanggal, waktu, matakuliah, dosen, lokasi, dan \textit{download} untuk mengunduh file iCal.		
-		\end{itemize}
-	\item Halaman untuk melakukan \textit{Browse} file excel\\
-	Halaman ini merupakan halaman dimana pengguna melakukan pemilihan \textit{input} file excel jadwal mengawas. Halaman \textit{browser} menyesuaikan tipe sistem operasi yang dipakai.
-		\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.5]{Gambar/antarmuka3}
-		\caption{Tampilan \textit{Browse} file excel}
-		\label{fig:browse}
-		\end{figure}
-	\item Halaman setelah excel dibaca\\
-	Halaman ini menujukan ketika file excel telah sukses dibaca dan ditampilkan pada \textit{tableview}.
-		\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.5]{Gambar/antarmuka2}
-		\caption{Tampilan setelah excel dibaca}
-		\label{fig:excel_dibaca}
-		\end{figure}
-	\item Halaman untuk menyimpan iCal\\
-	Halaman ini dimana pengguna telah memilih salah satu jadwal dan akan menyimpannya dalam betuk iCal. Halaman \textit{save} menyesuaikan sistem operasi yang dipakai. 
-		\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.5]{Gambar/antarmuka4}
-		\caption{Tampilan untuk menyimpan iCal}
-		\label{fig:jadwalpng}
-		\end{figure}
-\end{enumerate}
-
 \section{Rancangan \textit{Method-Method} Utama}
 Berikut ini adalah rancangan \textit{method} utama program jadwal mengawas ujian yang berperan penting dalam perangkat lunak:
 \begin{enumerate}
-	\item Converter() - ExcelConverter\\
+	\item readExcel() - ExcelConverter\\
 	\begin{tabular}{l c p{9cm}}
 		Input & : & - \\ 
 		Output & : & List<ScheduleClass>  \\ 
@@ -190,7 +143,7 @@ Berikut ini adalah rancangan \textit{method} utama program jadwal mengawas ujian
 		\end{enumerate}
 		\end{tabular}	
 	
-	\item Mergering() - ExcelConverter\\
+	\item mergeringList() - ExcelConverter\\
 	\begin{tabular}{l c p{9cm}}
 		Input & : & List<ScheduleClass> \\ 
 		Output & : & List<ScheduleClass> \\ 
@@ -232,3 +185,52 @@ Berikut ini adalah rancangan \textit{method} utama program jadwal mengawas ujian
 			\end{enumerate}
 		\end{tabular}	
 \end{enumerate}
+
+
+\section{Perancangan Antarmuka}
+Setelah melalui serangkaian anlisis dan perancangan diagram kelas pada sub bab ini akan dijelaskan mengenai gambaran bentuk program mengawas ujian tersebut.
+
+\begin{enumerate}
+	\item Halaman awal program\\
+	Ini adalah tampilan awal pada saat pengguna pertama kali menjalankan program.		
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{Gambar/antarmuka}
+		\caption{Tampilan awal Program}
+		\label{fig:tampilan_awal}
+		\end{figure}
+		
+		Pada gambar ~\ref{fig:tampilan_awal} terdapat beberapa \textit{button} dan \textit{textbox} yang memiliki fungsi sebagai berikut.
+		\begin{itemize}
+			\item \textit{}{Browse} : berfungsi untuk membuka \textit{pop-up window} sebagai sarana pengguna memilih file excel yang akan dimasukkan.
+			\item \textit{Textbox path} : alamat file yang telah dipilih oleh pengguna akan dicatat pada \textit{textbox} ini.
+			\item \textit{Convert} : tombol ini berfungsi mengkonversi kolom pada tabel excel jadwal mengaws ujian menjadi ArrayList jadwal.
+			\item \textit{Textbox filter} : merupakan fitur untuk memfilter jadwal mengawas berdasarkan nama dosen yang sesuai dengan \textit{input} pengguna.
+			\item \textit{TableView} : jadwal yang telah dibaca pada excel selanjutnya akan ditampilkan pada tabel ini. tabel ini terdiri dari kolom tanggal, waktu, matakuliah, dosen, lokasi, dan \textit{download} untuk mengunduh file iCal.		
+		\end{itemize}
+	\item Halaman untuk melakukan \textit{Browse} file excel\\
+	Halaman ini merupakan halaman dimana pengguna melakukan pemilihan \textit{input} file excel jadwal mengawas. Halaman \textit{browser} menyesuaikan tipe sistem operasi yang dipakai.
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{Gambar/antarmuka3}
+		\caption{Tampilan \textit{Browse} file excel}
+		\label{fig:browse}
+		\end{figure}
+	\item Halaman setelah excel dibaca\\
+	Halaman ini menujukan ketika file excel telah sukses dibaca dan ditampilkan pada \textit{tableview}.
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{Gambar/antarmuka2}
+		\caption{Tampilan setelah excel dibaca}
+		\label{fig:excel_dibaca}
+		\end{figure}
+	\item Halaman untuk menyimpan iCal\\
+	Halaman ini dimana pengguna telah memilih salah satu jadwal dan akan menyimpannya dalam betuk iCal. Halaman \textit{save} menyesuaikan sistem operasi yang dipakai. 
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.5]{Gambar/antarmuka4}
+		\caption{Tampilan untuk menyimpan iCal}
+		\label{fig:jadwalpng}
+		\end{figure}
+\end{enumerate}
+

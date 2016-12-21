@@ -1,5 +1,15 @@
 \begin{thebibliography}{99}
 
+\bibitem{excel}
+{Wikipedia} (2016) Microsoft excel.
+\newblock \url{https://en.wikipedia.org/wiki/Microsoft_Excel}.
+\newblock 21 Desember 2016.
+
+\bibitem{iCalendar}
+{Wikipedia} (2016) icalendar.
+\newblock \url{https://en.wikipedia.org/wiki/ICalendar}.
+\newblock 22 Desember 2016.
+
 \bibitem{apachepoi}
 {The Apache Software Foundation} (2016) {Apache POI - the Java API for
   Microsoft Documents}.
