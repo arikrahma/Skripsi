@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.6)  22 DEC 2016 03:49
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.2.6)  9 JAN 2017 12:26
 entering extended mode
 **skripsi.tex
 (C:\Users\Ariq\Skripsi\doc\DokumenSkripsi\skripsi.tex
@@ -1222,7 +1222,21 @@ Package pdftex.def Info: Gambar/logo-unpar.png used on input line 474.
 (pdftex.def)             Requested size: 144.23631pt x 142.4296pt.
  [3] [4
 
-] [5] [6
+]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.474 }
+       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[5] [6
 
 ]
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 474.
@@ -2306,7 +2320,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  42495 strings out of 493921
  923423 string characters out of 3144880
- 1569822 words of memory out of 3000000
+ 1569823 words of memory out of 3000000
  43451 multiletter control sequences out of 15000+200000
  71570 words of font info for 54 fonts, out of 3000000 for 9000
  845 hyphenation exceptions out of 8191
@@ -2320,7 +2334,7 @@ nts/type1/public/lm/lmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
 MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lms
 y6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on skripsi.pdf (128 pages, 3744925 bytes).
+Output written on skripsi.pdf (128 pages, 3744963 bytes).
 PDF statistics:
  3569 PDF objects out of 3580 (max. 8388607)
  1511 named destinations out of 1728 (max. 500000)
